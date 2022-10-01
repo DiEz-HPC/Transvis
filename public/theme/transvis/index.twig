@@ -6,7 +6,7 @@
 
         <h1>{{ record|title }}</h1>
 
-        {# Remove this block if you don't need it anymore. #}
+        {# Keep this block until the final deploy #}
         {{ include('partials/_fresh_install.twig') }}
 
         {# Output the `introduction` field. If it doesn't exist, 'default' to
@@ -17,14 +17,9 @@
 
         {{ record.content }}
 
-        {{ include('partials/_recordfooter.twig', { 'record': record }) }}
+    
 
     {% endif %}
 
 {% endblock main %}
 
-{% block aside %}
-
-    {{ include('partials/_aside.twig') }}
-    
-{% endblock aside %}
