@@ -1,0 +1,23 @@
+{#
+    record.
+        title
+        teaser
+        contentValues 'collection'
+            image
+            text
+        seo
+        slug
+#}
+{% extends '@theme/partials/_master.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+    {{ parent() }}
+{%  endblock javascript %}
+
+{% block body %}
+    <h1>{{ record.title }}</h1>
+{% endblock body %}

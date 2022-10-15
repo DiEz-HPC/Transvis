@@ -14,7 +14,7 @@ accueil:
             group: content
             localize: true
             label: Title
-            postfix: |
+            postfix:
                 The 'Homepage' can contain basic information about the website. This title will be
                 shown on the homepage of the website, as the name implies. To change the
                 <em><strong>name</strong></em> of the site, as is shown in the header, and the tab
@@ -46,7 +46,7 @@ accueil:
 savoirFaire:
     name: Nos savoir faire
     singular_name: Nos savoir faire
-    slug: Nos savoir faire
+    slug: Nos-savoir-faire
     fields:
         title:
             type: text
@@ -169,11 +169,12 @@ savoirFaire:
     singleton: true
     icon_many: "fa:brain"
     icon_one: "fa:brain"
+    record_template: 'savoirFaire.twig'
 
 nosValeurs:
     name: Nos valeurs
     singular_name: Nos valeurs
-    slug: Nos valeurs
+    slug: Nos-valeurs
     fields:
         title:
             type: text
@@ -217,11 +218,12 @@ nosValeurs:
     singleton: true
     icon_many: "fa:fist-raised"
     icon_one: "fa:fist-raised"
+    record_template: 'nosValeurs.twig'
 
 nosEquipes:
     name: Nos équipes
     singular_name: Nos équipes
-    slug: Nos équipes
+    slug: Nos-equipes
     fields:
         title:
             type: text
@@ -268,11 +270,12 @@ nosEquipes:
     singleton: true
     icon_many: "fa:users"
     icon_one: "fa:users"
+    record_template: 'nosValeurs.twig'
 
 nosRealisations:
     name: Nos réalisations
     singular_name: Réalisation
-    slug: Nos réalisations
+    slug: Nos-réalisations
     fields:
         title:
           type: text
@@ -297,7 +300,7 @@ nosRealisations:
 vosOptions:
     name: Vos options
     singular_name: Vos options
-    slug: Vos options
+    slug: Vos-options
     fields:
         nosRealisationsTitle:
             type: text

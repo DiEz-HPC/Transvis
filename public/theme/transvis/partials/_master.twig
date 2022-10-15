@@ -9,7 +9,9 @@
                    sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
-        <link rel="stylesheet" href="{{ asset('css/simple.css') }}">
+        {% block stylesheet %}
+            <link rel="stylesheet" href="{{ asset('css/simple.css') }}">
+        {% endblock stylesheet %}
     </head>
     <body>
         {{ include('partials/_header.twig') }}
@@ -32,4 +34,5 @@
         {{ include('partials/_footer.twig') }}
 
     </body>
+{% block javascript %}{% endblock javascript %}
 </html>
