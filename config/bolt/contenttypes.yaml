@@ -270,7 +270,7 @@ nosEquipes:
     singleton: true
     icon_many: "fa:users"
     icon_one: "fa:users"
-    record_template: 'nosValeurs.twig'
+    record_template: 'nosEquipes.twig'
 
 nosRealisations:
     name: Nos réalisations
