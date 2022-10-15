@@ -4,9 +4,6 @@
 # The Homepage content type is a singleton: There can be only one record of this
 # content type.
 
-__nodes:
-    savoirFaireCard: &savoirFaireCard
-       
 accueil:
     name: accueil
     singular_name: accueil
