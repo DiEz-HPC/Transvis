@@ -4,6 +4,9 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+    Appolo\BoltSeo\:
+        resource: '../vendor/appolodev/bolt-seo/src/*'
+        exclude: '../vendor/appolodev/bolt-seo/src/{Entity,Exception}'
     BobdenOtter\ConfigurationNotices\:
         resource: '../vendor/bobdenotter/configuration-notices/src/*'
         exclude: '../vendor/bobdenotter/configuration-notices/src/{Entity,Exception}'

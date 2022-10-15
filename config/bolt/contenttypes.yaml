@@ -43,6 +43,282 @@ accueil:
     icon_many: "fa:home"
     icon_one: "fa:home"
 
+savoirFaire:
+    name: Nos savoir faire
+    singular_name: Nos savoir faire
+    slug: Nos savoir faire
+    fields:
+        title:
+            type: text
+            class: large
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        cardOne:
+            type: set
+            label: Première carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la première carte
+                    info: Image de la première carte
+                text:
+                  type: text
+                  label: Texte de la première carte
+                  info: Texte de la première carte
+        cardTwo:
+            type: set
+            label: Deuxième carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la deuxième carte
+                    info: Image de la deuxième carte
+                text:
+                  type: text
+                  label: Texte de la deuxième carte
+                  info: Texte de la deuxième carte
+        cardThree:
+            type: set
+            label: Troisième carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la troisième carte
+                    info: Image de la troisième carte
+                text:
+                  type: text
+                  label: Texte de la troisième carte
+                  info: Texte de la troisième carte
+        keyFigureTitle:
+            type: text
+            label: Titre de la section 
+            info: Titre de la section chiffres clés
+            group: Chiffres clés
+        keyFigureOne:
+            type: set
+            label: Premier chiffre clé
+            group: Chiffres clés
+            fields:
+                image:
+                  type: image
+                  label: Nombre du premier chiffre clé
+                  info: Nombre du premier chiffre clé
+                text:
+                  type: text
+                  label: Texte du premier chiffre clé
+                  info: Texte du premier chiffre clé
+        keyFigureTwo:
+            type: set
+            label: Deuxième chiffre clé
+            group: Chiffres clés
+            fields:
+                image:
+                    type: image
+                    label: Nombre du deuxième chiffre clé
+                    info: Nombre du deuxième chiffre clé
+                text:
+                  type: text
+                  label: Texte du deuxième chiffre clé
+                  info: Texte du deuxième chiffre clé
+        keyFigureThree:
+            type: set
+            label: Troisième chiffre clé
+            group: Chiffres clés
+            fields:
+                image:
+                    type: image
+                    label: Nombre du troisième chiffre clé
+                    info: Nombre du troisième chiffre clé
+                text:
+                  type: text
+                  label: Texte du troisième chiffre clé
+                  info: Texte du troisième chiffre clé
+        keyFigureFour:
+            type: set
+            label: Quatrième chiffre clé
+            group: Chiffres clés
+            fields:
+                image:
+                    type: image
+                    label: Nombre du quatrième chiffre clé
+                    info: Nombre du quatrième chiffre clé
+                text:
+                  type: text
+                  label: Texte du quatrième chiffre clé
+                  info: Texte du quatrième chiffre clé
+        seo:
+            type: seo
+            group: "Réglage SEO"
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:brain"
+    icon_one: "fa:brain"
+
+nosValeurs:
+    name: Nos valeurs
+    singular_name: Nos valeurs
+    slug: Nos valeurs
+    fields:
+        title:
+            type: text
+            class: large
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        contentValues:
+            type: collection
+            label: Nos valeurs
+            group: Valeurs
+            fields:
+                contentValue:
+                    type: set
+                    label: Valeur
+                    fields:
+                        image:
+                            type: image
+                            label: Image de la valeur
+                            info: Image de la valeur
+                        text:
+                            type: textarea
+                            label: Texte de la valeur
+                            info: Texte de la valeur
+        seo:
+            type: seo
+            group: "Réglage SEO"
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:fist-raised"
+    icon_one: "fa:fist-raised"
+
+nosEquipes:
+    name: Nos équipes
+    singular_name: Nos équipes
+    slug: Nos équipes
+    fields:
+        title:
+            type: text
+            class: large
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        image:
+            type: image
+            label: Image d'illustration
+            info: Image illustrant le texte d'introduction
+            group: Introduction
+        bottomImage:
+            type: image
+            label: Image en arrière plan
+            info: Image en arrière plan de la page
+            group: Partie basse
+        cardTitle:
+            type: text
+            label: Titre de la carte
+            info: Titre de la carte
+            group: Partie basse
+        cardText:
+            type: textarea
+            label: Texte de la carte
+            info: Texte de la carte
+            group: Partie basse
+        seo:
+            type: seo
+            group: "Réglage SEO"
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:users"
+    icon_one: "fa:users"
+
+nosRealisations:
+    name: Nos réalisations
+    singular_name: Réalisation
+    slug: Nos réalisations
+    fields:
+        title:
+          type: text
+          label: Nom de la réalisation
+          info: Nom de la réalisation
+          group: Réalisation
+        carousel:
+          type: imagelist
+          label: Images de la réalisation
+          info: Images de la réalisation
+          group: Réalisation
+        video:
+          type: embed
+          label: Vidéo de la réalisation
+          info: Inserez le lien youtube de la vidéo
+          group: Réalisation
+    default_status: published
+    viewless: false
+    icon_many: "fa:images"
+    icon_one: "fa:images"
+
+vosOptions:
+    name: Vos options
+    singular_name: Vos options
+    slug: Vos options
+    fields:
+        nosRealisationsTitle:
+            type: text
+            label: Titre de la page Nos réalisations
+            info: Titre de la page Nos réalisations
+            group: Nos réalisations
+        nosRealisationsText:
+            type: textarea
+            label: Texte de la page Nos réalisations
+            info: Texte de la page Nos réalisations
+            group: Nos réalisations
+        nosPartenaires:
+            type: imagelist
+            label: Nos partenaires
+            info: Nos partenaires
+            group: Ils nous font confiance
+    default_status: published
+    viewless: true
+    singleton: true
+    icon_many: "fa:sliders-h"
+    icon_one: "fa:sliders-h"
 
 # Possible field types:
 #
