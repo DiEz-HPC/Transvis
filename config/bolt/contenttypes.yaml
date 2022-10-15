@@ -269,6 +269,57 @@ nosEquipes:
     icon_many: "fa:users"
     icon_one: "fa:users"
 
+nosRealisations:
+    name: Nos réalisations
+    singular_name: Réalisation
+    slug: Nos réalisations
+    fields:
+        title:
+          type: text
+          label: Nom de la réalisation
+          info: Nom de la réalisation
+          group: Réalisation
+        carousel:
+          type: imagelist
+          label: Images de la réalisation
+          info: Images de la réalisation
+          group: Réalisation
+        video:
+          type: embed
+          label: Vidéo de la réalisation
+          info: Inserez le lien youtube de la vidéo
+          group: Réalisation
+    default_status: published
+    viewless: false
+    icon_many: "fa:images"
+    icon_one: "fa:images"
+
+vosOptions:
+    name: Vos options
+    singular_name: Vos options
+    slug: Vos options
+    fields:
+        nosRealisationsTitle:
+            type: text
+            label: Titre de la page Nos réalisations
+            info: Titre de la page Nos réalisations
+            group: Nos réalisations
+        nosRealisationsText:
+            type: textarea
+            label: Texte de la page Nos réalisations
+            info: Texte de la page Nos réalisations
+            group: Nos réalisations
+        nosPartenaires:
+            type: imagelist
+            label: Nos partenaires
+            info: Nos partenaires
+            group: Ils nous font confiance
+    default_status: published
+    viewless: true
+    singleton: true
+    icon_many: "fa:sliders-h"
+    icon_one: "fa:sliders-h"
+
 # Possible field types:
 #
 # text - varchar(256) - input type text.
