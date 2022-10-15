@@ -218,6 +218,56 @@ nosValeurs:
     icon_many: "fa:fist-raised"
     icon_one: "fa:fist-raised"
 
+nosEquipes:
+    name: Nos équipes
+    singular_name: Nos équipes
+    slug: Nos équipes
+    fields:
+        title:
+            type: text
+            class: large
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        image:
+            type: image
+            label: Image d'illustration
+            info: Image illustrant le texte d'introduction
+            group: Introduction
+        bottomImage:
+            type: image
+            label: Image en arrière plan
+            info: Image en arrière plan de la page
+            group: Partie basse
+        cardTitle:
+            type: text
+            label: Titre de la carte
+            info: Titre de la carte
+            group: Partie basse
+        cardText:
+            type: textarea
+            label: Texte de la carte
+            info: Texte de la carte
+            group: Partie basse
+        seo:
+            type: seo
+            group: "Réglage SEO"
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:users"
+    icon_one: "fa:users"
 
 # Possible field types:
 #
