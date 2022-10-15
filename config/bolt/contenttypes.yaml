@@ -173,6 +173,55 @@ savoirFaire:
     icon_many: "fa:brain"
     icon_one: "fa:brain"
 
+nosValeurs:
+    name: Nos valeurs
+    singular_name: Nos valeurs
+    slug: Nos valeurs
+    fields:
+        title:
+            type: text
+            class: large
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        contentValues:
+            type: collection
+            label: Nos valeurs
+            group: Valeurs
+            fields:
+                contentValue:
+                    type: set
+                    label: Valeur
+                    fields:
+                        image:
+                            type: image
+                            label: Image de la valeur
+                            info: Image de la valeur
+                        text:
+                            type: textarea
+                            label: Texte de la valeur
+                            info: Texte de la valeur
+        seo:
+            type: seo
+            group: "Réglage SEO"
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:fist-raised"
+    icon_one: "fa:fist-raised"
+
+
 # Possible field types:
 #
 # text - varchar(256) - input type text.
