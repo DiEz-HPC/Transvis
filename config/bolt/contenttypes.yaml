@@ -372,6 +372,16 @@ vosOptions:
             label: Nos partenaires
             info: Nos partenaires
             group: Ils nous font confiance
+        recrutementsTitle:
+            type: text
+            label: Titre de la page Recrutements
+            info: Titre de la page Recrutements
+            group: Recrutements
+        recrutementsText:
+            type: textarea
+            label: Texte de la page Recrutements
+            info: Texte de la page Recrutements
+            group: Recrutements
         logo:
             type: image
             label: Logo
