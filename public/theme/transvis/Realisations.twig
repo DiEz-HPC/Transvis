@@ -1,13 +1,3 @@
-{#
-    record.
-        title
-        teaser
-        contentValues 'collection'
-            image
-            text
-        seo
-        slug
-#}
 {% extends '@theme/partials/_master.twig' %}
 
 {% block stylesheet %}
@@ -15,9 +5,11 @@
 {% endblock stylesheet %}
 
 {% block javascript %}
-    {{ parent() }}
+{{ parent() }}
 {%  endblock javascript %}
 
 {% block main %}
-    <h1>{{ record.title }}</h1>
+    {% for record in records %}
+        <a href="{{ record.link }}">{{ record.title }}</a>
+    {% endfor %}
 {% endblock main %}

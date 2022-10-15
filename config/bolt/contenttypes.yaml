@@ -275,7 +275,7 @@ nosEquipes:
 nosRealisations:
     name: Nos réalisations
     singular_name: Réalisation
-    slug: Nos-réalisations
+    slug: nos-realisations
     fields:
         title:
           type: text
@@ -296,6 +296,8 @@ nosRealisations:
     viewless: false
     icon_many: "fa:images"
     icon_one: "fa:images"
+    listing_template: 'Realisations.twig'
+    record_template: 'Realisation.twig'
 
 vosOptions:
     name: Vos options
