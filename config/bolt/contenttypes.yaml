@@ -5,52 +5,32 @@
 # content type.
 
 accueil:
-    name: accueil
-    singular_name: accueil
+    name: Accueil
+    singular_name: Accueil
+    slug: accueil
+    title_format: Page d'accueil
     fields:
-        title:
+        video:
+            type: file
+            label: Video
+            extensions: [mp4, webm]
+        teaser:
             type: text
-            class: large
-            group: content
-            localize: true
-            label: Title
-            postfix:
-                The 'Homepage' can contain basic information about the website. This title will be
-                shown on the homepage of the website, as the name implies. To change the
-                <em><strong>name</strong></em> of the site, as is shown in the header, and the tab
-                in the webbrowser, edit <code>sitename:</code> in the configuration file.
-        image:
-            type: image
-        introduction:
-            type: redactor
-            localize: true
-        content:
-            type: redactor
-            localize: true
-        contentlink:
-            type: text
-            label: Link
-            placeholder: 'contentType/slug or https://example.org/'
-            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
-            fixture_format: '{url}'
-        slug:
-            type: slug
-            uses: title
-            group: Meta
+            label: Texte d'introduction
+            info: Texte d'introduction présent sur le header       
     viewless: false
-    taxonomy: [ categories, tags, foobars ]
     singleton: true
     icon_many: "fa:home"
     icon_one: "fa:home"
+    record_template: 'index.twig'
 
 savoirFaire:
     name: Nos savoir faire
     singular_name: Nos savoir faire
-    slug: Nos-savoir-faire
+    slug: nos-savoir-faire
     fields:
         title:
             type: text
-            class: large
             label: Titre
             info: Titre de la page
             fixture_format: '{title}'
@@ -154,7 +134,7 @@ savoirFaire:
                     label: Nombre du quatrième chiffre clé
                     info: Nombre du quatrième chiffre clé
                 text:
-                  type: text
+                  type: text/admin/new/Nos savoir faire
                   label: Texte du quatrième chiffre clé
                   info: Texte du quatrième chiffre clé
         seo:
@@ -174,11 +154,10 @@ savoirFaire:
 nosValeurs:
     name: Nos valeurs
     singular_name: Nos valeurs
-    slug: Nos-valeurs
+    slug: nos-valeurs
     fields:
         title:
             type: text
-            class: large
             label: Titre
             info: Titre de la page
             fixture_format: '{title}'
@@ -223,11 +202,10 @@ nosValeurs:
 nosEquipes:
     name: Nos équipes
     singular_name: Nos équipes
-    slug: Nos-equipes
+    slug: nos-equipes
     fields:
         title:
             type: text
-            class: large
             label: Titre
             info: Titre de la page
             fixture_format: '{title}'
@@ -282,6 +260,11 @@ nosRealisations:
           label: Nom de la réalisation
           info: Nom de la réalisation
           group: Réalisation
+        teaser:
+          type: textarea
+          label: Texte de description
+          info: Texte de description de la réalisation
+          group: Réalisation
         carousel:
           type: imagelist
           label: Images de la réalisation
@@ -292,17 +275,96 @@ nosRealisations:
           label: Vidéo de la réalisation
           info: Inserez le lien youtube de la vidéo
           group: Réalisation
+        machineSheet:
+          type: file
+          label: Fiche technique
+          info: Fiche technique de la réalisation
+          group: Fiche technique
     default_status: published
     viewless: false
     icon_many: "fa:images"
     icon_one: "fa:images"
     listing_template: 'Realisations.twig'
     record_template: 'Realisation.twig'
+  
+recrutements:
+    name: Recrutements
+    singular_name: Recrutement
+    slug: recrutements
+    fields:
+        title:
+          type: text
+          label: Intitulé du poste
+          info: Intitulé du poste
+          group: Recrutement
+        teaser:
+          type: textarea
+          label: Texte de description
+          info: Texte de description du poste
+          group: Recrutement
+        profil:
+          type: textarea
+          label: Profil recherché
+          info: Profil recherché
+          group: Recrutement
+        salary:
+          type: number
+          label: Salaire annuel
+          info: Salaire annuel pour le poste
+          group: Recrutement
+    default_status: published
+    viewless: false
+    icon_many: "fa:table"
+    icon_one: "fa:table"
+    listing_template: 'recrutements.twig'
+    record_template: 'recrutement.twig'
+
+contactPage:
+    name: Page contact
+    singular_name: Contact
+    slug: contact
+    fields:
+        title:
+            type: text
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        blockOne:
+            type: set
+            label: Premier bloc
+            group: Blocs
+            fields:
+                image:
+                    type: image
+                    label: Image du premier bloc
+                    info: Image du premier bloc
+                text:
+                    type: textarea
+                    label: Texte du premier bloc
+                    info: Texte du premier bloc
+        blockTwo:
+            type: textarea
+            label: Deuxième bloc
+            info: Deuxième bloc
+            group: Blocs
+    default_status: published
+    viewless: false
+    singleton: true
+    icon_many: "fa:envelope"
+    icon_one: "fa:envelope"
+    record_template: 'contact.twig'    
 
 vosOptions:
     name: Vos options
     singular_name: Vos options
-    slug: Vos-options
+    slug: vos-options
     fields:
         nosRealisationsTitle:
             type: text
@@ -319,6 +381,21 @@ vosOptions:
             label: Nos partenaires
             info: Nos partenaires
             group: Ils nous font confiance
+        recrutementsTitle:
+            type: text
+            label: Titre de la page Recrutements
+            info: Titre de la page Recrutements
+            group: Recrutements
+        recrutementsText:
+            type: textarea
+            label: Texte de la page Recrutements
+            info: Texte de la page Recrutements
+            group: Recrutements
+        logo:
+            type: image
+            label: Logo
+            info: Logo
+            group: Autres
     default_status: published
     viewless: true
     singleton: true
