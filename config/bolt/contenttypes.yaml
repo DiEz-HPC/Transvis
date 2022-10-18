@@ -19,15 +19,16 @@ accueil:
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header       
     viewless: false
+    record_template: 'index.twig'
+    default_status: held
     singleton: true
     icon_many: "fa:home"
     icon_one: "fa:home"
-    record_template: 'index.twig'
 
 savoirFaire:
     name: Nos savoir faire
     singular_name: Nos savoir faire
-    slug: nos-savoir-faire
+    slug: Nos savoir faire
     fields:
         title:
             type: text
@@ -144,7 +145,7 @@ savoirFaire:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:brain"
@@ -154,7 +155,7 @@ savoirFaire:
 nosValeurs:
     name: Nos valeurs
     singular_name: Nos valeurs
-    slug: nos-valeurs
+    slug: Nos valeurs
     fields:
         title:
             type: text
@@ -192,7 +193,7 @@ nosValeurs:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:fist-raised"
@@ -202,7 +203,7 @@ nosValeurs:
 nosEquipes:
     name: Nos équipes
     singular_name: Nos équipes
-    slug: nos-equipes
+    slug: Nos équipes
     fields:
         title:
             type: text
@@ -243,7 +244,7 @@ nosEquipes:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:users"
@@ -253,7 +254,7 @@ nosEquipes:
 nosRealisations:
     name: Nos réalisations
     singular_name: Réalisation
-    slug: nos-realisations
+    slug: Nos réalisations
     fields:
         title:
           type: text
@@ -280,17 +281,17 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
-    default_status: published
+    listing_template: 'Realisations.twig'
+    record_template: 'Realisation.twig'
+    default_status: held
     viewless: false
     icon_many: "fa:images"
     icon_one: "fa:images"
-    listing_template: 'Realisations.twig'
-    record_template: 'Realisation.twig'
   
 recrutements:
     name: Recrutements
     singular_name: Recrutement
-    slug: recrutements
+    slug: Recrutements
     fields:
         title:
           type: text
@@ -312,17 +313,17 @@ recrutements:
           label: Salaire annuel
           info: Salaire annuel pour le poste
           group: Recrutement
-    default_status: published
+    listing_template: 'recrutements.twig'
+    record_template: 'recrutement.twig'
+    default_status: held
     viewless: false
     icon_many: "fa:table"
     icon_one: "fa:table"
-    listing_template: 'recrutements.twig'
-    record_template: 'recrutement.twig'
 
 contactPage:
     name: Page contact
     singular_name: Contact
-    slug: contact
+    slug: Contact
     fields:
         title:
             type: text
@@ -354,7 +355,7 @@ contactPage:
             label: Deuxième bloc
             info: Deuxième bloc
             group: Blocs
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:envelope"
@@ -364,7 +365,7 @@ contactPage:
 vosOptions:
     name: Vos options
     singular_name: Vos options
-    slug: vos-options
+    slug: Vos options
     fields:
         nosRealisationsTitle:
             type: text
@@ -396,7 +397,7 @@ vosOptions:
             label: Logo
             info: Logo
             group: Autres
-    default_status: published
+    default_status: held
     viewless: true
     singleton: true
     icon_many: "fa:sliders-h"
