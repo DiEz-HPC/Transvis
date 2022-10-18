@@ -21,9 +21,11 @@
         "paragonie/random_compat": "*"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "phpstan/phpstan": "^0.12.48",
         "phpstan/phpstan-doctrine": "^0.12.20",
         "phpstan/phpstan-symfony": "^0.12.8",
+        "symfony/maker-bundle": "^1.47",
         "symplify/easy-coding-standard": "^9.4"
     },
     "config": {
