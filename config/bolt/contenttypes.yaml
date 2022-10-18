@@ -19,6 +19,7 @@ accueil:
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header       
     viewless: false
+    default_status: held
     singleton: true
     icon_many: "fa:home"
     icon_one: "fa:home"
@@ -143,7 +144,7 @@ savoirFaire:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:brain"
@@ -190,7 +191,7 @@ nosValeurs:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:fist-raised"
@@ -240,7 +241,7 @@ nosEquipes:
             type: slug
             uses: title
             group: Meta
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:users"
@@ -276,7 +277,7 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
-    default_status: published
+    default_status: held
     viewless: false
     icon_many: "fa:images"
     icon_one: "fa:images"
@@ -306,7 +307,7 @@ recrutements:
           label: Salaire annuel
           info: Salaire annuel pour le poste
           group: Recrutement
-    default_status: published
+    default_status: held
     viewless: false
     icon_many: "fa:table"
     icon_one: "fa:table"
@@ -346,7 +347,7 @@ contactPage:
             label: Deuxième bloc
             info: Deuxième bloc
             group: Blocs
-    default_status: published
+    default_status: held
     viewless: false
     singleton: true
     icon_many: "fa:envelope"
@@ -387,7 +388,7 @@ vosOptions:
             label: Logo
             info: Logo
             group: Autres
-    default_status: published
+    default_status: held
     viewless: true
     singleton: true
     icon_many: "fa:sliders-h"
