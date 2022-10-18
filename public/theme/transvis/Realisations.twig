@@ -1,7 +1,5 @@
 {#
-    record:
-        video: 'file"
-        teaser: 'text'
+    Records: 'collection record'
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -15,6 +13,7 @@
 {%  endblock javascript %}
 
 {% block main %}
-
+    {% for record in records %}
+        <a href="{{ record|link }}">{{ record.title }}</a>
+    {% endfor %}
 {% endblock main %}
-

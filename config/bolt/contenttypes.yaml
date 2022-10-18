@@ -19,6 +19,7 @@ accueil:
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header       
     viewless: false
+    record_template: 'index.twig'
     default_status: held
     singleton: true
     icon_many: "fa:home"
@@ -149,6 +150,7 @@ savoirFaire:
     singleton: true
     icon_many: "fa:brain"
     icon_one: "fa:brain"
+    record_template: 'savoirFaire.twig'
 
 nosValeurs:
     name: Nos valeurs
@@ -196,6 +198,7 @@ nosValeurs:
     singleton: true
     icon_many: "fa:fist-raised"
     icon_one: "fa:fist-raised"
+    record_template: 'nosValeurs.twig'
 
 nosEquipes:
     name: Nos équipes
@@ -246,6 +249,7 @@ nosEquipes:
     singleton: true
     icon_many: "fa:users"
     icon_one: "fa:users"
+    record_template: 'nosEquipes.twig'
 
 nosRealisations:
     name: Nos réalisations
@@ -277,6 +281,8 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
+    listing_template: 'Realisations.twig'
+    record_template: 'Realisation.twig'
     default_status: held
     viewless: false
     icon_many: "fa:images"
@@ -307,6 +313,8 @@ recrutements:
           label: Salaire annuel
           info: Salaire annuel pour le poste
           group: Recrutement
+    listing_template: 'recrutements.twig'
+    record_template: 'recrutement.twig'
     default_status: held
     viewless: false
     icon_many: "fa:table"
@@ -352,6 +360,7 @@ contactPage:
     singleton: true
     icon_many: "fa:envelope"
     icon_one: "fa:envelope"
+    record_template: 'contact.twig'    
 
 vosOptions:
     name: Vos options

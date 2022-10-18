@@ -1,0 +1,27 @@
+{#
+    record.
+        title
+        teaser
+        cardOne/Two/Three
+            .image
+            .text
+        keyFigureTitle
+        keyFigureOne/Two/Three/Four
+            image
+            text
+        seo
+        slug
+#}
+{% extends '@theme/partials/_master.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+    {{ parent() }}
+{%  endblock javascript %}
+
+{% block main %}
+    <h1>{{ record.title }}</h1>
+{% endblock main %}
