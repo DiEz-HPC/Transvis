@@ -5,6 +5,14 @@ security:
         ROLE_CHIEF_EDITOR: [ROLE_EDITOR]
         ROLE_EDITOR: [ROLE_USER]
         # ROLE_USER is assigned to Bolt Entity Users if no roles have been set
+        ROLE_NOS_REALISATIONS: [ROLE_USER]
+        ROLE_RECRUTEMENT: [ROLE_USER]
+        ROLE_NOS_VALEURS: [ROLE_USER]
+        ROLE_NOS_SAVOIR_FAIRE: [ROLE_USER]
+        ROLE_NOS_EQUIPES: [ROLE_USER]
+        ROLE_PAGE_CONTACT: [ROLE_USER]
+        ROLE_VOS_OPTIONS: [ROLE_USER]
+        ROLE_ACCUEIL: [ROLE_USER]
         ROLE_USER: []
         ROLE_WEBSERVICE: []
 
