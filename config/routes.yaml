@@ -27,6 +27,11 @@ project:
   prefix: /
   type: annotation
 
+app_panelContact:
+    resource: '../src/ContactMessageController.php'
+    prefix: '%bolt.backend_url%'
+    type: annotation
+
 # ------------------------------------------------------------------------------
 # Examples:
 
