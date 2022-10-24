@@ -7,5 +7,17 @@
         <target>default-title</target>
       </segment>
     </unit>
+    <unit id="FIqbGzc" name="reset_password_error">
+      <segment>
+        <source>reset_password_error</source>
+        <target>reset_password_error</target>
+      </segment>
+    </unit>
+    <unit id="ogZAHZ6">
+      <segment>
+        <source>Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe - You have already requested a reset password email. Please check your email or try again soon.</source>
+        <target>Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe - You have already requested a reset password email. Please check your email or try again soon.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
