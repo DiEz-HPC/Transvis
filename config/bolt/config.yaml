@@ -232,8 +232,8 @@ user_avatar:
 # Settings for the reset password logic
 reset_password_settings:
     show_already_requested_password_notice: true
-    mail_from: "%env(MAIL_FROM)%"
-    mail_name: "Bolt CMS"
+    mail_from: "no-reply@transvis.fr"
+    mail_name: "Transvis-cti"
     mail_subject: "Reinitialisation de votre mot de passe"
     mail_template: "reset_password/email.html.twig"
 
