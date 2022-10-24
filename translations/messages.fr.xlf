@@ -86,7 +86,6 @@
         <target>your email</target>
       </segment>
     </unit>
-
     <unit id="4yW.j5A" name="Prénom">
       <segment>
         <source>Prénom</source>
@@ -187,7 +186,8 @@
       <segment>
         <source>Entreprise ...</source>
         <target>Entreprise ...</target>
-
+      </segment>
+    </unit>
     <unit id="4EMl7HC">
       <segment>
         <source>You have already requested a reset password email. Please check your email or try again soon.</source>
