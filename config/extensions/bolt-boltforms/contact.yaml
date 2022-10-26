@@ -2,9 +2,10 @@ templates:
     form: partials/forms/_contactForm.twig
     email: partials/mail/_contactEmail.twig
 database:
-  contenttype:
-    name: Message # save all form submissions to the quotations contenttype
-    ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
+    name: bolt_message
+  #contenttype:
+   # name: Message # save all form submissions to the quotations contenttype
+    #ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
 notification:
     enabled: true
     debug: true
