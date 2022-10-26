@@ -19,5 +19,47 @@
         <target>Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe - You have already requested a reset password email. Please check your email or try again soon.</target>
       </segment>
     </unit>
+    <unit id="sB0RYun" name="Adresse mail">
+      <segment>
+        <source>Adresse mail</source>
+        <target>Adresse mail</target>
+      </segment>
+    </unit>
+    <unit id="JrBQ5.0" name="Email du contact ...">
+      <segment>
+        <source>Email du contact ...</source>
+        <target>Email du contact ...</target>
+      </segment>
+    </unit>
+    <unit id="21nrsnI" name="Sujet">
+      <segment>
+        <source>Sujet</source>
+        <target>Sujet</target>
+      </segment>
+    </unit>
+    <unit id="rXOz2do" name="Sujet du mail ...">
+      <segment>
+        <source>Sujet du mail ...</source>
+        <target>Sujet du mail ...</target>
+      </segment>
+    </unit>
+    <unit id="QERVmkw" name="Votre message">
+      <segment>
+        <source>Votre message</source>
+        <target>Votre message</target>
+      </segment>
+    </unit>
+    <unit id=".fWf0o5" name="Votre message ...">
+      <segment>
+        <source>Votre message ...</source>
+        <target>Votre message ...</target>
+      </segment>
+    </unit>
+    <unit id="eQdSCfK" name="Envoyer">
+      <segment>
+        <source>Envoyer</source>
+        <target>Envoyer</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
