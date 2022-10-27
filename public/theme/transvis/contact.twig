@@ -1,11 +1,11 @@
 {#
-    record.
-        title: 'text'
-        teaser: 'redactor'
-        blockOne: 'fields'
-            image: 'image'
-            text: 'text'
-        blockTwo: 'text"
+record.
+    title: 'text'
+    teaser: 'redactor'
+    blockOne: 'fields'
+        image: 'image'
+        text: 'text'
+    blockTwo: 'text"
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -20,6 +20,5 @@
 
 {% block main %}
     <h1>{{ record.title }}</h1>
-PAGE CONTACT
-        {{ boltform('contact') }}
+    {{ boltform('contact') }}
 {% endblock main %}
