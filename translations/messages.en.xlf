@@ -61,5 +61,11 @@
         <target>Envoyer</target>
       </segment>
     </unit>
+    <unit id=".MeoEev" name="String city processor string">
+      <segment>
+        <source>String city processor string</source>
+        <target>String city processor string</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

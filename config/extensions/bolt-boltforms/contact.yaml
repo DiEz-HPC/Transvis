@@ -1,8 +1,8 @@
 templates:
     form: partials/forms/_contactForm.twig
     email: partials/mail/_contactEmail.twig
-database:
-    name: bolt_message
+#database:
+    #name: bolt_contact_message
   #contenttype:
    # name: Message # save all form submissions to the quotations contenttype
     #ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
@@ -17,8 +17,8 @@ notification:
     replyto_email: "{EMAIL}" # name of a field below or valid text.
     to_name: "Contact Transis"
     to_email: "youremail@example.org"
-    from_name: "Transvis"
-    from_email: "nepasrepondre@transvis.fr"
+    from_name: "{NAME} {FIRSTNAME}"
+    from_email: "{EMAIL}"
 feedback:
     success: Votre message à bien était envoyé.
     error: Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer.
