@@ -67,5 +67,11 @@
         <target>String city processor string</target>
       </segment>
     </unit>
+    <unit id=".yHun4s" name="Last province contact company">
+      <segment>
+        <source>Last province contact company</source>
+        <target>Last province contact company</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

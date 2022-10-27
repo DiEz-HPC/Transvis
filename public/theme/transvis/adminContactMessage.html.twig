@@ -29,8 +29,8 @@
                             <div class="col-4 d-flex justify-content-end">
                                 Message reçu le :
                                 {{ message.timestamp|date('d/m/Y') }}
-                            </div>
-                        </div>#}
+                            </div>#}
+                        </div>
                         <div class="row text-muted mt-2 pl-3">
                             {{ message.mail }}
                         </div>
@@ -59,7 +59,7 @@
         </div>
         {% include 'partials/_adminContact/_replyModal.twig' %}
         <div class="d-flex justify-content-center w-100">
-            {{ pager(contactMessages, template = 'helpers/_pager_bootstrap.html.twig') }}
+        {# {{ pager(contactMessages, template = '@theme/helpers/_pager.html.twig') }}  #}
         </div>
     </div>
 {% endblock %}

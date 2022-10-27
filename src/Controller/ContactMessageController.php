@@ -1,24 +1,25 @@
 <?php
 
-namespace App;
+namespace App\Controller;
 
 use App\Repository\ContactMessageRepository;
-use Bolt\Repository\ContentRepository;
+use Bolt\Controller\Backend\BackendZoneInterface;
 use Bolt\Controller\TwigAwareController;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Bolt\Controller\Backend\BackendZoneInterface;
 
 
 class ContactMessageController extends TwigAwareController implements BackendZoneInterface
 {
 
-    private ContactMessageRepository $repository;
-    public function __construct(ContactMessageRepository $repository, EntityManagerInterface $entityManager)
+
+    public function __construct(
+        private ContactMessageRepository $repository,
+        private EntityManagerInterface   $entityManager,
+    )
     {
-        $this->repository = $repository;
-        $this->entityManager = $entityManager;
     }
 
     #[Route("contact-message/", name: "app_contact_message")]
@@ -28,15 +29,15 @@ class ContactMessageController extends TwigAwareController implements BackendZon
         return $this->render(
             'adminContactMessage.html.twig',
             [
-               'contactMessages' => $contactMessages,
+                'contactMessages' => $contactMessages,
             ]
         );
     }
 
     #[Route("contact-message/delete/{id}", name: "app_contact_message_delete")]
-    public function deleteMessage(int $id)
+    public function deleteMessage(int $id): RedirectResponse
     {
-        $content = $this->repository->findOneBy($id);
+        $content = $this->repository->find($id);
         if ($content) {
             $this->entityManager->remove($content);
             $this->entityManager->flush();

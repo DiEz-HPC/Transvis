@@ -28,7 +28,7 @@ project:
   type: annotation
 
 app_panelContact:
-    resource: '../src/ContactMessageController.php'
+    resource: '../src/Controller/ContactMessageController.php'
     prefix: '%bolt.backend_url%'
     type: annotation
 
