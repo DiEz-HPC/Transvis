@@ -3,13 +3,38 @@ document.addEventListener("DOMContentLoaded", function () {
   replyToMessage();
   closeModal();
   formAlreadySend();
+  observer.observe(targetNode, config);
 });
 
-const deleteButton = document.querySelectorAll(".deleteButton");
-const feedbackMessage = document.querySelector(".boltforms-feedback");
-const replyButton = document.querySelectorAll(".replyButton");
-const modal = document.querySelector(".replyModal");
-const form = document.querySelector("#replyForm");
+let deleteButton = document.querySelectorAll(".deleteButton");
+let feedbackMessage = document.querySelector(".boltforms-feedback");
+let replyButton = document.querySelectorAll(".replyButton");
+let modal = document.querySelector(".replyModal");
+let form = document.querySelector("#replyForm");
+
+// Select the node that will be observed for mutations
+const targetNode = document.getElementById("contactMessage");
+
+// Options for the observer (which mutations to observe)
+const config = { childList: true };
+
+// Callback function to execute when mutations are observed
+const callback = (mutationList, observer) => {
+  for (const mutation of mutationList) {
+    if (mutation.type === "childList") {
+      console.log(
+        "The " + mutation.target.id + " element has been added or removed."
+      );
+      validateDelete();
+      replyToMessage();
+      closeModal();
+      formAlreadySend();
+    }
+  }
+};
+
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(callback);
 
 const validateDelete = () => {
   deleteButton.forEach((button) => {
@@ -61,3 +86,13 @@ const clearFeedback = () => {
     feedbackMessage.remove();
   }
 };
+
+
+const refreshContactButton = () => {
+    deleteButton = document.querySelectorAll(".deleteButton");
+    feedbackMessage = document.querySelector(".boltforms-feedback");
+    replyButton = document.querySelectorAll(".replyButton");
+    modal = document.querySelector(".replyModal");
+    form = document.querySelector("#replyForm");
+    console.log('refreshContactButton', deleteButton)
+}

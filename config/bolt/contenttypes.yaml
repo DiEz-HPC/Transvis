@@ -403,53 +403,6 @@ vosOptions:
     icon_many: "fa:sliders-h"
     icon_one: "fa:sliders-h"
 
-Message:
-    name: Messages
-    singular_name: Message
-    title_format: "Message de : {name} {firstname}"
-    excerpt_format: "{message}"
-    slug: messages
-    viewless: true
-    searchable: false
-    show_in_dashboard: false
-    fields:
-        name:
-            type: text
-            variant: inline
-            fixture_format: '{lastName}'
-        firstname:
-            type: text
-            variant: inline
-            fixture_format: '{firstName}'
-        companyName:
-            type: text
-            variant: inline
-            fixture_format: '{companyName}'
-        email:
-            type: text
-            variant: inline
-            fixture_format: '{email}'
-        message:
-            type: textarea
-            variant: inline
-            fixture_format: '{paragraph}'
-        timestamp:
-            type: text
-            variant: inline
-            fixture_format: '{date}'
-        url:
-            type: text
-            variant: inline
-            fixture_format: '{url}'
-        path:
-            type: text
-            variant: inline
-            fixture_format: '{url}'
-        ip:
-            type: text
-            variant: inline
-            fixture_format: '{ipv4}'
-
 # Possible field types:
 #
 # text - varchar(256) - input type text.
