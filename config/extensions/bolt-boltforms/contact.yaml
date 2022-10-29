@@ -59,6 +59,15 @@ fields:
                 placeholder: Votre mail...
                 class: contactInput
             constraints: [NotBlank, Email]
+    subject:
+        type: text
+        options:
+            required: true
+            label: Sujet
+            attr:
+                placeholder: Sujet...
+                class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
     message:
         type: textarea
         options:

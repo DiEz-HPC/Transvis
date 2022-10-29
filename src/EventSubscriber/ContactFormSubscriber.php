@@ -29,6 +29,7 @@ class ContactFormSubscriber implements EventSubscriberInterface
             $contactMessage->setCompanyName($data['companyName']);
             $contactMessage->setMail($data['email']);
             $contactMessage->setMessage($data['message']);
+            $contactMessage->setSubject($data['subject']);
 
             $this->em->persist($contactMessage);
             $this->em->flush();

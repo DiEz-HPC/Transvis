@@ -25,7 +25,6 @@ function toggleButton() {
       previousBtn.style.display = "block";
       nextBtn.style.display = "block";
     }
-    console.log(page, nbPages);
   }
 }
 function handlePrevious() {
@@ -40,7 +39,7 @@ function handlePrevious() {
       return response.text();
     })
     .then((data) => {
-      div.innerHTML = data;
+        setInnerHTML(div, data)
     })
     .catch((error) => {
       console.log(error);
@@ -60,10 +59,21 @@ function handleNext() {
       return response.text();
     })
     .then((data) => {
-      div.innerHTML = data;
+        setInnerHTML(div, data)
     })
     .catch((error) => {
       console.log(error);
     });
   toggleButton();
 }
+
+var setInnerHTML = function(elm, html) {
+    elm.innerHTML = html;
+    Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
+      const newScript = document.createElement("script");
+      Array.from(oldScript.attributes)
+        .forEach( attr => newScript.setAttribute(attr.name, attr.value) );
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }

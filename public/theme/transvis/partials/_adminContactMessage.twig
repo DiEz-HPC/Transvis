@@ -1,48 +1,71 @@
- {% if contactMessages is defined and contactMessages is not empty %}
-            {% for message in contactMessages %}
-                <div class="card w-100 my-3">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-8">
-                                Message envoyé par :
-                                {{ message.name }}
-                                {{message.firstname}}
-                            </div>
-                            {#
-                            <div class="col-4 d-flex justify-content-end">
-                                Message reçu le :
-                                {{ message.timestamp|date('d/m/Y') }}
-                            </div>#}
-                        </div>
-                        <div class="row text-muted mt-2 pl-3">
-                            {{ message.mail }}
-                        </div>
+<script>
+    deleteButton = document.querySelectorAll(".deleteButton");
+    feedbackMessage = document.querySelector(".boltforms-feedback");
+    replyButton = document.querySelectorAll(".replyButton");
+    modal = document.querySelector(".replyModal");
+    form = document.querySelector("#replyForm");
+
+    if (typeof validateDelete !== 'undefined') {
+        validateDelete();
+    }
+    if (typeof replyToMessage !== 'undefined') {
+        replyToMessage();
+    }
+    if (typeof closeModal !== 'undefined') {
+        closeModal();
+    }
+    if (typeof formAlreadySend !== 'undefined') {
+        formAlreadySend();
+    }
+</script>
+{% if contactMessages is defined and contactMessages is not empty %}
+    {% for message in contactMessages %}
+        <div class="card w-100 my-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        Message de :
+                        {{ message.name }}
+                        {{message.firstname}}
                     </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            {{message.message}}
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row justify-content-around">
-                            <div class="col-10">
-                                <button type="button" class="btn btn-primary replyButton" data-email="{{ message.mail }}">Répondre</button>
-                            </div>
-                            <div class="col-2 d-flex justify-content-end">
-                                <form action="{{ path('app_contact_message_delete', {'id': message.id}) }}" method="post">
-                                    <button type="submit" class="btn btn-danger deleteButton">
-                                        <i class="fas fa-trash-alt"></i>
-                                        Supprimer</button>
-                                </form>
-                            </div>
-                        </div>
+                   
+                    <div class="col-4 d-flex justify-content-end">
+                        Société :
+                        {{ message.companyName }}
                     </div>
                 </div>
-            {% endfor %}
-            {% else %}
-                <div class="col-12">
-                    <div class="alert alert-info" role="alert">
-                        Aucun message à afficher
+                <div class="row text-muted mt-2 pl-3">
+                    {{ message.mail }}
+                </div>
+            </div>
+            <div class="card-body">
+                 <p class="card-text">
+                  <strong> Sujet du message : {{message.subject}} </strong>
+                </p>
+                <p class="card-text">
+                    {{message.message}}
+                </p>
+            </div>
+            <div class="card-footer">
+                <div class="row justify-content-around">
+                    <div class="col-10">
+                        <button type="button" class="btn btn-primary replyButton" id="reply_email" data-email="{{ message.mail }}">Répondre</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-end">
+                        <form action="{{ path('app_contact_message_delete', {'id': message.id}) }}" method="post">
+                            <button type="submit" class="btn btn-danger deleteButton">
+                                <i class="fas fa-trash-alt"></i>
+                                Supprimer</button>
+                        </form>
                     </div>
                 </div>
-            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="col-12">
+        <div class="alert alert-info" role="alert">
+            Aucun message à afficher
+        </div>
+    </div>
+{% endif %}

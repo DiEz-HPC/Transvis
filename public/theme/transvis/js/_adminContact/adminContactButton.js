@@ -11,7 +11,7 @@ let feedbackMessage = document.querySelector(".boltforms-feedback");
 let replyButton = document.querySelectorAll(".replyButton");
 let modal = document.querySelector(".replyModal");
 let form = document.querySelector("#replyForm");
-
+let confirmDeleteModal = document.querySelector('#confirmDeleteModal');
 // Select the node that will be observed for mutations
 const targetNode = document.getElementById("contactMessage");
 
@@ -22,9 +22,6 @@ const config = { childList: true };
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
-      console.log(
-        "The " + mutation.target.id + " element has been added or removed."
-      );
       validateDelete();
       replyToMessage();
       closeModal();
@@ -40,12 +37,22 @@ const validateDelete = () => {
   deleteButton.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
-      if (confirm("Voulez-vous vraiment supprimer ce contact ?")) {
-        button.parentNode.submit();
-      }
+      openConfirmModal(e, button);
     });
   });
 };
+
+const openConfirmModal= (e, button) => {
+    confirmDeleteModal.classList.toggle("hidden");
+    confirmDeleteModal.querySelector('#confirmDelete').addEventListener('click', (e) => {
+        button.parentNode.submit();
+    })
+    confirmDeleteModal.querySelector('#cancelDelete').addEventListener('click', (e) => {
+        if(!confirmDeleteModal.classList.contains('hidden')) {
+            confirmDeleteModal.classList.add("hidden");
+        }
+    })
+}
 
 const replyToMessage = () => {
   replyButton.forEach((button) => {
@@ -59,10 +66,11 @@ const replyToMessage = () => {
 };
 
 const fillModal = (e) => {
-  const email = document.querySelector("#reply_email");
-  const subject = document.querySelector("#reply_subject");
-  const message = document.querySelector("#reply_message");
-  email.value = e.dataset.email;
+  const email = document.querySelector("#adminReply_email");
+  const subject = document.querySelector("#adminReply_subject");
+  const message = document.querySelector("#adminReply_message");
+  let senderEmail = e.dataset.email;
+  email.value = senderEmail;
   subject.value = "";
   message.value = "";
 };
@@ -94,5 +102,4 @@ const refreshContactButton = () => {
     replyButton = document.querySelectorAll(".replyButton");
     modal = document.querySelector(".replyModal");
     form = document.querySelector("#replyForm");
-    console.log('refreshContactButton', deleteButton)
 }
