@@ -2,7 +2,7 @@
     visibility: hidden;
 }
 
-.replyModal {
+.replyModal, .confirmModal {
     z-index: 2;
     position: fixed;
     top: 0;
@@ -21,6 +21,11 @@
     width: 50vw;
     border-radius: 0.5em;
 }
+.confirmModalCard{
+    height: 150px;
+    width: fit-content;
+    border-radius: 0.5em;
+}
 .replyModal-close svg{
     height: 25px;
     width: 25px;
@@ -28,4 +33,18 @@
 .replyModal-close:hover svg{
     cursor: pointer;
     scale: 1.1;
+}
+.confirmModal{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
