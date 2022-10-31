@@ -2,10 +2,7 @@
 record.
     title: 'text'
     teaser: 'redactor'
-    blockOne: 'fields'
-        image: 'image'
-        text: 'text'
-    blockTwo: 'text"
+  
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -20,16 +17,16 @@ record.
 {%  endblock javascript %}
 
 {% block main %}
-    <div class="row box-top">
-        <h1>{{ record.title }}</h1>
-        <p>{{ record.teaser }}</p>
+    <div class="row box-top text-center">
+        <h1 class="mb-4">{{ record.title }}</h1>
+        {{ record.teaser }}
     </div>
-    <div class="row box-bottom">
-        <div class="col-8">
+    <div class="row box-bottom p-4" style="background-image: url({{ asset('images/bgRed.png') }}); background-size: cover;">
+        <div class="col-7">
             {{ boltform('contact') }}
         </div>
-        <div class="col-4">
-            <iframe width="auto" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=orl%C3%A9ans%2045000&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <div class="col-5">
+            <iframe width="480" height="370" id="gmap_canvas" src="https://maps.google.com/maps?q=orl%C3%A9ans%2045000&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
     </div>
 {% endblock main %}
