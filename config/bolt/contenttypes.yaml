@@ -397,6 +397,31 @@ vosOptions:
             label: Logo
             info: Logo
             group: Autres
+        linkedin:
+            type: text
+            label: Lien Linkedin
+            info: Lien vers votre page Linkedin
+            group: Autres
+        facebook:
+            type: text
+            label: Lien Facebook
+            info: Lien vers votre page Facebook
+            group: Autres
+        adresse:
+            type: text
+            label: Adresse
+            info: Adresse de l'entreprise (Présent sur le footer)
+            group: Autres
+        telephone:
+            type: text
+            label: Téléphone
+            info: Téléphone de l'entreprise (Présent sur le footer)
+            group: Autres
+        email:
+            type: text
+            label: Email de contact
+            info: Email de contact de l'entreprise (Présent sur le footer, utilisé pour le formulaire de contact)
+            group: Autres
     default_status: held
     viewless: true
     singleton: true

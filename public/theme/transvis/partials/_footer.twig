@@ -1,22 +1,74 @@
 <!-- Footer -->
-<footer>
-
-    <h4>{{ __('Menu') }}</h4>
-    {{ menu(template = 'partials/_sub_menu.twig') }}
-
-    <hr>
-
-    <h4>{{ __('general.phrase.search') }}</h4>
-
-    <form method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
-        <input type="search" value="{{ searchTerm|default() }}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="searchTerm" >
-        <button type="submit">{{ __('action.search') }}</button>
-    </form>
-
-    <p>
-        {{ __('general.phrase.built-with-bolt') }}
-    </p>
-
-    {{ widgets('footer') }}
-
+{% setcontent options = 'Vos options' %}
+<style>
+    footer {
+        background-color: black;
+        color: white;
+    }
+    .footer-list {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        list-style-type: none;
+    }
+    .footer-list-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(40, 40, 40, 1);
+    }
+    li{
+        list-style-type: none;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .bottom-footer {
+        background: rgba(30, 30, 30, 1);
+    }
+</style>
+<footer class="p-5">
+    <div class="row core-footer">
+        <div class="col-3 row">
+            <div class="col-5">
+                {% if options.logo is not empty %}
+                    <img src="{{ asset(options.logo) }}" alt="Logo">
+                {% else %}
+                    <div class="alert alert-danger" role="alert">
+                        Veuillez configurer le logo dans le back-office
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-7">
+                Culpa dolor eiusmod anim ad elit eiusmod amet. Qui mollit dolor quis ad ipsum excepteur proident id esse velit occaecat. Tempor cupidatat reprehenderit esse magna veniam irure nulla occaecat dolore pariatur. Tempor voluptate cupidatat anim tempor incididunt nostrud aliqua duis Lorem id aute. Ex id consectetur ipsum pariatur non commodo culpa deserunt enim laborum.
+            </div>
+        </div>
+        <div class="col-6">
+            {{ menu(
+                    name = 'footer',
+                    template = 'partials/_sub_menu_footer.twig',
+                    withsubmenus = false,
+                ) }}
+        </div>
+        <div class="col-3">
+            <h3>CONTACT</h3>
+            <div class="footer-line"></div>
+            <ul>
+                <li>
+          <img src="{{ asset('images/localisation.svg') }}" >  3 rue Pierre Durand, 45470 Rebréchien
+                </li>
+                <li>
+                 <img src="{{ asset('images/enveloppe.svg') }}" >   <a href="mailto:transvis@transvis.com">transvis@transvis.com</a>
+                </li>
+                <li>
+                <img src="{{ asset('images/phone.svg') }}" > 02 38 00 00 00
+                </li>
+            </ul>
+       <img src="{{ asset('images/facebook.svg') }}" ><img src="{{ asset('images/linkedin.svg') }}" ><img src="{{ asset('images/enveloppe.svg') }}" >
+        </div>
+    </div>
+    <div class="row bottom-footer">
+        SALUT LES GENS
+    </div>
 </footer>
