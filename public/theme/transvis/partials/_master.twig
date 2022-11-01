@@ -10,7 +10,7 @@
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
         {% block stylesheet %}
-            <link rel="stylesheet" href="{{ asset('css/simple.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         {% endblock stylesheet %}
     </head>
     <body>
@@ -34,5 +34,7 @@
       {{ include('partials/_footer.twig') }}
 
     </body>
-{% block javascript %}{% endblock javascript %}
+{% block javascript %}
+ <script defer src="{{ asset('js/dependency/bootstrap.min.js') }}"></script>
+{% endblock javascript %}
 </html>
