@@ -10,7 +10,7 @@ main:
     class: homepage
   - label: Nos savoir faire
     title: Nos savoir faire
-    link: nos-savoir-faire
+    link: nos-savoirs-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
@@ -40,7 +40,7 @@ ffooter:
     class: homepage
   - label: Nos savoir faire
     title: Nos savoir faire
-    link: nos-savoir-faire
+    link: nos-savoirs-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
