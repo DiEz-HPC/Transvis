@@ -1,7 +1,29 @@
+@import "variables.css";
+
 .card-sf {
     background-image: url('../images/savoirs-faire/bg-card-sf.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 250px;
     padding-top: 37px;
+}
+
+.card-sf h3 {
+    color: var(--light-color);
+    font-size: var(--font-size);
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.card-sf .btn-link {
+    background-color: var(--red-color);
+    width: 155px;
+    height: 37px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--light-color);
+    font-weight: 500;
+    font-size: var(--font-size);
+    line-height: 20px;
+    text-align: center;
 }
