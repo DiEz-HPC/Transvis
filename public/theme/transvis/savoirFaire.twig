@@ -1,16 +1,16 @@
 {#
-    record.
-        title
-        teaser
-        cardOne/Two/Three
-            .image
-            .text
-        keyFigureTitle
-        keyFigureOne/Two/Three/Four
-            image
-            text
-        seo
-        slug
+record.
+    title
+    teaser
+    cardOne/Two/Three
+        .image
+        .text
+    keyFigureTitle
+    keyFigureOne/Two/Three/Four
+        image
+        text
+    seo
+    slug
 #}
 {% extends '@theme/partials/_master.twig' %}
 
@@ -19,9 +19,23 @@
 {% endblock stylesheet %}
 
 {% block javascript %}
-    {{ parent() }}
+{{ parent() }}
 {%  endblock javascript %}
 
 {% block main %}
-    <h1>{{ record.title }}</h1>
+    <div class="savoirs-faire">
+        <div class="block-top">
+            <div class="block-left">
+                <h1>{{ record.title }}</h1>
+                <p>{{ record.teaser }}</p>
+            </div>
+            <div class="block-right">
+                <img src="{{ asset('images/savoirs-faire/savoirs-faire-default.png') }}" alt="image Nos savoirs faire">
+            </div>
+        </div>
+        <div class="block-card col-12">
+            {{ include('@theme/partials/_card_SF.twig') }}
+        </div>
+    </div>
+
 {% endblock main %}

@@ -26,9 +26,9 @@ accueil:
     icon_one: "fa:home"
 
 savoirFaire:
-    name: Nos savoir faire
-    singular_name: Nos savoir faire
-    slug: Nos savoir faire
+    name: Nos savoirs faire
+    singular_name: Nos savoirs faire
+    slug: nos-savoirs-faire
     fields:
         title:
             type: text

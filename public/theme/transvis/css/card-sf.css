@@ -1,0 +1,7 @@
+.card-sf {
+    background-image: url('../images/savoirs-faire/bg-card-sf.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    padding-top: 37px;
+}
