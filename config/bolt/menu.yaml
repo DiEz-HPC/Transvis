@@ -8,8 +8,8 @@ main:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoir faire
-    title: Nos savoir faire
+  - label: Nos savoirs faire
+    title: Nos savoirs faire
     link: nos-savoirs-faire
     class: savoir-faire
   - label: Nos valeurs
@@ -38,8 +38,8 @@ ffooter:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoir faire
-    title: Nos savoir faire
+  - label: Nos savoirs faire
+    title: Nos savoirs faire
     link: nos-savoirs-faire
     class: savoir-faire
   - label: Nos valeurs
