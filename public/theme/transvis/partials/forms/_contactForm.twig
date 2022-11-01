@@ -1,3 +1,9 @@
+{% setcontent options = 'Vos options' %}
+{% if options.email is empty %}
+    {% set mailto = 'contact@transvis.com' %}
+{% else %}
+    {% set mailto = options.email %}
+{% endif %}
 <div class="mb-4">
     {{ form_start(form) }}
     {% if valid %}
@@ -40,9 +46,17 @@
             {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-dark send-mail-button col-10 col-md-3 col-lg-3 col-xl-2 d-flex justify-content-center align-items-center'},
             'label' : 'ENVOYER' } ) }}
         </div>
+        {{ form_widget(form.mailto, { 'attr': {'class': 'form-control'} } ) }}
         <div class="form-control form-special" style=' opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;'>
             {{ form_rest(form) }}
         </div>
         {{ form_end(form) }}
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    var mailto = form.querySelector('input[name="contact[mailto]"]');
+   mailto.value = {{ mailto|json_encode|raw }};
+});
+</script>
