@@ -40,7 +40,7 @@ ffooter:
     class: homepage
   - label: Nos savoir faire
     title: Nos savoir faire
-    link: savoir-faire
+    link: nos-savoir-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
