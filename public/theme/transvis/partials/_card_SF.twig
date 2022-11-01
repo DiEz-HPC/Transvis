@@ -2,14 +2,14 @@
     <link rel="stylesheet" href="{{ asset('css/card-sf.css') }}">
 {% endblock stylesheet %}
 
-<div class="card-sf col-3 d-flex flex-column justify-content-center align-items-center">
-    <div class="logo">
+<div class="card-sf col-3 d-flex flex-column align-items-center">
+    <div class="logo mb-4">
         <img src="{{ asset('images/savoirs-faire/main.svg') }}" alt="logo main">
     </div>
     <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
-        <h3 class="card-sf__title">{{ 'Vos machines adaptées' | upper }}</h3>
+        <h3 class="card-sf__title mb-4">{{ 'Vos machines adaptées' | upper }}</h3>
         <a class="btn-link d-flex justify-content-center align-items-center" href="#">
-            <span class="me-1">{{ "Découvrir" | upper }}</span>
+            <span class="me-2 align-baseline">{{ "Découvrir" | upper }}</span>
             <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next">
         </a>
     </div>
