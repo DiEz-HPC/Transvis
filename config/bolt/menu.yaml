@@ -33,7 +33,7 @@ main:
     link: contact
     class: contact
 
-footer:
+ffooter:
   - label: Accueil
     title: Page d'accueil
     link: accueil
@@ -46,6 +46,8 @@ footer:
     title: Nos valeurs
     link: nos-valeurs
     class: nos-valeurs
+
+sfooter:
   - label: Nos équipes
     title: Nos équipes
     link: nos-equipes

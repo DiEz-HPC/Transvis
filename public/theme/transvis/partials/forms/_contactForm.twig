@@ -1,3 +1,9 @@
+{% setcontent options = 'Vos options' %}
+{% if options.email is empty %}
+    {% set mailto = 'contact@transvis.com' %}
+{% else %}
+    {% set mailto = options.email %}
+{% endif %}
 <div class="mb-4">
     {{ form_start(form) }}
     {% if valid %}
@@ -47,3 +53,10 @@
         {{ form_end(form) }}
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    var mailto = form.querySelector('input[name="contact[mailto]"]');
+   mailto.value = {{ mailto|json_encode|raw }};
+});
+</script>

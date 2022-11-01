@@ -1,7 +1,7 @@
 {% macro display_menu_item(item, loop, withsubmenus) %}
     {% apply spaceless %}
-<li class="footer-list-item">
-   <img src="{{ asset('images/arrowRight.svg') }}"> <a href="/{{ item.link }}" title="{{ item.title }}" aria-current="page" class="">{{- item.label -}}</a>
+<li class="footer-list-item mb-4">
+   <img src="{{ asset('images/arrowRight.svg') }}"> <a href="/{{ item.link }}" title="{{ item.title }}" aria-current="page" class="ms-2">{{- item.label -}}</a>
 </li>
     {% endapply %}
 {% endmacro %}

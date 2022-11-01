@@ -1,37 +1,9 @@
 <!-- Footer -->
 {% setcontent options = 'Vos options' %}
-<style>
-    footer {
-        background-color: black;
-        color: white;
-    }
-    .footer-list {
-        columns: 2;
-        -webkit-columns: 2;
-        -moz-columns: 2;
-        list-style-type: none;
-    }
-    .footer-list-item {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 10px;
-        border-bottom: 1px solid rgba(40, 40, 40, 1);
-    }
-    li{
-        list-style-type: none;
-    }
-    a {
-        color: white;
-        text-decoration: none;
-    }
-    .bottom-footer {
-        background: rgba(30, 30, 30, 1);
-    }
-</style>
-<footer class="p-5">
-    <div class="row core-footer">
-        <div class="col-3 row">
-            <div class="col-5">
+<footer class="p-3 p-xl-5">
+    <div class="row core-footer justify-content-center align-items-xl-start">
+        <div class="col-12 col-lg-3 row">
+            <div class="col-12 d-flex justify-content-center align-items-center col-lg-5">
                 {% if options.logo is not empty %}
                     <img src="{{ asset(options.logo) }}" alt="Logo">
                 {% else %}
@@ -40,35 +12,56 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="col-7">
-                Culpa dolor eiusmod anim ad elit eiusmod amet. Qui mollit dolor quis ad ipsum excepteur proident id esse velit occaecat. Tempor cupidatat reprehenderit esse magna veniam irure nulla occaecat dolore pariatur. Tempor voluptate cupidatat anim tempor incididunt nostrud aliqua duis Lorem id aute. Ex id consectetur ipsum pariatur non commodo culpa deserunt enim laborum.
+            <div class="col-12 col-lg-7 py-3">
+                {{ options.footerText|default('Veuillez configurer le texte dans le back-office') }}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-lg-3">
+            <h6>
+                NAVIGATION
+            </h6>
+            <div class="red-line my-3"></div>
             {{ menu(
-                    name = 'footer',
+                    name = 'ffooter',
                     template = 'partials/_sub_menu_footer.twig',
                     withsubmenus = false,
                 ) }}
         </div>
-        <div class="col-3">
-            <h3>CONTACT</h3>
+        <div class="col-6 col-lg-3">
+            <h6 class="transparent">NAVIGATION</h6>
+            <div class="red-line my-3"></div>
+            {{ menu(
+                    name = 'sfooter',
+                    template = 'partials/_sub_menu_footer.twig',
+                    withsubmenus = false,
+                ) }}
+        </div>
+        <div class="col-12 col-lg-3">
+            <h6>CONTACT</h6>
+            <div class="red-line my-3"></div>
             <div class="footer-line"></div>
-            <ul>
-                <li>
-          <img src="{{ asset('images/localisation.svg') }}" >  3 rue Pierre Durand, 45470 Rebréchien
+            <ul class="contact-list">
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/localisation.svg') }}">
+                    {{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}
                 </li>
-                <li>
-                 <img src="{{ asset('images/enveloppe.svg') }}" >   <a href="mailto:transvis@transvis.com">transvis@transvis.com</a>
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/enveloppe.svg') }}" >   <a href="mailto:{{ options.email|default('contact@transvis.com') }}">{{ options.email|default('contact@transvis.com')}}</a>
                 </li>
-                <li>
-                <img src="{{ asset('images/phone.svg') }}" > 02 38 00 00 00
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/phone.svg') }}" > {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
+                </li>
+                <li class="contact-list-item contact-list-item-logo">
+                    <div class="row align-items-center">
+                        <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class=""></a>
+                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class=""></a>
+                        <a href="mailto:{{ options.email|default('contact@transvis.com') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class=""></a>
+                    </div>
                 </li>
             </ul>
-       <img src="{{ asset('images/facebook.svg') }}" ><img src="{{ asset('images/linkedin.svg') }}" ><img src="{{ asset('images/enveloppe.svg') }}" >
         </div>
     </div>
-    <div class="row bottom-footer">
-        SALUT LES GENS
+</footer> 
+    <div class="row bottom-footer text-center p-4 align-items-center">
+       <p class="diez-text"> Designed by <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a> </p>
     </div>
-</footer>

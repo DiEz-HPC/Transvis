@@ -418,9 +418,15 @@ vosOptions:
             info: Téléphone de l'entreprise (Présent sur le footer)
             group: Autres
         email:
-            type: text
+            type: email
             label: Email de contact
+            pattern: email
             info: Email de contact de l'entreprise (Présent sur le footer, utilisé pour le formulaire de contact)
+            group: Autres
+        footerText:
+            type: textarea
+            label: Texte du footer
+            info: Texte du footer
             group: Autres
     default_status: held
     viewless: true
