@@ -4,7 +4,7 @@
     <div class="row core-footer justify-content-center align-items-xl-start">
         <div class="col-12 col-lg-3 row">
             <div class="col-12 d-flex justify-content-center align-items-center col-lg-5">
-                {% if options.logo is not empty %}
+                {% if options.logo is defined and options.logo is not empty %}
                     <img src="{{ asset(options.logo) }}" alt="Logo">
                 {% else %}
                     <div class="alert alert-danger" role="alert">
