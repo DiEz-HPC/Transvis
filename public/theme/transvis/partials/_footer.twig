@@ -1,22 +1,67 @@
 <!-- Footer -->
-<footer style="background-color:black;">
-
-    <h4>{{ __('Menu') }}</h4>
-    {{ menu(template = 'partials/_sub_menu.twig') }}
-
-    <hr>
-
-    <h4>{{ __('general.phrase.search') }}</h4>
-
-    <form method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
-        <input type="search" value="{{ searchTerm|default() }}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="searchTerm" >
-        <button type="submit">{{ __('action.search') }}</button>
-    </form>
-
-    <p>
-        {{ __('general.phrase.built-with-bolt') }}
-    </p>
-
-    {{ widgets('footer') }}
-
+{% setcontent options = 'Vos options' %}
+<footer class="p-3 p-xl-5">
+    <div class="row core-footer justify-content-center align-items-xl-start">
+        <div class="col-12 col-lg-3 row">
+            <div class="col-12 d-flex justify-content-center align-items-center col-lg-5">
+                {% if options.logo is not empty %}
+                    <img src="{{ asset(options.logo) }}" alt="Logo">
+                {% else %}
+                    <div class="alert alert-danger" role="alert">
+                        Veuillez configurer le logo dans le back-office
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-12 col-lg-7 py-3">
+                {{ options.footerText|default('Veuillez configurer le texte dans le back-office') }}
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <h6>
+                NAVIGATION
+            </h6>
+            <div class="red-line my-3"></div>
+            {{ menu(
+                    name = 'ffooter',
+                    template = 'partials/_sub_menu_footer.twig',
+                    withsubmenus = false,
+                ) }}
+        </div>
+        <div class="col-6 col-lg-3">
+            <h6 class="transparent">NAVIGATION</h6>
+            <div class="red-line my-3"></div>
+            {{ menu(
+                    name = 'sfooter',
+                    template = 'partials/_sub_menu_footer.twig',
+                    withsubmenus = false,
+                ) }}
+        </div>
+        <div class="col-12 col-lg-3">
+            <h6>CONTACT</h6>
+            <div class="red-line my-3"></div>
+            <div class="footer-line"></div>
+            <ul class="contact-list">
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/localisation.svg') }}" alt="localisation">
+                    {{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}
+                </li>
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe">   <a href="mailto:{{ options.email|default('contact@transvis.com') }}">{{ options.email|default('contact@transvis.com')}}</a>
+                </li>
+                <li class="contact-list-item">
+                    <img src="{{ asset('images/phone.svg') }}" alt="phone"> {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
+                </li>
+                <li class="contact-list-item contact-list-item-logo">
+                    <div class="row align-items-center">
+                        <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
+                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
+                        <a href="mailto:{{ options.email|default('contact@transvis.com') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </footer>
+    <div class="row bottom-footer text-center p-4 align-items-center">
+       <p class="diez-text"> Site réalisé par <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a> </p>
+    </div>
