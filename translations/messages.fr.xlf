@@ -205,5 +205,17 @@
         <target>Sujet...</target>
       </segment>
     </unit>
+    <unit id="yk3gR69" name="Envoyerrrr">
+      <segment>
+        <source>Envoyerrrr</source>
+        <target>Envoyerrrr</target>
+      </segment>
+    </unit>
+    <unit id="gQ0Mqto" name="ENVOYER">
+      <segment>
+        <source>ENVOYER</source>
+        <target>ENVOYER</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
