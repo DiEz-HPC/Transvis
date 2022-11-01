@@ -88,6 +88,6 @@ fields:
     submit:
         type: submit
         options:
-            label: Envoyer le message
+            label: Envoyer
             attr:
-                class: btn-secondary
+                class: btn-black
