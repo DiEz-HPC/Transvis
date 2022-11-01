@@ -76,6 +76,15 @@ fields:
             attr:
                 placeholder: Votre message...
                 class: contactInput
+    mailto:
+        type: hidden
+        options:
+            required: true
+            label: Mailto
+            attr:
+                placeholder: Votre mail...
+                class: contactInput
+            constraints: [NotBlank, Email]
     submit:
         type: submit
         options:
