@@ -1,14 +1,31 @@
 <!-- Header bar -->
 <header>
-    {# the values in the 'config' object are taken directly from the file app/config/config.yml #}
-    <h2><a href="{{ path('homepage') }}">{{ config.get('general/sitename') }}</a></h2>
-    {% if config.has('general/payoff') and record is defined and record|feature == 'homepage' %}
-        <p>{{ config.get('general/payoff') }}</p>
-    {% endif %}
+    {% setcontent options = 'Vos options' %}
+    <nav>
 
-    {{ menu(
-        name = 'main',
-        template = 'partials/_sub_menu_header.twig',
-        withsubmenus = false
-    ) }}
+        <div id="burger-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <div class="nav-content align-items-center d-none d-lg-flex" id="burgerMenu">
+            {% if options is defined and options.logo is defined and options.logo is not null %}
+                <img src="{{ asset(options.logo) }}" alt="Logo" width="190" height="190">
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    Veuillez configurer le logo dans le back-office
+                </div>
+            {% endif %}
+            {{ menu(
+                name = 'main',
+                template = 'partials/_sub_menu_header.twig',
+                withsubmenus = false
+            ) }}
+        </div>
+    </nav>
+
+
 </header>

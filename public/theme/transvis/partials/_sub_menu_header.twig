@@ -9,11 +9,20 @@
 {% macro display_menu_item(item, loop, withsubmenus) %}
     {% from _self import display_menu_item %}
     {% apply spaceless %}
-        <a href="{{ item.uri }}" title='{{ item.title }}' class='{{ item.class }} {{ loop.first ? ' first' -}}
-        {{ loop.last ? ' last' -}}
-        {{ item|current ? ' active' }}'>
-            {{- item.label -}}
-        </a>
+        <a href="{{ item.uri }}" title='{{ item.title }}' class='nav-link'>
+            {% if item.label != 'Contact' %}
+                {{ item.label|upper }}
+            {% else %}
+                <div class="nav-contact d-flex align-items-center justify-content-center mx-3">
+                    {% include('images/mail.svg') %}
+                </div>
+            {% endif %}
+        </a> 
+        {% if loop.last is true %}  
+        {% elseif loop.index == loop.length - 1 %}
+        {% else %}
+            <span class="nav-point mx-3"></span>
+        {% endif %}
     {% endapply %}
 {% endmacro %}
 
@@ -21,12 +30,13 @@
 {% from _self import display_menu_item %}
 
 {# The main menu loop: Iterates over the items, calling `display_menu_item` #}
-<nav>
+<ul class="d-flex justify-content-around">
 {% for item in menu %}
     {% if item.label is defined %}
+    <li class="nav-item {{ item|current ? ' active' }} d-flex align-items-center">
         {{ display_menu_item(item, loop, withsubmenus) }}
+    </li> 
     {% endif %}
 {% endfor %}
-{% include 'helpers/_languageselect.html.twig' with {'type': 'select'} %}
-</nav>
+  </ul>
 
