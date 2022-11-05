@@ -19,6 +19,7 @@ record.
 
 {% block stylesheet %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/savoirFaire.css') }}" />
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -27,7 +28,7 @@ record.
 
 {% block main %}
     <div class="savoirs-faire">
-        <div class="block-top">
+        <div class="block-top d-flex">
             <div class="block-left">
                 <h1>{{ record.title | upper }}</h1>
                 <p>{{ record.teaser }}</p>
