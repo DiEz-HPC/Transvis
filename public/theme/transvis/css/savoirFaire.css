@@ -1,6 +1,22 @@
+.container-sf {
+    padding: 0 63px;
+}
+
+.savoirs-faire .block-top .block-left h1:before {
+    margin: 0;
+}
+
 .savoirs-faire .block-top .block-left h1 {
     font-style: normal;
     font-weight: 800;
-    font-size: 36px;
     line-height: 44px;
+    padding-top: 15px;
+}
+
+.savoirs-faire .block-top .block-left p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-justify: inter-word;
 }

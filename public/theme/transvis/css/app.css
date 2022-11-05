@@ -38,3 +38,9 @@ h1::before {
     border-radius: 0.5em;
     margin: auto;
 }
+
+.line {
+    border: 4px dashed var(--red-color);
+    border-style: none none dashed;
+    background-color: transparent;
+}
