@@ -16,16 +16,10 @@
     </head>
     <body>
         {{ include('partials/_header.twig') }}
-
         <main>
             {% block body %}
 
-
-                {{ widgets('main_top') }}
-
                 {% block main %}{% endblock main %}
-
-                {{ widgets('main_bottom') }}
 
             {% endblock body %}
         </main>
@@ -33,8 +27,10 @@
         {% block aside %}{% endblock aside %}
 
       {{ include('partials/_footer.twig') }}
+
     </body>
 {% block javascript %}
-    <script defer src="{{ asset('js/dependency/bootstrap.min.js') }}"></script>
+ <script src="{{ asset('js/dependency/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
 {% endblock javascript %}
 </html>
