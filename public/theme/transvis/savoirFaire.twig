@@ -14,6 +14,9 @@ record.
 #}
 {% extends '@theme/partials/_master.twig' %}
 
+{% set cards = [record.cardOne, record.cardTwo, record.cardThree] %}
+{% set keyFigures = [record.keyFigureOne, record.keyFigureTwo, record.keyFigureThree] %}
+
 {% block stylesheet %}
     {{ parent() }}
 {% endblock stylesheet %}
@@ -26,16 +29,18 @@ record.
     <div class="savoirs-faire">
         <div class="block-top">
             <div class="block-left">
-                <h1>{{ record.title }}</h1>
+                <h1>{{ record.title | upper }}</h1>
                 <p>{{ record.teaser }}</p>
             </div>
             <div class="block-right">
                 <img src="{{ asset('images/savoirs-faire/savoirs-faire-default.png') }}" alt="image Nos savoirs faire">
             </div>
         </div>
-        <div class="block-card col-12">
-            {{ include('@theme/partials/_card_SF.twig') }}
+        <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-around mb-5">
+            {% for  card in cards %}
+                {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
+            {% endfor %}
         </div>
+        {% include "@theme/partials/banner_keys/_banner_keys_figures.twig" with {keyFigures: keyFigures } %}
     </div>
-
 {% endblock main %}

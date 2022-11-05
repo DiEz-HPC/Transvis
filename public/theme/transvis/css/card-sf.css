@@ -1,9 +1,14 @@
 @import "variables.css";
 
+:root {
+    --spacing-card: 16px
+}
+
 .card-sf {
     background-color: var(--dark-color);
     height: 250px;
-    padding-top: 37px;
+    width: 400px;
+    padding: calc(var(--spacing-card) * 2) 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
     border-radius: 5px;
 }
@@ -18,7 +23,7 @@
     background-image: url(../images/savoirs-faire/bg-card-sf.png);
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: .08;
+    opacity: .15;
 }
 
 .card-sf h3 {

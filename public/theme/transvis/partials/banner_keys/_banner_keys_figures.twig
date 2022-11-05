@@ -1,0 +1,16 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/bannerKeyFigures.css') }}">
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('js/_keyFigures/keyAnimate.js') }}"></script>
+{% endblock %}
+
+<div class="banner-key-figure d-flex flex-column align-items-center py-5">
+    <h2 class="keyFigureTitle text-center">{{ record.keyFigureTitle | upper }}</h2>
+    <div class="d-flex flex-column flex-xl-row justify-content-around align-items-center pt-5 col-12">
+        {% for key in keyFigures %}
+            {% include "@theme/partials/banner_keys/_keys.twig" with {key: key, loop: loop.index} %}
+        {% endfor %}
+    </div>
+</div>

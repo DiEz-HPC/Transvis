@@ -1,13 +1,22 @@
+{% macro cardImagePath(card, loop) %}
+    {% set cardsIcon = ['images/savoirs-faire/main.svg', 'images/savoirs-faire/robot.svg', 'images/savoirs-faire/group.svg'] %}
+    {% if card.image.path is not defined or card.image.path is empty %}
+        {{ asset(cardsIcon[loop - 1]) }}
+    {% else %}
+        {{ asset(card.image.path) }}
+    {% endif %}
+{% endmacro cardImagePath %}
+
 {% block stylesheet %}
     <link rel="stylesheet" href="{{ asset('css/card-sf.css') }}">
 {% endblock stylesheet %}
 
-<div class="card-sf col-3 d-flex flex-column align-items-center">
+<div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
     <div class="logo mb-4">
-        <img src="{{ asset('images/savoirs-faire/main.svg') }}" alt="logo main">
+        <img src="{{ _self.cardImagePath(card, loop) }}" alt="logo main">
     </div>
     <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
-        <h3 class="card-sf__title mb-4">{{ 'Vos machines adaptées' | upper }}</h3>
+        <h3 class="card-sf__title mb-4">{{ card.text | upper }}</h3>
         <a class="btn-link d-flex justify-content-center align-items-center" href="#">
             <span class="me-2 align-baseline">{{ "Découvrir" | upper }}</span>
             <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next">

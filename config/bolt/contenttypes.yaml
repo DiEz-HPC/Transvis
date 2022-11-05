@@ -91,53 +91,52 @@ savoirFaire:
             label: Premier chiffre clé
             group: Chiffres clés
             fields:
-                image:
-                  type: image
-                  label: Nombre du premier chiffre clé
-                  info: Nombre du premier chiffre clé
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
                 text:
-                  type: text
-                  label: Texte du premier chiffre clé
-                  info: Texte du premier chiffre clé
+                    type: text
+                    label: Texte du premier chiffre clé
+                    info: Texte du premier chiffre clé
+                image:
+                    type: image
+                    label: Logo du premier chiffre clé
+                    info: Logo du premier chiffre clé
         keyFigureTwo:
             type: set
             label: Deuxième chiffre clé
             group: Chiffres clés
             fields:
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
+                text:
+                    type: text
+                    label: Texte du deuxième chiffre clé
+                    info: Texte du deuxième chiffre clé
                 image:
                     type: image
-                    label: Nombre du deuxième chiffre clé
-                    info: Nombre du deuxième chiffre clé
-                text:
-                  type: text
-                  label: Texte du deuxième chiffre clé
-                  info: Texte du deuxième chiffre clé
+                    label: Logo du deuxième chiffre clé
+                    info: Logo du deuxième chiffre clé
         keyFigureThree:
             type: set
             label: Troisième chiffre clé
             group: Chiffres clés
             fields:
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
+                text:
+                    type: text
+                    label: Texte du troisième chiffre clé
+                    info: Texte du troisième chiffre clé
                 image:
                     type: image
-                    label: Nombre du troisième chiffre clé
-                    info: Nombre du troisième chiffre clé
-                text:
-                  type: text
-                  label: Texte du troisième chiffre clé
-                  info: Texte du troisième chiffre clé
-        keyFigureFour:
-            type: set
-            label: Quatrième chiffre clé
-            group: Chiffres clés
-            fields:
-                image:
-                    type: image
-                    label: Nombre du quatrième chiffre clé
-                    info: Nombre du quatrième chiffre clé
-                text:
-                  type: text/admin/new/Nos savoir faire
-                  label: Texte du quatrième chiffre clé
-                  info: Texte du quatrième chiffre clé
+                    label: Logo du troisième chiffre clé
+                    info: Logo du troisième chiffre clé
         seo:
             type: seo
             group: "Réglage SEO"
