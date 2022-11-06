@@ -29,22 +29,21 @@ record.
 {% block main %}
     <div class="savoirs-faire mt-5">
         <div class="container-sf">
-            <div class="block-top d-flex mb-5">
-                <div class="block-left col-5">
+            <div class="block-top d-flex flex-column flex-xl-row mb-5">
+                <div class="block-left col-6">
                     <h1>{{ record.title | upper }}</h1>
                     <p>{{ record.teaser }}</p>
                 </div>
-                <div class="block-right col-7 d-flex justify-content-center">
-                    <img src="{{ asset('images/savoirs-faire/savoirs-faire-default.png') }}" alt="image Nos savoirs faire">
+                <div class="block-right col-12 col-xl-6 d-flex justify-content-end">
+                    <img src="{{ asset('images/bloc-contour.png') }}" alt="image Nos savoirs faire">
                 </div>
             </div>
-            <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-around mb-5">
+            <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-around my-5 pt-5">
                 {% for  card in cards %}
                     {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
                 {% endfor %}
             </div>
         </div>
-        {% include "@theme/partials/_line.twig" %}
         {% include "@theme/partials/banner_keys/_banner_keys_figures.twig" with {keyFigures: keyFigures } %}
     </div>
 {% endblock main %}

@@ -20,3 +20,12 @@
     letter-spacing: 0;
     text-justify: inter-word;
 }
+
+.savoirs-faire .block-top .block-right {
+    background: url(../images/savoirs-faire/savoirs-faire-default.png) no-repeat;
+
+}
+
+.savoirs-faire .block-top .block-right img {
+    width: 100%;
+}
