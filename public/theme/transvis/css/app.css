@@ -7,7 +7,7 @@
 
 body{
     overflow-x: hidden !important;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
 }
 
 p{
@@ -21,12 +21,12 @@ p{
 }
 
 h1{
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: var(--font-weight--bold);
     color: var(--dark-color);
     position: relative;
-
 }
+
 h1::before {
     content: "";
     position: absolute;
@@ -37,4 +37,10 @@ h1::before {
     border: 3px solid var(--red-color);
     border-radius: 0.5em;
     margin: auto;
+}
+
+.line {
+    border: 4px dashed var(--red-color);
+    border-style: none none dashed;
+    background-color: transparent;
 }

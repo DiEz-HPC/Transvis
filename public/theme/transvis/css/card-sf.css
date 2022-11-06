@@ -1,0 +1,60 @@
+@import "variables.css";
+
+:root {
+    --spacing-card: 16px
+}
+
+.card-sf {
+    background-color: var(--dark-color);
+    height: 250px;
+    width: 400px;
+    padding: calc(var(--spacing-card) * 2) 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 375px) {
+    .card-sf {
+        width: 370px;
+    }
+}
+
+.card-sf:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/savoirs-faire/bg-card-sf.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .15;
+}
+
+.card-sf h3 {
+    color: var(--light-color);
+    font-size: var(--font-size);
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.card-sf .btn-link {
+    background-color: var(--red-color);
+    width: 155px;
+    height: 37px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.btn-link span {
+    font-weight: 500;
+    font-size: var(--font-size);
+    line-height: 20px;
+    text-align: center;
+}
+
+.card-sf .btn-link .next {
+    width: 10%;
+}
