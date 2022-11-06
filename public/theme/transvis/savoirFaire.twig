@@ -29,16 +29,16 @@ record.
 {% block main %}
     <div class="savoirs-faire mt-5">
         <div class="container-sf">
-            <div class="block-top d-flex flex-column flex-xl-row mb-5">
-                <div class="block-left col-6">
+            <div class="block-top d-flex flex-column flex-xl-row mb-5 justify-content-between">
+                <div class="block-left col-12 col-xl-5">
                     <h1>{{ record.title | upper }}</h1>
                     <p>{{ record.teaser }}</p>
                 </div>
-                <div class="block-right col-12 col-xl-6 d-flex justify-content-end">
-                    <img src="{{ asset('images/bloc-contour.png') }}" alt="image Nos savoirs faire">
+                <div class="block-right col-12 col-xl-6 d-flex justify-content-center">
+                    <img src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="image Nos savoirs faire">
                 </div>
             </div>
-            <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-around my-5 pt-5">
+            <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-between my-5 pt-5">
                 {% for  card in cards %}
                     {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
                 {% endfor %}

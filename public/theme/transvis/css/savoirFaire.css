@@ -1,5 +1,5 @@
 .container-sf {
-    padding: 0 63px;
+    padding: 0 6%;
 }
 
 .savoirs-faire .block-top .block-left h1:before {
@@ -22,8 +22,8 @@
 }
 
 .savoirs-faire .block-top .block-right {
-    background: url(../images/savoirs-faire/savoirs-faire-default.png) no-repeat;
-
+    background: url(../images/savoirs-faire/cobot-emboxeuse.webp) no-repeat center;
+    background-size: cover;
 }
 
 .savoirs-faire .block-top .block-right img {
