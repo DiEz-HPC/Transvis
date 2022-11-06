@@ -38,7 +38,7 @@ record.
                     <img src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="image Nos savoirs faire">
                 </div>
             </div>
-            <div class="block-card col-12 d-flex flex-column flex-xl-row justify-content-between my-5 pt-5">
+            <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-between col-12 my-5 pt-5">
                 {% for  card in cards %}
                     {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
                 {% endfor %}
