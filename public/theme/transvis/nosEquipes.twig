@@ -1,15 +1,17 @@
 {#
-    record.
-        title: 'text'
-        teaser: 'redactor"
-        image: 'Image'
-        bottomImage: 'Image'
-        cardTitle: 'text"
-        cardText: 'text'
-        seo
-        slug
+record.
+    title: 'text'
+    teaser: 'redactor"
+    image: 'Image'
+    bottomImage: 'Image'
+    cardTitle: 'text"
+    cardText: 'text'
+    seo
+    slug
 #}
 {% extends '@theme/partials/_master.twig' %}
+
+{% setcontent recrutements = 'Recrutements' %}
 
 {% block stylesheet %}
     {{ parent() }}
@@ -17,15 +19,20 @@
 {% endblock stylesheet %}
 
 {% block javascript %}
-    {{ parent() }}
+{{ parent() }}
 {%  endblock javascript %}
 
 {% block main %}
-    <div class="nosEquipes">
+    <div class="nosEquipes mb-5">
         <div class="container-sf">
             {% include '@theme/partials/_block_top_singleton_with_image.twig' with {defaultImage: asset('images/equipe.webp')} %}
             {% include '@theme/partials/_line.twig' %}
-            <h2>{{ 'Rejoignez-nous' | upper }}</h2>
+            <h2 class="text-center mt-5">{{ 'Rejoignez-nous' | upper }}</h2>
+            {% if recrutements is empty %}
+                <h3 class="text-center mt-5">{{ 'Aucun poste à pourvoir pour le moment' }}</h3>
+            {% else %}
+                {{ dump(recrutements) }}
+            {% endif %}
         </div>
     </div>
 {% endblock main %}
