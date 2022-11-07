@@ -13,6 +13,7 @@
 
 {% block stylesheet %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/equipes.css') }}">
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -21,7 +22,10 @@
 
 {% block main %}
     <div class="nosEquipes">
-        {% include '@theme/partials/_block_top_singleton_with_image.twig' %}
-
+        <div class="container-sf">
+            {% include '@theme/partials/_block_top_singleton_with_image.twig' with {defaultImage: asset('images/equipe.webp')} %}
+            {% include '@theme/partials/_line.twig' %}
+            <h2>{{ 'Rejoignez-nous' | upper }}</h2>
+        </div>
     </div>
 {% endblock main %}
