@@ -202,7 +202,7 @@ nosValeurs:
 nosEquipes:
     name: Nos équipes
     singular_name: Nos équipes
-    slug: Nos équipes
+    slug: nos-equipes
     fields:
         title:
             type: text
