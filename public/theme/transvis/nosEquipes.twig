@@ -31,7 +31,9 @@ record.
             {% if recrutements is empty %}
                 <h3 class="text-center mt-5">{{ 'Aucun poste à pourvoir pour le moment' }}</h3>
             {% else %}
-                {{ dump(recrutements) }}
+                {% for recrutement in recrutements %}
+                    {% include '@theme/partials/cards/_card_recrutements.twig' with {card: recrutement} %}
+                {% endfor %}
             {% endif %}
         </div>
     </div>

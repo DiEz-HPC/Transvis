@@ -17,9 +17,6 @@
     </div>
     <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
         <h3 class="card-sf__title mb-4">{{ card.text | upper }}</h3>
-        <a class="btn-link d-flex justify-content-center align-items-center" href="#">
-            <span class="me-2 align-baseline">{{ "Découvrir" | upper }}</span>
-            <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next">
-        </a>
+        {% include "@theme/partials/buttons/_button-red.twig" with { text: "Découvrir", link: '#' } %}
     </div>
 </div>

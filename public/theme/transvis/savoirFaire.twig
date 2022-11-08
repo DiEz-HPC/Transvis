@@ -31,7 +31,7 @@ record.
             {% include '@theme/partials/_block_top_singleton_with_image.twig' with {defaultImage: asset('images/savoirs-faire/cobot-emboxeuse.webp')} %}
             <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-between col-12 my-5 pt-5">
                 {% for  card in cards %}
-                    {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
+                    {% include "@theme/partials/cards/_card_SF.twig" with { card: card, loop: loop.index } %}
                 {% endfor %}
             </div>
         </div>
