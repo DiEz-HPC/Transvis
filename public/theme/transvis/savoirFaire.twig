@@ -1,27 +1,49 @@
 {#
-    record.
-        title
-        teaser
-        cardOne/Two/Three
-            .image
-            .text
-        keyFigureTitle
-        keyFigureOne/Two/Three/Four
-            image
-            text
-        seo
-        slug
+record.
+    title
+    teaser
+    cardOne/Two/Three
+        .image
+        .text
+    keyFigureTitle
+    keyFigureOne/Two/Three/Four
+        image
+        text
+    seo
+    slug
 #}
 {% extends '@theme/partials/_master.twig' %}
 
+{% set cards = [record.cardOne, record.cardTwo, record.cardThree] %}
+{% set keyFigures = [record.keyFigureOne, record.keyFigureTwo, record.keyFigureThree] %}
+
 {% block stylesheet %}
     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/savoirFaire.css') }}" />
 {% endblock stylesheet %}
 
 {% block javascript %}
-    {{ parent() }}
+{{ parent() }}
 {%  endblock javascript %}
 
 {% block main %}
-    <h1>{{ record.title }}</h1>
+    <div class="savoirs-faire mt-5">
+        <div class="container-sf">
+            <div class="block-top d-flex flex-column flex-xl-row mb-5 justify-content-between">
+                <div class="block-left col-12 col-xl-5">
+                    <h1>{{ record.title | upper }}</h1>
+                    <p>{{ record.teaser }}</p>
+                </div>
+                <div class="block-right col-12 col-xl-6 d-flex justify-content-center">
+                    <img src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="image Nos savoirs faire">
+                </div>
+            </div>
+            <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-between col-12 my-5 pt-5">
+                {% for  card in cards %}
+                    {% include "@theme/partials/_card_SF.twig" with { card: card, loop: loop.index } %}
+                {% endfor %}
+            </div>
+        </div>
+        {% include "@theme/partials/banner_keys/_banner_keys_figures.twig" with {keyFigures: keyFigures } %}
+    </div>
 {% endblock main %}

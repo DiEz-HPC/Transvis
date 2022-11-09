@@ -2,7 +2,7 @@
 record.
     title: 'text'
     teaser: 'redactor'
-  
+
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -23,8 +23,7 @@ record.
         {{ record.teaser }}
         </div>
     </div>
-    <div class="line mb-3 mt-5">
-    </div>
+    {% include "@theme/partials/_line.twig" %}
     <div class="row box-bottom py-2 px-5 text-center" style="background-image: url({{ asset('images/bgRed.png') }}); background-size: cover;">
     <h2 class="my-3 form-title"> Un projet ? Venez en discutez. </h2>
         <div class="col-12 col-md-12 col-lg-8">

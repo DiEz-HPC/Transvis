@@ -26,7 +26,7 @@ function checkForDnone() {
 
 
 function toggleButton(status) {
-    if(status == 'open') {
+    if(status === 'open') {
         document.getElementById('burger-toggler').classList.add('open');
     }else{
         document.getElementById('burger-toggler').classList.remove('open');

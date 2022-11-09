@@ -29,11 +29,7 @@
 .form-control-textarea {
     height: 200px;
 }
-.line {
-    border: 4px dashed var(--red-color);
-    border-style: none none dashed;
-    background-color: transparent;
-}
+
 iframe{
     border-radius: 0.5em;
 }
