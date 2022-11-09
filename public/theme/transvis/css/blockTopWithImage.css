@@ -2,18 +2,18 @@
     padding: 0 6%;
 }
 
-.savoirs-faire .block-top .block-left h1:before {
+.block-top .block-left h1:before {
     margin: 0;
 }
 
-.savoirs-faire .block-top .block-left h1 {
+.block-top .block-left h1 {
     font-style: normal;
     font-weight: 800;
     line-height: 44px;
     padding-top: 15px;
 }
 
-.savoirs-faire .block-top .block-left p {
+.block-top .block-left p {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -21,11 +21,11 @@
     text-justify: inter-word;
 }
 
-.savoirs-faire .block-top .block-right {
+.block-top .block-right {
     background: url(../images/savoirs-faire/cobot-emboxeuse.webp) no-repeat center;
     background-size: cover;
 }
 
-.savoirs-faire .block-top .block-right img {
+.block-top .block-right img {
     width: 100%;
 }

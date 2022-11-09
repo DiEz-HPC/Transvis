@@ -202,7 +202,7 @@ nosValeurs:
 nosEquipes:
     name: Nos équipes
     singular_name: Nos équipes
-    slug: Nos équipes
+    slug: nos-equipes
     fields:
         title:
             type: text
@@ -221,21 +221,6 @@ nosEquipes:
             label: Image d'illustration
             info: Image illustrant le texte d'introduction
             group: Introduction
-        bottomImage:
-            type: image
-            label: Image en arrière plan
-            info: Image en arrière plan de la page
-            group: Partie basse
-        cardTitle:
-            type: text
-            label: Titre de la carte
-            info: Titre de la carte
-            group: Partie basse
-        cardText:
-            type: textarea
-            label: Texte de la carte
-            info: Texte de la carte
-            group: Partie basse
         seo:
             type: seo
             group: "Réglage SEO"
@@ -298,8 +283,10 @@ recrutements:
           info: Intitulé du poste
           group: Recrutement
         teaser:
-          type: textarea
-          label: Texte de description
+          type: text
+          pattern: '^.{1,100}$'
+          error: 'Le texte doit faire maximum 100 caractères'
+          label: "Texte de description (max: 100 caractères)"
           info: Texte de description du poste
           group: Recrutement
         profil:
@@ -307,11 +294,32 @@ recrutements:
           label: Profil recherché
           info: Profil recherché
           group: Recrutement
-        salary:
-          type: number
-          label: Salaire annuel
-          info: Salaire annuel pour le poste
-          group: Recrutement
+        description:
+            type: set
+            label: Déscription du poste
+            group: Détails
+            fields:
+                contrat:
+                    type: select
+                    label: Type de contrat
+                    info: Contrat
+                    values:
+                        CDI: CDI
+                        CDD: CDD
+                        Intérimaire: Intérimaire
+                        Alternance: Alternance
+                        Stage: Stage
+                temps:
+                  type: select
+                  values: 
+                    plein: 'Temps plein'
+                    partiel: 'Temps partiel'
+                  label: Temps de travail
+                  info: Temps de travail pour le poste
+                salary:
+                  type: number
+                  label: Salaire annuel
+                  info: Salaire annuel pour le poste
     listing_template: 'recrutements.twig'
     record_template: 'recrutement.twig'
     default_status: held

@@ -1,0 +1,19 @@
+{#
+    defaultImage is variable passed with call component
+#}
+
+{%  block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/blockTopWithImage.css') }}" />
+{% endblock %}
+<div class="mt-5 pt-5">
+    <div class="block-top d-flex flex-column flex-xl-row mb-5 justify-content-between">
+        <div class="block-left col-12 col-xl-5">
+            <h1>{{ record.title | upper }}</h1>
+            <p>{{ record.teaser }}</p>
+        </div>
+        <div class="block-right col-12 col-xl-6 d-flex justify-content-center" style="background-image: url({{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image')  }});">
+            <img src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="image Nos savoirs faire">
+        </div>
+    </div>
+</div>
+
