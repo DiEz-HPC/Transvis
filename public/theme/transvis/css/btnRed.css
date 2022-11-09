@@ -7,6 +7,11 @@
     color: var(--light-color);
 }
 
+.btn-link:hover {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
 .btn-link span {
     font-weight: 500;
     font-size: var(--font-size);

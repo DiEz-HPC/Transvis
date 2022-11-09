@@ -1,13 +1,16 @@
 {#
     text
     link
+    width
+    height
+    nextWidith: arrow logo width default 10%
 #}
 
 {% block stylesheet %}
     <link rel="stylesheet" href="{{ asset('css/btnRed.css') }}">
 {% endblock %}
 
-<a class="btn-link d-flex justify-content-center align-items-center" href="{{ link }}" style="width: {{  width ?? '' }}; height: {{ height ?? '' }}">
+<a class="btn-link d-flex justify-content-center align-items-center" href="{{ link ?? '' }}" style="width: {{  width ?? '' }}; height: {{ height ?? '' }}">
     <span class="me-2 align-baseline">{{ text | upper }}</span>
-    <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next">
+    <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next" style="width: {{ nextWidth ?? '' }}">
 </a>

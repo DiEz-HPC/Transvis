@@ -283,8 +283,10 @@ recrutements:
           info: Intitulé du poste
           group: Recrutement
         teaser:
-          type: textarea
-          label: Texte de description
+          type: text
+          pattern: '^.{1,100}$'
+          error: 'Le texte doit faire maximum 100 caractères'
+          label: "Texte de description (max: 100 caractères)"
           info: Texte de description du poste
           group: Recrutement
         profil:
@@ -297,10 +299,16 @@ recrutements:
             label: Déscription du poste
             group: Détails
             fields:
-                salary:
-                  type: number
-                  label: Salaire annuel
-                  info: Salaire annuel pour le poste
+                contrat:
+                    type: select
+                    label: Type de contrat
+                    info: Contrat
+                    values:
+                        CDI: CDI
+                        CDD: CDD
+                        Intérimaire: Intérimaire
+                        Alternance: Alternance
+                        Stage: Stage
                 temps:
                   type: select
                   values: 
@@ -308,10 +316,13 @@ recrutements:
                     partiel: 'Temps partiel'
                   label: Temps de travail
                   info: Temps de travail pour le poste
+                salary:
+                  type: number
+                  label: Salaire annuel
+                  info: Salaire annuel pour le poste
     listing_template: 'recrutements.twig'
     record_template: 'recrutement.twig'
     default_status: held
-    taxonomy: contrats
     viewless: false
     icon_many: "fa:table"
     icon_one: "fa:table"
