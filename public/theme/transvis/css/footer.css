@@ -53,6 +53,7 @@ a {
 }
 .bottom-footer{
     background-color:rgba(30, 30, 30, 1);
+    --bs-gutter-x: 0 !important;
 }
 .diez-link {
     color: var(--red-color);
