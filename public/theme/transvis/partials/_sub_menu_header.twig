@@ -17,8 +17,8 @@
                     {% include('images/mail.svg') %}
                 </div>
             {% endif %}
-        </a> 
-        {% if loop.last is true %}  
+        </a>
+        {% if loop.last is true %}
         {% elseif loop.index == loop.length - 1 %}
         {% else %}
             <span class="nav-point mx-3"></span>
@@ -30,12 +30,12 @@
 {% from _self import display_menu_item %}
 
 {# The main menu loop: Iterates over the items, calling `display_menu_item` #}
-<ul class="d-flex justify-content-around">
+<ul class="d-flex justify-content-around ps-0 ps-lg-4">
 {% for item in menu %}
     {% if item.label is defined %}
     <li class="nav-item {{ item|current ? ' active' }} d-flex align-items-center">
         {{ display_menu_item(item, loop, withsubmenus) }}
-    </li> 
+    </li>
     {% endif %}
 {% endfor %}
   </ul>
