@@ -1,0 +1,25 @@
+<script src="{{ asset('js/dependency/splide.min.js') }}"></script>
+<script src="{{ asset('js/dependency/splide.autoscroll.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/dependency/splide.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/logoSlider.css') }}">
+<script src="{{ asset('js/logoSlider.js') }}"></script>
+{% setcontent options = 'Vos options' %}
+
+{% if options.nosPartenaires is defined and options.nosPartenaires is not null %}
+<div class="row slider-container">
+    <div class="col-5 col-md-4 col-xl-3 slider-text d-flex justify-content-center align-items-center">            
+        <p class="text-center m-auto">ILS NOUS FONT CONFIANCE</p>
+    </div>
+    <div class="splide slider-slide col-7 col-md-8 col-xl-9" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for partner in options.nosPartenaires %}
+                    <li class="splide__slide  d-flex align-items-center justify-content-center">
+                        <img src="{{ asset(partner) }}" alt="{{ partner.title }}" data-width='{{ partner|media.width }}' data-height='{{ partner|media.height }}'class="slider-logo img-responsive">
+                    </li> 
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}
