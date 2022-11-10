@@ -1,22 +1,26 @@
-{% macro cardImagePath(card, loop) %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+
+{% block cardSFstylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/card-sf.css') }}">
+    {{ block('buttonRedStylesheet') }}
+{% endblock cardSFstylesheet %}
+
+{% block cardSFContent %}
     {% set cardsIcon = ['images/savoirs-faire/main.svg', 'images/savoirs-faire/robot.svg', 'images/savoirs-faire/group.svg'] %}
     {% if card.image.path is not defined or card.image.path is empty %}
-        {{ asset(cardsIcon[loop - 1]) }}
+        {% set path = asset(cardsIcon[loop - 1]) %}
     {% else %}
-        {{ asset(card.image.path) }}
+        {% set path = asset(card.image.path) %}
     {% endif %}
-{% endmacro cardImagePath %}
-
-{% block stylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/card-sf.css') }}">
-{% endblock stylesheet %}
-
-<div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
-    <div class="logo mb-4">
-        <img src="{{ _self.cardImagePath(card, loop) }}" alt="logo main">
+    <div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+        <div class="logo mb-4">
+            <img src="{{ path }}" alt="logo main">
+        </div>
+        <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
+            <h3 class="card-sf__title mb-4">{{ card.text | upper }}</h3>
+            {%  with { text: "Découvrir", link: '#' } %}
+                {{ block('buttonRedContent') }}
+            {% endwith %}
+        </div>
     </div>
-    <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
-        <h3 class="card-sf__title mb-4">{{ card.text | upper }}</h3>
-        {% include "@theme/partials/buttons/_button-red.twig" with { text: "Découvrir", link: '#' } %}
-    </div>
-</div>
+{% endblock cardSFContent %}

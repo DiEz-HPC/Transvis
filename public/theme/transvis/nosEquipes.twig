@@ -11,26 +11,32 @@ record.
 #}
 {% extends '@theme/partials/_master.twig' %}
 
-{%  setcontent recrutements = 'Recrutements' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% use '@theme/partials/cards/_card_recrutements.twig' %}
+{% use '@theme/partials/_block_top_singleton_with_image.twig' %}
+
+{% setcontent recrutements = 'Recrutements' limit 4 orderby '-publishedAt' %}
 {% set count = recrutements|length %}
-{% if count > 3 %}
-    {% setcontent recrutements = 'Recrutements' limit 3 orderby '-publishedAt' %}
-{% endif %}
 
 
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/equipes.css') }}">
+    {{ block('cardRecrutementStylesheet') }}
+    {{ block('blockTopSingletonWithImageStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
 {{ parent() }}
+{{ block('buttonRedStylesheet') }}
 {%  endblock javascript %}
 
 {% block main %}
     <div class="nosEquipes mb-5">
         <div class="container-sf">
-            {% include '@theme/partials/_block_top_singleton_with_image.twig' with {defaultImage: asset('images/equipe.webp')} %}
+            {% with {defaultImage: asset('images/equipe.webp')} %}
+                {{ block('blockTopSingletonWithImageContent') }}
+            {% endwith %}
             {% include '@theme/partials/_line.twig' %}
         </div>
         <div class="blok-recrutement d-flex flex-column px-4">
@@ -38,14 +44,21 @@ record.
             {% if recrutements is empty %}
                 <h3 class="text-center mt-5">{{ 'Aucun poste à pourvoir pour le moment' }}</h3>
             {% else %}
-                <div class="cards-recrutements d-flex flex-column flex-xl-row {{ recrutements|length < 3 ? 'justify-content-around' : 'justify-content-between'  }} align-items-center">
+                <div
+                    class="cards-recrutements d-flex flex-column flex-xl-row {{ count < 3 ? 'justify-content-around' : 'justify-content-between' }} align-items-center">
                     {% for recrutement in recrutements %}
-                        {% include '@theme/partials/cards/_card_recrutements.twig' with {card: recrutement} %}
+                        {% if loop.index < 4 %}
+                            {% with {card: recrutement} %}
+                                {{ block('cardRecrutementContent') }}
+                            {% endwith %}
+                        {% endif %}
                     {% endfor %}
                 </div>
                 {% if count > 3 %}
                     <div class="d-flex justify-content-center">
-                        {% include "@theme/partials/buttons/_button-red.twig" with { text: "Voir plus d'offres", link: 'recrutements', width: "285px", height: "37px", nextWidth: "5%" } %}
+                        {% with { text: "Voir plus d'offres", link: 'recrutements', width: "285px", height: "37px", nextWidth: "5%" } %}
+                            {{ block('buttonRedContent') }}
+                        {% endwith %}
                     </div>
                 {% endif %}
             {% endif %}

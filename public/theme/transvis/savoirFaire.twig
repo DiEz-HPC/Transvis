@@ -14,27 +14,43 @@ record.
 #}
 {% extends '@theme/partials/_master.twig' %}
 
+{% use '@theme/partials/_block_top_singleton_with_image.twig' %}
+{% use '@theme/partials/banner_keys/_banner_keys_figures.twig' %}
+{% use '@theme/partials/cards/_card_SF.twig' %}
+
+
 {% set cards = [record.cardOne, record.cardTwo, record.cardThree] %}
 {% set keyFigures = [record.keyFigureOne, record.keyFigureTwo, record.keyFigureThree] %}
 
 {% block stylesheet %}
     {{ parent() }}
+    {{ block('bannerKeysFiguresStylesheet') }}
+    {{ block('cardSFstylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
 {{ parent() }}
+{{ block('blockTopSingletonWithImageStylesheet') }}
+{{ block('bannerKeysFiguresJavascript') }}
 {%  endblock javascript %}
 
 {% block main %}
     <div class="savoirs-faire mt-5">
         <div class="container-sf">
-            {% include '@theme/partials/_block_top_singleton_with_image.twig' with {defaultImage: asset('images/savoirs-faire/cobot-emboxeuse.webp')} %}
-            <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-between col-12 my-5 pt-5">
+            {% with {defaultImage: asset('images/savoirs-faire/cobot-emboxeuse.webp')} %}
+                {{ block('blockTopSingletonWithImageContent') }}
+            {% endwith %}
+            <div
+                class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-between col-12 my-5 pt-5">
                 {% for  card in cards %}
-                    {% include "@theme/partials/cards/_card_SF.twig" with { card: card, loop: loop.index } %}
+                    {% with { card: card, loop: loop.index } %}
+                        {{ block('cardSFContent') }}
+                    {% endwith %}
                 {% endfor %}
             </div>
         </div>
-        {% include "@theme/partials/banner_keys/_banner_keys_figures.twig" with {keyFigures: keyFigures } %}
+        {% with {keyFigures: keyFigures } %}
+            {{ block('bannerKeysFiguresContent') }}
+        {% endwith %}
     </div>
 {% endblock main %}
