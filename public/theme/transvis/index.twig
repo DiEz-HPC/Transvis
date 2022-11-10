@@ -6,15 +6,18 @@
 
 {% extends '@theme/partials/_master.twig' %}
 
+{% use '@theme/partials/_logo_slider.twig' %}
+
 {% block stylesheet %}
     {{ parent() }}
+    {{ block('logoSliderStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
-{{ parent() }}
+    {{ parent() }}
+    {{ block('logoSliderJavascript')}}
 {%  endblock javascript %}
 
 {% block main %}
-{% include('partials/_logo_slider.twig') %}
+    {{ block('logoSliderContent')}}
 {% endblock main %}
-
