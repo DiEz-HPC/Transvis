@@ -26,11 +26,11 @@ record.
     {{ parent() }}
     {{ block('bannerKeysFiguresStylesheet') }}
     {{ block('cardSFstylesheet') }}
+    {{ block('blockTopSingletonWithImageStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
 {{ parent() }}
-{{ block('blockTopSingletonWithImageStylesheet') }}
 {{ block('bannerKeysFiguresJavascript') }}
 {%  endblock javascript %}
 

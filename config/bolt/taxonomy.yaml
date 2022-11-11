@@ -37,3 +37,12 @@ contrats:
     multiple: true
     options: [ CDI, CDD, Intérim, Stage, Alternance, Freelance, Indépendant ]
     required: false
+
+nosRealisationsTags:
+    slug: nosRealisationsTags
+    singular_slug: realisationTags
+    behaves_like: tags
+    postfix: "Commencez un nouveau tag en saisissant un caractère, valider le tag en appuyant sur entrée."
+    allow_spaces: false
+    listing_template: realisations.twig #custom template
+    required: false

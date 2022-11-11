@@ -8,12 +8,16 @@ card (contentype recrutement):
         salary: number
         temps: select (text)
 #}
-
+{% use '@theme/partials/buttons/_tags.twig' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
 {% block cardRecrutementStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/cardRecrutement.css') }}">
+    {{ block('tagStylesheet') }}
+    {{ block('buttonRedStylesheet')}}
 {% endblock %}
 
 {% block cardRecrutementContent %}
+
     {% set tags = [card.description.contrat, 'temps ' ~ card.description.temps, card.description.salary ~ '€'] %}
 
     <div class="card-recrutement col-12 col-xl-3 mb-5">
@@ -25,11 +29,14 @@ card (contentype recrutement):
             <p class="teaser mb-2">{{ card.teaser }}</p>
             <div class="tags d-flex pb-1">
                 {% for tag in tags %}
-                    {% include '@theme/partials/buttons/_tags.twig' with {tag: tag} %}
+                    {%  with { tag: tag} %}
+                    {{ block('tagContent') }}
+                    {% endwith %}
                 {% endfor %}
             </div>
-            {% include "@theme/partials/buttons/_button-red.twig" with { text: "Candidater rapidement", link: card|link, width: "285px", height: "37px", nextWidth: "5%" } %}
+            {%  with { text: "Candidater rapidement", link: card|link, width: "285px", height: "37px", nextWidth: "5%" } %}
+            {{ block('buttonRedContent') }}
+            {% endwith %}
         </div>
     </div>
 {% endblock cardRecrutementContent %}
-
