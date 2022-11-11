@@ -30,13 +30,13 @@
 {% from _self import display_menu_item %}
 
 {# The main menu loop: Iterates over the items, calling `display_menu_item` #}
-<ul class="d-flex justify-content-around ps-0 ps-lg-4">
-{% for item in menu %}
-    {% if item.label is defined %}
-    <li class="nav-item {{ item|current ? ' active' }} d-flex align-items-center">
-        {{ display_menu_item(item, loop, withsubmenus) }}
-    </li>
-    {% endif %}
-{% endfor %}
-  </ul>
+<ul class="d-flex justify-content-around ps-0 ps-lg-4 pe-xl-5">
+    {% for item in menu %}
+        {% if item.label is defined %}
+            <li class="nav-item {{ item|current ? ' active' }} d-flex align-items-center">
+                {{ display_menu_item(item, loop, withsubmenus) }}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
 

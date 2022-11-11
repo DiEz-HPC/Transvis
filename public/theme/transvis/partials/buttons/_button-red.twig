@@ -11,7 +11,7 @@ nextWidith: arrow logo width default 10%
 {% endblock buttonRedStylesheet %}
 
 {% block buttonRedContent %}
-    <a class="btn-link d-flex justify-content-center align-items-center" href="{{ link ?? '' }}"
+    <a class="button-link d-flex justify-content-center align-items-center" href="{{ link ?? '' }}"
        style="width: {{ width ?? '' }}; height: {{ height ?? '' }}">
         <span class="me-2 align-baseline">{{ text | upper }}</span>
         <img src="{{ asset('images/savoirs-faire/next.png') }}" alt="next" class="next"
