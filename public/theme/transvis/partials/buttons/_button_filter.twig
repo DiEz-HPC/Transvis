@@ -1,0 +1,51 @@
+{% block buttonFilterStylesheet %}
+
+{% endblock %}
+
+{% block buttonFilterJavascript %}
+ <script src="{{ asset('js/tagSearch.js') }}"></script>
+{% endblock %}
+
+{% block buttonFilterContent %}
+<style>
+.search-input{
+    border: none;
+    background: var(--dark-color);
+    color: #fff;
+    border-radius: 0.25em;
+    height: 50px;
+    padding: 15px;
+    font-weight: var(--font-weight--bold);
+}
+.search-input::placeholder{
+    text-align:center;
+    color: var(--light-color);
+    opacity: 1;
+    font-weight: var(--font-weight--bold);
+}
+.drop{
+    border: none;
+    border-radius: 0.25em;
+    font-weight: var(--font-weight--bold);
+    padding: 0 !important;
+}
+.match{
+    background: var(--light-color);
+    color: var(--dark-color);
+    font-weight: var(--font-weight--bold);
+}
+.tag-li{
+    background: red;
+    margin: 5px 0;
+}
+.tag-li:hover{
+    background: var(--light-color);
+    color: var(--dark-color);
+    font-weight: var(--font-weight--bold);
+}
+</style>    
+<div class="buttonFilterContainer">
+  <input id="search" class="search-input" type="text" placeholder="FILTRER" autocomplete="off">
+  <ul class="drop"></ul>
+</div>
+{% endblock %}

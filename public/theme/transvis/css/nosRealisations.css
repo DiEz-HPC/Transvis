@@ -1,0 +1,31 @@
+h1:before {
+    margin: 0;
+    right: 15px;
+}
+h1 {
+    font-style: normal;
+    font-weight: 800;
+    line-height: 44px;
+    padding-top: 15px;
+}
+.row {
+    --bs-gutter-x: 0 !important;
+}
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 20px;
+    color: var(--red-color);
+}
+
+
+@media screen and (max-width: 768px) {
+h1{
+text-align: center;
+}
+h1:before {
+margin: auto;
+}
+} 

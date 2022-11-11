@@ -24,11 +24,11 @@ record.
     <link rel="stylesheet" href="{{ asset('css/equipes.css') }}">
     {{ block('cardRecrutementStylesheet') }}
     {{ block('blockTopSingletonWithImageStylesheet') }}
+    {{ block('buttonRedStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
 {{ parent() }}
-{{ block('buttonRedStylesheet') }}
 {%  endblock javascript %}
 
 {% block main %}

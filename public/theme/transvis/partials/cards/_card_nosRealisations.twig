@@ -1,0 +1,43 @@
+{#
+    needed Variables: 
+        record: the record to be displayed
+        tagList: the list of tags for the record ( in array )
+#}
+
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% use '@theme/partials/buttons/_tags.twig' %}
+{% block cardNosRealisationsStylesheet %}
+    {{ block('buttonRedStylesheet')}}
+    {{ block('tagStylesheet') }}
+    <link rel="stylesheet" href="{{ asset('css/components/cardNosRealisations.css') }}">
+{% endblock %}
+
+{% block cardNosRealisationsContent %}
+
+    <div class="col-12 col-xl-4 p-4">
+        <div class="card nr">
+            <div class="card-img">
+                <img src="{{record.video.thumbnail}}" class="card-img-top" alt="record.video.title">
+                <div class="play-video">
+                    {% include ("images/play-button.svg") %}
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="title">{{ record.title }}</h3>
+                <div class="row tag-line mb-3">
+                    {% for tag in tagList %}
+                        <div style="width: fit-content;">
+                            {%  with { tag: tag} %}
+                            {{ block('tagContent') }}
+                            {% endwith %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <p class="card-text">{{record.teaser|excerpt(350)}}</p>
+                {%  with { text: "En savoir plus", link: record|link, width: "200px", height: "37px", nextWidth: "8%" } %}
+                {{ block('buttonRedContent') }}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

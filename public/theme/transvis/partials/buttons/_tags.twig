@@ -1,10 +1,11 @@
 {#
     tag: text
 #}
-{% block stylesheet %}
+{% block tagStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/tag.css') }}">
 {% endblock %}
-
-<p class="tag me-2 mb-2">
-    {{ tag | upper }}
-</p>
+{% block tagContent %}
+    <p class="tag me-2 mb-2">
+        {{ tag | upper }}
+    </p>
+{% endblock %}

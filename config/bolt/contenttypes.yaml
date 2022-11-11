@@ -221,6 +221,7 @@ nosEquipes:
             label: Image d'illustration
             info: Image illustrant le texte d'introduction
             group: Introduction
+            fixture_format: '{image}'
         seo:
             type: seo
             group: "Réglage SEO"
@@ -238,23 +239,26 @@ nosEquipes:
 nosRealisations:
     name: Nos réalisations
     singular_name: Réalisation
-    slug: Nos réalisations
+    slug: nos-realisations
     fields:
         title:
           type: text
           label: Nom de la réalisation
           info: Nom de la réalisation
           group: Réalisation
+          fixture_format: '{title}'
         teaser:
           type: textarea
           label: Texte de description
           info: Texte de description de la réalisation
           group: Réalisation
+          fixture_format: '{teaser}'
         carousel:
           type: imagelist
           label: Images de la réalisation
           info: Images de la réalisation
           group: Réalisation
+          fixture_format: '{carousel}'
         video:
           type: embed
           label: Vidéo de la réalisation
@@ -265,6 +269,7 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
+    taxonomy:  nosRealisationsTags
     listing_template: 'Realisations.twig'
     record_template: 'Realisation.twig'
     default_status: held
