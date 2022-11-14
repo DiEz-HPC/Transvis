@@ -11,6 +11,7 @@
     padding: calc(var(--spacing-card) * 2) 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
     border-radius: 5px;
+    position: relative;
 }
 
 @media screen and (max-width: 375px) {
