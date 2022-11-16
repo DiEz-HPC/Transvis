@@ -154,7 +154,7 @@ savoirFaire:
 nosValeurs:
     name: Nos valeurs
     singular_name: Nos valeurs
-    slug: Nos valeurs
+    slug: nos-valeurs
     fields:
         title:
             type: text
