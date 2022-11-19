@@ -1,48 +1,13 @@
-{% block buttonFilterStylesheet %}{% endblock %}
+{% block buttonFilterStylesheet %}
+<link rel="stylesheet" href="{{ asset('css/components/buttonFilter.css') }}" />
+{% endblock %}
 
 {% block buttonFilterJavascript %}
     <script src="{{ asset('js/tagSearch.js') }}"></script>
 {% endblock %}
 
 {% block buttonFilterContent %}
-    <style>
-        .search-input {
-            border: none;
-            background: var(--dark-color);
-            color: #fff;
-            border-radius: 0.25em;
-            height: 50px;
-            padding: 15px;
-            font-weight: var(--font-weight--bold);
-        }
-        .search-input::placeholder {
-            text-align: center;
-            color: var(--light-color);
-            opacity: 1;
-            font-weight: var(--font-weight--bold);
-        }
-        .drop {
-            border: none;
-            border-radius: 0.25em;
-            font-weight: var(--font-weight--bold);
-            padding: 0 !important;
-            margin-bottom: 0 !important;
-        }
-        .match {
-            background: var(--light-color);
-            color: var(--dark-color);
-            font-weight: var(--font-weight--bold);
-        }
-        .tag-li {
-            margin: 5px 0;
-        }
-        .tag-li:hover {
-            background: var(--light-color);
-            color: var(--dark-color);
-            font-weight: var(--font-weight--bold);
-            cursor: pointer;
-        }
-    </style>
+
     <div class="row d-flex align-items-center justify-content-center">
         <div class="buttonFilterContainer mx-2" data-records-tag="{{ recordsTagList|json_encode }}" data-records-taxonomies="{{ taxonomies }}" id="buttonFilterContainer">
             <input id="search" class="search-input w-100 mb-4" type="text" placeholder="FILTRER" autocomplete="off">
