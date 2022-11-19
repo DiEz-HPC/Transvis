@@ -13,6 +13,7 @@
 {% block javascript %}
     {{ parent() }}
     {{ block('buttonFilterJavascript')}}
+    {{ block('cardNosRealisationsJavascript') }}
 {%  endblock javascript %}
 
 {% block main %}
@@ -27,14 +28,14 @@
         {% set pageText = 'Découvrez nos réalisations' %}
     {% endif %}
     {% set recordsTagList = [] %}
-    {% if tag_cloud('realisations-slug') is not empty %}
-        {% for recordsTag in tag_cloud('realisations-slug') %}
-            {% set recordsTagList = recordsTagList|merge([recordsTag.name]) %}
+    {% if tag_cloud("nosRealisationsTags") is not empty %}
+        {% set taxonomies = "nosRealisationsTags" %}
+        {% for recordsTag in tag_cloud("nosRealisationsTags") %}
+            {% set recordsTagList = recordsTagList|merge({(recordsTag.name) : recordsTag.slug }) %}
         {% endfor %}
     {% endif %}
 
-
-    <div class="Nos-realisations mt-4" id="nosRealisationSection" data-records-tag="{{ recordsTagList|json_encode }}">
+    <div class="Nos-realisations mt-4" id="nosRealisationSection">
         <div class="row bs-g-0">
             <h1>
                 {{ pageTitle|upper  }}
@@ -47,7 +48,9 @@
         <div class="row">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-12 d-flex align-items-center justify-content-center">
+                {% with { recordsTagList : recordsTagList, taxonomies : taxonomies} %}
                     {{ block('buttonFilterContent') }}
+                {% endwith %}
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     {% for tag in recordsTagList %}
@@ -59,13 +62,13 @@
             <div class="row">
                 {% for record in records %}
                     {% set tagList = [] %}
-                    {% if record|taxonomies['realisations-slug'] is defined %}
-                        {% set tags = record|taxonomies['realisations-slug'] %}
+                    {% if record|taxonomies["nosRealisationsTags"] is defined %}
+                        {% set tags = record|taxonomies["nosRealisationsTags"] %}
                         {% for tag in tags %}
-                            {% set tagList = tagList|merge([tag.slug]) %}
+                            {% set tagList = tagList|merge({(tag.name) : tag.slug}) %}
                         {% endfor %}
                     {% endif %}
-                    {%  with { record: record, tagList: tagList} %}
+                    {%  with { record: record, tagList: tagList, taxonomies: "nosRealisationsTags"} %}
                     {{ block('cardNosRealisationsContent') }}
                     {% endwith %}
                 {% endfor %}

@@ -32,6 +32,7 @@
 }
 .card.nr .tag-line {
     height: 25px;
+    overflow: hidden;
 }
 .card.nr .card-text {
     height: 150px;

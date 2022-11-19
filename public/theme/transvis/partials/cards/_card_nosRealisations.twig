@@ -11,9 +11,11 @@
     {{ block('tagStylesheet') }}
     <link rel="stylesheet" href="{{ asset('css/components/cardNosRealisations.css') }}">
 {% endblock %}
+{% block cardNosRealisationsJavascript %}
+    {{ block('tagJavascript')}}
+{% endblock %}
 
 {% block cardNosRealisationsContent %}
-
     <div class="col-12 col-xl-4 p-4">
         <div class="card nr">
             <div class="card-img">
@@ -25,12 +27,10 @@
             <div class="card-body">
                 <h3 class="title">{{ record.title }}</h3>
                 <div class="row tag-line mb-3">
-                    {% for tag in tagList %}
-                        <div style="width: fit-content;">
-                            {%  with { tag: tag} %}
+                    {% for key, tag in tagList %}
+                            {%  with { name: key, slug: tag} %}
                             {{ block('tagContent') }}
                             {% endwith %}
-                        </div>
                     {% endfor %}
                 </div>
                 <p class="card-text">{{record.teaser|excerpt(350)}}</p>
