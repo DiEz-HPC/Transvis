@@ -269,6 +269,11 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
+        order:
+          type: number
+          label: Ordre d'affichage
+          info: Ordre d'affichage de la réalisation
+          group: Réalisation
     taxonomy:  nosRealisationsTags
     listing_template: 'Realisations.twig'
     record_template: 'Realisation.twig'
