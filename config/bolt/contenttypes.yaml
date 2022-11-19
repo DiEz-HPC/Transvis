@@ -269,8 +269,10 @@ nosRealisations:
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique
-        order:
+        sort:
           type: number
+          mode: integer
+          default: 10
           label: Ordre d'affichage
           info: Ordre d'affichage de la réalisation
           group: Réalisation
@@ -281,6 +283,7 @@ nosRealisations:
     viewless: false
     icon_many: "fa:images"
     icon_one: "fa:images"
+    order: -createdAt
   
 recrutements:
     name: Recrutements
