@@ -7,12 +7,8 @@
 
 }
 
-svg path {
-    fill: var(--dark-color);
-}
-
-.js-ag-active svg path {
-    fill: var(--light-color);
+.js-ag-active .logo-valeur {
+    filter: invert(100%);
 }
 
 .ag-format-container {
@@ -58,7 +54,6 @@ svg path {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-
     position: relative;
 }
 .ag-timeline_line {
@@ -78,7 +73,7 @@ svg path {
 
 .ag-timeline_line-progress {
     width: 100%;
-    height: 20%;
+    height: 5%;
     background-color: var(--dark-color);
 }
 
@@ -120,20 +115,19 @@ svg path {
 .ag-timeline-card_meta-box {
     display: inline-block;
 }
-.ag-timeline-card_meta {
+/*.ag-timeline-card_meta {
     margin: 10px 0 0;
 
     font-family: "ESL Legend", sans-serif;
     font-weight: bold;
     font-size: 28px;
     color: #ff0;
-}
+}*/
 .ag-timeline-card_item {
     display: inline-block;
     width: 45%;
     margin: -77px 0 0;
-    background-color: #282828;
-
+    background-color: var(--dark-color);
     opacity: 0;
 
     -webkit-border-radius: 6px;
@@ -180,7 +174,7 @@ svg path {
     height: 18px;
     width: 18px;
     margin-top: 20px;
-    background-color: #282828;
+    background-color: var(--dark-color);
 
     z-index: -1;
     position: absolute;
@@ -198,7 +192,7 @@ svg path {
     margin-right: calc(-18px / 2);
 }
 .ag-timeline_item:nth-child(2n) .ag-timeline-card_arrow {
-    margin-left: -10px;
+    margin-left: -9px;
 
     right: auto;
     left: 0;
@@ -227,7 +221,7 @@ svg path {
 
 @media only screen and (max-width: 979px) {
     .ag-timeline_line {
-        left: 30px;
+        left: 35px;
     }
 
     .ag-timeline_item:nth-child(2n) {
@@ -246,9 +240,9 @@ svg path {
         margin: 0 0 0 8px;
     }
     .ag-timeline-card_point {
-        height: 40px;
+        height: 50px;
         line-height: 40px;
-        width: 40px;
+        width: 50px;
     }
     .ag-timeline-card_item {
         width: auto;

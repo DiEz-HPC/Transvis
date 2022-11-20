@@ -11,6 +11,8 @@ record.
 #}
 {% extends '@theme/partials/_master.twig' %}
 
+{% use '@theme/partials/cards/_card_valeur.twig' %}
+
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/valeurs.css') }}">
@@ -18,10 +20,7 @@ record.
 
 {% block javascript %}
 {{ parent() }}
-<script
-  src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
+<script src="{{ asset('js/dependency/jquery-3.6.1.min.js') }}"></script>
 <script src="{{ asset('js/timeline.js') }}"></script>
 {% endblock javascript %}
 
@@ -43,81 +42,11 @@ record.
                                 <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
                             </div>
                             <div class="ag-timeline_list">
-                                <div class="js-timeline_item ag-timeline_item">
-                                    <div class="ag-timeline-card_box d-flex justify-content-lg-center">
-                                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                            <div class="ag-timeline-card_point d-flex justify-content-center align-items-center">
-                                                <div class="w-75">
-                                                    {% include('images/test-timeline.svg') %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ag-timeline-card_item">
-                                        <div class="ag-timeline-card_inner">
-                                            <div class="ag-timeline-card_info">
-                                                <div class="ag-timeline-card_desc">
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                                    pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-                                                    vel, aliquet nec, vulputate eget, arcu.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ag-timeline-card_arrow"></div>
-                                    </div>
-                                </div>
-                                <div class="js-timeline_item ag-timeline_item">
-                                    <div class="ag-timeline-card_box d-flex justify-content-lg-center">
-                                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                            <div class="ag-timeline-card_point d-flex justify-content-center align-items-center">
-                                                <div class="w-75">
-                                                    {% include('images/test-timeline.svg') %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ag-timeline-card_item">
-                                        <div class="ag-timeline-card_inner">
-                                            <div class="ag-timeline-card_info">
-                                                <div class="ag-timeline-card_desc">
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                                    pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-                                                    vel, aliquet nec, vulputate eget, arcu.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ag-timeline-card_arrow"></div>
-                                    </div>
-                                </div>
-                                <div class="js-timeline_item ag-timeline_item">
-                                    <div class="ag-timeline-card_box d-flex justify-content-lg-center">
-                                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                            <div class="ag-timeline-card_point d-flex justify-content-center align-items-center">
-                                                <div class="w-75">
-                                                    {% include('images/test-timeline.svg') %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ag-timeline-card_item">
-                                        <div class="ag-timeline-card_inner">
-                                            <div class="ag-timeline-card_info">
-                                                <div class="ag-timeline-card_desc">
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                                    pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-                                                    vel, aliquet nec, vulputate eget, arcu.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ag-timeline-card_arrow"></div>
-                                    </div>
-                                </div>
+                                {% for valeur in record.contentValues %}
+                                    {% with {valeur: valeur} %}
+                                        {{ block('cardValeurContent') }}
+                                    {% endwith %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
