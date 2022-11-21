@@ -154,7 +154,7 @@ savoirFaire:
 nosValeurs:
     name: Nos valeurs
     singular_name: Nos valeurs
-    slug: Nos valeurs
+    slug: nos-valeurs
     fields:
         title:
             type: text
@@ -177,10 +177,14 @@ nosValeurs:
                     type: set
                     label: Valeur
                     fields:
+                        nameOfValue:
+                            type: text
+                            label: Nom de la valeur
+                            info: Nom de la valeur    
                         image:
                             type: image
                             label: Image de la valeur
-                            info: Image de la valeur
+                            info: Logo de couleur noir
                         text:
                             type: textarea
                             label: Texte de la valeur
