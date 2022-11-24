@@ -3,7 +3,11 @@
         title: 'text'
         teaser: 'text'
         profil: 'text'
-        salary: 'text (number)'
+        description:
+            contrat: 'text'
+            temps: 'text'
+            salary: 'number'
+
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -17,5 +21,15 @@
 {%  endblock javascript %}
 
 {% block main %}
-
+    <div class="recrutement">
+        <div class="banner">
+            <h1>{{ record.title | upper }}</h1>
+            <div class="tags"></div>
+        </div>
+        <div class="content">
+            <div class="block-left"></div>
+            <div class="block-right"></div>
+        </div>
+    </div>
+    <h1>{{ record.title }}</h1>
 {% endblock main %}
