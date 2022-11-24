@@ -299,7 +299,7 @@ recrutements:
           info: Texte de description du poste
           group: Recrutement
         profil:
-          type: textarea
+          type: redactor
           label: Profil recherché
           info: Profil recherché
           group: Recrutement
@@ -308,6 +308,10 @@ recrutements:
             label: Déscription du poste
             group: Détails
             fields:
+                description:
+                    type: redactor
+                    label: Déscription du poste
+                    info: Déscription du poste
                 contrat:
                     type: select
                     label: Type de contrat

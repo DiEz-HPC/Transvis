@@ -11,9 +11,14 @@
 #}
 
 {% extends '@theme/partials/_master.twig' %}
+{% use '@theme/partials/buttons/_tags.twig' %}
+
+{% set tags = [record.description.contrat, 'temps ' ~ record.description.temps, record.description.salary ~ '€ annuel'] %}
 
 {% block stylesheet %}
     {{ parent() }}
+    {{ block('tagStylesheet') }}
+    <link rel="stylesheet" href="{{ asset('css/recrutement.css') }}">
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -21,15 +26,41 @@
 {%  endblock javascript %}
 
 {% block main %}
-    <div class="recrutement">
-        <div class="banner">
-            <h1>{{ record.title | upper }}</h1>
-            <div class="tags"></div>
+    <div class="recrutement pt-5">
+        <div class="banner d-flex flex-column justify-content-center align-items-center">
+            <img src="{{ asset('images/banner-recrutement-card.png') }}" alt="bannière">
+            <div class="filter-dark"></div>
+            <div class="banner-text d-flex flex-column justify-content-center align-items-center">
+                <h1 class>{{ record.title | upper }}</h1>
+                <div class="tags d-flex justify-around">
+                    {% for tag in tags %}
+                        {{ block('tagContent') }}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="content">
-            <div class="block-left"></div>
-            <div class="block-right"></div>
+        <div class="content d-flex flex-column flex-xl-row">
+            <div class="block-left col-6 pb-5 mb-5">
+                {% include '@theme/partials/_line.twig' with {margin: 'mt-3 mb-5'} %}
+                <div class="px-5">
+                    <h2 class="text-center">{{ 'Description du poste' | upper }}</h2>
+                    <div class="tags d-flex justify-content-center my-3">
+                        {% for tag in tags %}
+                            {{ block('tagContent') }}
+                        {% endfor %}
+                    </div>
+                    <div class="description text-center mb-2">
+                        {{ record.description.description | raw }}
+                    </div>
+                    <h3 class="text-center mt-5 pt-3">{{ 'Profil recherché' | upper }}</h3>
+                    <div class="profil text-center">
+                        {{ record.profil | raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="block-right col-6">
+
+            </div>
         </div>
     </div>
-    <h1>{{ record.title }}</h1>
 {% endblock main %}
