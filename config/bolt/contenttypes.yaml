@@ -257,15 +257,17 @@ nosRealisations:
           type: imagelist
           label: Images de la réalisation
           info: Images de la réalisation
-          group: Réalisation
+          group: Médias
           fixture_format: '{carousel}'
         video:
-          type: embed
+          type: file
+          extensions: [3g2,3gp,aaf,asf,avchd,avi,drc,flv,m2v,m3u8,m4p,m4v,mkv,mng,mov,mp2,mp4,mpe,mpeg,mpg,mpv,mxf,nsv,ogg,ogv,qt,rm,rmvb,roq,svi,vob,webm,wmv,yuv]
           label: Vidéo de la réalisation
-          info: Inserez le lien youtube de la vidéo
-          group: Réalisation
+          info: Selectionner une vidéo de la réalisation
+          group: Médias
         machineSheet:
           type: file
+          extensions: [pdf,doc,docx]
           label: Fiche technique
           info: Fiche technique de la réalisation
           group: Fiche technique

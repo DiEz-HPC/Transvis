@@ -6,7 +6,9 @@
     text-decoration: none;
     color: var(--light-color);
 }
-
+.btn-link-dark {
+    background-color: var(--dark-color) !important;
+}
 .btn-link:hover {
     text-decoration: none;
     color: var(--light-color);
@@ -22,3 +24,7 @@
 .btn-link .next {
     width: 10%;
 }
+
+.btn-link-dark{
+    background-color: var(--red-color);
+} 
