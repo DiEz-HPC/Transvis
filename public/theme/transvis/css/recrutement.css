@@ -38,6 +38,12 @@
     z-index: 3;
 }
 
+@media screen and (max-width: 768px) {
+    .tag {
+        font-size: 10px;
+    }
+}
+
 .recrutement .banner .banner-text h1 {
     color: var(--light-color);
     z-index: 3;
@@ -47,11 +53,7 @@
     display: none;
 }
 
-.recrutement .content .block-left .tags .tag {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.recrutement .content .block-left .tags .tag {
+.tags .tag {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -68,6 +70,13 @@
     color: var(--dark-color);
     position: relative;
     line-height: 44px;
+}
+
+@media screen and (max-width: 768px) {
+    .recrutement h3 {
+        font-size: 24px;
+        line-height: 29px;
+    }
 }
 
 .recrutement h3::before {

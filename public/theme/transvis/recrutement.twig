@@ -32,7 +32,7 @@
             <div class="filter-dark"></div>
             <div class="banner-text d-flex flex-column justify-content-center align-items-center">
                 <h1 class>{{ record.title | upper }}</h1>
-                <div class="tags d-flex justify-around">
+                <div class="tags d-flex justify-around mt-3">
                     {% for tag in tags %}
                         {{ block('tagContent') }}
                     {% endfor %}
@@ -40,9 +40,9 @@
             </div>
         </div>
         <div class="content d-flex flex-column flex-xl-row">
-            <div class="block-left col-6 pb-5 mb-5">
+            <div class="block-left col-12 col-xl-6 pb-5 mb-5">
                 {% include '@theme/partials/_line.twig' with {margin: 'mt-3 mb-5'} %}
-                <div class="px-5">
+                <div class="px-3 px-xl-5">
                     <h2 class="text-center">{{ 'Description du poste' | upper }}</h2>
                     <div class="tags d-flex justify-content-center my-3">
                         {% for tag in tags %}
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="block-right col-6">
+            <div class="block-right col-12 col-xl-6">
                 <h2 class="text-center mt-5 text-light">{{ 'Rejoignez-nous !' | upper }}</h2>
             </div>
         </div>
