@@ -6,38 +6,59 @@
 
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% use '@theme/partials/buttons/_tags.twig' %}
+{% use '@theme/partials/modals/_videoModal.twig' %}
 {% block cardNosRealisationsStylesheet %}
-    {{ block('buttonRedStylesheet')}}
+    {{ block('buttonRedStylesheet') }}
     {{ block('tagStylesheet') }}
+    {{ block('buttonFilterStylesheet') }}
+    {{ block('videoModalStyleSheet')}}
     <link rel="stylesheet" href="{{ asset('css/components/cardNosRealisations.css') }}">
+{% endblock %}
+{% block cardNosRealisationsJavascript %}
+    {{ block('tagJavascript') }}
+    {{ block('videoModalJavascript') }}
+    <script src="{{ asset('js/dependency/splide.min.js') }}"></script>
+    <script src="{{ asset('js/dependency/splide.autoscroll.min.js') }}"></script>
+    <script src="{{ asset('js/cardNosRealisations.js') }}"></script>
 {% endblock %}
 
 {% block cardNosRealisationsContent %}
+    <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}">
+        <div class="card nr cardNosRealisations" data-loop-index="{{loopIndex}}">
 
-    <div class="col-12 col-xl-4 p-4">
-        <div class="card nr">
             <div class="card-img">
-                <img src="{{record.video.thumbnail}}" class="card-img-top" alt="record.video.title">
+            {% if record.video is defined and record.video is not null and record.video is not empty %}
+                <canvas class="card-img-top" id="cardImage"></canvas>
+            {% else %}
+                {% for picture in record.carousel %}
+                    {% if loop.first %}
+                        <img class="card-img-top" src="{{ asset(picture) }}" alt="{{ picture.title }}" >
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
                 <div class="play-video">
                     {% include ("images/play-button.svg") %}
                 </div>
             </div>
+
             <div class="card-body">
                 <h3 class="title">{{ record.title }}</h3>
                 <div class="row tag-line mb-3">
-                    {% for tag in tagList %}
-                        <div style="width: fit-content;">
-                            {%  with { tag: tag} %}
-                            {{ block('tagContent') }}
-                            {% endwith %}
-                        </div>
+                    {% for key, tag in tagList %}
+                        {%  with { name: key, slug: tag} %}
+                        {{ block('tagContent') }}
+                        {% endwith %}
                     {% endfor %}
                 </div>
                 <p class="card-text">{{record.teaser|excerpt(350)}}</p>
-                {%  with { text: "En savoir plus", link: record|link, width: "200px", height: "37px", nextWidth: "8%" } %}
+                {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
                 {{ block('buttonRedContent') }}
                 {% endwith %}
             </div>
+
         </div>
+        {% with {loopIndex : loopIndex, record : record} %}
+        {{ block('videoModalContent') }}
+        {% endwith %}
     </div>
 {% endblock %}

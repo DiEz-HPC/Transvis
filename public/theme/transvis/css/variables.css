@@ -6,4 +6,7 @@
     --font-weight-light: 500;
     --font-size: 16px;
     --spacing: 16px;
+    --font-size-title: 24px;
+    --font-size-larger: 36px;
+    --slider-border: 2px solid #aeaeae;
 }

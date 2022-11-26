@@ -223,5 +223,23 @@
         <target>general.phrase.none</target>
       </segment>
     </unit>
+    <unit id="2hoKa1k" name="label.remembermeduration">
+      <segment>
+        <source>label.remembermeduration</source>
+        <target>label.remembermeduration</target>
+      </segment>
+    </unit>
+    <unit id="NF.vvAN" name="You have to login in order to access this page.">
+      <segment>
+        <source>You have to login in order to access this page.</source>
+        <target>You have to login in order to access this page.</target>
+      </segment>
+    </unit>
+    <unit id="JdtMlOI" name="Machine Sheet">
+      <segment>
+        <source>Machine Sheet</source>
+        <target>Machine Sheet</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

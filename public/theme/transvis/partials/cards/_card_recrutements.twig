@@ -10,6 +10,7 @@ card (contentype recrutement):
 #}
 {% use '@theme/partials/buttons/_tags.twig' %}
 {% use '@theme/partials/buttons/_button-red.twig' %}
+
 {% block cardRecrutementStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/cardRecrutement.css') }}">
     {{ block('tagStylesheet') }}
@@ -35,7 +36,7 @@ card (contentype recrutement):
                 {% endfor %}
             </div>
             {%  with { text: "Candidater rapidement", link: card|link, width: "285px", height: "37px", nextWidth: "5%" } %}
-            {{ block('buttonRedContent') }}
+                {{ block('buttonRedContent') }}
             {% endwith %}
         </div>
     </div>

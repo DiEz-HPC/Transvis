@@ -8,6 +8,10 @@
     z-index: 1;
 }
 
+.btn-link-dark {
+    background-color: var(--dark-color) !important;
+}
+
 .button-link:hover {
     text-decoration: none;
     color: var(--light-color);

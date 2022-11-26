@@ -33,7 +33,8 @@
     border-radius: var(--border-radius-banner);
 }
 
-.recrutement .tag {
+.tag {
+    position: relative;
     background-color: var(--red-color);
     z-index: 3;
 }
