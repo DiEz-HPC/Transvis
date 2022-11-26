@@ -1,6 +1,7 @@
 {% extends '@theme/partials/_master.twig' %}
 {% use '@theme/partials/cards/_card_nosRealisations.twig' %}
 {% use '@theme/partials/buttons/_button_filter.twig' %}
+{% use '@theme/partials/_logo_slider.twig' %}
 {#
     Records: 'collection record'
 #}
@@ -8,11 +9,14 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/nosRealisations.css') }}">
     {{ block('cardNosRealisationsStylesheet')}}
+    {{ block('logoSliderStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
     {{ parent() }}
     {{ block('buttonFilterJavascript')}}
+    {{ block('cardNosRealisationsJavascript') }}
+    {{ block('logoSliderJavascript') }}
 {%  endblock javascript %}
 
 {% block main %}
@@ -27,16 +31,16 @@
         {% set pageText = 'Découvrez nos réalisations' %}
     {% endif %}
     {% set recordsTagList = [] %}
-    {% if tag_cloud('realisations-slug') is not empty %}
-        {% for recordsTag in tag_cloud('realisations-slug') %}
-            {% set recordsTagList = recordsTagList|merge([recordsTag.name]) %}
+    {% if tag_cloud("nosRealisationsTags") is not empty %}
+        {% set taxonomies = "nosRealisationsTags" %}
+        {% for recordsTag in tag_cloud("nosRealisationsTags") %}
+            {% set recordsTagList = recordsTagList|merge({(recordsTag.name) : recordsTag.slug }) %}
         {% endfor %}
     {% endif %}
 
-
-    <div class="Nos-realisations mt-4" id="nosRealisationSection" data-records-tag="{{ recordsTagList|json_encode }}">
+    <div class="Nos-realisations mt-5" id="nosRealisationSection">
         <div class="row bs-g-0">
-            <h1>
+            <h1 class="nosRealisationTitle">
                 {{ pageTitle|upper  }}
             </h1>
             <p class="p-3">
@@ -45,13 +49,15 @@
         </div>
         {{ include ('@theme/partials/_line.twig') }}
         <div class="row">
-            <div class="row d-flex align-items-center justify-content-center">
+            <div class="row d-flex align-items-center justify-content-center my-5">
                 <div class="col-12 d-flex align-items-center justify-content-center">
+                {% with { recordsTagList : recordsTagList, taxonomies : taxonomies} %}
                     {{ block('buttonFilterContent') }}
+                {% endwith %}
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     {% for tag in recordsTagList %}
-                        {% with { tag: tag} %}                            
+                        {% with { tag: tag} %}
                         {% endwith %}
                     {% endfor %}
                 </div>
@@ -59,20 +65,23 @@
             <div class="row">
                 {% for record in records %}
                     {% set tagList = [] %}
-                    {% if record|taxonomies['realisations-slug'] is defined %}
-                        {% set tags = record|taxonomies['realisations-slug'] %}
+                    {% if record|taxonomies["nosRealisationsTags"] is defined %}
+                        {% set tags = record|taxonomies["nosRealisationsTags"] %}
                         {% for tag in tags %}
-                            {% set tagList = tagList|merge([tag.slug]) %}
+                            {% set tagList = tagList|merge({(tag.name) : tag.slug}) %}
                         {% endfor %}
                     {% endif %}
-                    {%  with { record: record, tagList: tagList} %}
+                    {%  with { record: record, tagList: tagList, taxonomies: "nosRealisationsTags", loopIndex: loop.index } %}
                     {{ block('cardNosRealisationsContent') }}
                     {% endwith %}
                 {% endfor %}
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="col-12 d-flex justify-content-center align-items-center my-5">
             {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
+        </div>
+        <div class="row">
+            {{ block('logoSliderContent') }}
         </div>
     </div>
 {% endblock main %}

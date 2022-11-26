@@ -4,8 +4,13 @@
 {% block tagStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/tag.css') }}">
 {% endblock %}
+{% block tagJavascript %}
+  <script src="{{ asset('js/tagSeeMore.js') }}"></script>
+{% endblock %}
 {% block tagContent %}
-    <p class="tag me-2 mb-2">
-        {{ tag | upper }}
-    </p>
+    <div class="single-tag-container">
+        <p class="tag me-2 mb-2">
+            <a href="/{{ taxonomies }}/{{ slug }}" class="tag-link">{{ name | upper }}</a>
+        </p>
+    </div>
 {% endblock %}

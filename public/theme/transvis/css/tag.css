@@ -9,3 +9,6 @@
     color: var(--light-color);
     padding: 5px 14px;
 }
+.single-tag-container{
+    width: fit-content;
+}
