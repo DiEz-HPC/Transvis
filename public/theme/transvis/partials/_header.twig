@@ -10,7 +10,7 @@
         </div>
 
 
-        <div class="nav-content align-items-center d-none d-lg-flex" id="burgerMenu">
+        <div class="nav-content align-items-center d-none d-lg-flex justify-content-between" id="burgerMenu">
             {% if options is defined and options.logo is defined and options.logo is not null %}
                 <img src="{{ asset(options.logo) }}" alt="Logo" width="190" height="190">
             {% else %}

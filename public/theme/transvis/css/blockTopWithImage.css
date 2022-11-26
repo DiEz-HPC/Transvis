@@ -7,9 +7,6 @@
 }
 
 .block-top .block-left h1 {
-    font-style: normal;
-    font-weight: 800;
-    line-height: 44px;
     padding-top: 15px;
 }
 
@@ -22,10 +19,16 @@
 }
 
 .block-top .block-right {
-    background: url(../images/savoirs-faire/cobot-emboxeuse.webp) no-repeat center;
     background-size: cover;
+    margin-top: -8%;
 }
 
 .block-top .block-right img {
     width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .block-top .block-right {
+        margin-top: 0;
+    }
 }
