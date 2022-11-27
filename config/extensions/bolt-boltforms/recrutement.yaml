@@ -1,0 +1,93 @@
+templates:
+    form: partials/forms/_recrutementForm.twig
+    email: partials/mail/_recrutementEmail.twig
+#database:
+    #name: bolt_contact_message
+  #contenttype:
+   # name: Message # save all form submissions to the quotations contenttype
+    #ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
+notification:
+    enabled: true
+    debug: true
+    debug_address: test@debug.com # Email address used when debug mode is enabled
+    debug_smtp: true
+    subject: Nouvelle candidature reçue
+    subject_prefix: "[Transvis]"
+    replyto_name: "{NAME} {FIRSTNAME}" # Email addresses and names can be either the
+    replyto_email: "{EMAIL}" # name of a field below or valid text.
+    to_name: "Contact Transvis"
+    to_email: "{MAILTO}"
+    from_name: "{NAME} {FIRSTNAME}"
+    from_email: "{EMAIL}"
+feedback:
+    success: Votre candidature a bien été envoyée.
+    error: Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer.
+fields:
+    lastname:
+        type: text
+        options:
+            required: true
+            label: Nom
+            attr:
+                placeholder: NOM...
+                #class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    firstname:
+        type: text
+        options:
+            required: true
+            label: Prénom
+            attr:
+                placeholder: PRÉNOM...
+                #class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    email:
+        type: email
+        options:
+            required: true
+            label: Adresse mail
+            attr:
+                placeholder: ADRESSE MAIL...
+                #class: contactInput
+            constraints: [NotBlank, Email]
+    motivation:
+        type: textarea
+        options:
+            required: true
+            label: Lettre de motivation
+            attr:
+                placeholder: VOTRE LETTRE DE MOTIVATION...
+                #class: contactInput
+    cv:
+        type: file
+        file_format: cv_
+        directory: /uploads/recrutement/cv/
+        attach: true
+        options:
+            required: true
+            label: CV
+            constraints: 
+                - NotBlank:
+                    message: "Veuillez joindre votre CV"
+                - File:
+                    maxSize: 2M
+                    mimeTypes: [application/pdf, application/x-pdf]
+                    mimeTypesMessage: "Le fichier doit être au format PDF"
+            attr:
+                placeholder: DÉPOSER VOTRE CV...
+                #class: contactInput
+    mailto:
+        type: hidden
+        options:
+            required: true
+            label: Mailto
+            attr:
+                placeholder: Votre mail...
+                class: contactInput
+            constraints: [NotBlank, Email]
+    submit:
+        type: submit
+        options:
+            label: Envoyer
+            attr:
+                class: btn-black

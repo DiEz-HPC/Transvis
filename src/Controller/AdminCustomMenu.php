@@ -21,8 +21,12 @@ class AdminCustomMenu implements ExtensionBackendMenuInterface
             'uri' => $this->urlGenerator->generate('app_contact_message'),
             'extras' => [
                 'icon' => 'fa-envelope'
-            ]
-        ]);
+            ]]);
+        $menu->addChild('Candidatures', [
+            'uri' => $this->urlGenerator->generate('app_candidatures'),
+            'extras' => [
+                'icon' => 'fa-pdf'
+            ]]);
 
 
     }

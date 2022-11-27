@@ -1,13 +1,12 @@
 {#
-    Record.
-        title: 'text'
-        teaser: 'text'
-        profil: 'text'
-        description:
-            contrat: 'text'
-            temps: 'text'
-            salary: 'number'
-
+Record.
+    title: 'text'
+    teaser: 'text'
+    profil: 'text'
+    description:
+        contrat: 'text'
+        temps: 'text'
+        salary: 'number'
 #}
 
 {% extends '@theme/partials/_master.twig' %}
@@ -59,7 +58,10 @@
                 </div>
             </div>
             <div class="block-right col-12 col-xl-6">
-                <h2 class="text-center mt-5 text-light">{{ 'Rejoignez-nous !' | upper }}</h2>
+                <h2 class="text-center mt-5 mb-3 text-light">{{ 'Rejoignez-nous !' | upper }}</h2>
+                <div class="container mt-5">
+                    {{ boltform('recrutement') }}
+                </div>
             </div>
         </div>
     </div>

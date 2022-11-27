@@ -241,5 +241,53 @@
         <target>Machine Sheet</target>
       </segment>
     </unit>
+    <unit id="KAcFzss" name="NOM...">
+      <segment>
+        <source>NOM...</source>
+        <target>NOM...</target>
+      </segment>
+    </unit>
+    <unit id="zdCP2Rd" name="PRÉNOM...">
+      <segment>
+        <source>PRÉNOM...</source>
+        <target>PRÉNOM...</target>
+      </segment>
+    </unit>
+    <unit id=".7ROOc8" name="ADRESSE MAIL...">
+      <segment>
+        <source>ADRESSE MAIL...</source>
+        <target>ADRESSE MAIL...</target>
+      </segment>
+    </unit>
+    <unit id="aMIkarM" name="VOTRE LETTRE DE MOTIVATION...">
+      <segment>
+        <source>VOTRE LETTRE DE MOTIVATION...</source>
+        <target>VOTRE LETTRE DE MOTIVATION...</target>
+      </segment>
+    </unit>
+    <unit id="h7V4k1c" name="Lettre de motivation">
+      <segment>
+        <source>Lettre de motivation</source>
+        <target>Lettre de motivation</target>
+      </segment>
+    </unit>
+    <unit id="D1.tF5H" name="CV">
+      <segment>
+        <source>CV</source>
+        <target>CV</target>
+      </segment>
+    </unit>
+    <unit id="vdIL9gy" name="DÉPOSER VOTRE CV...">
+      <segment>
+        <source>DÉPOSER VOTRE CV...</source>
+        <target>DÉPOSER VOTRE CV...</target>
+      </segment>
+    </unit>
+    <unit id="n4bQgYh" name="test">
+      <segment>
+        <source>test</source>
+        <target>test</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
