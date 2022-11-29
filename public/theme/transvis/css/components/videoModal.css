@@ -89,8 +89,8 @@
         height: 60vh;
     }
     .modalYoutube .modalContactText p{
-        font-size: var(--font-size-large);
-    }    
+        font-size: var(--font-size-larger);
+    }
 }
 
 /*

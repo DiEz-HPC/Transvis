@@ -28,6 +28,10 @@
     {% set pageTitle = options.recrutementsTitle|default('Recrutements') %}
     {% set pageDescription = options.recrutementsText|default('') %}
     {% set steps = options.recrutementsStep|default(null) %}
+    {% set recordsName = [] %}
+    {% for record in records %}
+        {% set recordsName = recordsName|merge({(record|link) : record.title}) %}
+    {% endfor %}
     <div class="row">
         <div class="recrutementHeader">
             <h1 class="text-center">
@@ -49,7 +53,7 @@
                     {{ 'postes à pourvoir'|upper }}
                 </h2>
                 <div class="col-xl-3">
-                    {% with { recordsTagList : [], taxonomies : ''} %}
+                    {% with { recordsTagList : recordsName, taxonomies : 'false'} %}
                     {{ block('buttonFilterContent')}}
                     {% endwith %}
                 </div>

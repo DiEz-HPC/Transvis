@@ -1,14 +1,19 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // On récupère la list des tags et slug
     const tagList = document.getElementById('buttonFilterContainer').dataset.recordsTag;
     const taxonomy = document.getElementById('buttonFilterContainer').dataset.recordsTaxonomies;
 
-
-    
-    // On parse en JSON 
+    // On parse en JSON
     const wordsArr = JSON.parse(tagList);
-    const words = Object.keys(wordsArr);
-      
+    let words;
+    if(taxonomy === 'false'){
+        words = Object.values(wordsArr);
+    }else{
+        words = Object.keys(wordsArr);
+    }
+   
     const formEl = document.querySelector('#search')
     const dropEl = document.querySelector('.drop')
     const seeAllEl = document.querySelector('#buttonSeeAll')
@@ -16,16 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const formHandler = (e) => {
         // On récupère la valeur du champ de recherche en minuscule
         const userInput = e.target.value.toLowerCase()
-    
+
         // Si le contenu est vidé on cache la liste
         if(userInput.length === 0) {
             dropEl.style.height = 0
-            return dropEl.innerHTML = ''              
+            return dropEl.innerHTML = ''
         }
-    
+
         // On filtre les tags en fonction de la valeur du champ de recherche
         const filteredWords = words.filter(word => word.toLowerCase().includes(userInput)).sort().splice(0, 5)
-        
+
         dropEl.innerHTML = ''
 
         // Pour chaque tag filtré on crée un élément li
@@ -42,30 +47,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // On récupère le slug du tag
                 const slug = wordsArr[e.target.innerText]
-                var link = '/' + taxonomy + '/' + slug;
-                window.location.href = link;
+                if(taxonomy != 'false'){
+                    window.location.href = '/' + taxonomy + '/' + slug;
+                }else{
+                    // On récupère la clé associé a la valeur du tag
+                    let link = Object.keys(wordsArr).find(key => wordsArr[key] === e.target.innerText);
+                    // On redirige vers la page du poste
+                    window.location.href =  link;
+                }
+                
             })
             // On ajoute le tag au contenu de l'élément li
-            listEl.textContent = item 
+            listEl.textContent = item
             dropEl.appendChild(listEl)
         })
-    
+
         // Si la recherche ne retourne aucun résultat on cache la liste
         if(dropEl.children[0] === undefined) {
             return dropEl.style.height = 0
         }
-        
+
         // On gère la hauteur de la liste en fonction du nombre d'éléments
         let totalChildrenHeight = dropEl.children[0].offsetHeight * filteredWords.length
         dropEl.style.height = totalChildrenHeight + 'px'
-    
+
     }
 
     const seeAllHandler = (e) => {
         // On récupere la valeurs du data attribute
-        const seeAll = e.target.dataset.recordsAll
         // On redirige vers la page du lien
-        window.location.href = seeAll
+        window.location.href = e.target.dataset.recordsAll
     }
 
     formEl.addEventListener('input', formHandler)

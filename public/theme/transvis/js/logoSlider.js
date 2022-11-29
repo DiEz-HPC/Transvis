@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-   var splideEl = document.querySelectorAll("#logoSlider");
-    splideEl.forEach(function (splide) {
-        var splide = new Splide(splide, {
+   const splideEl = document.querySelectorAll("#logoSlider");
+    splideEl.forEach(function (splideDiv) {
+        const splideObject = new Splide(splideDiv, {
             type: "loop",
             drag: "free",
             focus: "center",
@@ -16,15 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         });
 
-        splide.mount(window.splide.Extensions);
-        setLogoSize(splide);
+        splideObject.mount(window.splide.Extensions);
+        setLogoSize(splideObject);
     });
 });
 
-function setLogoSize(splide) {
-  var splideDiv = splide.root;
-  var sliderWidth = splideDiv.querySelector(".splide__slide").offsetWidth;
-  var logoSize = splideDiv.querySelectorAll(".splide__slide img");
+function setLogoSize(splideObject) {
+  const splideDiv = splideObject.root;
+  const sliderWidth = splideDiv.querySelector(".splide__slide").offsetWidth;
+  const logoSize = splideDiv.querySelectorAll(".splide__slide img");
   logoSize.forEach(function (logo) {
     logo.style.width = sliderWidth / 2 + "px";
   });

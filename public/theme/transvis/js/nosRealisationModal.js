@@ -30,8 +30,6 @@ const openModal = (cards, modals, body) => {
 };
 
 const setLogoSizeSlider = (splideDiv) => {
-    // A FAIRE \\
-    let sliderWidth = splideDiv.querySelector(".splide__slide").offsetWidth;
     let logoSize = splideDiv.querySelectorAll(".splide__slide img");
     logoSize.forEach(function (logo) {
         logo.style.width = 125 + "px";
@@ -42,7 +40,7 @@ const setLogoSizeSlider = (splideDiv) => {
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
     modal.addEventListener("click", function (e) {
-        if (e.target == modal) {
+        if (e.target === modal) {
             pauseVideo(modal, true);
             modal.style.display = "none";
             body.style.overflow = "auto";

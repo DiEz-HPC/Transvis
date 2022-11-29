@@ -1,0 +1,66 @@
+<script>
+    deleteButton = document.querySelectorAll(".deleteButton");
+    feedbackMessage = document.querySelector(".boltforms-feedback");
+    replyButton = document.querySelectorAll(".replyButton");
+    modal = document.querySelector(".replyModal");
+    form = document.querySelector("#replyForm");
+
+    if (typeof validateDelete !== 'undefined') {
+        validateDelete();
+    }
+    if (typeof replyToMessage !== 'undefined') {
+        replyToMessage();
+    }
+    if (typeof closeModal !== 'undefined') {
+        closeModal();
+    }
+    if (typeof formAlreadySend !== 'undefined') {
+        formAlreadySend();
+    }
+</script>
+{% if candidatures is defined and candidatures is not empty %}
+    {% for candidature in candidatures %}
+        <div class="card w-100 my-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        Message de :
+                        {{ candidature.lastname }}
+                        {{ candidature.firstname }}
+                    </div>
+                </div>
+                <div class="row text-muted mt-2 pl-3">
+                    {{ candidature.email }}
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    {{ candidature.motivation }}
+                </p>
+            </div>
+            <div class="card-footer">
+                <div class="row justify-content-around">
+                    <div class="col-10">
+                        <button type="button" class="btn btn-primary replyButton" id="reply_email"
+                                data-email="{{ candidature.email }}">Répondre
+                        </button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-end">
+                        <form action="{{ path('app_contact_message_delete', {'id': candidature.id}) }}" method="post">
+                            <button type="submit" class="btn btn-danger deleteButton">
+                                <i class="fas fa-trash-alt"></i>
+                                Supprimer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="col-12">
+        <div class="alert alert-info" role="alert">
+            Aucun message à afficher
+        </div>
+    </div>
+{% endif %}

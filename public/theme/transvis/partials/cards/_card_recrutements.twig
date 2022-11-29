@@ -10,6 +10,7 @@ card (contentype recrutement):
 #}
 {% use '@theme/partials/buttons/_tags.twig' %}
 {% use '@theme/partials/buttons/_button-red.twig' %}
+
 {% block cardRecrutementStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/cardRecrutement.css') }}">
     {{ block('tagStylesheet') }}
@@ -17,7 +18,6 @@ card (contentype recrutement):
 {% endblock %}
 
 {% block cardRecrutementContent %}
-
     {% set tags = [card.description.contrat, 'temps ' ~ card.description.temps, card.description.salary ~ '€'] %}
     <div class="card-recrutement col-12 col-xl-3 mb-5">
         <div class="block-image">
