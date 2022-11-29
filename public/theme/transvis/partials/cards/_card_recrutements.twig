@@ -19,7 +19,6 @@ card (contentype recrutement):
 {% block cardRecrutementContent %}
 
     {% set tags = [card.description.contrat, 'temps ' ~ card.description.temps, card.description.salary ~ '€'] %}
-
     <div class="card-recrutement col-12 col-xl-3 mb-5">
         <div class="block-image">
             <img class="w-100 h-100" src="{{ asset('images/banner-recrutement-card.png') }}" alt="bannière recrutement">
@@ -29,13 +28,13 @@ card (contentype recrutement):
             <p class="teaser mb-2">{{ card.teaser }}</p>
             <div class="tags d-flex pb-1">
                 {% for tag in tags %}
-                    {%  with { tag: tag} %}
+                    {%  with { name: tag , slug: tag} %}
                     {{ block('tagContent') }}
                     {% endwith %}
                 {% endfor %}
             </div>
             {%  with { text: "Candidater rapidement", link: card|link, width: "285px", height: "37px", nextWidth: "5%" } %}
-            {{ block('buttonRedContent') }}
+                {{ block('buttonRedContent') }}
             {% endwith %}
         </div>
     </div>

@@ -1,0 +1,17 @@
+{% block recruitmentsNumberStylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/components/recrutementsNumber.css') }}">
+{% endblock %}
+
+{% block recruitmentsNumberContent %}
+    <div class="col-12 col-xl-3 stepContainer d-flex flex-column justify-content-center align-items-center">
+        <div class="numberOuter mb-3">
+            {{ index }}
+        </div>
+        <div class="stepText text-center px-4 mx-4">
+            <h3>
+                {{title}}</h3>
+            <p>
+                {{content}}</p>
+        </div>
+    </div>
+{% endblock %}

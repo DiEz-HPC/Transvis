@@ -8,9 +8,14 @@
   <script src="{{ asset('js/tagSeeMore.js') }}"></script>
 {% endblock %}
 {% block tagContent %}
+    {% if taxonomies is defined and taxonomies is not null and taxonomies is not empty %}
+        {% set taxonomies = "/" ~  taxonomies  %}
+    {% else %}
+        {% set taxonomies ='' %}
+    {% endif %}
     <div class="single-tag-container">
         <p class="tag me-2 mb-2">
-            <a href="/{{ taxonomies }}/{{ slug }}" class="tag-link">{{ name | upper }}</a>
+            <a href="{{ taxonomies }}/{{ slug }}" class="tag-link">{{ name | upper }}</a>
         </p>
     </div>
 {% endblock %}
