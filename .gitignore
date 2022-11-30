@@ -54,6 +54,7 @@ docker-compose.override.yaml
 /config/secrets/prod/prod.decrypt.private.php
 /public/assets/
 /public/bundles/
+/public/files/recrutements/
 /var/cache/*
 !/var/cache/.gitkeep
 /var/log/*

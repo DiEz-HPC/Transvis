@@ -8,11 +8,13 @@ use Bolt\BoltForms\Event\BoltFormsEvents;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class RecrutementSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private EntityManagerInterface $em
+        private EntityManagerInterface $em,
+        private SessionInterface $session
     )
     {}
 
@@ -20,14 +22,26 @@ class RecrutementSubscriber implements EventSubscriberInterface
     {
         if ($event->getEvent()->getForm()->getName() == 'recrutement') {
             $data = $event->getData();
-            $contactMessage = new Candidature();
-            $contactMessage->setLastname($data['lastname']);
-            $contactMessage->setFirstname($data['firstname']);
-            $contactMessage->setEmail($data['email']);
-            $contactMessage->setMotivation($data['motivation']);
-            $contactMessage->setFilename($data['cv']->getClientOriginalName());
-            $this->em->persist($contactMessage);
-            $this->em->flush();
+
+            $candidatures = $this->em->getRepository(Candidature::class)->findBy([
+                'job' => $data['job'],
+                'email' => $data['email'],
+            ]);
+
+            if (!$candidatures) {
+                $candidature = new Candidature();
+                $candidature->setLastname($data['lastname']);
+                $candidature->setFirstname($data['firstname']);
+                $candidature->setEmail($data['email']);
+                $candidature->setMotivation($data['motivation']);
+                $candidature->setFilename($data['cv']->getClientOriginalName());
+                $candidature->setJob($data['job']);
+                $this->em->persist($candidature);
+                $this->em->flush();
+                $this->session->getFlashBag()->add('success', 'Votre candidature a bien été envoyée.');
+            }else{
+                $this->session->getFlashBag()->add('error', 'Vous avez déjà envoyé une candidature pour ce poste.');
+            }
         }
         // ...
     }

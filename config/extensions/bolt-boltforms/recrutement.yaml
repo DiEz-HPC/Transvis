@@ -22,6 +22,8 @@ notification:
 feedback:
     success: Votre candidature a bien été envoyée.
     error: Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer.
+    redirect:
+        target: /recrutements  # A page path, or URL     # Optional keys for the GET parameters
 fields:
     lastname:
         type: text
@@ -61,7 +63,7 @@ fields:
     cv:
         type: file
         file_format: cv_
-        directory: /uploads/recrutement/cv/
+        directory: /public/files/recrutements/cv/
         attach: true
         options:
             required: true
@@ -75,6 +77,14 @@ fields:
                     mimeTypesMessage: "Le fichier doit être au format PDF"
             attr:
                 placeholder: DÉPOSER VOTRE CV...
+                #class: contactInput
+    job:
+        type: hidden
+        options:
+            required: true
+            label: Poste
+            attr:
+                placeholder: POSTE...
                 #class: contactInput
     mailto:
         type: hidden

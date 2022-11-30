@@ -5,9 +5,6 @@
 {% endif %}
 <div class="mb-4">
     {{ form_start(form, {'attr': {'class': 'd-flex flex-column col-12 justify-content-center align-items-center'}}) }}
-    {% if valid %}
-        <div class="boltforms-feedback error bg-success">{{ formconfig.feedback.success|raw }}</div>
-    {% endif %}
     {% if submitted and not valid %}
         <div class="boltforms-feedback error">{{ formconfig.feedback.error|raw }}</div>
     {% endif %}
@@ -35,6 +32,7 @@
             {{ form_errors(form.cv) }}
             {{ form_widget(form.cv) }}
         </div>
+        {{ form_widget(form.job, {'attr': {'value': record.title}}) }}
         <div class="justify-content-center align-items-center">
             {{ form_widget(form.submit, { 'attr': {
                 'class': 'btn btn-dark send-mail-button d-flex justify-content-center align-items-center'},

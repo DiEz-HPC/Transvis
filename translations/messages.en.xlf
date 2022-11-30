@@ -73,5 +73,11 @@
         <target>Last province contact company</target>
       </segment>
     </unit>
+    <unit id="0PsI1zu" name="filemanager.delete_folder_missing">
+      <segment>
+        <source>filemanager.delete_folder_missing</source>
+        <target>filemanager.delete_folder_missing</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

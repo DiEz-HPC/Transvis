@@ -25,12 +25,16 @@
                 <div class="row">
                     <div class="col-8">
                         Message de :
-                        {{ candidature.lastname }}
-                        {{ candidature.firstname }}
+                        {{ candidature.lastname | capitalize }}
+                        {{ candidature.firstname | capitalize }}
                     </div>
                 </div>
-                <div class="row text-muted mt-2 pl-3">
+                <div class="row text-muted mt-2 pl-3 mb-2">
                     {{ candidature.email }}
+                </div>
+                <div class="row col-8">
+                    Pour le poste de :
+                    {{ candidature.job | capitalize }}
                 </div>
             </div>
             <div class="card-body">
