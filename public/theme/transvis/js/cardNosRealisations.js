@@ -13,9 +13,8 @@ let captureImage = (video, card) => {
     if (canvas) {
         let context = canvas.getContext("2d");
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        let data = canvas.toDataURL("image/png");
-        return data;
+        return canvas.toDataURL("image/png");
     }else{
-        return;
+        return null;
     }
 };

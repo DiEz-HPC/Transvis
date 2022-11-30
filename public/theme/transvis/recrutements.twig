@@ -3,17 +3,74 @@
 #}
 
 {% extends '@theme/partials/_master.twig' %}
-
+{% use '@theme/partials/cards/_card_recrutements.twig' %}
+{% use '@theme/partials/_recruitments_number/_recruitments_number.twig' %}
+{% use '@theme/partials/buttons/_button_filter.twig' %}
 {% block stylesheet %}
     {{ parent() }}
+    {{ block('cardRecrutementStylesheet') }}
+    {{ block('recruitmentsNumberStylesheet') }}
+    {{ block('buttonFilterStylesheet')}}
+    <style>
+        .card-recrutement {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+    </style>
 {% endblock stylesheet %}
 
 {% block javascript %}
-{{ parent() }}
+    {{ parent() }}
+    {{ block('buttonFilterJavascript')}}
 {%  endblock javascript %}
 
 {% block main %}
+    {% set pageTitle = options.recrutementsTitle|default('Recrutements') %}
+    {% set pageDescription = options.recrutementsText|default('') %}
+    {% set steps = options.recrutementsStep|default(null) %}
+    {% set recordsName = [] %}
     {% for record in records %}
-        <a href="{{ record|link }}">{{ record.title }}</a>
+        {% set recordsName = recordsName|merge({(record|link) : record.title}) %}
     {% endfor %}
+    <div class="row">
+        <div class="recrutementHeader">
+            <h1 class="text-center">
+                {{ pageTitle }}
+            </h1>
+            <p class="mx-5 my-4 text-center">
+                {{ pageDescription }}
+            </p>
+            <div class="row d-flex justify-content-center">
+                {% for step in steps %}
+                    {% with {index:loop.index, title: step.title, content: step.text} %}
+                    {{ block('recruitmentsNumberContent') }}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+            {% include "@theme/partials/_line.twig" %}
+            <div class="row flex-column align-items-center">
+                <h2 class="text-center my-5 col-12">
+                    {{ 'postes à pourvoir'|upper }}
+                </h2>
+                <div class="col-xl-3">
+                    {% with { recordsTagList : recordsName, taxonomies : 'false'} %}
+                    {{ block('buttonFilterContent')}}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+        <div class="recrutementBody">
+            <div class="row justify-content-around py-5 px-4">
+                {% for record in records %}
+                    {% with { card: record} %}
+                    {{ block('cardRecrutementContent')}}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center my-5">
+            {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
+        </div>
+    </div>
 {% endblock main %}

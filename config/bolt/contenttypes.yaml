@@ -294,7 +294,7 @@ nosRealisations:
 recrutements:
     name: Recrutements
     singular_name: Recrutement
-    slug: Recrutements
+    slug: recrutements
     fields:
         title:
           type: text
@@ -309,7 +309,7 @@ recrutements:
           info: Texte de description du poste
           group: Recrutement
         profil:
-          type: textarea
+          type: redactor
           label: Profil recherché
           info: Profil recherché
           group: Recrutement
@@ -318,6 +318,10 @@ recrutements:
             label: Déscription du poste
             group: Détails
             fields:
+                description:
+                    type: redactor
+                    label: Déscription du poste
+                    info: Déscription du poste
                 contrat:
                     type: select
                     label: Type de contrat
@@ -418,6 +422,27 @@ vosOptions:
             label: Texte de la page Recrutements
             info: Texte de la page Recrutements
             group: Recrutements
+        recrutementsStep:
+            type: collection
+            limit: 3
+            label: Etapes de recrutement
+            info: Etapes de recrutement
+            group: Recrutements
+            fields:
+                step:
+                    type: set
+                    label: Etape
+                    fields:
+                        title:
+                          type: text
+                          label: Titre de l'étape
+                          info: Titre de l'étape
+                          pattern: ^.{1,50}$
+                        text:
+                          type: text
+                          label: Texte de l'étape
+                          info: Texte de l'étape
+                          pattern: ^.{1,100}$
         logo:
             type: image
             label: Logo

@@ -1,0 +1,94 @@
+:root {
+    --border-radius-banner: 5px;
+}
+
+.recrutement .banner {
+    height: 368px;
+    position: relative;
+    border-radius: var(--border-radius-banner);
+}
+
+.recrutement .banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    filter: grayscale(1);
+    border-radius: var(--border-radius-banner);
+}
+
+.recrutement .banner .filter-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.6;
+    z-index: 2;
+    border-radius: var(--border-radius-banner);
+}
+
+.tag {
+    position: relative;
+    background-color: var(--red-color);
+    z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+    .tag {
+        font-size: 10px;
+    }
+}
+
+.recrutement .banner .banner-text h1 {
+    color: var(--light-color);
+    z-index: 3;
+}
+
+.recrutement .banner .banner-text h1::before {
+    display: none;
+}
+
+.tags .tag {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.recrutement .content .block-right {
+    background-image: url(../images/bgRed.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.recrutement h3{
+    font-size: 36px;
+    font-weight: var(--font-weight--bold);
+    color: var(--dark-color);
+    position: relative;
+    line-height: 44px;
+}
+
+@media screen and (max-width: 768px) {
+    .recrutement h3 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+.recrutement h3::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -15px;
+    left: 0;
+    width: 250px;
+    border: 3px solid var(--red-color);
+    background-color: var(--red-color);
+    border-radius: 0.5em;
+    margin: auto;
+}
