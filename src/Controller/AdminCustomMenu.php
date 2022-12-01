@@ -25,7 +25,7 @@ class AdminCustomMenu implements ExtensionBackendMenuInterface
         $menu->addChild('Candidatures', [
             'uri' => $this->urlGenerator->generate('app_candidatures'),
             'extras' => [
-                'icon' => 'fa-pdf'
+                'icon' => 'fa-file-invoice'
             ]]);
 
 

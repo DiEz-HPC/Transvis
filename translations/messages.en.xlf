@@ -79,5 +79,11 @@
         <target>filemanager.delete_folder_missing</target>
       </segment>
     </unit>
+    <unit id="XwuQgYC" name="Votre candidature a bien été envoyée.">
+      <segment>
+        <source>Votre candidature a bien été envoyée.</source>
+        <target>Votre candidature a bien été envoyée.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

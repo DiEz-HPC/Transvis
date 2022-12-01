@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\CandidatureRepository;
+use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CandidatureRepository;
 
 #[ORM\Entity(repositoryClass: CandidatureRepository::class)]
 class Candidature
@@ -31,6 +32,14 @@ class Candidature
 
     #[ORM\Column(length: 255)]
     private ?string $job = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private DateTimeInterface $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -105,6 +114,18 @@ class Candidature
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
