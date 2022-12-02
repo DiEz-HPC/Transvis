@@ -388,7 +388,7 @@ contactPage:
     default_status: held
     viewless: false
     singleton: true
-    icon_many: "fa:envelope"
+    icon_many: "fa:address-book"
     icon_one: "fa:envelope"
     record_template: 'contact.twig'    
 

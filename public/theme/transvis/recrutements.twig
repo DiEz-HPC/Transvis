@@ -49,6 +49,16 @@
             </div>
             {% include "@theme/partials/_line.twig" %}
             <div class="row flex-column align-items-center">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.flashes('error') %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
                 <h2 class="text-center my-5 col-12">
                     {{ 'postes à pourvoir'|upper }}
                 </h2>
