@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
-use App\Repository\CandidatureRepository;
-use Bolt\Controller\Backend\BackendZoneInterface;
 use Bolt\Controller\TwigAwareController;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Repository\CandidatureRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Bolt\Controller\Backend\BackendZoneInterface;
+use Nette\Utils\FileSystem;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
 class CandidaturesController extends TwigAwareController implements BackendZoneInterface
@@ -18,8 +19,7 @@ class CandidaturesController extends TwigAwareController implements BackendZoneI
     public function __construct(
         private CandidatureRepository $repository,
         private EntityManagerInterface   $entityManager,
-    )
-    {
+    ) {
     }
 
     #[Route("candidatures/", name: "app_candidatures")]
@@ -47,7 +47,6 @@ class CandidaturesController extends TwigAwareController implements BackendZoneI
 
             ]
         );
-
     }
 
 
@@ -56,6 +55,7 @@ class CandidaturesController extends TwigAwareController implements BackendZoneI
     {
         $content = $this->repository->find($id);
         if ($content) {
+            FileSystem::delete($this->getFile($content->getFilename()));
             $this->entityManager->remove($content);
             $this->entityManager->flush();
             $this->addFlash('success', 'Candidature supprimée');
@@ -63,5 +63,26 @@ class CandidaturesController extends TwigAwareController implements BackendZoneI
             $this->addFlash('error', 'Candidature introuvable');
         }
         return $this->redirectToRoute('app_candidatures');
+    }
+
+    #[Route("candidatures/download/{id}", name: "app_candidatures_download")]
+    public function downloadFile(int $id): Response
+    {
+        $content = $this->repository->find($id);
+        $filename = $content->getFilename();
+        $file = $this->getFile($filename);
+        $reponse = new Response();
+        $reponse->headers->set('Content-Type', 'application/pdf');
+        $reponse->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+        $reponse->headers->set('Content-Length', filesize($file));
+        $reponse->sendHeaders();
+        $reponse->setContent(file_get_contents($file));
+        return $reponse;
+    }
+
+    private function getFile($filename)
+    {
+        $path = $this->getParameter('upload_directory');
+        return $path . '/' . $filename;
     }
 }

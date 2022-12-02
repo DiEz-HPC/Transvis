@@ -7,5 +7,23 @@
         <target>Le fichier doit être au format PDF</target>
       </segment>
     </unit>
+    <unit id="ubpOVg9" name="Veuillez renseigner un fichier PDF ou Word">
+      <segment>
+        <source>Veuillez renseigner un fichier PDF ou Word</source>
+        <target>Veuillez renseigner un fichier PDF ou Word</target>
+      </segment>
+    </unit>
+    <unit id="Nu1MY_i" name="Veuillez renseigner votre CV">
+      <segment>
+        <source>Veuillez renseigner votre CV</source>
+        <target>Veuillez renseigner votre CV</target>
+      </segment>
+    </unit>
+    <unit id="SPmlsO8" name="Veuillez renseigner un fichier PDF">
+      <segment>
+        <source>Veuillez renseigner un fichier PDF</source>
+        <target>Veuillez renseigner un fichier PDF</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

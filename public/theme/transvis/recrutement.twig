@@ -60,7 +60,7 @@ Record.
             <div class="block-right col-12 col-xl-6">
                 <h2 class="text-center mt-5 mb-3 text-light">{{ 'Rejoignez-nous !' | upper }}</h2>
                 <div class="container mt-5">
-                    {{ boltform('recrutement') }}
+                    {{ render(url('app_recrutements_form_render')) }}
                 </div>
             </div>
         </div>

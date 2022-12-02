@@ -289,5 +289,101 @@
         <target>test</target>
       </segment>
     </unit>
+    <unit id="laeSb0k" name="POSTE...">
+      <segment>
+        <source>POSTE...</source>
+        <target>POSTE...</target>
+      </segment>
+    </unit>
+    <unit id="zYeSeNJ" name="action.stop_impersonating">
+      <segment>
+        <source>action.stop_impersonating</source>
+        <target>action.stop_impersonating</target>
+      </segment>
+    </unit>
+    <unit id="OYUVA5." name="general.label.search">
+      <segment>
+        <source>general.label.search</source>
+        <target>general.label.search</target>
+      </segment>
+    </unit>
+    <unit id="rWF6D91" name="Job">
+      <segment>
+        <source>Job</source>
+        <target>Job</target>
+      </segment>
+    </unit>
+    <unit id="d1tb_WR" name="Created at">
+      <segment>
+        <source>Created at</source>
+        <target>Created at</target>
+      </segment>
+    </unit>
+    <unit id="ifaDJWD" name="Year">
+      <segment>
+        <source>Year</source>
+        <target>Year</target>
+      </segment>
+    </unit>
+    <unit id="MQylA_8" name="Month">
+      <segment>
+        <source>Month</source>
+        <target>Month</target>
+      </segment>
+    </unit>
+    <unit id="jyNk4Ru" name="Day">
+      <segment>
+        <source>Day</source>
+        <target>Day</target>
+      </segment>
+    </unit>
+    <unit id="8AY7gIc" name="Hour">
+      <segment>
+        <source>Hour</source>
+        <target>Hour</target>
+      </segment>
+    </unit>
+    <unit id="S3hmW_x" name="Minute">
+      <segment>
+        <source>Minute</source>
+        <target>Minute</target>
+      </segment>
+    </unit>
+    <unit id="pWjmb7S" name="NOM ...">
+      <segment>
+        <source>NOM ...</source>
+        <target>NOM ...</target>
+      </segment>
+    </unit>
+    <unit id="I0V.zPb" name="Prénom ...">
+      <segment>
+        <source>Prénom ...</source>
+        <target>Prénom ...</target>
+      </segment>
+    </unit>
+    <unit id="aRTjxZh" name="Adresse mail ...">
+      <segment>
+        <source>Adresse mail ...</source>
+        <target>Adresse mail ...</target>
+      </segment>
+    </unit>
+    <unit id="uOjfTxH" name="Motivation ...">
+      <segment>
+        <source>Motivation ...</source>
+        <target>Motivation ...</target>
+      </segment>
+    </unit>
+    <unit id="97Xekp9" name="CV ...">
+      <segment>
+        <source>CV ...</source>
+        <target>CV ...</target>
+      </segment>
+    </unit>
+    <unit id="R3oQYj1" name="Poste ...">
+      <segment>
+        <source>Poste ...</source>
+        <target>Poste ...</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
