@@ -7,11 +7,11 @@
 {% extends '@theme/partials/_master.twig' %}
 
 {% use '@theme/partials/_logo_slider.twig' %}
-
+{% use '@theme/partials/_homeHeader.twig' %}
 {% block stylesheet %}
     {{ parent() }}
     {{ block('logoSliderStylesheet') }}
- 
+    {{ block('homeHeaderStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -21,6 +21,6 @@
 
 
 {% block main %}
-
+    {{ block('homeHeaderContent')}}
     {{ block('logoSliderContent')}}
 {% endblock main %}
