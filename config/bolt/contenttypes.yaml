@@ -10,14 +10,47 @@ accueil:
     slug: accueil
     title_format: Page d'accueil
     fields:
-        video:
+        headerVideo:
             type: file
             label: Video
             extensions: [mp4, webm]
-        teaser:
+            group: En-tête
+        headerTitle:
             type: text
+            label: Titre
+            group: En-tête
+        headerTeaser:
+            type: textarea
             label: Texte d'introduction
-            info: Texte d'introduction présent sur le header       
+            info: Texte d'introduction présent sur le header
+            group: En-tête
+        savoirFaireTitle:
+            type: text
+            label: Titre
+            group: Savoir-faire
+        savoirFaireTeaser:
+            type: textarea
+            label: Texte d'introduction
+            info: Texte d'introduction présent sur le header
+            group: Savoir-faire
+        nosEquipesTitle:
+            type: text
+            label: Titre
+            group: Nos équipes
+        nosEquipesTeaser:
+            type: textarea
+            label: Texte d'introduction
+            info: Texte d'introduction présent sur le header
+            group: Nos équipes
+        nosValeursTitle:
+            type: text
+            label: Titre
+            group: Nos valeurs
+        nosValeursTeaser:
+            type: textarea
+            label: Texte d'introduction
+            info: Texte d'introduction présent sur le header
+            group: Nos valeurs     
     viewless: false
     record_template: 'index.twig'
     default_status: held

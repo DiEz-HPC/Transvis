@@ -11,6 +11,7 @@
 {% block stylesheet %}
     {{ parent() }}
     {{ block('logoSliderStylesheet') }}
+ 
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -18,6 +19,8 @@
     {{ block('logoSliderJavascript')}}
 {%  endblock javascript %}
 
+
 {% block main %}
+
     {{ block('logoSliderContent')}}
 {% endblock main %}
