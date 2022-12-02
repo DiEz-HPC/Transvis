@@ -24,7 +24,14 @@
             </div>
             <div class="card-footer">
                 <div class="row justify-content-around">
-                    <div class="col-10"></div>
+                    <div class="col-10">
+                        <div class="col-3 d-flex justify-content-start">
+                            <a href="{{ path('app_candidatures_download', {'id' : candidature.id}) }}" class="btn btn-success" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Télécharger le CV
+                            </a>
+                        </div>
+                    </div>
                     <div class="col-2 d-flex justify-content-end">
                         <form action="{{ path('app_candidatures_delete', {'id': candidature.id}) }}" method="post">
                             <button type="submit" class="btn btn-danger deleteButton">

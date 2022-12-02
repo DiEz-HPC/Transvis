@@ -36,6 +36,9 @@ class Candidature
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private DateTimeInterface $createdAt;
 
+    #[ORM\Column(length: 255)]
+    private int $jobId;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -126,6 +129,18 @@ class Candidature
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getJobId(): ?int
+    {
+        return $this->jobId;
+    }
+    
+    public function setJobId($jobId)
+    {
+        $this->jobId = $jobId;
 
         return $this;
     }
