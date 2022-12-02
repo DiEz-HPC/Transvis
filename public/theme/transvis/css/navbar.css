@@ -11,15 +11,15 @@
     background-color: var(--red-color);
 }
 .nav-item {
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight--bold);
 }
 .nav-link svg {
     width: 1.5rem;
     height: 1.5rem;
 }
 .nav-item.active a {
-    color: var(--red-color);
-    fill: var(--red-color);
+    color: var(--red-color) !important;
+    fill: var(--red-color) !important;
 }
 .burger-toggler {
     display: none;
