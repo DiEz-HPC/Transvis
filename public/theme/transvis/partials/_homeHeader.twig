@@ -7,14 +7,28 @@
             display: block;
             position: relative;
 
-        } /* This has been changed */
+        } 
+        #headerVideoDiv header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+        }
+        #headerVideoDiv header a {
+            color: var(--light-color);
+        }
+        #headerVideoDiv video {
+             filter: grayscale(100%);
+        }
         #videoHeader {
             width: 100%;
             height: auto
-        } /* This has been changed */
+        }
         #headerContent {
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             top: 0;
             left: 0;
             display: flex;
@@ -25,7 +39,7 @@
             height: 100%;
         }
         .header-block-left{
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -33,9 +47,7 @@
             align-items: center;
         }
         .header-block-left h1{
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 700;
+            color: var(--light-color);
             text-align: center;
             margin: 0;
         }
@@ -48,21 +60,48 @@
             align-items: center;
             color: #fff;
         }
+        @media screen and (max-width: 768px) {
+            #headerVideoDiv header a {
+            color: var(--dark-color);
+        }
+        #headerVideoDiv{
+            margin:0;
+        }
+            video {
+                object-fit: cover;
+                display:none;
+            }
+            #headerContent {
+                position: relative;
+                height: fit-content !important;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                padding-top :55px;
+            }
+            .header-block-left{
+                background: transparent;
+                height: 100%;
+            }
+
+        }
     </style>
     {% endblock %}
 
 {% block homeHeaderContent %}
-
+ 
     <div id="headerVideoDiv">
+     {{ include('partials/_header.twig') }}
         <video controls muted autoplay preload="auto" id="videoHeader">
             <source src="{{ record.headerVideo }}">
         </video>
+  
 
         <div id="headerContent" class="styling">
-            <div class="col-12 col-xl-6 header-block-left">
+            <div class="col-12 col-md-6 col-xl-6 header-block-left">
                 <h1>{{record.headerTitle}}</h1>
             </div>
-            <div class="col-12 col-xl-6 header-block-right p-4">
+            <div class="col-12 col-md-6 col-xl-6 header-block-right p-4">
                 <p>{{record.headerTeaser}}</p>
             </div>
         </div>
