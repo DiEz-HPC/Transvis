@@ -20,7 +20,7 @@ accueil:
             label: Titre
             group: En-tête
         headerTeaser:
-            type: textarea
+            type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
             group: En-tête
@@ -29,7 +29,7 @@ accueil:
             label: Titre
             group: Savoir-faire
         savoirFaireTeaser:
-            type: textarea
+            type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
             group: Savoir-faire
@@ -38,7 +38,7 @@ accueil:
             label: Titre
             group: Nos équipes
         nosEquipesTeaser:
-            type: textarea
+            type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
             group: Nos équipes
@@ -47,7 +47,7 @@ accueil:
             label: Titre
             group: Nos valeurs
         nosValeursTeaser:
-            type: textarea
+            type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
             group: Nos valeurs     
