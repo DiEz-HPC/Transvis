@@ -1,5 +1,7 @@
+{% use '@theme/partials/buttons/_button-red.twig' %}
 {% block homeHeaderStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/homeHeader.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/homeHeader.css') }}"/>
+    {{ block('buttonRedStylesheet') }}
 {% endblock %}
 
 {% block homeHeaderContent %}
@@ -9,14 +11,32 @@
         <video controls muted autoplay preload="auto" id="videoHeader">
             <source src="{{ record.headerVideo }}">
         </video>
-
-
         <div id="headerContent" class="styling">
             <div class="col-12 col-md-6 col-xl-6 header-block-left">
                 <h1>{{record.headerTitle}}</h1>
             </div>
             <div class="col-12 col-md-6 col-xl-6 header-block-right p-4">
                 <p>{{record.headerTeaser}}</p>
+            </div>
+        </div>
+        <div class="container headerHaveProject">
+            {% include "@theme/partials/_line.twig" %}
+            <div class=" d-flex flex-column flex-md-row">
+                <div class="col-md-6 col-xl-6 align-items-center justify-content-center justify-content-md-start">
+                    <p class="headerHaveProjectText text-center text-md-start mt-4">Vous avez un
+                        <span>projet</span>
+                        ?</p>
+                    <div class="d-flex justify-content-center justify-content-md-start mt-4">
+                        {%  with { text: "contactez-nous", link: '/contact', width: "200px", height: "37px", nextWidth: "8%"} %}
+                        {{ block('buttonRedContent') }}
+                        {% endwith %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-6 row align-items-center justify-content-center justify-content-md-end my-4 mt-md-0">
+                    <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
+                    <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
+                    <a href="mailto:{{ options.email|default('contact@transvis.com') }}" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
+                </div>
             </div>
         </div>
     </div>
