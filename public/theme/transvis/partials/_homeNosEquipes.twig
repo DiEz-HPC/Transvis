@@ -1,0 +1,20 @@
+{% use '@theme/partials/_block_top_singleton_with_image.twig' %}
+
+{% block homeNosEquipesStylesheet %}
+    {{ block('blockTopSingletonWithImageStylesheet') }}
+    <style>
+    .block-right{}
+    </style>
+{% endblock %}
+
+{% block homeNosEquipesContent %}
+{% set arr = [] %}
+{% set arr = arr|merge({'title': record.nosEquipesTitle, 'teaser': record.nosEquipesTeaser, 'image': record.NosEquipesImages}) %}
+<div class="container">
+  {% with {defaultImage: asset('images/equipe.webp'), record: arr, imgMargin : ' '} %}
+                {{ block('blockTopSingletonWithImageContent') }}
+            {% endwith %}
+</div>
+   
+
+{% endblock %}
