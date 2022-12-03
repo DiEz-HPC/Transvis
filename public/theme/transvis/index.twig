@@ -8,15 +8,18 @@
 
 {% use '@theme/partials/_logo_slider.twig' %}
 {% use '@theme/partials/_homeHeader.twig' %}
+{% use '@theme/partials/_homeNosSavoirFaire.twig' %}
 {% block stylesheet %}
     {{ parent() }}
     {{ block('logoSliderStylesheet') }}
     {{ block('homeHeaderStylesheet') }}
+    {{ block('homeSavoirFaireStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
     {{ parent() }}
     {{ block('logoSliderJavascript')}}
+    {{ block('homeSavoirFaireJavascript') }}
 {%  endblock javascript %}
 
 
@@ -25,4 +28,7 @@
         {{ block('homeHeaderContent')}}
     </section>
     {{ block('logoSliderContent')}}
+    <section>
+    {{ block('homeSavoirFaireContent') }}
+    </section>
 {% endblock main %}
