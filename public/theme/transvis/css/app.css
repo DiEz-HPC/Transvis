@@ -18,6 +18,7 @@ p{
 
 .btn {
     font-weight: var(--font-weight--bold);
+    background-color: var(--dark-color);
 }
 
 h1, h2{
