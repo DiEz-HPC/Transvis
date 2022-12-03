@@ -1,0 +1,29 @@
+{% use '@theme/partials/cards/_card_valeur.twig' %}
+{% block homeNosValeursStylesheet %}
+    <style>
+        .circle {
+            background-color: #fff;
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block homeNosValeursContent %}
+    {% setcontent nosValeur = 'nos-valeurs' %}
+    {{ record.nosValeursTitle }}
+    {{ record.nosValeursTeaser}}
+    <div class="row d-flex justify-content-around">
+        {% for valeur in nosValeur.contentValues %}
+            <div class="single-valeur col-xl-4 p-5 d-flex flex-column justify-content-center align-items-center">
+                <img class="logo-valeur circle" src="{{ asset(valeur.image.path) }}" alt="{{ valeur.image.alt }}">
+                <h3 class="text-start">{{ valeur.nameOfValue | upper }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

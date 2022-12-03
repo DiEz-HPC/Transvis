@@ -8,10 +8,12 @@
 
 {% use '@theme/partials/_logo_slider.twig' %}
 {% use '@theme/partials/_homeHeader.twig' %}
+{% use '@theme/partials/_homeNosValeurs.twig' %}
 {% block stylesheet %}
     {{ parent() }}
     {{ block('logoSliderStylesheet') }}
     {{ block('homeHeaderStylesheet') }}
+    {{ block('homeNosValeursStylesheet') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -25,4 +27,8 @@
         {{ block('homeHeaderContent')}}
     </section>
     {{ block('logoSliderContent')}}
+
+    <section class="homeNosValeurs">
+        {{ block('homeNosValeursContent')}}
+    </section>
 {% endblock main %}
