@@ -1,0 +1,30 @@
+.homeValeurContainer {
+    background-image: url('../images/savoirs-faire/banner.png');
+    background-size: contain;
+    background-position: center;
+    min-height: 400px;
+}
+
+.homeValeursTitle {
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+}
+.circle {
+    background-color: var(--dark-color);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin: 0 auto;
+}
+.homeNameOfValue{
+    color: var(--light-color);
+    font-size: 1.5em;
+    font-weight: var(--font-weight--bold);
+    margin-top: 10px;
+}
+.homeNosValeurTeaser{
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+}

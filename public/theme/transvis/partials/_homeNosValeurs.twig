@@ -1,0 +1,34 @@
+{% use '@theme/partials/cards/_card_valeur.twig' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% block homeNosValeursStylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/homeNosValeurs.css') }}"/>
+    {{ block('buttonRedStylesheet') }}
+{% endblock %}
+
+{% block homeNosValeursContent %}
+    {% setcontent nosValeur = 'nos-valeurs' %}
+    {% include "@theme/partials/_line.twig" %}
+    <div class="homeValeurContainer py-5">
+        <h2 class="homeValeursTitle text-center">
+            {{ record.nosValeursTitle }}
+        </h2>
+        <div class="container mt-5 homeNosValeurTeaser">
+            {{ record.nosValeursTeaser}}
+        </div>
+        <div class="row d-flex justify-content-around">
+            {% for valeur in nosValeur.contentValues %}
+                <div class="single-valeur col-xl-4 p-5 d-flex flex-column justify-content-center align-items-center">
+                    <div class="circle d-flex justify-content-center align-items-center">
+                        <img class="logo-valeur w-75" src="{{ asset(valeur.image.path) }}" alt="{{ valeur.image.alt }}">
+                    </div>
+                    <h3 class="text-start mt-2 homeNameOfValue">{{ valeur.nameOfValue | upper }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-center">
+            {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%", isBlack: true} %}
+            {{ block('buttonRedContent') }}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

@@ -8,6 +8,7 @@
 
 {% use '@theme/partials/_logo_slider.twig' %}
 {% use '@theme/partials/_homeHeader.twig' %}
+{% use '@theme/partials/_homeNosValeurs.twig' %}
 {% use '@theme/partials/_homeNosSavoirFaire.twig' %}
 {% use '@theme/partials/_homeNosEquipes.twig' %}
 
@@ -15,6 +16,7 @@
     {{ parent() }}
     {{ block('logoSliderStylesheet') }}
     {{ block('homeHeaderStylesheet') }}
+    {{ block('homeNosValeursStylesheet') }}
     {{ block('homeSavoirFaireStylesheet') }}
     {{ block('homeNosEquipesStylesheet') }}
 {% endblock stylesheet %}
@@ -30,11 +32,15 @@
     <section>
         {{ block('homeHeaderContent')}}
     </section>
-        {{ block('logoSliderContent')}}
+    {{ block('logoSliderContent')}}
     <section>
         {{ block('homeSavoirFaireContent') }}
-    </section> 
+    </section>
     <section>
         {{ block('homeNosEquipesContent')}}
+    </section>
+      
+    <section class="homeNosValeurs">
+        {{ block('homeNosValeursContent')}}
     </section>
 {% endblock main %}
