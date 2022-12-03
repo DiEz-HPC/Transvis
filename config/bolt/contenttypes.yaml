@@ -42,6 +42,10 @@ accueil:
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
             group: Nos équipes
+        nosEquipeImage:
+            type: image
+            label: Image
+            group: Nos équipes
         nosValeursTitle:
             type: text
             label: Titre

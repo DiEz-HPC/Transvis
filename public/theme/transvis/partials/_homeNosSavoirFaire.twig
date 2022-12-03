@@ -1,0 +1,39 @@
+{% use '@theme/partials/cards/_card_SF.twig' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% use '@theme/partials/banner_keys/_banner_keys_figures.twig' %}
+{% block homeSavoirFaireStylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/homeNosSavoirFaire.css') }}"/>
+    {{block('cardSFstylesheet')}}
+    {{ block('buttonRedStylesheet') }}
+    {{ block('bannerKeysFiguresStylesheet') }}
+{% endblock %}
+{% block homeSavoirFaireJavascript %}
+    {{ block('bannerKeysFiguresJavascript') }}
+{% endblock %}
+
+{% block homeSavoirFaireContent %}
+    {% setcontent nosSavoirFaire = 'nos-savoirs-faire' %}
+    {% set cards = [nosSavoirFaire.cardOne, nosSavoirFaire.cardTwo, nosSavoirFaire.cardThree] %}
+    {% set keyFigures = [nosSavoirFaire.keyFigureOne, nosSavoirFaire.keyFigureTwo, nosSavoirFaire.keyFigureThree] %}
+
+    <h2 class="likeh1 text-center m-5">{{record.savoirFaireTitle}}</h2>
+    <div class="m-5">
+        <p>{{record.savoirFaireTeaser}}</p>
+    </div>
+
+    <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-around col-12 mt-5">
+        {% for  card in cards %}
+            {% with { card: card, loop: loop.index } %}
+            {{ block('cardSFContent') }}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
+        {{ block('buttonRedContent') }}
+        {% endwith %}
+    </div>
+    {% with {keyFigures: keyFigures } %}
+    {{ block('bannerKeysFiguresContent') }}
+    {% endwith %}
+{% endblock %}

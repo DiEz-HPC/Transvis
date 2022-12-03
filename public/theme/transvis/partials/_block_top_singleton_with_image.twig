@@ -7,11 +7,15 @@ defaultImage is variable passed with call component
 {% endblock %}
 
 {% block blockTopSingletonWithImageContent %}
+{% if imgMargin is not defined  %}
+    {% set imgMargin = ' m-5' %}
+{% endif %}
+
     <div class="mt-5 pt-5">
         <div class="block-top d-flex flex-column mb-5 justify-content-between">
             <h1 class="text-center text-xl-start pt-1 line-before-start mb-5">{{ record.title | upper }}</h1>
             <div class="block-bottom">
-                <div class="block-right m-5" style="background-image: url({{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image') }});">
+                <div class="block-right {{imgMargin}}" style="background-image: url({{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image') }});">
                     <img src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="image Nos savoirs faire">
                 </div>
                     {{ record.teaser }}
