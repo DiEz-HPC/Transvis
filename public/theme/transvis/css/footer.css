@@ -30,6 +30,11 @@ a {
     color: white;
     text-decoration: none;
 }
+
+.footer-list-item a:hover, .btn-link:hover {
+    color: var(--red-color);
+}
+
 .rounded-link {
     border-radius: 50%;
     width: 30px;
