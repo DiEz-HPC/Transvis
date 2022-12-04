@@ -17,6 +17,11 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+
+.nav-link:hover {
+    color: var(--red-color) !important;
+}
+
 .nav-item.active a {
     color: var(--red-color) !important;
     fill: var(--red-color) !important;
@@ -113,7 +118,7 @@
     /* Icon 3 */
 
     #burger-toggler span:nth-child(1) {
-        top: 0px;
+        top: 0;
     }
 
     #burger-toggler span:nth-child(2),
@@ -127,7 +132,7 @@
 
     #burger-toggler.open span:nth-child(1) {
         top: 10px;
-        width: 0%;
+        width: 0;
         left: 50%;
     }
 
@@ -147,7 +152,7 @@
 
     #burger-toggler.open span:nth-child(4) {
         top: 10px;
-        width: 0%;
+        width: 0;
         left: 50%;
     }
 }
