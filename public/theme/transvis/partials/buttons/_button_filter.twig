@@ -1,5 +1,5 @@
 {% block buttonFilterStylesheet %}
-<link rel="stylesheet" href="{{ asset('css/components/buttonFilter.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/components/buttonFilter.css') }}"/>
 {% endblock %}
 
 {% block buttonFilterJavascript %}
@@ -8,12 +8,15 @@
 
 {% block buttonFilterContent %}
 
-    <div class="row d-flex align-items-center justify-content-center">
-        <div class="buttonFilterContainer mx-2" data-records-tag="{{ recordsTagList|json_encode }}" data-records-taxonomies="{{ taxonomies }}" id="buttonFilterContainer">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="buttonFilterContainer col-11" data-records-tag="{{ recordsTagList|json_encode }}"
+             data-records-taxonomies="{{ taxonomies }}" id="buttonFilterContainer">
             <input id="search" class="search-input w-100 mb-4" type="text" placeholder="FILTRER" autocomplete="off">
             <ul class="drop"></ul>
         </div>
-            <button class="search-input mx-2 " type="submit" data-records-all="/nos-realisations" id="buttonSeeAll">Tout voir</button>
+        <button class="search-input col-11" type="submit" data-records-all="/nos-realisations" id="buttonSeeAll">Tout
+            voir
+        </button>
     </div>
 
 {% endblock %}
