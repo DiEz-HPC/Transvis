@@ -88,6 +88,11 @@
 .header-rounded-link:hover {
     background: rgba(30, 30, 30, 1);
 }
+
+.nav-link:hover {
+    color: var(--red-color) !important;
+}
+
 @media screen and (max-width: 768px) {
     #headerVideoDiv header a {
         color: var(--dark-color);
@@ -115,7 +120,7 @@
     }
     .headerHaveProject {
         position: relative;
-        bottom: 0%;
+        bottom: 0;
         background: rgba(0, 0, 0, 0.7);
 
     }
