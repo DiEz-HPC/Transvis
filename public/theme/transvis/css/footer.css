@@ -31,7 +31,7 @@ a {
     text-decoration: none;
 }
 
-.footer-list-item a:hover, .btn-link:hover {
+.footer-list-item a:hover, .btn-link:hover, .contact-list-item a:hover {
     color: var(--red-color);
 }
 
