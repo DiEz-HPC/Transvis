@@ -1,6 +1,7 @@
 .homeValeurContainer {
     background-image: url('../images/savoirs-faire/banner.png');
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     min-height: 400px;
 }
@@ -27,4 +28,8 @@
 .homeNosValeurTeaser{
     color: var(--light-color);
     font-weight: var(--font-weight--bold);
+}
+
+.logo-valeur {
+    filter: invert(1);
 }
