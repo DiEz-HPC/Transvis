@@ -11,12 +11,6 @@
     {{ block('cardRecrutementStylesheet') }}
     {{ block('recruitmentsNumberStylesheet') }}
     {{ block('buttonFilterStylesheet')}}
-    <style>
-        .card-recrutement {
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-    </style>
 {% endblock stylesheet %}
 
 {% block javascript %}
@@ -32,15 +26,15 @@
     {% for record in records %}
         {% set recordsName = recordsName|merge({(record|link) : record.title}) %}
     {% endfor %}
-    <div class="row">
+    <div class="d-flex flex-column">
         <div class="recrutementHeader">
             <h1 class="text-center">
                 {{ pageTitle }}
             </h1>
-            <p class="mx-5 my-4 text-center">
+            <p class="p-5 text-center">
                 {{ pageDescription }}
             </p>
-            <div class="row d-flex justify-content-center">
+            <div class="d-flex flex-column flex-xl-row justify-content-center">
                 {% for step in steps %}
                     {% with {index:loop.index, title: step.title, content: step.text} %}
                     {{ block('recruitmentsNumberContent') }}
@@ -48,7 +42,7 @@
                 {% endfor %}
             </div>
             {% include "@theme/partials/_line.twig" %}
-            <div class="row flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center">
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success">
                         {{ message }}
@@ -62,7 +56,7 @@
                 <h2 class="text-center my-5 col-12">
                     {{ 'postes à pourvoir'|upper }}
                 </h2>
-                <div class="col-xl-3">
+                <div class="col-12 col-xl-3">
                     {% with { recordsTagList : recordsName, taxonomies : 'false'} %}
                     {{ block('buttonFilterContent')}}
                     {% endwith %}
@@ -71,7 +65,7 @@
         </div>
 
         <div class="recrutementBody">
-            <div class="row justify-content-around py-5 px-4">
+            <div class="d-flex flex-column flex-xl-row flex-xl-wrap justify-content-center justify-content-xl-around align-items-center py-5 px-4 col-12">
                 {% for record in records %}
                     {% with { card: record} %}
                     {{ block('cardRecrutementContent')}}
@@ -79,7 +73,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-12 d-flex justify-content-center align-items-center my-5">
+        <div class="col-12 {{ records.nbResults < records.maxPerPage ? 'd-none' : 'd-flex' }}  justify-content-center align-items-center my-5 ">
             {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
         </div>
     </div>
