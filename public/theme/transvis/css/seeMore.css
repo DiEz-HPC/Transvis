@@ -1,0 +1,26 @@
+.readMore {
+    color: var(--admin-toolbar-text-light);
+    text-decoration: none !important;
+    background: var(--admin-toolbar);
+    padding: 5px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--admin-toolbar);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.readMore:hover {
+    background: var(--admin-toolbar-text-light);
+    color: var(--admin-toolbar);
+}
+.readMore:hover i {
+    color: var(--admin-toolbar);
+}
+.readMore i {
+    margin-left: 5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: var(--admin-toolbar-text-light);
+}

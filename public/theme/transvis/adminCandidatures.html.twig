@@ -6,12 +6,14 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{asset('css/adminContact.css')}}">
+    <link rel="stylesheet" href="{{asset('css/seeMore.css')}}">
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/_adminContact/adminContactButton.js') }}"></script>
     <script src="{{ asset('js/_adminContact/pagination.js') }}"></script>
+    <script src="{{ asset('js/seeMore.js') }}"></script>
 {% endblock %}
 {% block main %}
     <div class="container">
@@ -24,7 +26,6 @@
             <button class="btn btn-primary" id="nextBtn">Page suivante</button>
         </div>
         {% include 'partials/_adminContact/_confirmDeleteModal.twig' %}
-        <div class="d-flex justify-content-center w-100">
-        </div>
+        <div class="d-flex justify-content-center w-100"></div>
     </div>
 {% endblock %}
