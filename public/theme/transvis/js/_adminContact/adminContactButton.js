@@ -77,6 +77,7 @@ const fillModal = (e) => {
 
 const closeModal = () => {
   const closeButton = document.querySelector("#close_modal");
+  if(!closeButton) return;
   closeButton.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.toggle("hidden");
