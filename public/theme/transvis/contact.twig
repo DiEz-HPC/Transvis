@@ -27,9 +27,7 @@ record.
     <div class="row box-bottom py-2 px-5 text-center" style="background-image: url({{ asset('images/bgRed.png') }}); background-size: cover;">
     <h2 class="my-3 form-title"> Un projet ? Venez en discutez. </h2>
         <div class="col-12 col-md-12 col-lg-8">
-        {% with {options : options} %}
             {{ boltform('contact') }}
-        {% endwith %}
         </div>
         <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center">
             <iframe width="480" height="370" id="gmap_canvas" src="https://maps.google.com/maps?q=transvis&t=&z=7&ie=UTF8&iwloc=&output=embed&" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
