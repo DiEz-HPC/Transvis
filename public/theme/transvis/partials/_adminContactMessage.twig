@@ -20,8 +20,12 @@
 </script>
 {% if contactMessages is defined and contactMessages is not empty %}
     {% for message in contactMessages %}
+   
         <div class="card w-100 my-3">
             <div class="card-header">
+            <div class="row justify-content-end">
+                {{ message.isAnswered ? '<div class="col-2 my-2 d-flex justify-content-end"><span class="badge badge-success">Répondu</span></div>' : '<div class="col-2 my-2 d-flex justify-content-end"><span class="badge badge-danger">Non répondu</span></div>'}}
+            </div>
                 <div class="row">
                     <div class="col-8">
                         Message de :
@@ -49,7 +53,7 @@
             <div class="card-footer">
                 <div class="row justify-content-around">
                     <div class="col-10">
-                        <button type="button" class="btn btn-primary replyButton" id="reply_email" data-email="{{ message.mail }}">Répondre</button>
+                        <button type="button" class="btn btn-primary {{ message.isAnswered ? 'disabled' : 'replyButton' }}" id="reply_email" data-email="{{ message.mail }}" data-id="{{message.id}}">Répondre</button>
                     </div>
                     <div class="col-2 d-flex justify-content-end">
                         <form action="{{ path('app_contact_message_delete', {'id': message.id}) }}" method="post">

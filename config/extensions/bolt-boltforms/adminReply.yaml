@@ -43,6 +43,10 @@ fields:
             attr:
                 placeholder: Votre message ...
                 class: myclass
+    id:
+        type: hidden
+        options:
+            required: true
     submit:
         type: submit
         options:

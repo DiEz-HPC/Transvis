@@ -385,5 +385,35 @@
         <target>Poste ...</target>
       </segment>
     </unit>
+    <unit id="397X4zx" name="Is answered">
+      <segment>
+        <source>Is answered</source>
+        <target>Is answered</target>
+      </segment>
+    </unit>
+    <unit id="X_zrZv." name="0">
+      <segment>
+        <source>0</source>
+        <target>0</target>
+      </segment>
+    </unit>
+    <unit id="a4ayc.8" name="1">
+      <segment>
+        <source>1</source>
+        <target>1</target>
+      </segment>
+    </unit>
+    <unit id="l_RMrck" name="Réponse envoyée">
+      <segment>
+        <source>Réponse envoyée</source>
+        <target>Réponse envoyée</target>
+      </segment>
+    </unit>
+    <unit id="S4nPzVV" name="ID ...">
+      <segment>
+        <source>ID ...</source>
+        <target>ID ...</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
