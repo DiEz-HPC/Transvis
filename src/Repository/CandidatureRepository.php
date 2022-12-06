@@ -6,6 +6,7 @@ use App\Entity\Candidature;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 
 /**
  * @extends ServiceEntityRepository<Candidature>
@@ -41,6 +42,10 @@ class CandidatureRepository extends ServiceEntityRepository
     }
 
     //This function send paginate data
+
+    /**
+     * @throws Exception
+     */
     public function paginate(int $page = 1, int $limit = 10): array
     {
         $query = $this->createQueryBuilder('c')

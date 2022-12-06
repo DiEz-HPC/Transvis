@@ -7,6 +7,12 @@ services:
     Appolo\BoltSeo\:
         resource: '../vendor/appolodev/bolt-seo/src/*'
         exclude: '../vendor/appolodev/bolt-seo/src/{Entity,Exception}'
+    BobdenOtter\ConfigurationNotices\:
+        resource: '../vendor/bobdenotter/configuration-notices/src/*'
+        exclude: '../vendor/bobdenotter/configuration-notices/src/{Entity,Exception}'
+    BobdenOtter\WeatherWidget\:
+        resource: '../vendor/bobdenotter/weatherwidget/src/*'
+        exclude: '../vendor/bobdenotter/weatherwidget/src/{Entity,Exception}'
     Bobdenotter\Sitemap\:
         resource: '../vendor/bobdenotter/sitemap/src/*'
         exclude: '../vendor/bobdenotter/sitemap/src/{Entity,Exception}'
@@ -16,6 +22,9 @@ services:
     Bolt\BoltForms\:
         resource: '../vendor/bolt/forms/src/*'
         exclude: '../vendor/bolt/forms/src/{Entity,Exception}'
+    Bolt\NewsWidget\:
+        resource: '../vendor/bolt/newswidget/src/*'
+        exclude: '../vendor/bolt/newswidget/src/{Entity,Exception}'
     Bolt\Redactor\:
         resource: '../vendor/bolt/redactor/src/*'
         exclude: '../vendor/bolt/redactor/src/{Entity,Exception}'
