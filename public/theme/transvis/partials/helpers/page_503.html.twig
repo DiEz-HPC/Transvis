@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>500 :: Internal Server Error</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+</head>
+
+<body id="home">
+
+    <div style="padding: 2rem 4rem;">
+
+        <h1>500 :: Internal Server Error</h1>
+
+        <h2>The server returned a <code>500</code> status code.</h2>
+
+        <p>
+            Something is broken. Please let us know what you were doing when this error occurred.
+            We will fix it as soon as possible. Sorry for any inconvenience caused.
+        </p>
+
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ exception.statusCode }}
+            | Transvis</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Lato");
+            * {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Lato", sans-serif;
+            }
+
+            body {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                margin: 40px 0 20px;
+                font-weight: 800;
+            }
+
+            .lock {
+                border-radius: 5px;
+                width: auto;
+                height: 150px;
+                background-color: transparent;
+            }
+            .button-link {
+                background-color: #D30F4E;
+                width: 155px;
+                height: 37px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: white;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+            }
+
+            .btn-link-dark {
+                background-color: #121212 !important;
+                border-radius: 5px;
+            }
+
+            .button-link:hover {
+                text-decoration: none;
+                color: white;
+            }
+
+            .button-link:active {
+                text-decoration: none;
+                color: white;
+            }
+
+            .button-link span {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            .button-link .next {
+                width: 10%;
+            }
+        </style>
+    </head>
+
+    <body id="home">
+
+        <div style="padding: 2rem 4rem; display: flex; justify-content: center; align-items:center; flex-direction: column;">
+
+            <div class="lock">
+                <img src="{{asset('images/Transvis800px.png')}}" alt="logo transvis" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div class="message" style="text-align: center;">
+                <h1>503 | Le serveur est surchargé</h1>
+                <p>Le serveur est surchargé, veuillez réessayer dans quelques minutes. Si le problème persiste, veuillez contacter l'administrateur du site.</p>
+            </div>
+            <a class="button-link btn-link-more btn-link-dark' " href="/" style="width:200px; height: 25px">
+                <span class="me-2 align-baseline">{{ "Retour à l'accueil" | upper }}</span>
+            </a>
+        </div>
+    </body>
+</html>
