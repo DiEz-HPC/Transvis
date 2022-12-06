@@ -85,5 +85,17 @@
         <target>Votre candidature a bien été envoyée.</target>
       </segment>
     </unit>
+    <unit id="Ej.WZqo" name="danger">
+      <segment>
+        <source>danger</source>
+        <target>danger</target>
+      </segment>
+    </unit>
+    <unit id="ekJPePm" name="You do not have permission to access this page.">
+      <segment>
+        <source>You do not have permission to access this page.</source>
+        <target>You do not have permission to access this page.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

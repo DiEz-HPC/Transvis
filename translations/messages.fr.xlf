@@ -391,17 +391,5 @@
         <target>listing_table.actions.select_all</target>
       </segment>
     </unit>
-    <unit id="a_COwtV" name="image.button_upload_options">
-      <segment>
-        <source>image.button_upload_options</source>
-        <target>image.button_upload_options</target>
-      </segment>
-    </unit>
-    <unit id="wG04eAa" name="image.image_preview">
-      <segment>
-        <source>image.image_preview</source>
-        <target>image.image_preview</target>
-      </segment>
-    </unit>
   </file>
 </xliff>
