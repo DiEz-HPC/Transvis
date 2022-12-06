@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "035d92c4d803e78f065d9888218342cd",
+    "content-hash": "60909fe9ecb7f6a8cfd02be5e8a2db2d",
     "packages": [
         {
             "name": "api-platform/core",
@@ -359,56 +359,6 @@
             "time": "2020-11-29T07:37:23+00:00"
         },
         {
-            "name": "bobdenotter/configuration-notices",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobdenotter/configuration-notices.git",
-                "reference": "884af85ef972137a5d5ff08c759162a79ebd0c52"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobdenotter/configuration-notices/zipball/884af85ef972137a5d5ff08c759162a79ebd0c52",
-                "reference": "884af85ef972137a5d5ff08c759162a79ebd0c52",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.9"
-            },
-            "require-dev": {
-                "bolt/core": "^5.1",
-                "symplify/easy-coding-standard": "^8.3"
-            },
-            "type": "bolt-extension",
-            "extra": {
-                "entrypoint": "BobdenOtter\\ConfigurationNotices\\Extension",
-                "screenshots": [
-                    "screenshots/notices.png"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "BobdenOtter\\ConfigurationNotices\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
-                }
-            ],
-            "description": "💡 A small tool to point out common pitfalls for Bolt 5 configuration settings",
-            "support": {
-                "issues": "https://github.com/bobdenotter/configuration-notices/issues",
-                "source": "https://github.com/bobdenotter/configuration-notices/tree/1.3.0"
-            },
-            "time": "2022-05-24T13:25:44+00:00"
-        },
-        {
             "name": "bobdenotter/sitemap",
             "version": "1.3.0",
             "source": {
@@ -454,56 +404,6 @@
                 "source": "https://github.com/bobdenotter/sitemap/tree/1.3.0"
             },
             "time": "2022-06-09T10:03:55+00:00"
-        },
-        {
-            "name": "bobdenotter/weatherwidget",
-            "version": "1.1.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobdenotter/weatherwidget.git",
-                "reference": "50204830b6f952ad97d9ce20418a9781a6d3fbb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobdenotter/weatherwidget/zipball/50204830b6f952ad97d9ce20418a9781a6d3fbb8",
-                "reference": "50204830b6f952ad97d9ce20418a9781a6d3fbb8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "bolt/core": "^4.0.0",
-                "symplify/easy-coding-standard": "^6.0"
-            },
-            "type": "bolt-extension",
-            "extra": {
-                "entrypoint": "BobdenOtter\\WeatherWidget\\Extension",
-                "screenshots": [
-                    "screenshots/widget.png"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "BobdenOtter\\WeatherWidget\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
-                }
-            ],
-            "description": "🌤 A simple Dashboard Widget that displays the current weather. So you don't actually need to go outside or open the curtains.",
-            "support": {
-                "issues": "https://github.com/bobdenotter/weatherwidget/issues",
-                "source": "https://github.com/bobdenotter/weatherwidget/tree/1.1.15"
-            },
-            "time": "2021-03-27T11:14:42+00:00"
         },
         {
             "name": "bobdenotter/yaml-migrations",
@@ -908,56 +808,6 @@
                 "source": "https://github.com/bolt/forms/tree/1.5.1"
             },
             "time": "2022-06-29T13:38:23+00:00"
-        },
-        {
-            "name": "bolt/newswidget",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bolt/newswidget.git",
-                "reference": "8e842bcaf323111292ba7f8241d21341f1c6709d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bolt/newswidget/zipball/8e842bcaf323111292ba7f8241d21341f1c6709d",
-                "reference": "8e842bcaf323111292ba7f8241d21341f1c6709d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "bolt/core": "^4.0.0",
-                "symplify/easy-coding-standard": "^6.0"
-            },
-            "type": "bolt-extension",
-            "extra": {
-                "entrypoint": "Bolt\\NewsWidget\\Extension",
-                "screenshots": [
-                    "screenshots/widget.png"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bolt\\NewsWidget\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
-                }
-            ],
-            "description": "📰 A simple Widget Extension to display the latest Bolt news on the dashboard.",
-            "support": {
-                "issues": "https://github.com/bolt/newswidget/issues",
-                "source": "https://github.com/bolt/newswidget/tree/1.3.0"
-            },
-            "time": "2021-04-04T13:49:37+00:00"
         },
         {
             "name": "bolt/redactor",
