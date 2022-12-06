@@ -21,6 +21,7 @@
 .block-top .block-right {
     background-size: cover;
     margin-top: -8%;
+    height: 80%;
 }
 
 .block-top .block-right img {
@@ -32,19 +33,27 @@
         margin-top: 0;
     }
 }
-.block-right{
-    float: right;  
-    max-width: 40vw;
-    border: 1.5rem;
-}
-.block-right img{
+
+#image-back {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
     width: 100%;
-    height: auto;
+    z-index: 1;
+}
+
+#image-front {
+    object-fit: cover;
+    object-position: bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-    .block-right{
-        float: none;
+    .block-right {
         max-width: 100%;
         margin-top: 2rem;
     }
