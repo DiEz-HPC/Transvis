@@ -5,36 +5,47 @@ namespace App\EventSubscriber;
 
 use App\Entity\ContactMessage;
 use Bolt\BoltForms\Event\BoltFormsEvent;
-use Bolt\BoltForms\Event\BoltFormsEvents;
 use Doctrine\ORM\EntityManagerInterface;
+use Bolt\BoltForms\Event\BoltFormsEvents;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\FormError;
 
 class ContactFormSubscriber implements EventSubscriberInterface
 {
-    private EntityManagerInterface $em;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(private EntityManagerInterface $em, private SessionInterface $session)
     {
-        $this->em = $em;
     }
 
     public function onBoltFormsSubmit(BoltFormsEvent $event): void
     {
         if ($event->getEvent()->getForm()->getName() == 'contact') {
-            $data = $event->getData();
-            $contactMessage = new ContactMessage();
 
-            $contactMessage->setName($data['name']);
-            $contactMessage->setFirstname($data['firstname']);
-            $contactMessage->setCompanyName($data['companyName']);
-            $contactMessage->setMail($data['email']);
-            $contactMessage->setMessage($data['message']);
-            $contactMessage->setSubject($data['subject']);
+            if ($this->session->get('contactMessageSend') == 'true') {
+                $event->getEvent()->getForm()->addError(new FormError('Nous avons pris en compte votre dernier message, veuillez patienter'));
+                return;
+            } else {
 
-            $this->em->persist($contactMessage);
-            $this->em->flush();
+                $this->session->set('contactMessageSend', 'true');
+                $data = $event->getData();
+                $contactMessage = new ContactMessage();
+
+                $contactMessage->setName($data['name']);
+                $contactMessage->setFirstname($data['firstname']);
+                $contactMessage->setCompanyName($data['companyName']);
+                $contactMessage->setMail($data['email']);
+                $contactMessage->setMessage($data['message']);
+                $contactMessage->setSubject($data['subject']);
+
+                $this->em->persist($contactMessage);
+                $this->em->flush();
+            }
         }
-        // Do something with the data
+        if ($event->getEvent()->getForm()->getName() == 'adminReply') {
+            $data = $event->getData();
+            $contactMessage = $this->em->getRepository(ContactMessage::class)->findOneBy(['id' => $data['id']])->setIsAnswered(true);
+        }
     }
 
 

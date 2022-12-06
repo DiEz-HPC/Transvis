@@ -32,6 +32,9 @@ class ContactMessage
     #[ORM\Column(type: Types::TEXT)]
     private ?string $subject = null;
 
+    #[ORM\Column(type: Types::BOOLEAN, options: ['default' => false])]
+    private bool $isAnswered = false;
+
     
 
     public function getId(): ?int
@@ -107,6 +110,18 @@ class ContactMessage
     public function setSubject(string $subject): self
     {
         $this->subject = $subject;
+
+        return $this;
+    }
+
+    public function getIsAnswered()
+    {
+        return $this->isAnswered;
+    }
+
+    public function setIsAnswered($isAnswered)
+    {
+        $this->isAnswered = $isAnswered;
 
         return $this;
     }

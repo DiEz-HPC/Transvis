@@ -13,6 +13,7 @@
     {% if submitted and not valid %}
         <div class="boltforms-feedback error">{{ formconfig.feedback.error|raw }}</div>
     {% endif %}
+{{ form_errors(form) }}
     <div class="row my-2">
         <div class="col-6">
             {{ form_errors(form.name) }}
