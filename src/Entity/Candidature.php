@@ -38,6 +38,9 @@ class Candidature
 
     #[ORM\Column(length: 255)]
     private int $jobId;
+    
+    #[ORM\Column(length: 255, nullable: true)]
+    private $mailto;
 
     public function __construct()
     {
@@ -141,6 +144,18 @@ class Candidature
     public function setJobId($jobId)
     {
         $this->jobId = $jobId;
+
+        return $this;
+    }
+
+    public function getMailto(): ?string
+    {
+        return $this->mailto;
+    }
+
+    public function setMailto($mailto)
+    {
+        $this->mailto = $mailto;
 
         return $this;
     }

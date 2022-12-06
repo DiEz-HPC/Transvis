@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\SendMail;
 use App\Entity\Candidature;
 use App\Form\RecrutementsType;
 use Bolt\Controller\TwigAwareController;
@@ -18,6 +19,7 @@ class RecrutementsFormController extends TwigAwareController
 
     public function __construct(
         private EntityManagerInterface $entityManager,
+        private SendMail $sendMail,
     ) {
     }
 
@@ -43,6 +45,9 @@ class RecrutementsFormController extends TwigAwareController
             $newFilename = $this->uploadFile($form, $slugger);
             $data = $form->getData();
             $this->handleData($data, $newFilename);
+            
+            $this->sendMail->sendMail($data, 'Nouvelle candidature !', '_recrutementEmail.twig');
+
             return $this->redirectToRoute('record', ['contentTypeSlug' => 'recrutements', 'slugOrId' => $data->getJobId()]);
         }elseif($form->isSubmitted() && !$form->isValid()){
             if($form->getErrors(true)){

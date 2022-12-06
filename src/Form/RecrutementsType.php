@@ -120,6 +120,7 @@ class RecrutementsType extends AbstractType
             )
             ->add('job',HiddenType::class)
             ->add('job_id',HiddenType::class)
+            ->add('mailto',HiddenType::class)
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer',
                 'attr' => [

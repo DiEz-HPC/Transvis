@@ -9,11 +9,11 @@ notification:
     subject: Transvis - Réponse à votre message
     subject_prefix: '[Transvis]'
     replyto_name: Transvis               # Email addresses and names can be either the
-    replyto_email: emaildeladmin@mail.com                 # name of a field below or valid text.
+    replyto_email: contact@transvis.fr                 # name of a field below or valid text.
     to_name: "{EMAIL}"
     to_email: "{EMAIL}"
     from_name: 'Transvis'
-    from_email: emaildeladmin@mail.com
+    from_email: contact@transvis.fr
 feedback:
     success: Votre message a était envoyé.
     error: Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer.

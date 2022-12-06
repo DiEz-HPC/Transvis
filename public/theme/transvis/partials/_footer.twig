@@ -45,7 +45,7 @@
                     {{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}
                 </li>
                 <li class="contact-list-item">
-                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe">   <a href="mailto:{{ options.email|default('contact@transvis.com') }}">{{ options.email|default('contact@transvis.com')}}</a>
+                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe">   <a href="mailto:{{ options.email|default('contact@transvis.fr') }}">{{ options.email|default('contact@transvis.fr')}}</a>
                 </li>
                 <li class="contact-list-item">
                     <img src="{{ asset('images/phone.svg') }}" alt="phone"> {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
@@ -54,7 +54,7 @@
                     <div class="row align-items-center">
                         <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
                         <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
-                        <a href="mailto:{{ options.email|default('contact@transvis.com') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
+                        <a href="mailto:{{ options.email|default('contact@transvis.fr') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
                     </div>
                 </li>
             </ul>
