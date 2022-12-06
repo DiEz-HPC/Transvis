@@ -385,5 +385,59 @@
         <target>Poste ...</target>
       </segment>
     </unit>
+    <unit id="OEqzPDO" name="listing_table.actions.select_all">
+      <segment>
+        <source>listing_table.actions.select_all</source>
+        <target>listing_table.actions.select_all</target>
+      </segment>
+    </unit>
+    <unit id="qoZwSEY" name="action.preview_secure_share">
+      <segment>
+        <source>action.preview_secure_share</source>
+        <target>action.preview_secure_share</target>
+      </segment>
+    </unit>
+    <unit id="a_COwtV" name="image.button_upload_options">
+      <segment>
+        <source>image.button_upload_options</source>
+        <target>image.button_upload_options</target>
+      </segment>
+    </unit>
+    <unit id="wG04eAa" name="image.image_preview">
+      <segment>
+        <source>image.image_preview</source>
+        <target>image.image_preview</target>
+      </segment>
+    </unit>
+    <unit id="W7z__Yi" name="action.impersonate">
+      <segment>
+        <source>action.impersonate</source>
+        <target>action.impersonate</target>
+      </segment>
+    </unit>
+    <unit id="z8r0TY6" name="action.edit_permissions">
+      <segment>
+        <source>action.edit_permissions</source>
+        <target>action.edit_permissions</target>
+      </segment>
+    </unit>
+    <unit id="eJG2.4P" name="listing.current_sessions_header">
+      <segment>
+        <source>listing.current_sessions_header</source>
+        <target>listing.current_sessions_header</target>
+      </segment>
+    </unit>
+    <unit id="Ej.WZqo" name="danger">
+      <segment>
+        <source>danger</source>
+        <target>danger</target>
+      </segment>
+    </unit>
+    <unit id="ekJPePm" name="You do not have permission to access this page.">
+      <segment>
+        <source>You do not have permission to access this page.</source>
+        <target>You do not have permission to access this page.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

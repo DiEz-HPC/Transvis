@@ -36,31 +36,31 @@ global:
     about: [ROLE_ADMIN] # view the 'About Bolt' page
     clearcache: [ROLE_ADMIN]
     dashboard: [IS_AUTHENTICATED_REMEMBERED]
-    extensions: [ROLE_ADMIN]
+    extensions: [ROLE_DEVELOPER]
     # these control /bolt/file-edit and /bolt/filemanager -> combined create/read/update/delete permission
     # the part after the files: is the 'location' where the files are part of
-    managefiles:config: [ROLE_ADMIN] # all configuration yml files /bolt/filemanager/config and /bolt/file-edit/config?file=/bolt/menu.yaml
+    managefiles:config: [ROLE_DEVELOPER] # all configuration yml files /bolt/filemanager/config and /bolt/file-edit/config?file=/bolt/menu.yaml
     managefiles:files: [ROLE_ADMIN]
     managefiles:themes: [ROLE_ADMIN]
     editprofile: [IS_AUTHENTICATED_FULLY] # edit own profile
-    translation: [ROLE_ADMIN]
+    translation: [ROLE_DEVELOPER]
     user:list: [ROLE_ADMIN] # overview listing of users and a list of active sessions
     user:add: [ROLE_ADMIN] # add user - allows editing user _before_ saving, can set roles, status on create, after saving 'useredit' is needed.
     user:status: [ROLE_ADMIN] # user enable/disable - only used for changing status outside of add/edit context
     user:delete: [ROLE_ADMIN] # user delete
     user:edit: [ROLE_ADMIN] # user edit all fields, includes user:status permissions
-    maintenance-mode: [ROLE_ADMIN] # view the frontend when in maintenance mode
+    maintenance-mode: [ROLE_DEVELOPER] # view the frontend when in maintenance mode
     systemlog: [ROLE_ADMIN]
-    api_admin: [ROLE_ADMIN] # WARNING: this only shows/hides api in the bolt admin, it doesn't protect the /api route(s)
+    api_admin: [ROLE_DEVELOPER] # WARNING: this only shows/hides api in the bolt admin, it doesn't protect the /api route(s)
     bulk_operations: [ROLE_ADMIN]
     kitchensink: [ROLE_ADMIN]
     upload: [ROLE_ADMIN] # to-do PERMISSIONS upload media/files ? Or should this be handled by managefiles:files
     extensionmenus: [IS_AUTHENTICATED_REMEMBERED] # allows you to see menu items added by extensions
     media_edit: [ROLE_ADMIN] # edit metadata for images etc.
     fetch_embed_data: [ROLE_ADMIN] # get embed (meta)data for urls via the back-end (needed to embed youtube etc.)
-    list_files:config: [ROLE_ADMIN] # should probably not be used?
+    list_files:config: [ROLE_DEVELOPER] # should probably not be used?
     list_files:files: [ROLE_ADMIN] # get list of files (images?) available for use as site-content
-    list_files:themes: [ROLE_ADMIN] # should probably not be used?
+    list_files:themes: [ROLE_DEVELOPER] # should probably not be used?
     api:get: [ROLE_ADMIN] # allow read access to Bolt's RESTful and GraphQL API
     api:post: [ROLE_ADMIN] # allow write access to Bolt's RESTful and GraphQL API
     api:delete: [ROLE_ADMIN] # allow delete access to Bolt's RESTful and GraphQL API
@@ -127,43 +127,43 @@ contenttype-default:
     view: [ROLE_ADMIN]
 
 contenttypes:
-    Nos réalisations:
+    nos-realisations:
         edit: [ROLE_NOS_REALISATIONS, CONTENT_OWNER]
         create: [ROLE_NOSREALISATIONS]
         change-ownership: [ROLE_NOSREALISATIONS]
         view: [ROLE_NOSREALISATIONS]
 
-    Accueil:
+    accueil:
         edit: [ROLE_ACCUEIL, CONTENT_OWNER]
         create: [ROLE_ACCUEIL]
         change-ownership: [ROLE_ACCUEIL]
         view: [ROLE_ACCUEIL]
 
-    Nos savoir faire:
+    nos-savoirs-faire:
         edit: [ROLE_NOS_SAVOIR_FAIRE, CONTENT_OWNER]
         create: [ROLE_NOS_SAVOIR_FAIRE]
         change-ownership: [ROLE_NOS_SAVOIR_FAIRE]
         view: [ROLE_NOS_SAVOIR_FAIRE]
 
-    Nos valeurs:
+    nos-valeurs:
         edit: [ROLE_NOS_VALEURS, CONTENT_OWNER]
         create: [ROLE_NOS_VALEURS]
         change-ownership: [ROLE_NOS_VALEURS]
         view: [ROLE_NOS_VALEURS]
 
-    Nos équipes:
+    nos-equipes:
         edit: [ROLE_NOS_EQUIPES, CONTENT_OWNER]
         create: [ROLE_NOS_EQUIPES]
         change-ownership: [ROLE_NOS_EQUIPES]
         view: [ROLE_NOS_EQUIPES]
 
-    Recrutements:
-        edit: [ROLE_RECRUTEMENTS, CONTENT_OWNER]
-        create: [ROLE_RECRUTEMENTS]
-        change-ownership: [ROLE_RECRUTEMENTS]
-        view: [ROLE_RECRUTEMENTS]
+    recrutements:
+        edit: [ROLE_RECRUTEMENT, CONTENT_OWNER]
+        create: [ROLE_RECRUTEMENT]
+        change-ownership: [ROLE_RECRUTEMENT]
+        view: [ROLE_RECRUTEMENT]
 
-    Page contact:
+    Contact:
         edit: [ROLE_PAGE_CONTACT, CONTENT_OWNER]
         create: [ROLE_PAGE_CONTACT]
         change-ownership: [ROLE_PAGE_CONTACT]
