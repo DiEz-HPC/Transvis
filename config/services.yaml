@@ -50,6 +50,11 @@ services:
             - ../src/Exception/
             - ../src/Kernel.php
 
+    App\Service\SendMail:
+        public: true
+        arguments:
+          $themeName: '%bolt.theme%'
+
     Bolt\:
         resource: '../vendor/bolt/core/src/*'
         exclude: '../vendor/bolt/core/src/{Entity,Exception,Kernel.php}'

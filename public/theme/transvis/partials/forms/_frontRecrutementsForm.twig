@@ -1,5 +1,6 @@
+{% setcontent options = 'Vos options' %}
 {% if options.email is not defined or options.email is empty %}
-    {% set mailto = 'contact@transvis.com' %}
+    {% set mailto = 'contact@transvis.fr' %}
 {% else %}
     {% set mailto = options.email %}
 {% endif %}
@@ -55,7 +56,7 @@
             } ) }}
         </div>
     </div>
-
+ {{ form_widget(form.mailto, { 'attr': {'class': 'form-control'} } ) }}
     <div class="form-control form-special"
          style=' opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;'>
         {{ form_rest(form) }}
@@ -63,3 +64,10 @@
     {{ form_end(form) }}
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    var mailto = form.querySelector('input[name="recrutements[mailto]"]');
+   mailto.value = {{ mailto|json_encode|raw }};
+});
+</script>

@@ -8,14 +8,14 @@ templates:
     #ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
 notification:
     enabled: true
-    debug: true
+    debug: false
     debug_address: test@debug.com # Email address used when debug mode is enabled
-    debug_smtp: true
+    debug_smtp: false
     subject: Vous avez reçu un message via le formulaire de contact
     subject_prefix: "[Transvis]"
     replyto_name: "{NAME} {FIRSTNAME}" # Email addresses and names can be either the
     replyto_email: "{EMAIL}" # name of a field below or valid text.
-    to_name: "Contact Transis"
+    to_name: "Contact Transvis"
     to_email: "{MAILTO}"
     from_name: "{NAME} {FIRSTNAME}"
     from_email: "{EMAIL}"

@@ -1,6 +1,7 @@
 
+ {% setcontent options = 'Vos options' %}
 {% if options.email is not defined or options.email is empty %}
-    {% set mailto = 'contact@transvis.com' %}
+    {% set mailto = 'contact@transvis.fr' %}
 {% else %}
     {% set mailto = options.email %}
 {% endif %}
