@@ -9,6 +9,17 @@
     height: 2.5rem;
     border-radius: 50%;
     background-color: var(--red-color);
+    fill: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    transition: all 0.3s ease-in-out;
+}
+.nav-contact:hover {
+    background-color: var(--light-color);
+    border: var(--red-color) 1px solid;
+}
+.nav-contact:hover svg {
+   fill: var(--red-color);
+    
 }
 .nav-item {
     font-weight: var(--font-weight--bold);
@@ -32,6 +43,10 @@
 .nav-content {
     display: flex;
 }
+.headerNavLogo{
+    margin-left: 25px;
+    margin-top: 25px;
+}
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -51,6 +66,9 @@
 }
 /* hide point on mobile */
 @media (max-width: 811px) {
+    .headerNavLogo{
+        margin: auto;
+    }
     .nav-point {
         display: none;
     }

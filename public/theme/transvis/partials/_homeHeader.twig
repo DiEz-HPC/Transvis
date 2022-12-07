@@ -8,7 +8,7 @@
 
     <div id="headerVideoDiv">
         {{ include('partials/_header.twig') }}
-        <video controls muted autoplay preload="auto" id="videoHeader">
+        <video controls muted autoplay loop preload="auto" id="videoHeader">
             <source src="{{ record.headerVideo }}">
         </video>
         <div id="headerContent" class="styling">
@@ -16,7 +16,9 @@
                 <h1>{{record.headerTitle}}</h1>
             </div>
             <div class="col-12 col-md-6 col-xl-6 header-block-right p-4">
-                <p>{{record.headerTeaser}}</p>
+                <div class="col-12 col-md-10">
+                    <p>{{record.headerTeaser}}</p>
+                </div>
             </div>
         </div>
         <div class="container headerHaveProject">

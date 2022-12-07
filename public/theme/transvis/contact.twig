@@ -17,19 +17,19 @@ record.
 {%  endblock javascript %}
 
 {% block main %}
-    <div class="row box-top text-center justify-content-center">
-        <h1 class="mb-4">{{ record.title|upper }}</h1>
+    <div class="row box-top text-center justify-content-center mt-5">
+        <h1 class="mb-4 mt-4">{{ record.title|upper }}</h1>
         <div class="col-10">
         {{ record.teaser }}
         </div>
     </div>
     {% include "@theme/partials/_line.twig" %}
     <div class="row box-bottom py-2 px-5 text-center" style="background-image: url({{ asset('images/bgRed.png') }}); background-size: cover;">
-    <h2 class="my-3 form-title"> Un projet ? Venez en discutez. </h2>
-        <div class="col-12 col-md-12 col-lg-8">
+    <h2 class="my-4 form-title"> Un projet ? Venez en discutez. </h2>
+        <div class="col-12 col-md-12 col-lg-7">
             {{ boltform('contact') }}
         </div>
-        <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center">
+        <div class="col-12 col-md-12 col-lg-5 d-flex justify-content-center">
             <iframe width="480" height="370" id="gmap_canvas" src="https://maps.google.com/maps?q=transvis&t=&z=7&ie=UTF8&iwloc=&output=embed&" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
     </div>

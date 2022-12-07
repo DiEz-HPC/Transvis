@@ -31,19 +31,19 @@
         {% set pageText = 'Découvrez nos réalisations' %}
     {% endif %}
     {% set recordsTagList = [] %}
+    {% set taxonomies = "nosRealisationsTags" %}
     {% if tag_cloud("nosRealisationsTags") is not empty %}
-        {% set taxonomies = "nosRealisationsTags" %}
         {% for recordsTag in tag_cloud("nosRealisationsTags") %}
             {% set recordsTagList = recordsTagList|merge({(recordsTag.name) : recordsTag.slug }) %}
         {% endfor %}
     {% endif %}
 
     <div class="Nos-realisations mt-5" id="nosRealisationSection">
-        <div class="row bs-g-0">
-            <h1 class="nosRealisationTitle">
+        <div class="row bs-g-0 nosRealisationIntro" style="padding: 0 6%;">
+            <h1 class="nosRealisationTitle mt-4">
                 {{ pageTitle|upper  }}
             </h1>
-            <p class="p-3">
+            <p class="mt-5">
                 {{ pageText }}
             </p>
         </div>
