@@ -32,9 +32,9 @@ record.
 {%  endblock javascript %}
 
 {% block main %}
-    <div class="nosEquipes mb-5">
+    <div class="nosEquipes mb-5 mt-5">
         <div class="container-sf">
-            {% with {defaultImage: asset('images/equipe.webp')} %}
+            {% with {defaultImage: asset('images/equipe.webp'), boxMargin: 'mt-4 pt-4'} %}
                 {{ block('blockTopSingletonWithImageContent') }}
             {% endwith %}
             {% include '@theme/partials/_line.twig' %}
