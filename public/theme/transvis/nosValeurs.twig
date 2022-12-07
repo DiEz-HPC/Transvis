@@ -25,9 +25,9 @@ record.
 {% endblock javascript %}
 
 {% block main %}
-    <div class="nos-valeurs pt-5 mt-5 d-flex flex-column">
+    <div class="nos-valeurs d-flex flex-column mt-5">
         <div class="block-top d-flex flex-column">
-            <h1 class="text-center pt-1 mb-4">{{ record.title | upper }}</h1>
+            <h1 class="text-center pt-1 mb-4 mt-4">{{ record.title | upper }}</h1>
             <div class="col-12 text-center px-5">
                 {{ record.teaser }}
             </div>

@@ -26,10 +26,11 @@
     {% for record in records %}
         {% set recordsName = recordsName|merge({(record|link) : record.title}) %}
     {% endfor %}
-    <div class="d-flex flex-column">
+    {% set hasRecords = records|length > 0 ? true : false %}
+    <div class="d-flex flex-column mt-5">
         <div class="recrutementHeader">
-            <h1 class="text-center">
-                {{ pageTitle }}
+            <h1 class="text-center mt-4">
+                {{ pageTitle|upper }}
             </h1>
             <p class="p-5 text-center">
                 {{ pageDescription }}
@@ -54,9 +55,9 @@
                     </div>
                 {% endfor %}
                 <h2 class="text-center my-5 col-12">
-                    {{ 'postes à pourvoir'|upper }}
+                    {{ hasRecords ? 'postes à pourvoir'|upper : 'Aucun poste à pourvoir pour le moment'|upper }}
                 </h2>
-                <div class="col-12 col-xl-3">
+                <div class="col-12 col-xl-3 {{ hasRecords ? '' : 'd-none' }}">
                     {% with { recordsTagList : recordsName, taxonomies : 'false'} %}
                     {{ block('buttonFilterContent')}}
                     {% endwith %}

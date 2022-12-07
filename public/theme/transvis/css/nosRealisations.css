@@ -2,11 +2,8 @@
     margin: 0;
     right: 15px;
 }
-.nosRealisationTitle {
-    font-style: normal;
-    font-weight: 800;
-    line-height: 44px;
-    padding-top: 15px;
+.nosRealisationIntro{
+    padding: 0 6%;
 }
 .row {
     --bs-gutter-x: 0 !important;
