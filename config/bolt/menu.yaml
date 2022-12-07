@@ -54,7 +54,7 @@ sfooter:
     class: nos-equipes
   - label: Nos réalisations
     title: Nos réalisations
-    link: nos-realisation
+    link: nos-realisations
     class: nos-realisation
   - label: Recrutements
     title: Recrutements
