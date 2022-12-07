@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleNavbar() {
     const header = document.querySelector(".headerHaveProject");
-    console.log(header);
     document
         .getElementById("burger-toggler")
         .addEventListener("click", function () {
