@@ -3,6 +3,12 @@ footer {
     color: white;
     max-width: 100vw;
 }
+.footerCorpLogo{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 150px;
+}
 .footer-list {
     list-style-type: none;
     padding-left: 0 !important;
