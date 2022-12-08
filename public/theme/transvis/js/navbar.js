@@ -13,7 +13,10 @@ function toggleNavbar() {
                     .getElementById("burgerMenu")
                     .classList.contains("appears")
             ) {
-                header.style.zIndex = "0";
+                if (header) {
+                    header.style.zIndex = "0";
+                }
+
                 document.body.style.overflow = "hidden !important";
                 document.body.style.position = "fixed";
                 checkForDnone();
@@ -22,9 +25,11 @@ function toggleNavbar() {
                 toggleButton("close");
                 document.body.style.overflow = "auto";
                 document.body.style.position = "relative";
-                setTimeout(function () {
-                    header.style.zIndex = "999";
-                }, 500);
+                if (header) {
+                    setTimeout(function () {
+                        header.style.zIndex = "999";
+                    }, 500);
+                }
             }
         });
 }
