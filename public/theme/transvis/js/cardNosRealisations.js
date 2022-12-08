@@ -3,7 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach(function (card) {
         modal = card.querySelector(".modalYoutube");
         video = modal.querySelector("video");
+        video.addEventListener('seeked', function(){
+            canvas.width = 1920;
+            canvas.height = 1080;
+        
+            let ctx = canvas.getContext('2d');
+            ctx.drawImage( video, 0, 0, canvas.width, canvas.height );
+        
+            image = canvas.toDataURL('image/jpeg');
+        });
+        
+        video.currentTime = 10;
+       /* setTimeout(function () {
         captureImage(video, card);
+        }, 250);*/
     });
 });
 
@@ -13,8 +26,10 @@ let captureImage = (video, card) => {
     if (canvas) {
         let context = canvas.getContext("2d");
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        video.currentTime = 0;
         return canvas.toDataURL("image/png");
     }else{
         return null;
     }
 };
+
