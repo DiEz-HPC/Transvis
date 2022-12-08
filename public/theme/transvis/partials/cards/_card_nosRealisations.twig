@@ -23,12 +23,12 @@
 {% endblock %}
 
 {% block cardNosRealisationsContent %}
-    <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}">
+    <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}" data-timerecord="{{ record.videoTime }}">
         <div class="card nr cardNosRealisations" data-loop-index="{{loopIndex}}">
 
             <div class="card-img">
             {% if record.video is defined and record.video is not null and record.video is not empty %}
-                <canvas class="card-img-top" id="cardImage"></canvas>
+                <canvas class="card-img-top" id="cardImage{{loopIndex}}"></canvas>
             {% else %}
                 {% for picture in record.carousel %}
                     {% if loop.first %}
