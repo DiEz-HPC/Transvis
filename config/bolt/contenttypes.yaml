@@ -37,6 +37,11 @@ accueil:
             type: text
             label: Titre
             group: Nos équipes
+        nosEquipesIntro:
+            type: redactor
+            label: Texte d'introduction
+            info: Texte d'introduction
+            group: Nos équipes
         nosEquipesTeaser:
             type: redactor
             label: Texte d'introduction
@@ -251,10 +256,16 @@ nosEquipes:
             info: Titre de la page
             fixture_format: '{title}'
             group: Introduction
-        teaser:
+        intro:
             type: redactor
             label: Texte d'introduction
             info: Texte d'introduction de la page
+            fixture_format: '{intro}'
+            group: Introduction
+        teaser:
+            type: redactor
+            label: Contenue de la page
+            info: Contenue de la page
             fixture_format: '{teaser}'
             group: Introduction
         image:

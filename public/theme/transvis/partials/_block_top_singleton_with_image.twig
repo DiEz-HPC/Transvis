@@ -17,17 +17,16 @@ defaultImage is variable passed with call component
     <div class="{{boxMargin}}">
         <div class="block-top d-flex flex-column mb-5 justify-content-between">
             <h1 class="text-center text-xl-start pt-1 line-before-start mb-5">{{ record.title | upper }}</h1>
-            <div class="block-bottom d-flex flex-column-reverse flex-xl-row justify-content-center justify-content-xl-between align-items-center align-items-xl-start">
-                <div class="block-left col-10 col-xl-6">
-                    {{ record.teaser }}
-                </div>
+            {% if record.intro is defined %}
+                <div class="">{{ record.intro }}</div>
+            {% endif %}
+            <div class="block-bottom">
                 <div class="block-right position-relative col-10 col-xl-5 d-flex justify-content-center align-items-center {{ imgMargin }}">
-                    <img id="image-back"
-                         src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="contour">
-                    <img id="image-front"
-                         class="p-2"
-                         src="{{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image') }}"
-                         alt="image d'illustration">
+                    <img id="image-back" src="{{ asset('images/savoirs-faire/bloc-contour.png') }}" alt="contour">
+                    <img id="image-front" class="p-2" src="{{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image') }}" alt="image d'illustration">
+                </div>
+                <div class="p-3">
+                    {{ record.teaser }}
                 </div>
             </div>
         </div>

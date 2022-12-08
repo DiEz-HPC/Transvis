@@ -23,18 +23,18 @@
         </div>
         <div class="container headerHaveProject">
             {% include "@theme/partials/_line.twig" %}
-            <div class=" d-flex flex-column flex-md-row">
-                <div class="col-md-6 col-xl-6 align-items-center justify-content-center justify-content-md-start">
-                    <p class="headerHaveProjectText text-center text-md-start mt-4">Vous avez un
+            <div class=" d-flex flex-column flex-lg-row">
+                <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
+                    <p class="headerHaveProjectText text-center text-lg-start mt-4">Vous avez un
                         <span>projet</span>
                         ?</p>
-                    <div class="d-flex justify-content-center justify-content-md-start mt-4">
+                    <div class="d-flex justify-content-center justify-content-lg-start mt-4">
                         {%  with { text: "contactez-nous", link: '/contact', width: "200px", height: "37px", nextWidth: "8%"} %}
                         {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-6 row align-items-center justify-content-center justify-content-md-end my-4 mt-md-0">
+                <div class="col-lg-6 col-xl-6 row align-items-center justify-content-center justify-content-lg-end my-4 mt-lg-0">
                     <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
                     <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
                     <a href="mailto:{{ options.email|default('contact@transvis.fr') }}" class="header-rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
