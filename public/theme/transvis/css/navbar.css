@@ -19,7 +19,7 @@
 }
 .nav-contact:hover svg {
    fill: var(--red-color);
-    
+
 }
 .nav-item {
     font-weight: var(--font-weight--bold);
