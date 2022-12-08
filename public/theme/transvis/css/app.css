@@ -4,7 +4,9 @@
     font-family: "Montserrat";
     src: url(../fonts/Montserrat-Bold.woff2);
 }
-
+a {
+    text-decoration: none;
+}
 body {
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden !important;
