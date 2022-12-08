@@ -11,7 +11,7 @@
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 36px;
+    font-size: var(--font-size-larger);
     line-height: 44px;
 }
 
@@ -37,4 +37,15 @@
     font-size: 20px;
     line-height: 24px;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 768px) {
+    .keyFigureTitle {
+        font-size: var(--font-size-title);
+    }
+    .keyFigureNumber {
+        font-size: 2rem;
+    }
+    .keyFiguretext {
+        font-size: 16px;
+    }
 }
