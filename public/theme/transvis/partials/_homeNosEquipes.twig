@@ -6,7 +6,7 @@
 
 {% block homeNosEquipesContent %}
     {% set arr = [] %}
-    {% set arr = arr|merge({'title': record.nosEquipesTitle, 'teaser': record.nosEquipesTeaser, 'image': record.NosEquipesImages}) %}
+    {% set arr = arr|merge({'title': record.nosEquipesTitle, 'teaser': record.nosEquipesTeaser, 'image': record.NosEquipesImages, 'intro': record.nosEquipesIntro}) %}
     <div class="container">
         {% with {defaultImage: asset('images/equipe.webp'), record: arr, imgMargin : ' '} %}
         {{ block('blockTopSingletonWithImageContent') }}
