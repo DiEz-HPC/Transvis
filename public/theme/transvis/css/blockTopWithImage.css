@@ -20,7 +20,7 @@
 
 .block-top .block-right {
     background-size: cover;
-    margin-top: -8%;
+    margin: 15px;
     height: 80%;
 }
 
@@ -51,9 +51,18 @@
     width: 100%;
     height: 100%;
 }
-
+.block-right{
+    float: right;  
+    max-width: 40vw;
+    border: 1.5rem;
+}
+.block-right img{
+    width: 100%;
+    height: auto;
+}
 @media screen and (max-width: 1200px) {
     .block-right {
+        float: none;
         max-width: 100%;
         margin-top: 2rem;
     }
