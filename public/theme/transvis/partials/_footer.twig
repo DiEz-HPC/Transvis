@@ -21,19 +21,19 @@
             </h6>
             <div class="red-line my-3"></div>
             {{ menu(
-                    name = 'ffooter',
-                    template = 'partials/_sub_menu_footer.twig',
-                    withsubmenus = false,
-                ) }}
+                name = 'ffooter',
+                template = 'partials/_sub_menu_footer.twig',
+                withsubmenus = false,
+            ) }}
         </div>
         <div class="col-6 col-lg-2">
             <h6 class="transparent">NAVIGATION</h6>
             <div class="red-line my-3"></div>
             {{ menu(
-                    name = 'sfooter',
-                    template = 'partials/_sub_menu_footer.twig',
-                    withsubmenus = false,
-                ) }}
+                name = 'sfooter',
+                template = 'partials/_sub_menu_footer.twig',
+                withsubmenus = false,
+            ) }}
         </div>
         <div class="col-12 col-lg-2">
             <h6>CONTACT</h6>
@@ -45,23 +45,37 @@
                     {{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}
                 </li>
                 <li class="contact-list-item">
-                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe">   <a href="mailto:{{ options.email|default('contact@transvis.fr') }}">{{ options.email|default('contact@transvis.fr')}}</a>
+                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe"> <a
+                        href="mailto:{{ options.email|default('contact@transvis.fr') }}">{{ options.email|default('contact@transvis.fr') }}</a>
                 </li>
                 <li class="contact-list-item">
-                    <img src="{{ asset('images/phone.svg') }}" alt="phone"> {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
+                    <img src="{{ asset('images/phone.svg') }}"
+                         alt="phone"> {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
                 </li>
                 <li class="contact-list-item contact-list-item-logo">
                     <div class="row align-items-center">
-                        <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
-                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
-                        <a href="mailto:{{ options.email|default('contact@transvis.fr') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
+                        <a href="{{ options.facebook|default('https://www.facebook.com/') }}" target="_blank"
+                           class="rounded-link d-flex justify-content-center align-items-center"><img
+                                src="{{ asset('images/facebook.svg') }}" class="" alt="facebook"></a>
+                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank"
+                           class="rounded-link d-flex justify-content-center align-items-center"><img
+                                src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
+                        <a href="mailto:{{ options.email|default('contact@transvis.fr') }}"
+                           class="rounded-link d-flex justify-content-center align-items-center"><img
+                                src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
 </footer>
-    <div class="bottom-footer text-center p-4 align-items-center col-12">
-       <p class="diez-text"> Site réalisé par <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a> </p><br>
-       <p class="diez-text"><a href="https://www.centre-valdeloire.fr/" target="_blank" class="diez-link"><img src="{{ asset('images/centrevaldeloire.png') }}" class="mx-2" alt="logo centre val de loire"></a> Ce site a bénéficié d'un soutien financier de la Région Centre-Val de Loire </p>
-    </div>
+<div class="bottom-footer text-center p-4 align-items-center col-12">
+    <p class="diez-text"> Site réalisé par <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a>
+    </p><br>
+    <p class="diez-text d-flex flex-column flex-lg-row justify-content-center align-items-center">
+        <a href="https://www.centre-valdeloire.fr/" target="_blank" class="diez-link">
+            <img src="{{ asset('images/centrevaldeloire.png') }}" class="mx-2" alt="logo centre val de loire">
+        </a>
+        <span class="py-3">Ce site a bénéficié d'un soutien financier de la Région Centre-Val de Loire</span>
+    </p>
+</div>
