@@ -74,8 +74,8 @@ accueil:
 
 savoirFaire:
     name: Nos savoirs faire
-    singular_name: Nos savoirs faire
-    slug: nos-savoirs-faire
+    singular_name: Nos savoir-faire
+    slug: nos-savoir-faire
     fields:
         title:
             type: text
