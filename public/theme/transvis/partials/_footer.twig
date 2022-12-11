@@ -41,16 +41,7 @@
             <div class="footer-line"></div>
             <ul class="contact-list">
                 <li class="contact-list-item">
-                    <img src="{{ asset('images/localisation.svg') }}" alt="localisation">
-                    {{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}
-                </li>
-                <li class="contact-list-item">
-                    <img src="{{ asset('images/enveloppe.svg') }}" alt="enveloppe"> <a
-                        href="mailto:{{ options.email|default('contact@transvis.fr') }}">{{ options.email|default('contact@transvis.fr') }}</a>
-                </li>
-                <li class="contact-list-item">
-                    <img src="{{ asset('images/phone.svg') }}"
-                         alt="phone"> {{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}
+                    {% include '@theme/images/adress.svg' with {spacing: 55} %}
                 </li>
                 <li class="contact-list-item contact-list-item-logo">
                     <div class="row align-items-center">
@@ -61,6 +52,9 @@
                            class="rounded-link d-flex justify-content-center align-items-center"><img
                                 src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
                     </div>
+                </li>
+                <li>
+
                 </li>
             </ul>
         </div>
