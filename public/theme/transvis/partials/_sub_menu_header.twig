@@ -10,17 +10,9 @@
     {% from _self import display_menu_item %}
     {% apply spaceless %}
         <a href="{{ item.uri }}" title='{{ item.title }}' class='nav-link'>
-            {% if item.label != 'Contact' %}
                 {{ item.label|upper }}
-            {% else %}
-                <div class="nav-contact d-flex align-items-center justify-content-center mx-3">
-                    {% include('images/envelope-svgrepo-com.svg') %}
-                </div>
-            {% endif %}
         </a>
-        {% if loop.last is true %}
-        {% elseif loop.index == loop.length - 1 %}
-        {% else %}
+        {% if loop.last is false %}
             <span class="nav-point mx-3"></span>
         {% endif %}
     {% endapply %}
