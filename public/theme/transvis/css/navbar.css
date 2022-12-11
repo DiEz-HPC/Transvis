@@ -1,3 +1,6 @@
+#burgerMenu {
+    transition: all 0.3s ease-in-out;
+}
 .nav-point {
     width: 0.5rem;
     height: 0.5rem;
