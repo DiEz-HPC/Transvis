@@ -21,8 +21,8 @@
     filter: grayscale(100%);
 }
 #videoHeader {
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: auto;
 }
 #headerContent {
     position: absolute;
@@ -64,7 +64,7 @@
     right: 0;
     left: 0;
     margin: auto;
-    z-index: 99;
+    z-index: 900;
 }
 .headerHaveProjectText {
     font-size: 1.5rem;
@@ -77,13 +77,17 @@
 }
 .header-rounded-link {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
     background: var(--red-color);
     display: inline-block;
     text-align: center;
     line-height: 30px;
     margin-right: 10px;
+}
+.header-rounded-link img{
+    width: 20px;
+    height: 20px;
 }
 .header-rounded-link:hover {
     background: rgba(30, 30, 30, 1);
@@ -92,7 +96,12 @@
 .nav-link:hover {
     color: var(--red-color) !important;
 }
-
+@media screen and (min-width: 768px){
+    #headerVideoDiv {
+        background-image: none !important;
+        max-height: 100vh;
+    }
+}
 @media screen and (max-width: 768px) {
     #headerVideoDiv header a {
         color: var(--dark-color);
@@ -108,7 +117,7 @@
         position: relative;
         height: fit-content !important;
         display: block;
-        padding-top: 55px;
+        padding-top: 55px;        
     }
     .header-block-left {
         background: transparent;
