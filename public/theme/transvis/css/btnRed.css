@@ -1,4 +1,4 @@
-.button-link {
+.button-link, .btn-link {
     background-color: var(--red-color);
     width: 155px;
     height: 37px;
@@ -13,17 +13,17 @@
     border-radius: 5px;
 }
 
-.button-link:hover {
+.button-link:hover, .btn-link:hover {
     text-decoration: none;
     color: var(--light-color);
 }
 
-.button-link:active {
+.button-link:active, .btn-link:active {
     text-decoration: none;
     color: var(--light-color);
 }
 
-.button-link span {
+.button-link span, .btn-link span {
     font-weight: 500;
     font-size: var(--font-size);
     line-height: 20px;

@@ -18,7 +18,8 @@
                         {{ record.title  }}
                     </h1>
                     <button type="button" class="btn-close-modal">
-                        {% include ("images/close.svg") %}</button>
+                        {% include ("images/enveloppe.svg") %}
+                    </button>
                 </div>
             </div>
             <div class="modalBody mt-4">
@@ -51,7 +52,7 @@
                 </div>
                 <div class="row justify-content-center my-4">
                     {% if record.machineSheet is defined and record.machineSheet is not null and record.machineSheet is not empty %}
-                        {%  with { text: "Fiche technique", link: record.machineSheet, width: "200px", height: "37px", nextWidth: "8%", isBlack: true} %}
+                        {%  with { text: "Fiche technique", link: record.machineSheet, width: "250px", height: "37px", nextWidth: "8%", isBlack: true} %}
                         {{ block('buttonRedContent') }}
                         {% endwith %}
                     {% endif %}
