@@ -39,8 +39,9 @@ contrats:
     required: false
 
 nosRealisationsTags:
-    slug: nosRealisationsTags
-    singular_slug: realisationTags
+    name: Tags de la réalisation
+    slug: nosRealisations
+    singular_slug: Realisation
     behaves_like: tags
     postfix: "Commencez un nouveau tag en saisissant un caractère, valider le tag en appuyant sur entrée."
     allow_spaces: false

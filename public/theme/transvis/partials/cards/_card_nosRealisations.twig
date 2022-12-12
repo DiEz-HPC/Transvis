@@ -43,7 +43,7 @@
 
             <div class="card-body">
                 <h3 class="title">{{ record.title }}</h3>
-                <div class="row tag-line mb-3">
+                <div class="row tag-line mb-3 align-items-center py-1">
                     {% for key, tag in tagList %}
                         {%  with { name: key, slug: tag} %}
                         {{ block('tagContent') }}

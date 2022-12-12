@@ -14,8 +14,19 @@
     line-height: 20px;
     color: var(--red-color);
 }
-
-
+.tagCloud-item {
+    white-space: nowrap;
+}
+.tagCloud-item.active{
+    color: var(--red-color);
+}
+.tag:hover, .tag:focus, .tag:active{
+    color: var(--red-color);
+}
+.CurrentTagTitle{
+    color: var(--red-color);
+    font-size: var(--font-size-title);
+}
 @media screen and (max-width: 768px) {
 h1{
 text-align: center;
