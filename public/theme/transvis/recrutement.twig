@@ -55,6 +55,12 @@ Record.
                     <div class="profil text-center">
                         {{ record.profil | raw }}
                     </div>
+                    {% if record.other %}
+                        <h3 class="text-center mt-5 pt-3">{{ 'Informations complémentaires' | upper }}</h3>
+                        <div class="profil text-center">
+                            {{ record.other | raw }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="block-right col-12 col-xl-6">

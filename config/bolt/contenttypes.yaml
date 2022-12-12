@@ -371,6 +371,11 @@ recrutements:
           label: Profil recherché
           info: Profil recherché
           group: Recrutement
+        other:
+          type: redactor
+          label: Informations complémentaires
+          info: Informations complémentaires
+          group: Recrutement
         description:
             type: set
             label: Déscription du poste
