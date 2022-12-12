@@ -139,7 +139,7 @@ contenttypes:
         change-ownership: [ROLE_ACCUEIL]
         view: [ROLE_ACCUEIL]
 
-    nos-savoirs-faire:
+    nos-savoir-faire:
         edit: [ROLE_NOS_SAVOIR_FAIRE, CONTENT_OWNER]
         create: [ROLE_NOS_SAVOIR_FAIRE]
         change-ownership: [ROLE_NOS_SAVOIR_FAIRE]
