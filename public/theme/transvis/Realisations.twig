@@ -1,6 +1,5 @@
 {% extends '@theme/partials/_master.twig' %}
 {% use '@theme/partials/cards/_card_nosRealisations.twig' %}
-{% use '@theme/partials/buttons/_button_filter.twig' %}
 {% use '@theme/partials/_logo_slider.twig' %}
 {#
     Records: 'collection record'
@@ -14,7 +13,6 @@
 
 {% block javascript %}
     {{ parent() }}
-    {{ block('buttonFilterJavascript')}}
     {{ block('cardNosRealisationsJavascript') }}
     {{ block('logoSliderJavascript') }}
 {%  endblock javascript %}
@@ -25,58 +23,77 @@
     {% else %}
         {% set pageTitle = 'Nos réalisations' %}
     {% endif %}
+    {% if app.request.attributes.get('_route_params').slug is defined %}
+        {% set currentTag = app.request.attributes.get('_route_params').slug %}
+    {% else %}
+        {% set currentTag = null %}
+    {% endif %}
     {% if options.nosRealisationsTitle is defined and options.nosRealisationsText is not null %}
         {% set pageText = options.nosRealisationsText %}
     {% else %}
         {% set pageText = 'Découvrez nos réalisations' %}
     {% endif %}
     {% set recordsTagList = [] %}
-    {% set taxonomies = "nosRealisationsTags" %}
-    {% if tag_cloud("nosRealisationsTags") is not empty %}
-        {% for recordsTag in tag_cloud("nosRealisationsTags") %}
+    {% set taxonomies = "nosRealisations" %}
+    {% if tag_cloud("nosRealisations") is not empty %}
+        {% for recordsTag in tag_cloud("nosRealisations") %}
             {% set recordsTagList = recordsTagList|merge({(recordsTag.name) : recordsTag.slug }) %}
+            {% if recordsTag.slug is same as currentTag %}
+                {% set currentTag = recordsTag.name %}
+            {% endif %}
         {% endfor %}
     {% endif %}
 
     <div class="Nos-realisations mt-5" id="nosRealisationSection">
         <div class="row bs-g-0 nosRealisationIntro" style="padding: 0 6%;">
             <h1 class="nosRealisationTitle mt-4">
-                {{ pageTitle|upper  }}
+                {{ pageTitle|upper }}
             </h1>
+            {% if currentTag is not null %}
+                <h2 class="CurrentTagTitle">
+                    {{ currentTag|upper }}
+                </h2>
+            {% endif %}
+
             <p class="mt-5">
                 {{ pageText }}
             </p>
         </div>
+
         {{ include ('@theme/partials/_line.twig') }}
-        <div class="row">
-            <div class="row d-flex align-items-center justify-content-center my-5">
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                {% with { recordsTagList : recordsTagList, taxonomies : taxonomies} %}
-                    {{ block('buttonFilterContent') }}
-                {% endwith %}
-                </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    {% for tag in recordsTagList %}
-                        {% with { tag: tag} %}
-                        {% endwith %}
+        {% if recordsTagList is not empty %}
+            <div class="row d-flex align-items-center justify-content-center flex-column my-5">
+                <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center tagCloud-container">
+                    {% for tagName, tagSlug in recordsTagList  %}
+                        <a href="{{ '/' ~ taxonomies ~ '/' ~ tagSlug}}" class="tag-link tag m-2 tagCloud-item {{ currentTag == tagName ? 'active' : '' }}">
+                            {{ tagName }}
+                        </a>
                     {% endfor %}
                 </div>
+                {% if currentTag is not null %}
+                    <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                        <a href="{{ path('listing', {'contentTypeSlug': 'nos-realisations'}) }}" class="tag-link tag m-2 tagCloud-item">
+                            Tout</a>
+                    </div>
+                {% endif %}
             </div>
-            <div class="row">
-                {% for record in records %}
-                    {% set tagList = [] %}
-                    {% if record|taxonomies["nosRealisationsTags"] is defined %}
-                        {% set tags = record|taxonomies["nosRealisationsTags"] %}
-                        {% for tag in tags %}
-                            {% set tagList = tagList|merge({(tag.name) : tag.slug}) %}
-                        {% endfor %}
-                    {% endif %}
-                    {%  with { record: record, tagList: tagList, taxonomies: "nosRealisationsTags", loopIndex: loop.index } %}
-                    {{ block('cardNosRealisationsContent') }}
-                    {% endwith %}
-                {% endfor %}
-            </div>
+            {{ include ('@theme/partials/_line.twig') }}
+        {% endif %}
+        <div class="row">
+            {% for record in records %}
+                {% set tagList = [] %}
+                {% if record|taxonomies["nosRealisations"] is defined %}
+                    {% set tags = record|taxonomies["nosRealisations"] %}
+                    {% for tag in tags %}
+                        {% set tagList = tagList|merge({(tag.name) : tag.slug}) %}
+                    {% endfor %}
+                {% endif %}
+                {%  with { record: record, tagList: tagList, taxonomies: "nosRealisations", loopIndex: loop.index } %}
+                {{ block('cardNosRealisationsContent') }}
+                {% endwith %}
+            {% endfor %}
         </div>
+
         <div class="col-12 d-flex justify-content-center align-items-center my-5">
             {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
         </div>

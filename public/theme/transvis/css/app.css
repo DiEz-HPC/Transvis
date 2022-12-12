@@ -9,7 +9,6 @@ a {
 }
 a:active, a:focus{
     text-decoration: none;
-    color:inherit !important;
 }
 body {
     font-family: "Montserrat", sans-serif;

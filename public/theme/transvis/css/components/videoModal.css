@@ -18,6 +18,7 @@
    height: 95vh;
    background-color: var(--light-color);
    overflow: scroll;
+   overflow-x: hidden;
    position: relative;
    border-radius: 5px;
 }
@@ -35,6 +36,15 @@
     width: 25px;
     border: none !important;
 }
+.modalYoutube .btn-close-modal:after{
+    display: inline-block;
+    content: "\00d7"; /* This will render the 'X' */
+    font-size: 30px;
+    line-height: 1;
+    vertical-align: middle;
+    color: var(--light-color);
+
+  }
 .modalYoutube .btn-close-modal svg {
     fill: var(--light-color);
     margin: auto;
@@ -44,6 +54,11 @@
 }
 .modalYoutube .modalFooter{
     height: 35vh;
+}
+.modalYoutube .btn-link:hover,
+.modalYoutube .btn-link:focus,
+.modalYoutube .btn-link:active{
+    color: var(--red-color);
 }
 .modalYoutube .modalFooter p{
     font-size: var(--font-size-title);
