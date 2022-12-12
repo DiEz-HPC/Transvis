@@ -2,14 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (checkIfMobile()) {
         toggleMobileNavbar();
     } else {
-        hideOnScroll();
+
+        const initialNavbarHeight = document.querySelector("main").getBoundingClientRect().top;
+        const initialLogoHeight = document.querySelector(".headerNavLogo").offsetHeight;
+        hideOnScroll(initialNavbarHeight, initialLogoHeight);
     }
 });
 
+// Fonction qui vérifie si on est sur mobile ou non
 var checkIfMobile = () => {
     return window.innerWidth < 768 ? true : false;
 };
 
+// Fonction qui permet d'ouvrir et fermé le menu burger
 var toggleMobileNavbar = () => {
     const header = document.querySelector(".headerHaveProject");
     document
@@ -56,7 +61,7 @@ var toggleButton = (status) => {
     }
 };
 
-var hideOnScroll = () => {
+var hideOnScroll = (initialNavbarHeight, initialLogoHeight) => {
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
@@ -68,9 +73,9 @@ var hideOnScroll = () => {
             // On affiche la navbar
             setNavbarStyle(header, false);
             // Si on est sur la homePage on enlève le margin-top du main pour ne pas casser le header
-            isHome ? setPageMargin(0) : setPageMargin(header.offsetHeight);
+            isHome ? setPageMargin(0) : setPageMargin(initialNavbarHeight);
             // On vérifie si l'utilisateur est en haut de la page
-            handleScrollTop();
+            handleScrollTop(initialLogoHeight);
         } else {
             // Sinon on scroll vers le bas
             // On enlève la navbar
@@ -80,16 +85,23 @@ var hideOnScroll = () => {
     };
 };
 
-var setNavbarStyle = (navbar, isTransparent) => {
+var setNavbarStyle = (
+    navbar,
+    isTransparent,
+    isTop = false,
+    initialLogoHeight = 150
+) => {
+    var blackColor = getComputedStyle(document.documentElement).getPropertyValue("--dark-color");
+    var whiteColor = getComputedStyle(document.documentElement).getPropertyValue("--light-color");
     var css = {
-        background: "rgba(30, 30, 30, 0.26)",
+        background: checkIfHomePage() ? blackColor : whiteColor,
         backdropFilter: "blur(6.8px)",
         webkitBackdropFilter: "blur(6.8px)",
         boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
         position: "fixed",
         top: "0",
         width: "100%",
-        zIndex: "999",
+        zIndex: "9999",
         padding: "1rem 0",
     };
     if (isTransparent) {
@@ -97,6 +109,16 @@ var setNavbarStyle = (navbar, isTransparent) => {
         css.boxShadow = "none";
         css.backdropFilter = "none";
         css.webkitBackdropFilter = "none";
+    }
+    if (!isTop) {
+        document.querySelector(".headerNavLogo").style.height = "100px";
+        document.querySelector(".headerNavLogo").style.width = "auto";
+        document.querySelector(".headerNavLogo").style.marginTop = "0px";
+        
+    } else {
+        document.querySelector(".headerNavLogo").style.height = initialLogoHeight + "px";
+        document.querySelector(".headerNavLogo").style.marginTop = "25px";
+        css.padding = "0";
     }
     for (var key in css) {
         navbar.style[key] = css[key];
@@ -113,9 +135,14 @@ var setPageMargin = (navbarHeight) => {
     document.querySelector("main").style.marginTop = navbarHeight + "px";
 };
 
-var handleScrollTop = () => {
+var handleScrollTop = (initialLogoHeight) => {
     // Si l'utilisateur est en haut de la page alors on enleve le blur effect
     if (window.pageYOffset === 0) {
-        setNavbarStyle(document.querySelector("#burgerMenu"), true);
+        setNavbarStyle(
+            document.querySelector("#burgerMenu"),
+            true,
+            true,
+            initialLogoHeight
+        );
     }
 };
