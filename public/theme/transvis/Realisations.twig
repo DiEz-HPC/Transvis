@@ -1,6 +1,5 @@
 {% extends '@theme/partials/_master.twig' %}
 {% use '@theme/partials/cards/_card_nosRealisations.twig' %}
-{% use '@theme/partials/buttons/_button_filter.twig' %}
 {% use '@theme/partials/_logo_slider.twig' %}
 {#
     Records: 'collection record'
@@ -14,7 +13,6 @@
 
 {% block javascript %}
     {{ parent() }}
-    {{ block('buttonFilterJavascript')}}
     {{ block('cardNosRealisationsJavascript') }}
     {{ block('logoSliderJavascript') }}
 {%  endblock javascript %}
