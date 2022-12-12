@@ -10,22 +10,16 @@
     {{ parent() }}
     {{ block('cardRecrutementStylesheet') }}
     {{ block('recruitmentsNumberStylesheet') }}
-    {{ block('buttonFilterStylesheet')}}
 {% endblock stylesheet %}
 
 {% block javascript %}
     {{ parent() }}
-    {{ block('buttonFilterJavascript')}}
 {%  endblock javascript %}
 
 {% block main %}
     {% set pageTitle = options.recrutementsTitle|default('Recrutements') %}
     {% set pageDescription = options.recrutementsText|default('') %}
     {% set steps = options.recrutementsStep|default(null) %}
-    {% set recordsName = [] %}
-    {% for record in records %}
-        {% set recordsName = recordsName|merge({(record|link) : record.title}) %}
-    {% endfor %}
     {% set hasRecords = records|length > 0 ? true : false %}
     <div class="d-flex flex-column mt-5">
         <div class="recrutementHeader">
@@ -57,11 +51,6 @@
                 <h2 class="text-center my-5 col-12">
                     {{ hasRecords ? 'postes à pourvoir'|upper : 'Aucun poste à pourvoir pour le moment'|upper }}
                 </h2>
-                <div class="col-12 col-xl-3 {{ hasRecords ? '' : 'd-none' }}">
-                    {% with { recordsTagList : recordsName, taxonomies : 'false'} %}
-                    {{ block('buttonFilterContent')}}
-                    {% endwith %}
-                </div>
             </div>
         </div>
 
