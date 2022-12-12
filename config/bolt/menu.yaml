@@ -8,9 +8,9 @@ main:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoirs faire
-    title: Nos savoirs faire
-    link: nos-savoirs-faire
+  - label: Nos savoir-faire
+    title: Nos savoir-faire
+    link: nos-savoir-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
@@ -38,9 +38,9 @@ ffooter:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoirs faire
-    title: Nos savoirs faire
-    link: nos-savoirs-faire
+  - label: Nos savoir-faire
+    title: Nos savoir-faire
+    link: nos-savoir-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
