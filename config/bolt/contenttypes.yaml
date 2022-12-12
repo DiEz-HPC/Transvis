@@ -322,6 +322,11 @@ nosRealisations:
           label: Vidéo de la réalisation
           info: Selectionner une vidéo de la réalisation
           group: Médias
+        videoTime:
+          type: integer
+          label: Position de la vidéo
+          info: Temp en seconde de l'image que vous voulez afficher
+          group: Médias
         machineSheet:
           type: file
           extensions: [pdf,doc,docx]

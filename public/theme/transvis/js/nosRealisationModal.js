@@ -16,6 +16,7 @@ const openModal = (cards, modals, body) => {
                 let modal = modals[nbDiv - 1];
                 let splideDiv = modal.querySelector("#logoSliderModal");
                 let carouselDiv = modal.querySelector("#carouselSlider");
+                initVideo(modal);
                 // init carousel
                 initCarousel(carouselDiv);
                 // init logo slider
@@ -111,3 +112,11 @@ const pauseVideo = (modal, wantStop) => {
         });
     });
 };
+
+const  initVideo = (modal) => {
+    var videoPlayer = modal.querySelector("video");
+
+    videoPlayer.addEventListener("play", function () {
+       videoPlayer.currentTime = 0;
+    }, {once : true});
+}
