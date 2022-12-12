@@ -15,6 +15,11 @@ accueil:
             label: Video
             extensions: [mp4, webm]
             group: En-tête
+        headerImage:
+            type: image
+            label: Image mobile
+            info: L'image de fond sur mobile
+            group: En-tête
         headerTitle:
             type: text
             label: Titre
@@ -69,8 +74,8 @@ accueil:
 
 savoirFaire:
     name: Nos savoirs faire
-    singular_name: Nos savoirs faire
-    slug: nos-savoirs-faire
+    singular_name: Nos savoir-faire
+    slug: nos-savoir-faire
     fields:
         title:
             type: text
@@ -505,11 +510,6 @@ vosOptions:
             type: text
             label: Lien Linkedin
             info: Lien vers votre page Linkedin
-            group: Autres
-        facebook:
-            type: text
-            label: Lien Facebook
-            info: Lien vers votre page Facebook
             group: Autres
         adresse:
             type: text

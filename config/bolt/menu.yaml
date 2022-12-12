@@ -8,9 +8,9 @@ main:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoirs faire
-    title: Nos savoirs faire
-    link: nos-savoirs-faire
+  - label: Nos savoir-faire
+    title: Nos savoir-faire
+    link: nos-savoir-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
@@ -24,7 +24,7 @@ main:
     title: Nos réalisations
     link: nos-realisations
     class: nos-realisation
-  - label: Recrutements
+  - label: Nous recrutons
     title: Recrutements
     link: recrutements
     class: recrutements
@@ -38,9 +38,9 @@ ffooter:
     title: Page d'accueil
     link: accueil
     class: homepage
-  - label: Nos savoirs faire
-    title: Nos savoirs faire
-    link: nos-savoirs-faire
+  - label: Nos savoir-faire
+    title: Nos savoir-faire
+    link: nos-savoir-faire
     class: savoir-faire
   - label: Nos valeurs
     title: Nos valeurs
@@ -56,7 +56,7 @@ sfooter:
     title: Nos réalisations
     link: nos-realisations
     class: nos-realisation
-  - label: Recrutements
+  - label: Nous recrutons
     title: Recrutements
     link: recrutements
     class: recrutements
