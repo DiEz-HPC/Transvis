@@ -8,7 +8,7 @@
     background-color: var(--dark-color);
     height: 250px;
     width: 400px;
-    padding: calc(var(--spacing-card) * 2) 0;
+    padding: calc(var(--spacing-card)) 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
     border-radius: 5px;
     position: relative;
@@ -38,6 +38,22 @@
     color: var(--light-color);
     font-size: var(--font-size);
     font-weight: 700;
-    line-height: 20px;
+    line-height: 1.5rem;
 }
+
+@media screen and (max-width: 375px) {
+    .card-sf h3 {
+        font-size: 14px;
+    }
+}
+
+.logo {
+    --logo-size: 100px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
 
