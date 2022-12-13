@@ -517,5 +517,23 @@
         <target>Leave blank for the default</target>
       </segment>
     </unit>
+    <unit id="JRCZLRM" name="Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.">
+      <segment>
+        <source>Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.</source>
+        <target>Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.</target>
+      </segment>
+    </unit>
+    <unit id="yUeSYHH" name="Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.">
+      <segment>
+        <source>Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.</source>
+        <target>Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.</target>
+      </segment>
+    </unit>
+    <unit id="pylGz2F" name="Parlez-nous de vous...">
+      <segment>
+        <source>Parlez-nous de vous...</source>
+        <target>Parlez-nous de vous...</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

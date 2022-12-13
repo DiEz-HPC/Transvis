@@ -83,7 +83,7 @@ class RecrutementsType extends AbstractType
                 [
                     'label' => 'Motivation',
                     'attr' => [
-                        'placeholder' => 'Motivation ...',
+                        'placeholder' => 'Parlez-nous de vous...',
                     ],
                     'required' => true,
                     'constraints' => [
