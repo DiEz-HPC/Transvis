@@ -15,18 +15,20 @@
         <div class="container mt-5 homeNosValeurTeaser">
             {{ record.nosValeursTeaser}}
         </div>
-        <div class="row d-flex justify-content-around">
-            {% for valeur in nosValeur.contentValues %}
-                <div class="single-valeur col-xl-4 p-5 d-flex flex-column justify-content-center align-items-center">
-                    <div class="circle d-flex justify-content-center align-items-center p-3">
-                        <img class="logo-valeur w-75" src="{{ asset(valeur.image.path) }}" alt="{{ valeur.image.alt }}">
+        <div class="d-flex justify-content-center my-5">
+            <div class="d-flex flex-column align-items-center">
+                {% for valeur in nosValeur.contentValues %}
+                    <div class="single-valeur p-2 d-flex justify-content-start align-items-center col-12 mb-3">
+                        <div class="circle d-flex justify-content-center align-items-center p-3 col-2 m-0 me-2">
+                            <img class="logo-valeur w-75" src="{{ asset(valeur.image.path) }}" alt="{{ valeur.image.alt }}">
+                        </div>
+                        <h3 class="text-start mt-2 homeNameOfValue">{{ valeur.nameOfValue | upper }}</h3>
                     </div>
-                    <h3 class="text-start mt-2 homeNameOfValue">{{ valeur.nameOfValue | upper }}</h3>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
         <div class="d-flex justify-content-center">
-            {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%", isBlack: true} %}
+            {%  with { text: "En savoir plus", link: '/nos-valeurs', width: "200px", height: "37px", nextWidth: "8%", isBlack: true} %}
             {{ block('buttonRedContent') }}
             {% endwith %}
         </div>

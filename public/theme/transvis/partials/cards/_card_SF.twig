@@ -17,7 +17,7 @@
             <img src="{{ path }}" alt="logo main">
         </div>
         <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
-            <h3 class="card-sf__title mb-4">{{ card.text | upper }}</h3>
+            <h3 class="card-sf__title mb-4 text-center">{{ card.text | upper }}</h3>
             {%  with { text: "Découvrir", link: '#' } %}
                 {{ block('buttonRedContent') }}
             {% endwith %}
