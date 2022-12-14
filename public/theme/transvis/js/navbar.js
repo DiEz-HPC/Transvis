@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (checkIfMobile()) {
         toggleMobileNavbar();
     } else {
-        // On saubvegarde la hauteur initial de la navbar et du logo pour les réutilisé
-        const initialNavbarHeight = document.querySelector("main").getBoundingClientRect().top;
+        // On sauvegarde la hauteur initial de la navbar et du logo pour les réutilisé
+        const initialNavbarHeight = getOffset(document.querySelector("main")).top;
         const initialLogoHeight = document.querySelector(".headerNavLogo").offsetHeight;
         hideOnScroll(initialNavbarHeight, initialLogoHeight);
     }
@@ -14,6 +14,15 @@ var checkIfMobile = () => {
     return window.innerWidth < 768 ? true : false;
 };
 
+// Fonction qui permet de récupérer la position d'un élément
+var getOffset = ( el ) => {
+    var _y = 0;
+    while( el && !isNaN( el.offsetTop ) ) {
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y};
+}
 // Fonction qui permet d'ouvrir et fermé le menu burger
 var toggleMobileNavbar = () => {
     const header = document.querySelector(".headerHaveProject");
