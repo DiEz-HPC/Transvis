@@ -24,6 +24,10 @@ p {
     line-height: 26px;
     font-weight: var(--font-weight-light);
 }
+strong{
+    font-weight: var(--font-weight-light) !important;
+    color: var(--red-color) !important;
+}
 
 .btn {
     font-weight: var(--font-weight--bold);
@@ -57,12 +61,15 @@ h1::before,
     margin: 0;
 }
 
-.line {
+.line, hr {
     border: 4px dashed var(--red-color);
     border-style: none none dashed;
     background-color: transparent;
+    opacity: 1 !important;
 }
-
+hr{
+    margin: 3rem 0;
+}
 @media (max-width: 1200px) {
     .line-before-start::before {
         margin: auto !important;

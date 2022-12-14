@@ -1,4 +1,7 @@
 @import "../app.css";
+body {
+    font-size: var(--font-size);
+}
 b{
     font-weight:normal !important;
     color: #D30F4E !important;
@@ -7,6 +10,7 @@ b{
 .img-fluid {
     max-width: 100%;
     height: auto;
+    background-color: rgba(116, 116, 116, 0.3);
 }
 .img-thumbnail {
     padding: 0.25rem;

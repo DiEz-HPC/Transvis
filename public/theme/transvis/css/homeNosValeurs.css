@@ -41,3 +41,8 @@
 .homeValeurContainer .btn-link{
     text-decoration: none !important;
 }
+
+.homeValeurContainer figure img {
+    max-width: 35px;
+    max-height: 35px;
+}
