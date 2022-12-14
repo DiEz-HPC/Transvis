@@ -1,5 +1,6 @@
 .card.nr {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100%;
 }
 .card.nr .card-img {
     position: relative;
@@ -32,7 +33,7 @@
 }
 .card.nr .tag-line {
     height: 32px;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 .card.nr .card-text {
     height: 150px;
