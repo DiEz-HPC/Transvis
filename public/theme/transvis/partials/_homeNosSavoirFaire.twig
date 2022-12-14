@@ -3,7 +3,7 @@
 {% use '@theme/partials/banner_keys/_banner_keys_figures.twig' %}
 {% block homeSavoirFaireStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/homeNosSavoirFaire.css') }}"/>
-    {{block('cardSFstylesheet')}}
+    {{ block('cardSFstylesheet') }}
     {{ block('buttonRedStylesheet') }}
     {{ block('bannerKeysFiguresStylesheet') }}
 {% endblock %}
@@ -13,28 +13,35 @@
 
 {% block homeSavoirFaireContent %}
     {% setcontent nosSavoirFaire = 'nos-savoir-faire' %}
-    {% set cards = [nosSavoirFaire.cardOne, nosSavoirFaire.cardTwo, nosSavoirFaire.cardThree] %}
-    {% set keyFigures = [nosSavoirFaire.keyFigureOne, nosSavoirFaire.keyFigureTwo, nosSavoirFaire.keyFigureThree] %}
+    {% set cards = [nosSavoirFaire.cardOne ?? {}, nosSavoirFaire.cardTwo ?? {}, nosSavoirFaire.cardThree ?? {}] %}
+    {% set keyFigures = [nosSavoirFaire.keyFigureOne ?? {}, nosSavoirFaire.keyFigureTwo ?? {}, nosSavoirFaire.keyFigureThree ?? {}] %}
 
-    <h2 class="likeh1 text-center m-5">{{record.savoirFaireTitle}}</h2>
+    <h2 class="likeh1 text-center m-5">{{ record.savoirFaireTitle }}</h2>
     <div class="m-5 text-center">
+        <p>{{record.savoirFaireIntro}}</p>
+    </div>
+    <div class="m-5">
         <p>{{record.savoirFaireTeaser}}</p>
     </div>
 
     <div class="d-flex justify-content-center mt-5">
-        {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
+        {%  with { text: "En savoir plus", link: '/nos-savoir-faire', width: "200px", height: "37px", nextWidth: "8%"} %}
+
             {{ block('buttonRedContent') }}
         {% endwith %}
     </div>
 
-    <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-around col-12 mt-5">
+    <div
+        class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-around col-12 mt-5">
         {% for  card in cards %}
-            {% with { card: card, loop: loop.index } %}
-            {{ block('cardSFContent') }}
-            {% endwith %}
+            {% if card is not empty %}
+                {% with { card: card, loop: loop.index } %}
+                    {{ block('cardSFContent') }}
+                {% endwith %}
+            {% endif %}
         {% endfor %}
     </div>
     {% with {keyFigures: keyFigures } %}
-    {{ block('bannerKeysFiguresContent') }}
+        {{ block('bannerKeysFiguresContent') }}
     {% endwith %}
 {% endblock %}

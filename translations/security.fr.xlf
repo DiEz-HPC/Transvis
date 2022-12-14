@@ -4,7 +4,7 @@
     <unit id="NF.vvAN" name="You have to login in order to access this page.">
       <segment>
         <source>You have to login in order to access this page.</source>
-        <target>You have to login in order to access this page.</target>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
       </segment>
     </unit>
   </file>
