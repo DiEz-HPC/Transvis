@@ -13,6 +13,7 @@ accueil:
         headerVideo:
             type: file
             label: Video
+            info: Video de fond sur desktop
             extensions: [mp4, webm]
             group: En-tête
         headerImage:
@@ -22,45 +23,59 @@ accueil:
             group: En-tête
         headerTitle:
             type: text
-            label: Titre
+            label: Titre 
+            info: Titre de la page
             group: En-tête
         headerTeaser:
             type: redactor
-            label: Texte d'introduction
+            label: Texte d'en-tête
             info: Texte d'introduction présent sur le header
             group: En-tête
         savoirFaireTitle:
             type: text
             label: Titre
+            info: Titre de la section savoir-faire
             group: Savoir-faire
-        savoirFaireTeaser:
+        savoirFaireIntro:
             type: redactor
             label: Texte d'introduction
-            info: Texte d'introduction présent sur le header
+            info: Texte d'introduction pour la section savoir-faire
+            group: Savoir-faire
+        savoirFaireTeaser:
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section savoir-faire
             group: Savoir-faire
         nosEquipesTitle:
             type: text
             label: Titre
+            info: Titre de la section nos équipes
             group: Nos équipes
         nosEquipesIntro:
             type: redactor
             label: Texte d'introduction
-            info: Texte d'introduction
+            info: Texte d'introduction pour la section nos équipes
             group: Nos équipes
         nosEquipesTeaser:
-            type: redactor
-            label: Texte d'introduction
-            info: Texte d'introduction présent sur le header
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section nos équipes
             group: Nos équipes
         nosEquipeImage:
             type: image
             label: Image
+            info: Image de la section nos équipes
             group: Nos équipes
         nosValeursTitle:
             type: text
             label: Titre
+            info: Titre de la section nos valeurs
             group: Nos valeurs
         nosValeursTeaser:
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section nos valeurs
+            group: Nos valeurs     
             type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header

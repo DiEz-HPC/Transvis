@@ -15,7 +15,7 @@
         <div class="container mt-5 homeNosValeurTeaser">
             {{ record.nosValeursTeaser}}
         </div>
-        <div class="d-flex justify-content-center my-5">
+      {#  <div class="d-flex justify-content-center my-5">
             <div class="d-flex flex-column align-items-center">
                 {% for valeur in nosValeur.contentValues %}
                     <div class="single-valeur p-2 d-flex justify-content-start align-items-center col-12 mb-3">
@@ -26,7 +26,7 @@
                     </div>
                 {% endfor %}
             </div>
-        </div>
+        </div> #}
         <div class="d-flex justify-content-center">
             {%  with { text: "En savoir plus", link: '/nos-valeurs', width: "200px", height: "37px", nextWidth: "8%", isBlack: true} %}
             {{ block('buttonRedContent') }}

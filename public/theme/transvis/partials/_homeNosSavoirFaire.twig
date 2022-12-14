@@ -18,11 +18,15 @@
 
     <h2 class="likeh1 text-center m-5">{{ record.savoirFaireTitle }}</h2>
     <div class="m-5">
-        <p>{{ record.savoirFaireTeaser }}</p>
+        <p>{{record.savoirFaireIntro}}</p>
+    </div>
+    <div class="m-5">
+        <p>{{record.savoirFaireTeaser}}</p>
     </div>
 
     <div class="d-flex justify-content-center mt-5">
-        {% with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
+        {%  with { text: "En savoir plus", link: '/nos-savoir-faire', width: "200px", height: "37px", nextWidth: "8%"} %}
+
             {{ block('buttonRedContent') }}
         {% endwith %}
     </div>

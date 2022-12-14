@@ -1,9 +1,46 @@
 .article-h2{
     font-size: var(--font-size-title);
 }
+.article-h3{
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight--bold);
+}
+b {
+    color: var(--red-color) !important;
+}
 .article-paragraph b{
     font-weight: var(--font-weight-light) !important;
     color: var(--red-color) !important;
+
+}
+
+.float-right{
+    float: right !important;
+    margin-left: 1rem;
+}
+.float-left{
+    float: left !important;
+    margin-right: 1rem;
+}
+.align-right{
+    text-align: right !important;
+}
+.align-left{
+    text-align: left !important;
+}
+.align-center{
+    text-align: center !important;
+}
+.article-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
 } 
 
 .superposition {display: inline-block;
@@ -25,4 +62,4 @@
     bottom: 0;
     margin: auto;
   }
-  
+
