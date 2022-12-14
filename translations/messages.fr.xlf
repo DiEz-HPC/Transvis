@@ -190,7 +190,7 @@
     <unit id="4EMl7HC">
       <segment>
         <source>You have already requested a reset password email. Please check your email or try again soon.</source>
-        <target>You have already requested a reset password email. Please check your email or try again soon.</target>
+        <target>Vous avez déjà demandé un e-mail de réinitialisation du mot de passe. Veuillez vérifier votre boîte mail ou réessayer plus tard.</target>
       </segment>
     </unit>
     <unit id=".yHun4s" name="Last province contact company">
@@ -226,13 +226,13 @@
     <unit id="2hoKa1k" name="label.remembermeduration">
       <segment>
         <source>label.remembermeduration</source>
-        <target>label.remembermeduration</target>
+        <target>Se souvenir de moi</target>
       </segment>
     </unit>
     <unit id="NF.vvAN" name="You have to login in order to access this page.">
       <segment>
         <source>You have to login in order to access this page.</source>
-        <target>You have to login in order to access this page.</target>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
       </segment>
     </unit>
     <unit id="JdtMlOI" name="Machine Sheet">
@@ -533,6 +533,12 @@
       <segment>
         <source>Parlez-nous de vous...</source>
         <target>Parlez-nous de vous...</target>
+      </segment>
+    </unit>
+    <unit id="uPhgz7H" name="Vous devez être connecté pour accéder à cette page.">
+      <segment>
+        <source>Vous devez être connecté pour accéder à cette page.</source>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
       </segment>
     </unit>
   </file>

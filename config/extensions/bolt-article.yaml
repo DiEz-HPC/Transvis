@@ -5,13 +5,14 @@
 # selector, specialchars, style, tags, textdirection, underline, variable,
 # removeformat, imageresize
 default:
-  plugins: [ blockcode, buttonlink, definedlinks, inlineformat, reorder, tags, underline, imageposition, filelink, removeformat, imageresize]
+  plugins: [ blockcode, buttonlink, definedlinks, inlineformat, reorder, tags, underline, imageposition, filelink, removeformat]
   source: true
   custom: 
     css: [ '/theme/transvis/css/dependency/customAdminArticle.css' ]
   classes:
     p: 'article-paragraph'
-    img: 'img-fluid'
+    figure: 'superposition'
+    img: 'rounded mx-auto d-block img-thumbnail'
     h1: 'article-h1'
     h2: 'article-h2'
     h3: 'article-h3'
@@ -22,10 +23,10 @@ default:
     classname: 'row'
     columns: 12
     patterns:
-      '4|4|4': 'col-12 col-lg-4|col-12 col-lg-4|col-12 col-lg-4'
-      '4|8': 'col-12 col-md-4 col-lg-4|col-12 col-md-8 col-lg-8'
-      '6|6': 'col-12 col-md-6 col-lg-6|col-12 col-md-6 col-lg-6'
-      '8|4': 'col-12 col-md-8 col-lg-8|col-12 col-md-8 col-lg-4'
+      '4|4|4': 'col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-lg-4|col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column'
+      '4|8': 'col-12 col-md-4 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column'
+      '6|6': 'col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column|col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column'
+      '8|4': 'col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-4 d-flex align-items-start justify-content-center flex-column'
 
   # Settings for images
   # Note: The current editor can only upload / insert images if they are granted 
