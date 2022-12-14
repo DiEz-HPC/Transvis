@@ -8,11 +8,12 @@
         {# make sure we always display a proper title: The record's title if there is one, appended with the
                            sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
         <title>{{ seo.title() }}</title>
-        {# {{ seo.metatags() }}  #}
+        {{ seo.metatags() }}
         {% block stylesheet %}
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
             <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/dependency/aos.css') }}">
         {% endblock stylesheet %}
     </head>
     {% setcontent options = 'Vos options' %}
@@ -35,6 +36,8 @@
     </body>
     {% block javascript %}
         <script src="{{ asset('js/dependency/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/dependency/aos.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/navbar.js') }}"></script>
     {% endblock javascript %}
 </html>

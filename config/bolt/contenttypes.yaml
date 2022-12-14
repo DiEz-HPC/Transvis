@@ -64,7 +64,10 @@ accueil:
             type: redactor
             label: Texte d'introduction
             info: Texte d'introduction présent sur le header
-            group: Nos valeurs     
+            group: Nos valeurs
+        seo:
+            type: seo
+            group: "Réglage SEO"     
     viewless: false
     record_template: 'index.twig'
     default_status: held
