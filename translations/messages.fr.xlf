@@ -535,5 +535,11 @@
         <target>Parlez-nous de vous...</target>
       </segment>
     </unit>
+    <unit id="uPhgz7H" name="Vous devez être connecté pour accéder à cette page.">
+      <segment>
+        <source>Vous devez être connecté pour accéder à cette page.</source>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
