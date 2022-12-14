@@ -42,13 +42,13 @@ const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
     modal.addEventListener("click", function (e) {
         if (e.target === modal) {
-            pauseVideo(modal, true);
+            stopVideo(modal);
             modal.style.display = "none";
             body.style.overflow = "auto";
         }
     });
     close.addEventListener("click", function () {
-        pauseVideo(modal, true);
+        stopVideo(modal);
         modal.style.display = "none";
         body.style.overflow = "auto";
     });
@@ -101,16 +101,20 @@ const initLogoSlider = (splideDiv) => {
     setLogoSizeSlider(splideDiv);
 };
 
-const pauseVideo = (modal, wantStop) => {
+const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
     let arrowButton = modal.querySelectorAll(".splide__arrow");
 
     arrowButton.forEach(function (button) {
         button.addEventListener("click", function () {
             videoPlayer.pause();
-            wantStop ? videoPlayer.currentTime = 0 : null;
         });
     });
+};
+const stopVideo = (modal) => {
+    let videoPlayer = modal.querySelector("video");
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
 };
 
 const  initVideo = (modal) => {
