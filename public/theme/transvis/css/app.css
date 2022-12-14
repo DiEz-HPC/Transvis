@@ -27,8 +27,7 @@ p {
 strong{
     font-weight: var(--font-weight-light) !important;
     color: var(--red-color) !important;
-}
-
+} 
 .btn {
     font-weight: var(--font-weight--bold);
     background-color: var(--dark-color);

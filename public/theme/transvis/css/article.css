@@ -11,6 +11,7 @@ b {
 .article-paragraph b{
     font-weight: var(--font-weight-light) !important;
     color: var(--red-color) !important;
+
 }
 
 .float-right{
@@ -39,3 +40,26 @@ b {
     max-width: 100%;
     padding: 0 1rem;
 }
+
+} 
+
+.superposition {display: inline-block;
+    position: relative;
+  }
+  .superposition img:first-of-type {
+    height: auto;
+    width: 75%;
+  }
+  .superposition img:last-of-type {
+    height: 100%;
+    width: 100%;
+  }
+  .superposition img:nth-of-type(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+

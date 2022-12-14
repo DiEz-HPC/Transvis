@@ -279,7 +279,7 @@ nosEquipes:
             fixture_format: '{intro}'
             group: Introduction
         teaser:
-            type: redactor
+            type: article
             label: Contenue de la page
             info: Contenue de la page
             fixture_format: '{teaser}'
