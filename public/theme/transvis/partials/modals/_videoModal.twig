@@ -35,7 +35,7 @@
                                 <ul class="splide__list">
                                     {% if record.video is not null and record.video is not empty %}
                                         <li class="splide__slide  d-flex align-items-center justify-content-center">
-                                            <video controls id="videoPlayer">
+                                            <video controls muted id="videoPlayer">
                                                 <source src="{{ record.video }}" type="video/webm">
                                             </video>
                                         </li>
