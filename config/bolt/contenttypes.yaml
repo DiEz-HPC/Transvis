@@ -319,7 +319,7 @@ nosRealisations:
           group: Réalisation
           fixture_format: '{title}'
         teaser:
-          type: textarea
+          type: redactor
           label: Texte de description
           info: Texte de description de la réalisation
           group: Réalisation
