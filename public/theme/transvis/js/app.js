@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 var createImage = (element) => {
        var overlayImg = document.createElement('img');
-        overlayImg.src = "{{ asset('images/bloc-contour.png') }}";
+        overlayImg.src = "/theme/transvis/images/bloc-contour.png";
         element.appendChild(overlayImg);
 }
 

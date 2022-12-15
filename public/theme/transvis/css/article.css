@@ -36,12 +36,9 @@ b {
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
-    width: 100%;
     max-width: 100%;
     padding: 0 1rem;
 }
-
-} 
 
 .superposition {display: inline-block;
     position: relative;
