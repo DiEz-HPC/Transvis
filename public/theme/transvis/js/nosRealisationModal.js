@@ -12,8 +12,7 @@ const openModal = (cards, modals, body) => {
         let nbDiv = card.dataset.loopIndex;
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            button.addEventListener("click", function (e) {
-                e.preventDefault();
+            button.addEventListener("click", function () {
                 let modal = modals[nbDiv - 1];
                 let splideDiv = modal.querySelector("#logoSliderModal");
                 let carouselDiv = modal.querySelector("#carouselSlider");
@@ -106,14 +105,16 @@ const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
     let arrowButton = modal.querySelectorAll(".splide__arrow");
 
-    arrowButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            videoPlayer.pause();
+    if (videoPlayer) {
+        arrowButton.forEach(function (button) {
+            button.addEventListener("click", function () {
+                videoPlayer.pause();
+            });
         });
-    });
+    }
 };
 const stopVideo = (modal) => {
-    let videoPlayer = modal.querySelector("video");
+    const videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
@@ -121,7 +122,7 @@ const stopVideo = (modal) => {
 };
 
 const initVideo = (modal) => {
-    var videoPlayer = modal.querySelector("video");
+    const videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
         videoPlayer.addEventListener("play", function () {
             videoPlayer.currentTime = 0;

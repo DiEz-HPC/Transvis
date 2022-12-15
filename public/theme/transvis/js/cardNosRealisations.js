@@ -3,15 +3,18 @@ window.addEventListener("load", function () {
     cards.forEach(function (card, index) {
         const isCaptured = card.dataset.iscaptured;
         if(isCaptured === '0') {
+            console.log(index);
             setTimeout(function(){
                 modal = card.querySelector(".modalYoutube");
                 const video = modal.querySelector("video");
                 const time = card.dataset.timerecord;
                 const loop = card.dataset.loopindex;
-                video.addEventListener("seeked", function () {
-                    captureImage(video, card, loop)
-                }, {once : true});
-                video.currentTime = parseInt(time);
+                if (video) {
+                    video.addEventListener("seeked", function () {
+                        captureImage(video, card, loop)
+                    }, {once : true});
+                    video.currentTime = parseInt(time);
+                }
                 const capt = 1;
                 card.dataset.iscaptured = capt.toString();
             }, index * 400)
