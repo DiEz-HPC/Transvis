@@ -13,14 +13,10 @@
         {% set path = asset(card.image.path) %}
     {% endif %}
     <div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
-        <div class="logo mb-4">
-            <img src="{{ path }}" alt="logo main">
+        <div class="logo d-flex justify-content-center my-3">
+            <img class="w-50" src="{{ path }}" alt="logo main">
         </div>
-        <div class="card-sf__content d-flex flex-column justify-content-around align-items-center">
-            <h3 class="card-sf__title mb-4 text-center">{{ card.text | upper }}</h3>
-            {%  with { text: "Découvrir", link: '#' } %}
-                {{ block('buttonRedContent') }}
-            {% endwith %}
-        </div>
+        <h3 class="card-sf__title text-center px-3">{{ card.text | upper }}</h3>
     </div>
+
 {% endblock cardSFContent %}
