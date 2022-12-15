@@ -12,14 +12,6 @@ b{
     height: auto;
     background-color: rgba(116, 116, 116, 0.3);
 }
-.img-thumbnail {
-    padding: 0.25rem;
-    background-color: #fff;
-    border: 1px solid var(--bs-border-color);
-    border-radius: 0.375rem;
-    max-width: 100%;
-    height: auto;
-}
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;

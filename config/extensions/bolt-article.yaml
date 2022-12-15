@@ -12,7 +12,7 @@ default:
   classes:
     p: 'article-paragraph'
     figure: 'superposition'
-    img: 'rounded mx-auto d-block img-thumbnail'
+    img: 'rounded mx-auto d-block img-fluid'
     h1: 'article-h1'
     h2: 'article-h2'
     h3: 'article-h3'
