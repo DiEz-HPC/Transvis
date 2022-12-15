@@ -27,7 +27,7 @@ default:
     description: ""
     keywords: ""
     ogtype: "website" # default og:type value.
-    #image: "" Set absolute URL
+    image: ""
 
 # Control who can view the more "scary" fields
 # allow:
