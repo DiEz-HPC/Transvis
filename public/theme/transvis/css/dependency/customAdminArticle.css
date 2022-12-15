@@ -1,11 +1,19 @@
 @import "../app.css";
+/* Css pour le champ "Article" coté admin ( Agit uniquement sur le field ) */
 body {
     font-size: var(--font-size);
 }
 b{
     font-weight:normal !important;
     color: #D30F4E !important;
-} 
+}
+.article-h2 {
+    font-size: var(--font-size-title);
+}
+.article-h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight--bold);
+}
 /* Bootstrap */
 .img-fluid {
     max-width: 100%;

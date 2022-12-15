@@ -1,3 +1,4 @@
+/* Css spécifique pour le champ "Article" coté visiteur ( peut agir sur tout le site ) */
 .article-h2 {
     font-size: var(--font-size-title);
 }
