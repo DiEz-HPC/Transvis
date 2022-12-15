@@ -28,15 +28,19 @@ record.
 {% endblock stylesheet %}
 
 {% block javascript %}
-{{ parent() }}
+    {{ parent() }}
 {%  endblock javascript %}
 
 {% block main %}
     <div class="nosEquipes mb-5 mt-5">
         <div class="container-sf">
-            {% with {defaultImage: asset('images/equipe.webp'), boxMargin: 'mt-4 pt-4'} %}
-                {{ block('blockTopSingletonWithImageContent') }}
-            {% endwith %}
+            <h1 class="text-center text-xl-start pt-1 line-before-start mb-5">{{ record.title | upper }}</h1>
+            {% if record.intro is defined %}
+                <div class="">{{ record.intro }}</div>
+            {% endif %}
+            <div class="p-3">
+                {{ record.teaser }}
+            </div>
             {% include '@theme/partials/_line.twig' %}
         </div>
         <div class="blok-recrutement d-flex flex-column p-4">
@@ -44,12 +48,11 @@ record.
             {% if recrutements is empty %}
                 <h3 class="text-center mt-5">{{ 'Aucun poste à pourvoir pour le moment' }}</h3>
             {% else %}
-                <div
-                    class="cards-recrutements d-flex flex-column flex-xl-row {{ count < 3 ? 'justify-content-around' : 'justify-content-between' }} align-items-center">
+                <div class="cards-recrutements d-flex flex-column flex-xl-row {{ count < 3 ? 'justify-content-around' : 'justify-content-between' }} align-items-center">
                     {% for recrutement in recrutements %}
                         {% if loop.index < 4 %}
                             {% with {card: recrutement} %}
-                                {{ block('cardRecrutementContent') }}
+                            {{ block('cardRecrutementContent') }}
                             {% endwith %}
                         {% endif %}
                     {% endfor %}
@@ -57,7 +60,7 @@ record.
                 {% if count > 3 %}
                     <div class="d-flex justify-content-center">
                         {% with { text: "Voir plus d'offres", link: 'recrutements', width: "285px", height: "37px", nextWidth: "5%" } %}
-                            {{ block('buttonRedContent') }}
+                        {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>
                 {% endif %}
