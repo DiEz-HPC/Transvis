@@ -1,11 +1,11 @@
 window.addEventListener("load", function () {
-    var cards = document.querySelectorAll(".cardOuterContainer");
+    const cards = document.querySelectorAll(".cardOuterContainer");
     cards.forEach(function (card, index) {
         var isCaptured = card.dataset.iscaptured;
         if(isCaptured == 0 || isCaptured == '0') {
             setTimeout(function(){
                 modal = card.querySelector(".modalYoutube");
-                video = modal.querySelector("video");
+                let video = modal.querySelector("video");
                 var time = card.dataset.timerecord;
                 var loop = card.dataset.loopindex;
                 video.addEventListener("seeked", function () {

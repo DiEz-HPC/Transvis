@@ -12,7 +12,8 @@ const openModal = (cards, modals, body) => {
         let nbDiv = card.dataset.loopIndex;
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            button.addEventListener("click", function () {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
                 let modal = modals[nbDiv - 1];
                 let splideDiv = modal.querySelector("#logoSliderModal");
                 let carouselDiv = modal.querySelector("#carouselSlider");
