@@ -14,6 +14,10 @@ b {
     color: var(--red-color) !important;
 }
 
+.article-ul {
+    padding-left: 0;
+}
+
 .float-right {
     float: right !important;
     margin-left: 1rem;
