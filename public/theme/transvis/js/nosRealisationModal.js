@@ -68,8 +68,8 @@ const initCarousel = (carouselDiv) => {
             speed: 0,
         },
         breakpoints: {
-            1200: { perPage: 1, gap: "1rem" },
-            640: { perPage: 1, gap: "5rem" },
+            1200: {perPage: 1, gap: "1rem"},
+            640: {perPage: 1, gap: "5rem"},
         },
     });
     carousel.mount();
@@ -94,8 +94,8 @@ const initLogoSlider = (splideDiv) => {
             speed: 1,
         },
         breakpoints: {
-            1200: { perPage: 3, gap: "1rem" },
-            640: { perPage: 2, gap: 0 },
+            1200: {perPage: 3, gap: "1rem"},
+            640: {perPage: 2, gap: 0},
         },
     }).mount(window.splide.Extensions);
     setLogoSizeSlider(splideDiv);
@@ -105,22 +105,27 @@ const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
     let arrowButton = modal.querySelectorAll(".splide__arrow");
 
-    arrowButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            videoPlayer.pause();
+    if (videoPlayer) {
+        arrowButton.forEach(function (button) {
+            button.addEventListener("click", function () {
+                videoPlayer.pause();
+            });
         });
-    });
+    }
 };
 const stopVideo = (modal) => {
-    let videoPlayer = modal.querySelector("video");
-    videoPlayer.pause();
-    videoPlayer.currentTime = 0;
+    const videoPlayer = modal.querySelector("video");
+    if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
 };
 
-const  initVideo = (modal) => {
-    var videoPlayer = modal.querySelector("video");
-
-    videoPlayer.addEventListener("play", function () {
-       videoPlayer.currentTime = 0;
-    }, {once : true});
+const initVideo = (modal) => {
+    const videoPlayer = modal.querySelector("video");
+    if (videoPlayer) {
+        videoPlayer.addEventListener("play", function () {
+            videoPlayer.currentTime = 0;
+        }, {once: true});
+    }
 }
