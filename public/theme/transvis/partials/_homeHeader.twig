@@ -2,11 +2,9 @@
 {% block homeHeaderStylesheet %}
     <link rel="stylesheet" href="{{ asset('css/homeHeader.css') }}"/>
     {{ block('buttonRedStylesheet') }}
-
 {% endblock %}
 
 {% block homeHeaderContent %}
-
     <div id="headerVideoDiv" style="background-image: url({{ record.headerImage.path ?? '' }});">
         {{ include('partials/_header.twig') }}
         <video controls muted autoplay loop preload="auto" id="videoHeader">
@@ -14,11 +12,11 @@
         </video>
         <div id="headerContent" class="styling">
             <div class="col-12 col-lg-6 col-xl-6 header-block-left">
-                <h1 class="text-center">{{record.headerTitle}}</h1>
+                <h1 class="text-center">{{ record.headerTitle }}</h1>
             </div>
             <div class="col-12 col-lg-6 col-xl-6 header-block-right p-4">
                 <div class="col-12 col-lg-10">
-                    {{record.headerTeaser}}
+                    {{ record.headerTeaser }}
                 </div>
             </div>
         </div>
@@ -35,10 +33,10 @@
                         {% endwith %}
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-6 row align-items-center justify-content-center justify-content-lg-end my-4 mt-lg-0">
-                 <p class="headerHaveProjectText text-center text-lg-end mt-4 p-0">Suivez nos
-
-                        <span>actualités</span> :
+                <div
+                    class="col-lg-6 col-xl-6 row align-items-center justify-content-center justify-content-lg-end my-4 mt-lg-0">
+                    <p class="headerHaveProjectText text-center text-lg-end mt-4 p-0">
+                        Suivez nos <span>actualités</span> :
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
                         {% with { text: "linkedin", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "12%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg'} %}
