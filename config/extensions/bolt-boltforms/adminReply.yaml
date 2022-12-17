@@ -42,7 +42,6 @@ fields:
             label: Votre message
             attr:
                 placeholder: Votre message ...
-                class: myclass
     id:
         type: hidden
         options:
