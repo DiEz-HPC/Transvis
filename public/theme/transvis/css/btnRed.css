@@ -6,6 +6,7 @@
     text-decoration: none;
     color: var(--light-color);
     z-index: 1;
+    max-width: 100%;
 }
 
 .btn-link-dark {
