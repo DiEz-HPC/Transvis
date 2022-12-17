@@ -26,7 +26,6 @@
 
     <div class="d-flex justify-content-center mt-5">
         {%  with { text: "En savoir plus", link: '/nos-savoir-faire', width: "200px", height: "37px", nextWidth: "8%"} %}
-
             {{ block('buttonRedContent') }}
         {% endwith %}
     </div>
@@ -41,7 +40,7 @@
             {% endif %}
         {% endfor %}
     </div>
-    {% with {keyFigures: keyFigures } %}
+    {% with {keyFigures: keyFigures, keyFigureTitle: nosSavoirFaire.keyFigureTitle } %}
         {{ block('bannerKeysFiguresContent') }}
     {% endwith %}
 {% endblock %}
