@@ -20,6 +20,7 @@ default:
     h5: 'article-h5'
     h6: 'article-h6'
     div: 'article-div'
+    ul: 'article-ul'
   grid:
     classname: 'row'
     columns: 12

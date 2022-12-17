@@ -37,7 +37,6 @@ const setLogoSizeSlider = (splideDiv) => {
     });
 };
 
-
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
     modal.addEventListener("click", function (e) {
@@ -76,15 +75,14 @@ const initCarousel = (carouselDiv, modal) => {
 
     setInnerCarouselSize(carouselDiv);
 
-    carousel.on('move', function () {
+    carousel.on("move", function () {
         pauseVideo(carouselDiv);
     });
-   
+
     let close = modal.querySelector(".btn-close-modal");
     close.addEventListener("click", function () {
         carousel.destroy();
-    });   
-    
+    });
 };
 const setInnerCarouselSize = (carouselDiv) => {
     let carouselItems = carouselDiv.querySelectorAll(".splide__slide");
@@ -95,7 +93,7 @@ const setInnerCarouselSize = (carouselDiv) => {
 };
 
 const initLogoSlider = (splideDiv, modal) => {
-   new Splide(splideDiv, {
+    new Splide(splideDiv, {
         type: "loop",
         drag: "free",
         focus: "center",
@@ -114,24 +112,32 @@ const initLogoSlider = (splideDiv, modal) => {
     let close = modal.querySelector(".btn-close-modal");
     close.addEventListener("click", function () {
         splide.destroy();
-    });   
+    });
 };
 
 const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
-    videoPlayer.pause();
-   
+    if (videoPlayer) {
+        videoPlayer.pause();
+    }
 };
 const stopVideo = (modal) => {
-    let videoPlayer = modal.querySelector("video");
-    videoPlayer.pause();
-    videoPlayer.currentTime = 0;
+    const videoPlayer = modal.querySelector("video");
+    if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
 };
 
 const initVideo = (modal) => {
     var videoPlayer = modal.querySelector("video");
-
-    videoPlayer.addEventListener("play", function () {
-       videoPlayer.currentTime = 0;
-    }, {once : true});
-}
+    if (videoPlayer) {
+        videoPlayer.addEventListener(
+            "play",
+            function () {
+                videoPlayer.currentTime = 0;
+            },
+            { once: true }
+        );
+    }
+};

@@ -98,7 +98,6 @@
 }
 @media screen and (min-width: 768px){
     #headerVideoDiv {
-        background-image: none !important;
         max-height: 100vh;
     }
 }
@@ -117,7 +116,7 @@
         position: relative;
         height: fit-content !important;
         display: block;
-        padding-top: 55px;        
+        padding-top: 55px;
     }
     .header-block-left {
         background: transparent;
