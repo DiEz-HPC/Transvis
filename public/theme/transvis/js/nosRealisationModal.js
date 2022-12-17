@@ -16,6 +16,7 @@ const openModal = (cards, modals, body) => {
                 let modal = modals[nbDiv - 1];
                 let splideDiv = modal.querySelector("#logoSliderModal");
                 let carouselDiv = modal.querySelector("#carouselSlider");
+                if(hasVideo(modal)){
                 initVideo(modal);
                 // init carousel
                 initCarousel(carouselDiv, modal);
@@ -25,6 +26,7 @@ const openModal = (cards, modals, body) => {
                 body.style.overflow = "hidden";
                 modal.style.zIndex = "10000";
                 closeModal(modal, body);
+                }
             });
         });
     });
@@ -141,3 +143,11 @@ const initVideo = (modal) => {
         );
     }
 };
+
+const hasVideo = (modal) => {
+    let videoPlayer = modal.querySelector("video");
+    if (videoPlayer) {
+        return true;
+    }
+    return false;
+}
