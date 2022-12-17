@@ -439,7 +439,7 @@ contactPage:
             fixture_format: '{title}'
             group: Introduction
         teaser:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
             fixture_format: '{teaser}'
