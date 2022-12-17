@@ -18,12 +18,12 @@ const openModal = (cards, modals, body) => {
                 let carouselDiv = modal.querySelector("#carouselSlider");
                 initVideo(modal);
                 // init carousel
-                initCarousel(carouselDiv);
+                initCarousel(carouselDiv, modal);
                 // init logo slider
-                initLogoSlider(splideDiv);
+                initLogoSlider(splideDiv, modal);
                 modal.style.display = "flex";
                 body.style.overflow = "hidden";
-                pauseVideo(modal, false);
+                modal.style.zIndex = "10000";
                 closeModal(modal, body);
             });
         });
@@ -54,7 +54,7 @@ const closeModal = (modal, body) => {
     });
 };
 
-const initCarousel = (carouselDiv) => {
+const initCarousel = (carouselDiv, modal) => {
     let carousel = new Splide(carouselDiv, {
         type: "loop",
         focus: "center",
@@ -73,7 +73,18 @@ const initCarousel = (carouselDiv) => {
         },
     });
     carousel.mount();
+
     setInnerCarouselSize(carouselDiv);
+
+    carousel.on('move', function () {
+        pauseVideo(carouselDiv);
+    });
+   
+    let close = modal.querySelector(".btn-close-modal");
+    close.addEventListener("click", function () {
+        carousel.destroy();
+    });   
+    
 };
 const setInnerCarouselSize = (carouselDiv) => {
     let carouselItems = carouselDiv.querySelectorAll(".splide__slide");
@@ -83,8 +94,8 @@ const setInnerCarouselSize = (carouselDiv) => {
     });
 };
 
-const initLogoSlider = (splideDiv) => {
-    new Splide(splideDiv, {
+const initLogoSlider = (splideDiv, modal) => {
+   new Splide(splideDiv, {
         type: "loop",
         drag: "free",
         focus: "center",
@@ -99,17 +110,17 @@ const initLogoSlider = (splideDiv) => {
         },
     }).mount(window.splide.Extensions);
     setLogoSizeSlider(splideDiv);
+
+    let close = modal.querySelector(".btn-close-modal");
+    close.addEventListener("click", function () {
+        splide.destroy();
+    });   
 };
 
 const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
-    let arrowButton = modal.querySelectorAll(".splide__arrow");
-
-    arrowButton.forEach(function (button) {
-        button.addEventListener("click", function () {
-            videoPlayer.pause();
-        });
-    });
+    videoPlayer.pause();
+   
 };
 const stopVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
@@ -117,7 +128,7 @@ const stopVideo = (modal) => {
     videoPlayer.currentTime = 0;
 };
 
-const  initVideo = (modal) => {
+const initVideo = (modal) => {
     var videoPlayer = modal.querySelector("video");
 
     videoPlayer.addEventListener("play", function () {
