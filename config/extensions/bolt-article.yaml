@@ -28,7 +28,7 @@ default:
       '4|4|4': 'col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-lg-4|col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column'
       '4|8': 'col-12 col-md-4 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column'
       '6|6': 'col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column|col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column'
-      '8|4': 'col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-4 d-flex align-items-start justify-content-center flex-column'
+      '8|4': 'col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column|col-12 col-md-4 col-lg-4 d-flex align-items-start justify-content-center flex-column'
 
   # Settings for images
   # Note: The current editor can only upload / insert images if they are granted 
