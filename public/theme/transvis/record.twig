@@ -2,7 +2,7 @@
 
 {% block main %}
 
-    <h1 class="title">{{ record|title }}</h1>
+    <h1 class="title">{{ record|title|upper }}</h1>
 
     {% include 'partials/_image.twig' with ({'image': record|image}) %}
 

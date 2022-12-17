@@ -10,7 +10,7 @@
     {% include "@theme/partials/_line.twig" %}
     <div class="homeValeurContainer  py-5">
         <h2 class="homeValeursTitle text-center">
-            {{ record.nosValeursTitle }}
+            {{ record.nosValeursTitle | upper }}
         </h2>
         <div class="container mt-5 homeNosValeurTeaser">
             {{ record.nosValeursTeaser}}

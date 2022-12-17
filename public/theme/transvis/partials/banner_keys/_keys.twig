@@ -12,12 +12,12 @@
         <img class="keyLogo" src="{{ _self.keyLogoPath(key, loop) }}"
              alt="{{ key.image.alt | default('logo chiffre clé') }}">
         <h3 class="d-flex flex-column text-center">
-        <span class="keyFigureNumber text-white my-2"
-              data-number="{{ key.keyNumber is not defined or key.keyNumber is empty ? 0 : key.keyNumber }}"
-        >
+        <span class="keyFigureNumber text-white my-2" data-number="{{ key.keyNumber is not defined or key.keyNumber is empty ? 0 : key.keyNumber }}">
             {{ key.keyNumber is not defined or key.keyNumber is empty ? 'A définir' : 0 }}
         </span>
-            <span class="keyFiguretext text-white">{{ key.text | default('A définir') }}</span>
+            <span class="keyFiguretext text-white">
+                {{ key.text | default('A définir') }}
+            </span>
         </h3>
     </div>
 {% endblock %}
