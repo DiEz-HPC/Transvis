@@ -16,15 +16,17 @@ const openModal = (cards, modals, body) => {
                 let modal = modals[nbDiv - 1];
                 let splideDiv = modal.querySelector("#logoSliderModal");
                 let carouselDiv = modal.querySelector("#carouselSlider");
+                if(hasVideo(modal)){
                 initVideo(modal);
                 // init carousel
-                initCarousel(carouselDiv);
+                initCarousel(carouselDiv, modal);
                 // init logo slider
-                initLogoSlider(splideDiv);
+                initLogoSlider(splideDiv, modal);
                 modal.style.display = "flex";
                 body.style.overflow = "hidden";
-                pauseVideo(modal, false);
+                modal.style.zIndex = "10000";
                 closeModal(modal, body);
+                }
             });
         });
     });
@@ -36,7 +38,6 @@ const setLogoSizeSlider = (splideDiv) => {
         logo.style.width = 125 + "px";
     });
 };
-
 
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
@@ -54,7 +55,7 @@ const closeModal = (modal, body) => {
     });
 };
 
-const initCarousel = (carouselDiv) => {
+const initCarousel = (carouselDiv, modal) => {
     let carousel = new Splide(carouselDiv, {
         type: "loop",
         focus: "center",
@@ -68,12 +69,22 @@ const initCarousel = (carouselDiv) => {
             speed: 0,
         },
         breakpoints: {
-            1200: {perPage: 1, gap: "1rem"},
-            640: {perPage: 1, gap: "5rem"},
+            1200: { perPage: 1, gap: "1rem" },
+            640: { perPage: 1, gap: "5rem" },
         },
     });
     carousel.mount();
+
     setInnerCarouselSize(carouselDiv);
+
+    carousel.on("move", function () {
+        pauseVideo(carouselDiv);
+    });
+
+    let close = modal.querySelector(".btn-close-modal");
+    close.addEventListener("click", function () {
+        carousel.destroy();
+    });
 };
 const setInnerCarouselSize = (carouselDiv) => {
     let carouselItems = carouselDiv.querySelectorAll(".splide__slide");
@@ -83,7 +94,7 @@ const setInnerCarouselSize = (carouselDiv) => {
     });
 };
 
-const initLogoSlider = (splideDiv) => {
+const initLogoSlider = (splideDiv, modal) => {
     new Splide(splideDiv, {
         type: "loop",
         drag: "free",
@@ -94,23 +105,22 @@ const initLogoSlider = (splideDiv) => {
             speed: 1,
         },
         breakpoints: {
-            1200: {perPage: 3, gap: "1rem"},
-            640: {perPage: 2, gap: 0},
+            1200: { perPage: 3, gap: "1rem" },
+            640: { perPage: 2, gap: 0 },
         },
     }).mount(window.splide.Extensions);
     setLogoSizeSlider(splideDiv);
+
+    let close = modal.querySelector(".btn-close-modal");
+    close.addEventListener("click", function () {
+        splide.destroy();
+    });
 };
 
 const pauseVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
-    let arrowButton = modal.querySelectorAll(".splide__arrow");
-
     if (videoPlayer) {
-        arrowButton.forEach(function (button) {
-            button.addEventListener("click", function () {
-                videoPlayer.pause();
-            });
-        });
+        videoPlayer.pause();
     }
 };
 const stopVideo = (modal) => {
@@ -122,10 +132,22 @@ const stopVideo = (modal) => {
 };
 
 const initVideo = (modal) => {
-    const videoPlayer = modal.querySelector("video");
+    var videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
-        videoPlayer.addEventListener("play", function () {
-            videoPlayer.currentTime = 0;
-        }, {once: true});
+        videoPlayer.addEventListener(
+            "play",
+            function () {
+                videoPlayer.currentTime = 0;
+            },
+            { once: true }
+        );
     }
+};
+
+const hasVideo = (modal) => {
+    let videoPlayer = modal.querySelector("video");
+    if (videoPlayer) {
+        return true;
+    }
+    return false;
 }

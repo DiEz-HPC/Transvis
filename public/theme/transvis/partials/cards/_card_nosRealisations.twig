@@ -28,12 +28,14 @@
             <div class="card-img">
             {% if record.video is defined and record.video is not null and record.video is not empty %}
                 <canvas class="card-img-top" id="cardImage{{loopIndex}}"></canvas>
-            {% else %}
+            {% elseif record.carousel is defined and record.carousel is not empty %}
                 {% for picture in record.carousel %}
                     {% if loop.first %}
                         <img class="card-img-top" src="{{ asset(picture) }}" alt="{{ picture.title }}" >
                     {% endif %}
                 {% endfor %}
+            {% else %}
+                <img class="card-img-top" src="{{ asset('images/Image_not_available.png') }}" alt="image non trouvé" >
             {% endif %}
                 <div class="play-video">
                     {% include ("images/play-button.svg") %}
