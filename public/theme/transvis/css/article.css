@@ -49,8 +49,8 @@ b {
     position: relative;
 }
 .superposition img:first-of-type {
-    height: auto;
-    width: 75%;
+    height: 100%;
+    width: auto;
 }
 .superposition img:last-of-type {
     height: 100%;
