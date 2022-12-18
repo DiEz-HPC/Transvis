@@ -4,6 +4,7 @@
 }
 .card.nr .card-img {
     position: relative;
+    max-height: 200px;
 }
 .card.nr .card-img .card-img-top {
     filter: grayscale(1);
