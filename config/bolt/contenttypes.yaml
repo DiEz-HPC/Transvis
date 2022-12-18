@@ -480,7 +480,7 @@ vosOptions:
             info: Titre de la page Nos réalisations
             group: Nos réalisations
         nosRealisationsText:
-            type: textarea
+            type: redactor
             label: Texte de la page Nos réalisations
             info: Texte de la page Nos réalisations
             group: Nos réalisations
@@ -495,7 +495,7 @@ vosOptions:
             info: Titre de la page Recrutements
             group: Recrutements
         recrutementsText:
-            type: textarea
+            type: redactor
             label: Texte de la page Recrutements
             info: Texte de la page Recrutements
             group: Recrutements
