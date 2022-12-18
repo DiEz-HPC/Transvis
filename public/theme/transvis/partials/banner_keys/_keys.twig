@@ -8,16 +8,16 @@
 {% endmacro keyLogoPath %}
 
 {% block keysContent %}
-    <div class="keyFigure d-flex flex-column align-items-center col-12 col-lg-4 mb-5 mb-xl-0">
+    <div class="keyFigure d-flex flex-column align-items-center col-12 col-lg-4 my-5 my-sm-3 my-lg-0">
         <img class="keyLogo" src="{{ _self.keyLogoPath(key, loop) }}"
              alt="{{ key.image.alt | default('logo chiffre clé') }}">
         <h3 class="d-flex flex-column text-center">
-        <span class="keyFigureNumber text-white my-2"
-              data-number="{{ key.keyNumber is not defined or key.keyNumber is empty ? 0 : key.keyNumber }}"
-        >
+        <span class="keyFigureNumber text-white my-2" data-number="{{ key.keyNumber is not defined or key.keyNumber is empty ? 0 : key.keyNumber }}">
             {{ key.keyNumber is not defined or key.keyNumber is empty ? 'A définir' : 0 }}
         </span>
-            <span class="keyFiguretext text-white">{{ key.text | default('A définir') }}</span>
+            <span class="keyFiguretext text-white">
+                {{ key.text | default('A définir') }}
+            </span>
         </h3>
     </div>
 {% endblock %}

@@ -15,7 +15,7 @@
             <div class="">
                 <div class="modalHeader row justify-content-center align-items-center">
                     <h1 class="text-center modalTitle col-11">
-                        {{ record.title  }}
+                        {{ record.title | upper  }}
                     </h1>
                     <button type="button" class="btn-close-modal">
                         {% include ("images/enveloppe.svg") %}

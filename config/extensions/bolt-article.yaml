@@ -10,7 +10,7 @@ default:
   custom: 
     css: [ '/theme/transvis/css/dependency/customAdminArticle.css' ]
   classes:
-    p: 'article-paragraph'
+    p: 'article-paragraph w-100'
     figure: 'superposition'
     img: 'rounded mx-auto d-block img-fluid'
     h1: 'article-h1'
@@ -22,13 +22,13 @@ default:
     div: 'article-div'
     ul: 'article-ul'
   grid:
-    classname: 'row'
+    classname: 'row my-5 py-5'
     columns: 12
     patterns:
       '4|4|4': 'col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-lg-4|col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column'
       '4|8': 'col-12 col-md-4 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column'
       '6|6': 'col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column|col-12 col-md-6 col-lg-6 d-flex align-items-start justify-content-center flex-column'
-      '8|4': 'col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column|col-12 col-md-8 col-lg-4 d-flex align-items-start justify-content-center flex-column'
+      '8|4': 'col-12 col-md-8 col-lg-8 d-flex align-items-start justify-content-center flex-column|col-12 col-md-4 col-lg-4 d-flex align-items-start justify-content-center flex-column'
 
   # Settings for images
   # Note: The current editor can only upload / insert images if they are granted 

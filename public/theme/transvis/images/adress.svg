@@ -23,4 +23,5 @@
             <text>{{ options.fax|default('Veuillez configurer le fax dans le back-office') }}</text>
         </foreignObject>
     </g>
+    <rect x="0" y="0" width="100%" height="190" fill="transparent"/>
 </svg>
