@@ -63,6 +63,7 @@
         {{ include ('@theme/partials/_line.twig') }}
         {% if recordsTagList is not empty %}
             <div class="row d-flex align-items-center justify-content-center flex-column my-5">
+                <h3 class="text-center mb-5"> {{"rechercher par tag"|upper}} </h3>
                 <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center tagCloud-container">
                     {% for tagName, tagSlug in recordsTagList  %}
                         <a href="{{ '/' ~ taxonomies ~ '/' ~ tagSlug}}" class="tag-link tag m-2 tagCloud-item {{ currentTag == tagName ? 'active' : '' }}">
