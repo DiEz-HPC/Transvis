@@ -8,9 +8,9 @@
            code in the 'else' part of the for-loop is used. #}
         <h1 class="search-results">
             {% if searchTerm is not empty %}
-                {{ __('general.phrase.search-results-for', { '%search%': searchTerm }) }}
+                {{ __('general.phrase.search-results-for' | upper, { '%search%': searchTerm }) }}
             {% else %}
-                {{ __('general.phrase.search') }}
+                {{ __('general.phrase.search') | upper }}
             {% endif %}
         </h1>
 
@@ -30,7 +30,7 @@
         {% for record in records %}
             <article>
 
-                <h2><a href="{{ record|link }}">{{ record|title }}</a></h2>
+                <h2><a href="{{ record|link }}">{{ record|title|upper }}</a></h2>
 
                 {% if record|image %}
                     <a href="{{ record|image }}">

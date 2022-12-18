@@ -24,7 +24,7 @@ card (contentype recrutement):
             <img class="w-100 h-100" src="{{ asset('images/banner-recrutement-card.png') }}" alt="bannière recrutement">
         </div>
         <div class="block-content">
-            <h3 class="title">{{ card.title }}</h3>
+            <h3 class="title">{{ card.title | upper }}</h3>
             <p class="teaser mb-2">{{ card.teaser }}</p>
             <div class="tags d-flex pb-1 flex-wrap">
                 {% for tag in tags %}
