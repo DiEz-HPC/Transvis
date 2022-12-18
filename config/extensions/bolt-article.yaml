@@ -10,7 +10,7 @@ default:
   custom: 
     css: [ '/theme/transvis/css/dependency/customAdminArticle.css' ]
   classes:
-    p: 'article-paragraph'
+    p: 'article-paragraph w-100'
     figure: 'superposition'
     img: 'rounded mx-auto d-block img-fluid'
     h1: 'article-h1'
@@ -22,7 +22,7 @@ default:
     div: 'article-div'
     ul: 'article-ul'
   grid:
-    classname: 'row'
+    classname: 'row my-5 py-5'
     columns: 12
     patterns:
       '4|4|4': 'col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-lg-4|col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column'
