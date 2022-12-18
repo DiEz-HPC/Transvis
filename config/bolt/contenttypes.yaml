@@ -27,7 +27,7 @@ accueil:
             info: Titre de la page
             group: En-tête
         headerTeaser:
-            type: redactor
+            type: article
             label: Texte d'en-tête
             info: Texte d'introduction présent sur le header
             group: En-tête
@@ -37,7 +37,7 @@ accueil:
             info: Titre de la section savoir-faire
             group: Savoir-faire
         savoirFaireIntro:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction pour la section savoir-faire
             group: Savoir-faire
@@ -52,7 +52,7 @@ accueil:
             info: Titre de la section nos équipes
             group: Nos équipes
         nosEquipesIntro:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction pour la section nos équipes
             group: Nos équipes
@@ -98,7 +98,7 @@ savoirFaire:
             fixture_format: '{title}'
             group: Introduction
         teaser:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
             fixture_format: '{teaser}'
@@ -224,7 +224,7 @@ nosValeurs:
             fixture_format: '{title}'
             group: Introduction
         teaser:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
             fixture_format: '{teaser}'
@@ -247,7 +247,7 @@ nosValeurs:
                             label: Image de la valeur
                             info: Logo de couleur noir
                         text:
-                            type: redactor
+                            type: article
                             label: Texte de la valeur
                             info: Texte de la valeur
         seo:
@@ -276,7 +276,7 @@ nosEquipes:
             fixture_format: '{title}'
             group: Introduction
         intro:
-            type: redactor
+            type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
             fixture_format: '{intro}'
@@ -319,7 +319,7 @@ nosRealisations:
           group: Réalisation
           fixture_format: '{title}'
         teaser:
-          type: redactor
+          type: article
           label: Texte de description
           info: Texte de description de la réalisation
           group: Réalisation
@@ -381,12 +381,12 @@ recrutements:
           info: Texte de description du poste
           group: Recrutement
         profil:
-          type: redactor
+          type: article
           label: Profil recherché
           info: Profil recherché
           group: Recrutement
         other:
-          type: redactor
+          type: article
           label: Informations complémentaires
           info: Informations complémentaires
           group: Recrutement
@@ -396,7 +396,7 @@ recrutements:
             group: Détails
             fields:
                 description:
-                    type: redactor
+                    type: article
                     label: Déscription du poste
                     info: Déscription du poste
                 contrat:
@@ -480,7 +480,7 @@ vosOptions:
             info: Titre de la page Nos réalisations
             group: Nos réalisations
         nosRealisationsText:
-            type: redactor
+            type: article
             label: Texte de la page Nos réalisations
             info: Texte de la page Nos réalisations
             group: Nos réalisations
@@ -495,7 +495,7 @@ vosOptions:
             info: Titre de la page Recrutements
             group: Recrutements
         recrutementsText:
-            type: redactor
+            type: article
             label: Texte de la page Recrutements
             info: Texte de la page Recrutements
             group: Recrutements
