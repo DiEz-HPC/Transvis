@@ -470,8 +470,8 @@ contactPage:
     record_template: 'contact.twig'    
 
 vosOptions:
-    name: Vos options
-    singular_name: Vos options
+    name: Autre contenu
+    singular_name: Autre contenu
     slug: Vos options
     fields:
         nosRealisationsTitle:
