@@ -10,8 +10,8 @@
     <div class="block-banner pt-5">
         {% include "@theme/partials/_line.twig" %}
         <div class="banner-key-figure d-flex flex-column align-items-center py-5">
-            <h2 class="keyFigureTitle text-center">{{ record.keyFigureTitle | upper }}</h2>
-            <div class="d-flex flex-column flex-xl-row justify-content-around align-items-center pt-5 col-12">
+            <h2 class="keyFigureTitle text-center">{{ keyFigureTitle | upper }}</h2>
+            <div class="d-flex flex-column flex-xl-row justify-content-around align-items-center pt-5 px-5 col-12">
                 {% for key in keyFigures %}
                     {% include "@theme/partials/banner_keys/_keys.twig" with {key: key, loop: loop.index} %}
                 {% endfor %}

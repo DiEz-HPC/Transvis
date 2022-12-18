@@ -49,7 +49,7 @@ record.
                 {% endfor %}
             </div>
         </div>
-        {% with {keyFigures: keyFigures } %}
+        {% with {keyFigures: keyFigures, keyFigureTitle: record.keyFigureTitle } %}
             {{ block('bannerKeysFiguresContent') }}
         {% endwith %}
     </div>
