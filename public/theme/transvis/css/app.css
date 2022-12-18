@@ -41,7 +41,13 @@ h2 {
     position: relative;
     line-height: 44px;
 }
-
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight--bold);
+    color: var(--dark-color);
+    position: relative;
+    line-height: 32px;
+}
 h1::before,
 .likeh1::before {
     content: "";

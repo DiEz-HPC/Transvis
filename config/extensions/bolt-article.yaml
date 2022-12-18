@@ -22,7 +22,7 @@ default:
     div: 'article-div'
     ul: 'article-ul'
   grid:
-    classname: 'row my-5 py-5'
+    classname: 'row'
     columns: 12
     patterns:
       '4|4|4': 'col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column|col-12 col-lg-4|col-12 col-lg-4 d-flex align-items-start justify-content-center flex-column'
