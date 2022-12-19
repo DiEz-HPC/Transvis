@@ -5,7 +5,7 @@
 # selector, specialchars, style, tags, textdirection, underline, variable,
 # removeformat, imageresize
 default:
-  plugins: [ blockcode, buttonlink, definedlinks, inlineformat, reorder, tags, underline, imageposition, filelink, removeformat]
+  plugins: [ blockcode, buttonlink, definedlinks, inlineformat, reorder, tags, underline, imageposition, filelink, removeformat, selector]
   source: true
   custom: 
     css: [ '/theme/transvis/css/dependency/customAdminArticle.css' ]

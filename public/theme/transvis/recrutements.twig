@@ -23,10 +23,10 @@
     {% set hasRecords = records|length > 0 ? true : false %}
     <div class="d-flex flex-column mt-5">
         <div class="recrutementHeader">
-            <h1 class="text-center mt-4">
+            <h1 class="text-center mt-4" data-aos="fade-up">
                 {{ pageTitle|upper }}
             </h1>
-            <div class="p-5">
+            <div class="p-5" data-aos="fade-up" data-aos-delay="250">
                 {{ pageDescription }}
             </div>
             <div class="d-flex flex-column flex-xl-row justify-content-center">
@@ -48,7 +48,7 @@
                         {{ message }}
                     </div>
                 {% endfor %}
-                <h2 class="text-center my-5 col-12">
+                <h2 class="text-center my-5 col-12" data-aos="fade-up">
                     {{ hasRecords ? 'postes à pourvoir'|upper : 'Aucun poste à pourvoir pour le moment'|upper }}
                 </h2>
             </div>
@@ -57,7 +57,7 @@
         <div class="recrutementBody">
             <div class="d-flex flex-column flex-xl-row flex-xl-wrap justify-content-center justify-content-xl-around align-items-center p-5 col-12">
                 {% for record in records %}
-                    {% with { card: record} %}
+                    {% with { card: record, index: loop.index} %}
                     {{ block('cardRecrutementContent')}}
                     {% endwith %}
                 {% endfor %}

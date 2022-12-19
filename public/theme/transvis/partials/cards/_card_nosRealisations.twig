@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block cardNosRealisationsContent %}
-    <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}" data-timerecord="{{ record.videoTime }}" data-iscaptured="0">
+    <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}" data-timerecord="{{ record.videoTime }}" data-iscaptured="0" data-aos="fade-up" data-aos-duration="{{ 250 + (loopIndex * 250)}}">
         <div class="card nr cardNosRealisations" data-loop-index="{{loopIndex}}">
             <div class="card-img">
             {% if record.video is defined and record.video is not null and record.video is not empty %}

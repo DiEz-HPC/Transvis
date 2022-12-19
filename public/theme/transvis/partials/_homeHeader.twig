@@ -11,16 +11,16 @@
             <source src="{{ record.headerVideo }}">
         </video>
         <div id="headerContent" class="styling">
-                <div class="col-12 col-lg-6 col-xl-6 header-block-left pt-5 pt-sm-0">
-                    <h1 class="px-3 px-sm-4">{{ record.headerTitle | upper }}</h1>
+                <div class="col-12 col-lg-6 col-xl-6 header-block-left pt-5 pt-sm-0" >
+                    <h1 class="px-3 px-sm-4" data-aos="fade-right" data-aos-delay="0" data-aos-durationdata-aos-duration="500">{{ record.headerTitle | upper }}</h1>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-6 header-block-right p-4">
-                    <div class="col-12 col-lg-10">
+                    <div class="col-12 col-lg-10" data-aos="fade-left" data-aos-delay="0" data-aos-durationdata-aos-duration="500">
                         {{ record.headerTeaser }}
                     </div>
                 </div>
         </div>
-        <div class="container headerHaveProject">
+        <div class="container headerHaveProject" data-aos="fade-up" data-aos-delay="500">
             {% include "@theme/partials/_line.twig" %}
             <div class=" d-flex flex-column flex-lg-row">
                 <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
