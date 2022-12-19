@@ -87,7 +87,7 @@ accueil:
     icon_one: "fa:home"
 
 savoirFaire:
-    name: Nos savoirs faire
+    name: Nos savoir-faire
     singular_name: Nos savoir-faire
     slug: nos-savoir-faire
     fields:
