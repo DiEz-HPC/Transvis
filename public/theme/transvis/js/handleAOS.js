@@ -43,5 +43,3 @@ const handleAOS = () => {
     });
     AOS.init();
 }
-
-handleAOS();
