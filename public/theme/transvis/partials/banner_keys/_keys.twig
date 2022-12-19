@@ -8,7 +8,7 @@
 {% endmacro keyLogoPath %}
 
 {% block keysContent %}
-    <div class="keyFigure d-flex flex-column align-items-center col-12 col-lg-4 my-5 my-sm-3 my-lg-0">
+    <div class="keyFigure d-flex flex-column align-items-center col-12 col-lg-4 my-5 my-sm-3 my-lg-0" data-aos="fade-up" data-aos-duration="{{ 500 * loop }}">
         <img class="keyLogo" src="{{ _self.keyLogoPath(key, loop) }}"
              alt="{{ key.image.alt | default('logo chiffre clé') }}">
         <h3 class="d-flex flex-column text-center">
