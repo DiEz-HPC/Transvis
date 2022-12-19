@@ -11,14 +11,12 @@
     {{ block('buttonRedStylesheet') }}
     {{ block('tagStylesheet') }}
     {{ block('videoModalStyleSheet')}}
-    <link rel="stylesheet" href="{{ asset('css/components/cardNosRealisations.css') }}">
+    {{ encore_entry_link_tags('cardNosRealisationStyle', null, 'transvis') }}
 {% endblock %}
 {% block cardNosRealisationsJavascript %}
     {{ block('tagJavascript') }}
     {{ block('videoModalJavascript') }}
-    <script src="{{ asset('js/dependency/splide.min.js') }}"></script>
-    <script src="{{ asset('js/dependency/splide.autoscroll.min.js') }}"></script>
-    <script src="{{ asset('js/cardNosRealisations.js') }}"></script>
+    {{ encore_entry_script_tags('cardNosRealisationsJs', null, 'transvis') }}
 {% endblock %}
 
 {% block cardNosRealisationsContent %}
@@ -50,7 +48,7 @@
                         {% endwith %}
                     {% endfor %}
                 </div>
-                <p class="card-text">{{record.teaser|excerpt(350)}}</p>
+                <p class="card-text">{{record.teaser|excerpt(300)}}</p>
                 {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
                 {{ block('buttonRedContent') }}
                 {% endwith %}

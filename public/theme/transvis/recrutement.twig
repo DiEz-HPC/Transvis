@@ -17,7 +17,7 @@ Record.
 {% block stylesheet %}
     {{ parent() }}
     {{ block('tagStylesheet') }}
-    <link rel="stylesheet" href="{{ asset('css/recrutement.css') }}">
+    {{ encore_entry_link_tags('recrutementStyle', null, 'transvis') }}
 {% endblock stylesheet %}
 
 {% block javascript %}

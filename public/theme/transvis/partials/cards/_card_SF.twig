@@ -1,7 +1,7 @@
 {% use '@theme/partials/buttons/_button-red.twig' %}
 
 {% block cardSFstylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/card-sf.css') }}">
+{{ encore_entry_link_tags('cardSFStyle', null, 'transvis') }}
     {{ block('buttonRedStylesheet') }}
 {% endblock cardSFstylesheet %}
 

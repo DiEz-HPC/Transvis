@@ -15,13 +15,13 @@ record.
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/valeurs.css') }}">
+    {{ encore_entry_link_tags('valeursStyle', null, 'transvis') }}
 {% endblock stylesheet %}
 
 {% block javascript %}
 {{ parent() }}
 <script src="{{ asset('js/dependency/jquery-3.6.1.min.js') }}"></script>
-<script src="{{ asset('js/timeline.js') }}"></script>
+{{ encore_entry_script_tags('timelineJs', null, 'transvis') }}
 {% endblock javascript %}
 
 {% block main %}

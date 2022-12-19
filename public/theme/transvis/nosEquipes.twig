@@ -21,7 +21,7 @@ record.
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/equipes.css') }}">
+    {{ encore_entry_link_tags('equipeStyle', null, 'transvis') }}
     {{ block('cardRecrutementStylesheet') }}
     {{ block('blockTopSingletonWithImageStylesheet') }}
     {{ block('buttonRedStylesheet') }}
@@ -29,7 +29,7 @@ record.
 
 {% block javascript %}
     {{ parent() }}
-    <script src="{{ asset('js/superposition.js') }}"></script>
+    {{ encore_entry_script_tags('superpositionJs', null, 'transvis') }}
 {%  endblock javascript %}
 
 {% block main %}

@@ -1,3 +1,5 @@
+import { Splide } from '@splidejs/splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
     let cards = document.querySelectorAll(".cardNosRealisations");
@@ -108,7 +110,7 @@ const initLogoSlider = (splideDiv, modal) => {
             1200: { perPage: 3, gap: "1rem" },
             640: { perPage: 2, gap: 0 },
         },
-    }).mount(window.splide.Extensions);
+    }).mount( {AutoScroll});
     setLogoSizeSlider(splideDiv);
 
     let close = modal.querySelector(".btn-close-modal");

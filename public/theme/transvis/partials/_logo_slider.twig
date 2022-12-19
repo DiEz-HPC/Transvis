@@ -1,12 +1,10 @@
 {% block logoSliderJavascript %}
-    <script src="{{ asset('js/dependency/splide.min.js') }}"></script>
-    <script src="{{ asset('js/dependency/splide.autoscroll.min.js') }}"></script>
-    <script src="{{ asset('js/logoSlider.js') }}"></script>
+{{ encore_entry_script_tags('logoSliderJs', null, 'transvis') }}
 {% endblock %}
 
 {% block logoSliderStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/dependency/splide.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/logoSlider.css') }}">
+{{ encore_entry_link_tags('splideStyle', null, 'transvis') }}
+{{ encore_entry_link_tags('logoSliderStyle', null, 'transvis') }}
 {% endblock %}
 
 {% block logoSliderContent %}

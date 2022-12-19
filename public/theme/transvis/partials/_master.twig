@@ -10,10 +10,12 @@
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
         {% block stylesheet %}
-            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/dependency/aos.css') }}">
+
+            {{ encore_entry_link_tags('appStyle', null, 'transvis') }}
+            {{ encore_entry_link_tags('navbarStyle', null, 'transvis') }}
+            {{ encore_entry_link_tags('aosStyle', null, 'transvis') }}
+            {{ encore_entry_link_tags('footerStyle', null, 'transvis') }}
+
         {% endblock stylesheet %}
     </head>
     {% setcontent options = 'Vos options' %}
@@ -35,9 +37,10 @@
 
     </body>
     {% block javascript %}
-        <script src="{{ asset('js/dependency/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/dependency/aos.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script src="{{ asset('js/navbar.js') }}"></script>
+
+        {{ encore_entry_script_tags('appJs', null, 'transvis') }}
+        {{ encore_entry_script_tags('bootstrapJs', null, 'transvis') }}
+        {{ encore_entry_script_tags('navbarJs', null, 'transvis') }}
+
     {% endblock javascript %}
 </html>

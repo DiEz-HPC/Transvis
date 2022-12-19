@@ -6,7 +6,7 @@
 #}
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/nosRealisations.css') }}">
+    {{ encore_entry_link_tags('nosRealisationsStyle', null, 'transvis') }}
     {{ block('cardNosRealisationsStylesheet')}}
     {{ block('logoSliderStylesheet') }}
 {% endblock stylesheet %}

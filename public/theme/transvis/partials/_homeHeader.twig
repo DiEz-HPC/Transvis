@@ -1,6 +1,6 @@
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% block homeHeaderStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/homeHeader.css') }}"/>
+{{ encore_entry_link_tags('homeHeaderStyle', null, 'transvis') }}
     {{ block('buttonRedStylesheet') }}
 {% endblock %}
 
@@ -24,7 +24,7 @@
             {% include "@theme/partials/_line.twig" %}
             <div class=" d-flex flex-column flex-lg-row">
                 <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
-                    <p class="headerHaveProjectText text-center text-lg-start mt-4">Vous avez un
+                    <p class="headerHaveProjectText text-center text-lg-start mt-4" data-aos="fade-up">Vous avez un
                         <span>projet</span>
                         ?</p>
                     <div class="d-flex justify-content-center justify-content-lg-start mt-4">
