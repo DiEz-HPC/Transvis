@@ -26,9 +26,9 @@
             <h1 class="text-center mt-4">
                 {{ pageTitle|upper }}
             </h1>
-            <p class="p-5 text-center">
+            <div class="p-5">
                 {{ pageDescription }}
-            </p>
+            </div>
             <div class="d-flex flex-column flex-xl-row justify-content-center">
                 {% for step in steps %}
                     {% with {index:loop.index, title: step.title, content: step.text} %}

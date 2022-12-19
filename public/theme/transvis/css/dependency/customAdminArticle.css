@@ -13,6 +13,7 @@ b{
 .article-h3 {
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight--bold);
+    width: 100%;
 }
 /* Bootstrap */
 .img-fluid {
