@@ -46,16 +46,16 @@
 
     <div class="Nos-realisations mt-5" id="nosRealisationSection">
         <div class="row bs-g-0 nosRealisationIntro" style="padding: 0 6%;">
-            <h1 class="nosRealisationTitle line-before-start mt-4">
+            <h1 class="nosRealisationTitle line-before-start mt-4" data-aos="fade-up">
                 {{ pageTitle|upper }}
             </h1>
             {% if currentTag is not null %}
-                <h2 class="CurrentTagTitle">
+                <h2 class="CurrentTagTitle" data-aos="fade-up">
                     {{ currentTag|upper }}
                 </h2>
             {% endif %}
 
-            <p class="mt-5">
+            <p class="mt-5" data-aos="fade-up" data-aos-delay="250">
                 {{ pageText }}
             </p>
         </div>
@@ -63,17 +63,17 @@
         {{ include ('@theme/partials/_line.twig') }}
         {% if recordsTagList is not empty %}
             <div class="row d-flex align-items-center justify-content-center flex-column my-5">
-                <h3 class="text-center mb-5"> {{"rechercher par tag"|upper}} </h3>
+                <h3 class="text-center mb-5" data-aos="fade-up"> {{"rechercher par tag"|upper}} </h3>
                 <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center tagCloud-container">
                     {% for tagName, tagSlug in recordsTagList  %}
-                        <a href="{{ '/' ~ taxonomies ~ '/' ~ tagSlug}}" class="tag-link tag m-2 tagCloud-item {{ currentTag == tagName ? 'active' : '' }}">
+                        <a href="{{ '/' ~ taxonomies ~ '/' ~ tagSlug}}" class="tag-link tag m-2 tagCloud-item {{ currentTag == tagName ? 'active' : '' }}" data-aos="fade-up" data-aos-duration="{{250 + (loop.index * 250) }}">
                             {{ tagName }}
                         </a>
                     {% endfor %}
                 </div>
                 {% if currentTag is not null %}
                     <div class="col-lg-3 d-flex justify-content-center align-items-center">
-                        <a href="{{ path('listing', {'contentTypeSlug': 'nos-realisations'}) }}" class="tag-link tag m-2 tagCloud-item">
+                        <a href="{{ path('listing', {'contentTypeSlug': 'nos-realisations'}) }}" class="tag-link tag m-2 tagCloud-item" data-aos="fade-up">
                             Tout</a>
                     </div>
                 {% endif %}

@@ -12,7 +12,7 @@
     {% else %}
         {% set path = asset(card.image.path) %}
     {% endif %}
-    <div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0">
+    <div class="card-sf col-3 d-flex flex-column align-items-center mb-5 mb-lg-0" data-aos="fade-up" data-aos-duration="{{ 500 * loop }}">
         <div class="logo d-flex justify-content-center my-3">
             <img class="w-50" src="{{ path }}" alt="logo main">
         </div>
