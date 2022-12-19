@@ -3,7 +3,7 @@ defaultImage is variable passed with call component
 #}
 
 {% block blockTopSingletonWithImageStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/blockTopWithImage.css') }}"/>
+{{ encore_entry_link_tags('blockTopStyle', null, 'transvis') }}
 {% endblock %}
 
 {% block blockTopSingletonWithImageContent %}

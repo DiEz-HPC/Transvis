@@ -13,7 +13,8 @@
         "bolt/themes": "^3.5",
         "jeschek/dragsort": "^1.0",
         "nelmio/security-bundle": "^2.12",
-        "symfony/flex": "^2.0"
+        "symfony/flex": "^2.0",
+        "symfony/webpack-encore-bundle": "^1.16"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

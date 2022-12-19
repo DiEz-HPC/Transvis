@@ -7,7 +7,7 @@ nextWidith: arrow logo width default 10%
 #}
 
 {% block buttonRedStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/btnRed.css') }}">
+{{ encore_entry_link_tags('btnRedStyle', null, 'transvis') }}
 {% endblock buttonRedStylesheet %}
 
 {% block buttonRedContent %}

@@ -1,3 +1,5 @@
+import * as AOS from 'aos';
+
 const matchesEffect = [
     {
         selector: ".aos-up",

@@ -1,12 +1,12 @@
 {% use '@theme/partials/_logo_slider.twig' %}
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% block videoModalJavascript %}
-    <script src="{{ asset('js/nosRealisationModal.js') }}"></script>
+{{ encore_entry_script_tags('nosRealisationModalJs', null, 'transvis') }}
     {{ block('buttonRedStylesheet') }}
 {% endblock videoModalJavascript %}
 
 {% block videoModalStyleSheet %}
-    <link rel="stylesheet" href="{{ asset('css/components/videoModal.css') }}">
+    {{ encore_entry_link_tags('videoModalStyle', null, 'transvis') }}
 {% endblock videoModalStyleSheet %}
 
 {% block videoModalContent %}

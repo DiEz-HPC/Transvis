@@ -2,7 +2,7 @@
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% use '@theme/partials/banner_keys/_banner_keys_figures.twig' %}
 {% block homeSavoirFaireStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/homeNosSavoirFaire.css') }}"/>
+{{ encore_entry_link_tags('homeNosSavoirFaireStyle', null, 'transvis') }}
     {{ block('cardSFstylesheet') }}
     {{ block('buttonRedStylesheet') }}
     {{ block('bannerKeysFiguresStylesheet') }}

@@ -1,9 +1,9 @@
 {% block bannerKeysFiguresStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/bannerKeyFigures.css') }}">
+    {{ encore_entry_link_tags('bannerKeyStyle', null, 'transvis') }}
 {% endblock %}
 
 {% block bannerKeysFiguresJavascript %}
-    <script src="{{ asset('js/_keyFigures/keyAnimate.js') }}"></script>
+    {{ encore_entry_script_tags('keyFiguresJs', null, 'transvis') }}
 {% endblock %}
 
 {% block bannerKeysFiguresContent %}

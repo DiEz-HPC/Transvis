@@ -3,10 +3,10 @@
 #}
 
 {% block tagStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/tag.css') }}">
+{{ encore_entry_link_tags('tagStyle', null, 'transvis') }}
 {% endblock %}
 {% block tagJavascript %}
-  <script src="{{ asset('js/tagSeeMore.js') }}"></script>
+{{ encore_entry_script_tags('tagSeeMoreJs', null, 'transvis') }}
 {% endblock %}
 {% block tagContent %}
     {% set name = name ?? tag %}

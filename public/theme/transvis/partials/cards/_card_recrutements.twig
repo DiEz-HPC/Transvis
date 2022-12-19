@@ -12,7 +12,7 @@ card (contentype recrutement):
 {% use '@theme/partials/buttons/_button-red.twig' %}
 
 {% block cardRecrutementStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/cardRecrutement.css') }}">
+    {{ encore_entry_link_tags('cardRecrutementStyle', null, 'transvis') }}
     {{ block('tagStylesheet') }}
     {{ block('buttonRedStylesheet')}}
 {% endblock %}

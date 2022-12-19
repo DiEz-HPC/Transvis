@@ -1,7 +1,7 @@
 {% use '@theme/partials/cards/_card_valeur.twig' %}
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% block homeNosValeursStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/homeNosValeurs.css') }}"/>
+{{ encore_entry_link_tags('homeNosValeursStyle', null, 'transvis') }}
     {{ block('buttonRedStylesheet') }}
 {% endblock %}
 

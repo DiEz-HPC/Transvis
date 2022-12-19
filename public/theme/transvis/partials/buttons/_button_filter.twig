@@ -1,9 +1,9 @@
 {% block buttonFilterStylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/components/buttonFilter.css') }}"/>
+    {{ encore_entry_link_tags('buttonFilterStyle', null, 'transvis') }}
 {% endblock %}
 
 {% block buttonFilterJavascript %}
-    <script src="{{ asset('js/tagSearch.js') }}"></script>
+{{ encore_entry_script_tags('tagSearchJs', null, 'transvis') }}
 {% endblock %}
 
 {% block buttonFilterContent %}
