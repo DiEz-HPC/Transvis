@@ -115,3 +115,9 @@ button img {
     width: 20px;
     filter: invert(100%);
 }
+
+.consentCheckbox{
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    font-size: smaller;
+}

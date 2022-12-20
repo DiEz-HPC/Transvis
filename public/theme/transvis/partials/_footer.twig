@@ -34,7 +34,12 @@
                 template = 'partials/_sub_menu_footer.twig',
                 withsubmenus = false,
             ) }}
+            <li class="footer-list-item mb-4 d-flex">
+             <img src="{{ asset('images/arrowRight.svg') }}" alt="arrow">
+                <a class="ms-2" href="/rgpd">Politique de confidentialité</a>
+            </li>
         </div>
+
         <div class="col-12 col-lg-2">
             <h6>CONTACT</h6>
             <div class="red-line my-3"></div>
@@ -45,23 +50,18 @@
                 </li>
                 <li class="contact-list-item contact-list-item-logo">
                     <div class="row align-items-center">
-                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank"
-                           class="rounded-link d-flex justify-content-center align-items-center"><img
-                                src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
-                        <a href="mailto:{{ options.email|default('contact@transvis.fr') }}"
-                           class="rounded-link d-flex justify-content-center align-items-center"><img
-                                src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
+                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="" alt="linkedin"></a>
+                        <a href="mailto:{{ options.email|default('contact@transvis.fr') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="" alt="enveloppe"></a>
                     </div>
-                </li>
-                <li>
-
                 </li>
             </ul>
         </div>
     </div>
 </footer>
 <div class="bottom-footer text-center p-4 align-items-center col-12">
-    <p class="diez-text"> Site réalisé par <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a>
+    <p class="diez-text">
+        Site réalisé par
+        <a href="https://www.deviteasy.fr/" target="_blank" class="diez-link">Deviteasy</a>
     </p><br>
     <p class="diez-text d-flex flex-column flex-lg-row justify-content-center align-items-center">
         <a href="https://www.centre-valdeloire.fr/" target="_blank" class="diez-link">

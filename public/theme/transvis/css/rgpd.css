@@ -1,0 +1,11 @@
+.rgpd h3 {
+    margin-top: 2em;
+}
+.rgpd {
+    line-height: 1.5em;
+}
+
+.rgpd li {
+    list-style-type: lower-latin;
+    margin-bottom: 1em;
+}

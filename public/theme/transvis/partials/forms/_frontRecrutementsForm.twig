@@ -4,16 +4,16 @@
 {% else %}
     {% set mailto = options.email %}
 {% endif %}
-        {% for message in app.flashes('error') %}
-            <div class="alert alert-warning">
-                {{ message }}
-            </div>
-        {% endfor %}
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endfor %}
+{% for message in app.flashes('error') %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+{% endfor %}
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
 <div class="mb-4">
     {{ form_start(form, {'attr': {'class': 'd-flex flex-column col-12 justify-content-center align-items-center'}}) }}
     <div class="col-11 mb-5">
@@ -28,17 +28,22 @@
         {{ form_errors(form.email) }}
         {{ form_widget(form.email, { 'attr': {'class': 'form-control'} } ) }}
     </div>
-    <div class="col-11 mb-5">
+    <div class="col-11 mb-3">
         {{ form_errors(form.motivation) }}
         {{ form_widget(form.motivation, { 'attr': {
             'class': 'form-control',
             'rows': '10'
         } } ) }}
     </div>
+        <div class="form-check consentCheckbox col-11 mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de contact et de la relation commerciale qui peut en découler.
+        </label>
+    </div>
     <div class="group-send d-flex flex-column flex-sm-row col-11 justify-content-around">
         <div class="col-12 col-sm-7 col-md-6 col-lg-5 col-xl-4 mb-4 mb-sm-5">
-            <button type="button" class="btnFile d-flex col-12 justify-content-center align-items-center"
-                    onclick="document.getElementById('recrutements_filename').click(); return false;">{{ 'Déposer un cv' | upper }}
+            <button type="button" class="btnFile d-flex col-12 justify-content-center align-items-center" onclick="document.getElementById('recrutements_filename').click(); return false;">{{ 'Déposer un cv' | upper }}
                 <img class="ms-2" src="{{ asset('images/upload-file.svg') }}" alt="logo upload">
             </button>
             {{ form_errors(form.filename) }}
@@ -49,25 +54,35 @@
         </div>
         {{ form_widget(form.job, {'attr': {'value': record.title}}) }}
         {{ form_widget(form.job_id, {'attr': {'value': record.id}}) }}
+
         <div class="justify-content-center align-items-center">
             {{ form_widget(form.submit, { 'attr': {
                 'class': 'btn btn-dark send-mail-button d-flex justify-content-center align-items-center col-12'},
-                'label' : 'ENVOYER'
+                'label' : 'ENVOYER',
+                'disabled': 'disabled'
             } ) }}
         </div>
+
     </div>
- {{ form_widget(form.mailto, { 'attr': {'class': 'form-control'} } ) }}
-    <div class="form-control form-special"
-         style=' opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;'>
+
+    {{ form_widget(form.mailto, { 'attr': {'class': 'form-control'} } ) }}
+    <div class="form-control form-special" style=' opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;'>
         {{ form_rest(form) }}
     </div>
     {{ form_end(form) }}
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var form = document.querySelector('form');
-    var mailto = form.querySelector('input[name="recrutements[mailto]"]');
-   mailto.value = {{ mailto|json_encode|raw }};
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.querySelector('form');
+        var mailto = form.querySelector('input[name="recrutements[mailto]"]');
+        mailto.value = {{ mailto|json_encode|raw }};
+        form.querySelector(".consentCheckbox").addEventListener('click', function (element) {
+            if (element.target.checked) {
+                form.querySelector('button[type="submit"]').disabled = false;
+            } else {
+                form.querySelector('button[type="submit"]').disabled = true;
+            }
+        });
+    });
 </script>

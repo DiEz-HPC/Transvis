@@ -45,6 +45,7 @@ Encore
     .addStyleEntry('cardNosRealisationStyle', './public/theme/transvis/css/components/cardNosRealisations.css')
     .addStyleEntry('cardRecrutementStyle', './public/theme/transvis/css/cardRecrutement.css')
     .addStyleEntry('cardSFStyle', './public/theme/transvis/css/card-sf.css')
+    .addStyleEntry('rgpdStyle', './public/theme/transvis/css/rgpd.css')
 
     .addStyleEntry('paginationStyle', './public/theme/transvis/css/components/pagination.css')
     .addStyleEntry('videoModalStyle', './public/theme/transvis/css/components/videoModal.css')

@@ -26,6 +26,8 @@
         {% if record is defined and record.contentType != 'accueil' or records is defined %}
             {{ include('partials/_header.twig') }}
         {% endif %}
+        {% block rgpd %}
+        {% endblock %}
         <main>
             {% block body %}
 
