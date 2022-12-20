@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
    mailto.value = {{ mailto|json_encode|raw }};
 
    form.querySelector(".consentCheckbox").addEventListener('click', function(element) {
-    console.log(element.target.checked)
     if(element.target.checked) {
         form.querySelector('button[type="submit"]').disabled = false;
     } else {
