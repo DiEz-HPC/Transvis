@@ -40,7 +40,7 @@ record.
                 <div data-aos="fade-up" data-aos-delay="250">{{ record.intro }}</div>
             {% endif %}
             <div class="p-0 p-md-3" id="nosEquipeTeaser">
-                {{ record.teaser }}
+                {{ superposition(record.teaser) }}
             </div>
             {% include '@theme/partials/_line.twig' %}
         </div>

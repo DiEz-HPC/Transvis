@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.superposition').forEach(function (element) {
-            createImage(element);
+       element.querySelectorAll('.w-0').forEach(function (element) {
+        setTimeout(function () {
+              element.classList.remove('w-0');
+        }, 250);
+         });
     });
-
 });
-var createImage = (element) => {
-       var overlayImg = document.createElement('img');
-        overlayImg.src = "/theme/transvis/images/bloc-contour.png";
-        element.appendChild(overlayImg);
-}
