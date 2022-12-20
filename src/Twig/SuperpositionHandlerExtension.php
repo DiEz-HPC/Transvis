@@ -13,11 +13,11 @@ class SuperpositionHandlerExtension extends AbstractExtension
 {
 
 
-    public function __construct(private $publicFolder)
-    {
-        $this->publicFolder = $publicFolder;
-    }
-
+        public function __construct(private $publicFolder)
+        {
+            $this->publicFolder = $publicFolder;
+        }
+    
     public function getFunctions()
     {
         return [
@@ -41,7 +41,8 @@ class SuperpositionHandlerExtension extends AbstractExtension
             // On ajoute l'image avant le premier enfant de la balise figure
             $superposition->insertBefore($img, $superposition->firstChild);
         }
-        $message_encoded = mb_convert_encoding($dom->saveHTML(), 'HTML-ENTITIES', 'UTF-8');
+        $message_encoded = mb_convert_encoding($dom->saveHTML() , 'HTML-ENTITIES', 'UTF-8');
         return new Markup($message_encoded, 'UTF-8');
+        
     }
 }
