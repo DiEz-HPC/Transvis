@@ -33,3 +33,8 @@
 iframe{
     border-radius: 0.5em;
 }
+.consentCheckbox{
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    font-size: smaller;
+}
