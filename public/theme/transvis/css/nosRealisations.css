@@ -2,12 +2,12 @@
     margin: 0;
     right: 15px;
 }
-.nosRealisationIntro{
+.nosRealisationIntro {
     padding: 0 6%;
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 1rem;
@@ -17,21 +17,66 @@
 .tagCloud-item {
     white-space: nowrap;
 }
-.tagCloud-item.active{
+.tagCloud-item.active {
     color: var(--red-color);
 }
-.tag:hover, .tag:focus, .tag:active{
+.tag:hover,
+.tag:focus,
+.tag:active {
     color: var(--red-color);
 }
-.CurrentTagTitle{
+.CurrentTagTitle {
     color: var(--red-color);
     font-size: var(--font-size-title);
 }
 @media screen and (max-width: 768px) {
-h1{
-text-align: center;
+    h1 {
+        text-align: center;
+    }
+    h1:before {
+        margin: auto;
+    }
+    .modalFooter {
+        height: 20vh;
+    }
+    .modalFooter p {
+        font-size: var(--font-size-larger);
+    }
 }
-h1:before {
-margin: auto;
+
+.modalFooter {
+    height: 35vh;
+    position: relative;
+    overflow: hidden !important;
 }
-} 
+
+.modalFooter p {
+    font-size: var(--font-size-larger);
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+}
+
+.styledBorder{
+    position: absolute;
+    top: 50;
+    left: 50;
+    bottom: 50;
+    right: 50;
+    margin: auto;
+    border: 1px dashed var(--light-color);
+    border-radius: 50%;
+    width: 700px;
+    height: 700px;
+    padding: 10px;
+    margin: 10px;
+}
+.styledBorder:before {
+    content: "";
+    position: absolute;
+    border: 2px dashed var(--light-color);
+    border-radius: 50%;
+    top: 35px;
+    bottom: 35px;
+    left: 35px;
+    right: 35px;
+  }
