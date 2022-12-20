@@ -6,7 +6,7 @@
         <meta
         name="viewport" content="width=device-width, initial-scale=1.0">
         {# make sure we always display a proper title: The record's title if there is one, appended with the
-                           sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
+                                   sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
         {% block stylesheet %}
@@ -17,6 +17,9 @@
             {{ encore_entry_link_tags('footerStyle', null, 'transvis') }}
 
         {% endblock stylesheet %}
+        {% if app.environment == "prod" %}
+            {{ encore_entry_script_tags('matomoJs', null, 'transvis') }}
+        {% endif %}
     </head>
     {% setcontent options = 'Vos options' %}
     <body>

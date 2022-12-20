@@ -52,6 +52,7 @@ Encore
     .addEntry('appJs', './public/theme/transvis/js/app.js')
     .addEntry('bootstrapJs', './public/theme/transvis/js/dependency/bootstrap.min.js')
     .addEntry('navbarJs', './public/theme/transvis/js/navbar.js')
+    .addEntry('matomoJs', './public/theme/transvis/js/matomo.js')
     
     .addEntry('superpositionJs', './public/theme/transvis/js/superposition.js')
 
