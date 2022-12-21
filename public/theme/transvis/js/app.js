@@ -35,6 +35,13 @@ const handleDelay = (element) => {
     }
 }
 
+const handleOffset = (element) => {
+    // On récupère, dans la class, la valeur de l'offset sous la forme "aos-offset-250"
+    var offset = element.classList.value.match(/aos-offset-\d+/g);
+    if (offset) {
+        element.dataset.aosOffset = offset[0].replace("aos-offset-", "");
+    }
+}
 const handleAOS = () => {
     matchesEffect.forEach((match) => {
         document.querySelectorAll(match.selector).forEach((element) => {
