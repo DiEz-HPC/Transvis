@@ -11,7 +11,7 @@ default:
     css: [ '/theme/transvis/css/dependency/customAdminArticle.css' ]
   classes:
     p: 'article-paragraph w-100'
-    figure: 'superposition'
+    figure: 'superposition d-none'
     img: 'rounded mx-auto d-block img-fluid'
     h1: 'article-h1'
     h2: 'article-h2'
