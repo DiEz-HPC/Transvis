@@ -48,6 +48,7 @@ const handleAOS = () => {
             element.dataset.aos = match.data;
             handleDuration(element);
             handleDelay(element);
+            handleOffset(element);
         });
     });
     AOS.init();
