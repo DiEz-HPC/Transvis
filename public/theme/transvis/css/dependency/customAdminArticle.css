@@ -38,7 +38,10 @@ b{
     padding-left: calc(var(--bs-gutter-x) * 0.5);
     margin-top: var(--bs-gutter-y);
 }
-
+.d-none{
+    width: initial !important;
+    display: initial !important;
+}
 .col-lg {
     flex: 1 0 0%;
 }

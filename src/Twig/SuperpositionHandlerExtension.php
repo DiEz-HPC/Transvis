@@ -5,9 +5,8 @@ namespace App\Twig;
 use DOMDocument;
 use Twig\Markup;
 use Twig\TwigFunction;
-use Bolt\Entity\Taxonomy;
 use Twig\Extension\AbstractExtension;
-use Doctrine\ORM\EntityManagerInterface;
+
 
 class SuperpositionHandlerExtension extends AbstractExtension
 {
@@ -36,7 +35,6 @@ class SuperpositionHandlerExtension extends AbstractExtension
             $img->setAttribute('src', '/theme/transvis/images/savoirs-faire/bloc-contour.png');
             $img->setAttribute('alt', 'image de contour');
             $img->setAttribute('id', 'image-back');
-            $superposition->firstChild->setAttribute('class', 'w-0');
 
             // On ajoute l'image avant le premier enfant de la balise figure
             $superposition->insertBefore($img, $superposition->firstChild);
@@ -45,4 +43,5 @@ class SuperpositionHandlerExtension extends AbstractExtension
         return new Markup($message_encoded, 'UTF-8');
         
     }
+
 }
