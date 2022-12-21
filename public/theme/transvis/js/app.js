@@ -54,4 +54,15 @@ const handleAOS = () => {
     AOS.init();
 }
 
+const handleImageLoad = () => {
+    document.querySelectorAll(".superposition").forEach((element) => {
+        var images = element.querySelectorAll("img");
+        if(images.length == 1) {
+           element.classList.remove("d-none");
+        }
+    });
+}
+
+
 handleAOS();
+handleImageLoad();
