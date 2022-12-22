@@ -287,12 +287,6 @@ nosEquipes:
             info: Contenue de la page
             fixture_format: '{teaser}'
             group: Introduction
-        image:
-            type: image
-            label: Image d'illustration
-            info: Image illustrant le texte d'introduction
-            group: Introduction
-            fixture_format: '{image}'
         seo:
             type: seo
             group: "Réglage SEO"
@@ -444,24 +438,6 @@ contactPage:
             info: Texte d'introduction de la page
             fixture_format: '{teaser}'
             group: Introduction
-        blockOne:
-            type: set
-            label: Premier bloc
-            group: Blocs
-            fields:
-                image:
-                    type: image
-                    label: Image du premier bloc
-                    info: Image du premier bloc
-                text:
-                    type: textarea
-                    label: Texte du premier bloc
-                    info: Texte du premier bloc
-        blockTwo:
-            type: textarea
-            label: Deuxième bloc
-            info: Deuxième bloc
-            group: Blocs
     default_status: held
     viewless: false
     singleton: true

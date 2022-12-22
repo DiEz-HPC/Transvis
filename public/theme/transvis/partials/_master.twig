@@ -9,6 +9,7 @@
                                    sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
+        <link rel="preload" href="{{ asset('fonts/Montserrat-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
         {% block stylesheet %}
 
             {{ encore_entry_link_tags('appStyle', null, 'transvis') }}
