@@ -24,9 +24,7 @@
             {% include "@theme/partials/_line.twig" %}
             <div class=" d-flex flex-column flex-lg-row">
                 <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
-                    <p class="headerHaveProjectText text-center text-lg-start mt-4" data-aos="fade-up">Vous avez un
-                        <span>projet</span>
-                        ?</p>
+                    <div class="headerHaveProjectText text-center text-lg-start mt-4" data-aos="fade-up">{{ record.headerBottomTextLeft }}</div>
                     <div class="d-flex justify-content-center justify-content-lg-start mt-4">
                         {% with { text: "contactez-nous", link: '/contact', width: "200px", height: "38px", nextWidth: "8%"} %}
                             {{ block('buttonRedContent') }}
@@ -35,9 +33,9 @@
                 </div>
                 <div
                     class="col-lg-6 col-xl-6 row align-items-center justify-content-center justify-content-lg-end my-4 mt-lg-0 pb-3 pb-lg-0">
-                    <p class="headerHaveProjectText text-center text-lg-end mt-4 p-0">
-                        Suivez nos <span>actualités</span> :
-                    </p>
+                    <div class="headerHaveProjectText text-center text-lg-end mt-4 p-0">
+                        {{ record.headerBottomTextRight }}
+                    </div>
                     <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
                         {% with { text: "linkedin", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "12%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg'} %}
                             {{ block('buttonRedContent') }}

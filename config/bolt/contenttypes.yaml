@@ -31,6 +31,16 @@ accueil:
             label: Texte d'en-tête
             info: Texte d'introduction présent sur le header
             group: En-tête
+        headerBottomTextLeft:
+            type: article
+            label: Texte de gauche
+            info: Texte de gauche présent en bas du header
+            group: En-tête
+        headerBottomTextRight:
+            type: article
+            label: Texte de droite
+            info: Texte de droite présent en bas du header
+            group: En-tête
         savoirFaireTitle:
             type: text
             label: Titre
