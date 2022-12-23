@@ -157,7 +157,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du premier chiffre clé
                     info: Texte du premier chiffre clé
                 image:
@@ -174,7 +174,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du deuxième chiffre clé
                     info: Texte du deuxième chiffre clé
                 image:
@@ -191,7 +191,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du troisième chiffre clé
                     info: Texte du troisième chiffre clé
                 image:
