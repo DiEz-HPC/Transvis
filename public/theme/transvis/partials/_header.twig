@@ -9,7 +9,9 @@
         </div>
         <div class="nav-content align-items-center d-none d-lg-flex justify-content-between" id="burgerMenu">
             {% if options is defined and options.logo is defined and options.logo is not null %}
+            <a href="{{ path('homepage') }}">
                 <img src="{{ asset(options.logo) }}" alt="Logo" class="headerNavLogo" width="auto" height="190">
+            </a>
             {% else %}
                 <div class="alert alert-danger" role="alert">
                     Veuillez configurer le logo dans le back-office
