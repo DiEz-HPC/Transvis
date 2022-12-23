@@ -22,7 +22,7 @@ accueil:
             info: L'image de fond sur mobile
             group: En-tête
         headerTitle:
-            type: text
+            type: article
             label: Titre 
             info: Titre de la page
             group: En-tête
