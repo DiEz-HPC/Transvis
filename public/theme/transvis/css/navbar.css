@@ -68,7 +68,7 @@
     }
 }
 /* hide point on mobile */
-@media (max-width: 811px) {
+@media (max-width: 1024px) {
     .headerNavLogo{
         margin: auto;
     }
