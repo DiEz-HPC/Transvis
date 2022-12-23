@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .slider-container {
     max-width: 100% !important;
     --bs-gutter-x: 0 !important;
@@ -35,3 +36,4 @@
         max-height: 100px;
     }
 }
+/* purgecss stop ignore */

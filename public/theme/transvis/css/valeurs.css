@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .block-bottom {
     background-image: url(../images/bgRed.png);
     background-position: center;
@@ -306,3 +307,4 @@
         width: 960px;
     }
 }
+/* purgecss stop ignore */
