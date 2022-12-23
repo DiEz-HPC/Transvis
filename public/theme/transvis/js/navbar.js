@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Fonction qui vérifie si on est sur mobile ou non
 var checkIfMobile = () => {
-    return window.innerWidth < 768 ? true : false;
+    return window.innerWidth <= 1024 ? true : false;
 };
 
 // Fonction qui permet de récupérer la position d'un élément
