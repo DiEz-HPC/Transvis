@@ -540,11 +540,6 @@ vosOptions:
             label: Téléphone
             info: Téléphone de l'entreprise (Présent sur le footer)
             group: Autres
-        fax:
-            type: text
-            label: Fax
-            info: Fax de l'entreprise (Présent sur le footer)
-            group: Autres
         email:
             type: email
             label: Email de contact
