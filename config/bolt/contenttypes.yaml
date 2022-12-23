@@ -22,7 +22,7 @@ accueil:
             info: L'image de fond sur mobile
             group: En-tête
         headerTitle:
-            type: text
+            type: article
             label: Titre 
             info: Titre de la page
             group: En-tête
@@ -30,6 +30,16 @@ accueil:
             type: article
             label: Texte d'en-tête
             info: Texte d'introduction présent sur le header
+            group: En-tête
+        headerBottomTextLeft:
+            type: article
+            label: Texte de gauche
+            info: Texte de gauche présent en bas du header
+            group: En-tête
+        headerBottomTextRight:
+            type: article
+            label: Texte de droite
+            info: Texte de droite présent en bas du header
             group: En-tête
         savoirFaireTitle:
             type: text
@@ -157,7 +167,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du premier chiffre clé
                     info: Texte du premier chiffre clé
                 image:
@@ -174,7 +184,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du deuxième chiffre clé
                     info: Texte du deuxième chiffre clé
                 image:
@@ -191,7 +201,7 @@ savoirFaire:
                     label: Chiffre clé
                     info: chiffre clé
                 text:
-                    type: text
+                    type: article
                     label: Texte du troisième chiffre clé
                     info: Texte du troisième chiffre clé
                 image:

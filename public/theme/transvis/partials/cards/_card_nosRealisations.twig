@@ -38,7 +38,6 @@
                     {% include ("images/play-button.svg") %}
                 </div>
             </div>
-
             <div class="card-body">
                 <h3 class="title">{{ record.title | upper }}</h3>
                 <div class="row tag-line mb-3 align-items-center py-1">
@@ -49,7 +48,7 @@
                     {% endfor %}
                 </div>
                 <p class="card-text">{{record.teaser|excerpt(300)}}</p>
-                {%  with { text: "En savoir plus", link: '#', width: "200px", height: "37px", nextWidth: "8%"} %}
+                {%  with { text: "En savoir plus", link: "#modal-" ~ loopIndex,  width: "200px", height: "37px", nextWidth: "8%"} %}
                 {{ block('buttonRedContent') }}
                 {% endwith %}
             </div>

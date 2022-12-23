@@ -11,5 +11,10 @@
         {% with {defaultImage: asset('images/equipe.webp'), record: arr, imgMargin : ' '} %}
         {{ block('blockTopSingletonWithImageContent') }}
         {% endwith %}
+ <div class="d-flex justify-content-center">
+            {%  with { text: "En savoir plus", link: '/nos-equipes', width: "200px", height: "37px", nextWidth: "8%", isBlack: false} %}
+            {{ block('buttonRedContent') }}
+            {% endwith %}
+        </div>
     </div>
 {% endblock %}
