@@ -6,7 +6,9 @@
 
 {% block homeHeaderContent %}
     <div id="headerVideoDiv" style="background-image: url({{ record.headerImage.path ?? '' }});">
-        {{ include('partials/_header.twig') }}
+        <div class="homeNav">
+            {{ include('partials/_header.twig') }}
+        </div>
         <video controls muted autoplay loop preload="auto" id="videoHeader">
             <source src="{{ record.headerVideo }}">
         </video>
@@ -39,7 +41,7 @@
                         Suivez nos <span>actualités</span> :
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
-                        {% with { text: "linkedin", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "12%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg'} %}
+                        {% with { text: "linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "18%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg'} %}
                             {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>

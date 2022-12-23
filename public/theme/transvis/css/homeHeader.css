@@ -6,13 +6,15 @@
     position: relative;
     overflow: hidden;
 }
+#headerVideoDiv .homeNav{
+    position: relative;
+    z-index: 10;
+}
 #headerVideoDiv header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: 800;
 }
 #headerVideoDiv header a {
     color: var(--light-color);
@@ -64,8 +66,8 @@
     right: 0;
     left: 0;
     margin: auto;
-    z-index: 500;
 }
+
 .headerHaveProjectText {
     font-size: 1.5rem;
     font-weight: var(--font-weight--bold);
