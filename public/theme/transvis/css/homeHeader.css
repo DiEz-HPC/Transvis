@@ -56,7 +56,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
+}
+.header-block-right .article-h3, .header-block-right .article-h2, .header-block-right .article-h1, .header-block-right .article-paragraph {
+    color: var(--light-color) !important;
 }
 .headerHaveProject {
     position: absolute;
