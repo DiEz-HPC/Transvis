@@ -81,7 +81,7 @@
             </div>
             {{ include ('@theme/partials/_line.twig') }}
         {% endif %}
-        <div class="row">
+        <div class="row px-lg-5">
             {% for record in records %}
                 {% set tagList = [] %}
                 {% if record|taxonomies["nosRealisations"] is defined %}
