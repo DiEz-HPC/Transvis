@@ -94,12 +94,13 @@
         align-items: center;
         height: 100%;
     }
+    /* purgecss start ignore */
     .nav-content.appears {
         display: flex;
         transform: translateX(0);
         animation: slideIn 0.5s ease-in-out;
     }
-
+    /* purgecss stop ignore */
     #burger-toggler {
         z-index: 900;
         width: 45px;
