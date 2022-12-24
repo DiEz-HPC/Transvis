@@ -4,7 +4,6 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 document.addEventListener("DOMContentLoaded", function () {
    const splideEl = document.querySelectorAll("#logoSlider");
     splideEl.forEach(function (splideDiv) {
-        console.log("initLogoSlider")
         const splideObject = new Splide(splideDiv, {
             type: "loop",
             drag: "free",
@@ -26,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function setLogoSize(splideObject) {
-    console.log("setLogoSize")
   const splideDiv = splideObject.root;
   const sliderWidth = splideDiv.querySelector(".splide__slide").offsetWidth;
   const logoSize = splideDiv.querySelectorAll(".splide__slide img");
