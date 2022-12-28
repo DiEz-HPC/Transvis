@@ -27,3 +27,4 @@ public/assets/
 public/bundles/
 var/
 vendor/
+node_modules/
