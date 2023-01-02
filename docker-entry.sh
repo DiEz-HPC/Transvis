@@ -13,9 +13,9 @@ php bin/console doctrine:migrations:migrate --verbose --no-interaction --allow-n
 chmod -R 777 var
 chmod -R 777 public
 
-## On s'approprie les dossiers
-chown -R www-data:www-data var
-chown -R www-data:www-data public
+## On attribue les droits sur les dossiers pour le user root
+chown -R root:root var
+chown -R root:root public
 
 php bin/console assets:install public
 php bin/console cache:clear
