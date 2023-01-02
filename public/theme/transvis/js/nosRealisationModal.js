@@ -20,7 +20,7 @@ const handleModal = (cards, modals, body) => {
     });
 };
 
-const openModal = (modal, body) => {
+const openModal = (modals, body) => {
     let modal = modals[nbDiv - 1];
     let splideDiv = modal.querySelector("#logoSliderModal");
     let carouselDiv = modal.querySelector("#carouselSlider");
