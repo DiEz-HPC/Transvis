@@ -4,35 +4,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
     let cards = document.querySelectorAll(".cardNosRealisations");
     let body = document.querySelector("body");
-    openModal(cards, modals, body);
+    handleModal(cards, modals, body);
 });
 
-const openModal = (cards, modals, body) => {
+const handleModal = (cards, modals, body) => {
     cards.forEach(function (card) {
         let playButton = card.querySelector(".play-video");
         let seeMoreButton = card.querySelector(".btn-link-more");
         let nbDiv = card.dataset.loopIndex;
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                let modal = modals[nbDiv - 1];
-                let splideDiv = modal.querySelector("#logoSliderModal");
-                let carouselDiv = modal.querySelector("#carouselSlider");
-                if(hasVideo(modal)){
-                initVideo(modal);
-                // init carousel
-                initCarousel(carouselDiv, modal);
-                // init logo slider
-                initLogoSlider(splideDiv, modal);
-                modal.style.display = "flex";
-                body.style.overflow = "hidden";
-                modal.style.zIndex = "10000";
-                closeModal(modal, body);
-                }
-            });
+            button.addEventListener("click", openModal(modals, body));
+            button.addEventListener("touchend", openModal(modals, body));
         });
     });
 };
+
+const openModal = (modal, body) => {
+    let modal = modals[nbDiv - 1];
+    let splideDiv = modal.querySelector("#logoSliderModal");
+    let carouselDiv = modal.querySelector("#carouselSlider");
+    if(hasVideo(modal)){
+    initVideo(modal);
+    // init carousel
+    initCarousel(carouselDiv, modal);
+    // init logo slider
+    initLogoSlider(splideDiv, modal);
+    modal.style.display = "flex";
+    body.style.overflow = "hidden";
+    modal.style.zIndex = "10000";
+    closeModal(modal, body);
+    }
+}
 
 const setLogoSizeSlider = (splideDiv) => {
     let logoSize = splideDiv.querySelectorAll(".splide__slide img");
