@@ -76,6 +76,13 @@ RUN mkdir -p /etc/nginx/sites-enabled
 RUN chmod -R 777 /var/www/public
 RUN chmod -R 777 /var/www/
 
+# Configure nginx upload size
+RUN echo "file_uploads = On\n" \
+         "memory_limit = 500M\n" \
+         "upload_max_filesize = 500M\n" \
+         "post_max_size = 500M\n" \
+         "max_execution_time = 600\n" \
+         > /usr/local/etc/php/conf.d/uploads.ini
 #RUN php bin/console cache:clear (don t do it with a symfony app because composer.json script post install and update do it)
 
 # Expose port 80 and start php-fpm server
