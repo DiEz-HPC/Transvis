@@ -8,27 +8,20 @@ npm run build
 
 echo "Création de la base de données"
 php bin/console doctrine:database:create --if-not-exists --quiet --no-interaction
+echo "Chargement des migrations"
 php bin/console doctrine:migrations:migrate --verbose --no-interaction --allow-no-migration
-
-echo "Attribution des droits sur les dossiers"
-## On donne les droits sur les dossiers
-chmod -R 777 var
-chmod -R 777 public
-chmod -R 777 var/cache
-
-## On donne les droits sur les fichiers
-chmod -R 777 var/cache/*
-chmod -R 777 var/log/*
-echo "Fin de l'attribution des droits sur les dossiers"
-
 
 echo "Installation des assets"
 php bin/console assets:install public
+echo "Suppression du cache"
 php bin/console cache:clear
+echo "Initialisation du cache"
 php bin/console cache:warmup
+echo "Attribution des droits sur les dossiers de cache"
+chmod -R 777 var
+chmod -R 777 public
 
 echo "Build terminé, Lancement du serveur"
-
 ## server config
 php-fpm &
 nginx -g "daemon off;"
