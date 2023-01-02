@@ -57,7 +57,6 @@ RUN composer install --no-dev --no-interaction -o --no-scripts
 # Add user for laravel application
 #RUN groupadd -g 1000 www
 #RUN useradd -u 1000 -ms /bin/bash -g www www
-RUN adduser --system usercontainer
 # Copy existing application directory
 COPY . /var/www/
 
@@ -90,5 +89,4 @@ RUN echo "file_uploads = On\n" \
 
 # Expose port 80 and start php-fpm server
 EXPOSE 80
-USER usercontainer
 CMD ["/var/www/docker-entry.sh"]

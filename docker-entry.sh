@@ -15,11 +15,12 @@ echo "Attribution des droits sur les dossiers"
 chmod -R 777 var
 chmod -R 777 public
 chmod -R 777 var/cache
+
+## On donne les droits sur les fichiers
+chmod -R 777 var/cache/*
+chmod -R 777 var/log/*
 echo "Fin de l'attribution des droits sur les dossiers"
 
-ls
-
-ls -l var/cache
 
 echo "Installation des assets"
 php bin/console assets:install public
