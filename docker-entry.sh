@@ -1,26 +1,27 @@
 
 #!/bin/sh
-
+echo "docker-entry.sh"
+echo "Installation des dépendances"
 composer install
-apt update -y && apt upgrade -y && apt install npm -y && npm install -y
+apt update -yq && apt upgrade -yq && apt install npm -yq && npm install -y
 npm run build
 
+echo "Création de la base de données"
+php bin/console doctrine:database:create --if-not-exists --quiet --no-interaction
+echo "Chargement des migrations"
+php bin/console doctrine:migrations:migrate --verbose --no-interaction --allow-no-migration
 
-## Symfony configuration
-chmod -R 777 /var/www/var
-chmod -R 777 /var/www/public
-
+echo "Installation des assets"
+php bin/console assets:install public
+echo "Suppression du cache"
+php bin/console cache:clear
+echo "Initialisation du cache"
+php bin/console cache:warmup
+echo "Attribution des droits sur les dossiers de cache"
 chmod -R 777 var
 chmod -R 777 public
 
-php bin/console doctrine:database:create --if-not-exists --quiet --no-interaction
-php bin/console doctrine:migrations:migrate --verbose --no-interaction --allow-no-migration
-
-
-php bin/console assets:install public
-php bin/console cache:clear
-php bin/console cache:warmup
-
+echo "Build terminé, Lancement du serveur"
 ## server config
 php-fpm &
 nginx -g "daemon off;"
