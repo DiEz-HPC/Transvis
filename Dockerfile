@@ -34,8 +34,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     libcurl4 \
     libcurl4-openssl-dev \
-    nginx \
-    && usermod -u 1000 www-data
+    nginx
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -72,12 +71,6 @@ RUN cat /usr/local/etc/php/conf.d/local.ini
 
 RUN rm -rf /etc/nginx/sites-enabled
 RUN mkdir -p /etc/nginx/sites-enabled
-
-RUN chmod -R 777 /var/www/
-RUN chmod -R 777 /var/www/public
-RUN chmod -R 777 /var/www/var
-RUN chmod -R 777 /var/www/var/cache
-RUN chmod -R 777 /var/www/var/log
 
 # Configure nginx upload size
 RUN echo "file_uploads = On\n" \
