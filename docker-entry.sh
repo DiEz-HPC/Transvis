@@ -10,10 +10,6 @@ php bin/console doctrine:database:create --if-not-exists --quiet --no-interactio
 php bin/console doctrine:migrations:migrate --verbose --no-interaction --allow-no-migration
 
 
-## On creé le dossier var/cache
-mkdir -p var/cache
-mkdir -p var/cache/prod
-
 ## On donne les droits sur les dossiers
 chmod -R 777 var
 chmod -R 777 public
