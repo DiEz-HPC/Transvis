@@ -79,7 +79,6 @@ RUN chmod -R 777 /var/www/var
 RUN chmod -R 777 /var/www/var/cache
 RUN chmod -R 777 /var/www/var/log
 
-
 # Configure nginx upload size
 RUN echo "file_uploads = On\n" \
          "memory_limit = 500M\n" \
