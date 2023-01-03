@@ -5,6 +5,10 @@
     display: block;
     position: relative;
     overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 #headerVideoDiv .homeNav{
     position: relative;
