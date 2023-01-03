@@ -14,8 +14,12 @@ const handleModal = (cards, modals, body) => {
         let nbDiv = card.dataset.loopIndex;
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            button.addEventListener("click", openModal(modals, body, nbDiv));
-            button.addEventListener("touchend", openModal(modals, body, nbDiv));
+            button.addEventListener("click", function () {
+                openModal(modals, body, nbDiv);
+            });
+            button.addEventListener("touchend", function () {
+                openModal(modals, body, nbDiv);
+            });
         });
     });
 };
