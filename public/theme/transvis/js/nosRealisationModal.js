@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
     let cards = document.querySelectorAll(".cardNosRealisations");
     let body = document.querySelector("body");
-    console.log("Dom content loaded")
     handleModal(cards, modals, body);
 });
 
 const handleModal = (cards, modals, body) => {
-    console.log("handleModal")
     cards.forEach(function (card) {
         let playButton = card.querySelector(".play-video");
         let seeMoreButton = card.querySelector(".btn-link-more");
@@ -17,15 +15,16 @@ const handleModal = (cards, modals, body) => {
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
             button.addEventListener("click", function () {
-                openModal(modals, body, nbDiv)
+                openModal(modals, body, nbDiv);
             });
-            button.addEventListener("touchend",function(){ openModal(modals, body, nbDiv)});
+            button.addEventListener("touchend", function () {
+                openModal(modals, body, nbDiv);
+            });
         });
     });
 };
 
 const openModal = (modals, body, nbDiv) => {
-    console.log(nbDiv)
     let modal = modals[nbDiv - 1];
     let splideDiv = modal.querySelector("#logoSliderModal");
     let carouselDiv = modal.querySelector("#carouselSlider");
