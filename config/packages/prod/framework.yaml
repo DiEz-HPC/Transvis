@@ -1,6 +1,6 @@
-framework:
-    cache:
-        system: cache.adapter.apcu
-        default_lifetime: 216000
+#framework:
+    #cache:
+        #system: cache.adapter.apcu
+        #default_lifetime: 216000
 
         
