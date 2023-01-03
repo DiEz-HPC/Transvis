@@ -1,5 +1,5 @@
-import { Splide } from '@splidejs/splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import { Splide } from "@splidejs/splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
     let cards = document.querySelectorAll(".cardNosRealisations");
@@ -14,28 +14,28 @@ const handleModal = (cards, modals, body) => {
         let nbDiv = card.dataset.loopIndex;
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            button.addEventListener("click", openModal(modals, body));
-            button.addEventListener("touchend", openModal(modals, body));
+            button.addEventListener("click", openModal(modals, body, nbDiv));
+            button.addEventListener("touchend", openModal(modals, body, nbDiv));
         });
     });
 };
 
-const openModal = (modals, body) => {
+const openModal = (modals, body, nbDiv) => {
     let modal = modals[nbDiv - 1];
     let splideDiv = modal.querySelector("#logoSliderModal");
     let carouselDiv = modal.querySelector("#carouselSlider");
-    if(hasVideo(modal)){
-    initVideo(modal);
-    // init carousel
-    initCarousel(carouselDiv, modal);
-    // init logo slider
-    initLogoSlider(splideDiv, modal);
-    modal.style.display = "flex";
-    body.style.overflow = "hidden";
-    modal.style.zIndex = "10000";
-    closeModal(modal, body);
+    if (hasVideo(modal)) {
+        initVideo(modal);
+        // init carousel
+        initCarousel(carouselDiv, modal);
+        // init logo slider
+        initLogoSlider(splideDiv, modal);
+        modal.style.display = "flex";
+        body.style.overflow = "hidden";
+        modal.style.zIndex = "10000";
+        closeModal(modal, body);
     }
-}
+};
 
 const setLogoSizeSlider = (splideDiv) => {
     let logoSize = splideDiv.querySelectorAll(".splide__slide img");
@@ -113,7 +113,7 @@ const initLogoSlider = (splideDiv, modal) => {
             1200: { perPage: 3, gap: "1rem" },
             640: { perPage: 2, gap: 0 },
         },
-    }).mount( {AutoScroll});
+    }).mount({ AutoScroll });
     setLogoSizeSlider(splideDiv);
 
     let close = modal.querySelector(".btn-close-modal");
@@ -155,4 +155,4 @@ const hasVideo = (modal) => {
         return true;
     }
     return false;
-}
+};
