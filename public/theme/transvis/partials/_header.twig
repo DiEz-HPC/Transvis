@@ -7,7 +7,7 @@
             <span></span>
             <span></span>
         </div>
-        <div class="nav-content align-items-center d-none d-lg-flex justify-content-between" id="burgerMenu">
+        <div class="nav-content align-items-center d-none d-lg-flex justify-content-start justify-content-lg-between" id="burgerMenu">
             {% if options is defined and options.logo is defined and options.logo is not null %}
             <a href="{{ path('homepage') }}">
                 <img src="{{ asset(options.logo) }}" alt="Logo" class="headerNavLogo" width="auto" height="190">
