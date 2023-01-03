@@ -80,3 +80,7 @@
     left: 35px;
     right: 35px;
   }
+  .card-body .card-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
