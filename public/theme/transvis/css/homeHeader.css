@@ -147,8 +147,10 @@
 
 }
 
+/* purgecss start ignore */
 @media screen and (min-height: 1024px) {
     #headerContent .article-paragraph {
         font-size: .9rem;
     }
 }
+/* purgecss end ignore */
