@@ -11,6 +11,7 @@
     filter: grayscale(1);
     border-radius: 5px 5px 0 0;
     max-height: 200px;
+    height: 200px;
     object-fit: cover;
     object-position: center;
 }
