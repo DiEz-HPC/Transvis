@@ -120,10 +120,7 @@ const initLogoSlider = (splideDiv, modal) => {
     }).mount({ AutoScroll });
     setLogoSizeSlider(splideDiv);
 
-    let close = modal.querySelector(".btn-close-modal");
-    close.addEventListener("click", function () {
-        splide.destroy();
-    });
+   
 };
 
 const pauseVideo = (modal) => {
@@ -155,7 +152,10 @@ const initVideo = (modal) => {
 
 const hasVideo = (modal) => {
     let videoPlayer = modal.querySelector("video");
+    let imageNotFound = modal.querySelector("#imageNotFound");
     if (videoPlayer) {
+        return true;
+    }else if(!imageNotFound){
         return true;
     }
     return false;
