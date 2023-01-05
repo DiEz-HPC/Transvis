@@ -21,11 +21,19 @@ nextWidith: arrow logo width default 10%
 {% if icon is not defined %}
 {% set icon = false %}
 {% endif %}
+{% if upper is not defined %}
+{% set upper = true %}
+{% endif %}
     <a class="btn-link d-flex justify-content-center align-items-center btn-link-more {{ isBlack ? 'btn-link-dark' : 'button-link' }}" href="{{ link ?? '' }}"
        style="width: {{ width ?? '' }}; height: {{ height ?? '' }}"
        {{ external ? 'target="_blank"' : '' }}
        >
-        <span class="me-2 align-baseline">{{ text | upper }}</span>
+        <span class="me-2 align-baseline">
+        {% if upper is true %}
+        {{ text | upper }}
+        {% else %}
+        {{ text }}
+        {% endif %}</span>
         <img src="{{ asset(icon ? icon :'images/savoirs-faire/next.png.webp') }}" alt="next" class="next"
              style="width: {{ nextWidth ?? '' }}">
     </a>

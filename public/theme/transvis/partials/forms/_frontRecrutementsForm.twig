@@ -35,7 +35,7 @@
             'rows': '10'
         } } ) }}
     </div>
-        <div class="form-check consentCheckbox col-11 mb-3">
+    <div class="form-check consentCheckbox col-11 mb-3">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
             En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de contact.
@@ -43,7 +43,7 @@
     </div>
     <div class="group-send d-flex flex-column flex-sm-row col-11 justify-content-around">
         <div class="col-12 col-sm-7 col-md-6 col-lg-5 col-xl-4 mb-4 mb-sm-5">
-            <button type="button" class="btnFile d-flex col-12 justify-content-center align-items-center" onclick="document.getElementById('recrutements_filename').click(); return false;">{{ 'Déposer un cv' | upper }}
+            <button type="button" class="btnFile d-flex col-12 justify-content-center align-items-center" onclick="document.getElementById('recrutements_filename').click(); return false;">{{ 'DÉPOSER MON CV' | upper }}
                 <img class="ms-2" src="{{ asset('images/upload-file.svg') }}" alt="logo upload">
             </button>
             {{ form_errors(form.filename) }}
@@ -57,10 +57,10 @@
 
         <div class="justify-content-center align-items-center">
             {{ form_widget(form.submit, { 'attr': {
-                'class': 'btn btn-dark send-mail-button d-flex justify-content-center align-items-center col-12'},
-                'label' : 'ENVOYER',
-                'disabled': 'disabled'
-            } ) }}
+                'class': 'btn btn-dark send-mail-button col-12 d-flex justify-content-center align-items-center', 
+                'disabled': 'disabled'},
+                'label' : 'ENVOYER'
+             } ) }}
         </div>
 
     </div>

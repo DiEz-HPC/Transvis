@@ -71,7 +71,7 @@ accueil:
             label: Contenu de la section
             info: Contenu pour la section nos équipes
             group: Nos équipes
-        nosEquipeImage:
+        nosEquipesImage:
             type: image
             label: Image
             info: Image de la section nos équipes
@@ -211,10 +211,6 @@ savoirFaire:
         seo:
             type: seo
             group: "Réglage SEO"
-        slug:
-            type: slug
-            uses: title
-            group: Meta
     default_status: held
     viewless: false
     singleton: true
@@ -263,10 +259,6 @@ nosValeurs:
         seo:
             type: seo
             group: "Réglage SEO"
-        slug:
-            type: slug
-            uses: title
-            group: Meta
     default_status: held
     viewless: false
     singleton: true
@@ -300,10 +292,6 @@ nosEquipes:
         seo:
             type: seo
             group: "Réglage SEO"
-        slug:
-            type: slug
-            uses: title
-            group: Meta
     default_status: held
     viewless: false
     singleton: true
@@ -358,6 +346,9 @@ nosRealisations:
           label: Ordre d'affichage
           info: Ordre d'affichage de la réalisation
           group: Réalisation
+        seo:
+          type: seo
+          group: "Réglage SEO"
     taxonomy:  nosRealisationsTags
     listing_template: 'Realisations.twig'
     record_template: 'Realisation.twig'
@@ -421,9 +412,12 @@ recrutements:
                   label: Temps de travail
                   info: Temps de travail pour le poste
                 salary:
-                  type: number
+                  type: text
                   label: Salaire annuel
                   info: Salaire annuel pour le poste
+        seo:
+            type: seo
+            group: "Réglage SEO"
     listing_template: 'recrutements.twig'
     record_template: 'recrutement.twig'
     default_status: held
@@ -441,13 +435,21 @@ contactPage:
             label: Titre
             info: Titre de la page
             fixture_format: '{title}'
-            group: Introduction
+            group: Contenu
         teaser:
             type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
             fixture_format: '{teaser}'
-            group: Introduction
+            group: Contenu
+        other:
+            type: article
+            label: Autre texte
+            info: Autre texte de la page
+            group: Contenu
+        seo:
+            type: seo
+            group: "Réglage SEO"
     default_status: held
     viewless: false
     singleton: true
@@ -464,12 +466,12 @@ vosOptions:
             type: text
             label: Titre de la page Nos réalisations
             info: Titre de la page Nos réalisations
-            group: Nos réalisations
+            group: Page nos réalisations
         nosRealisationsText:
             type: article
             label: Texte de la page Nos réalisations
             info: Texte de la page Nos réalisations
-            group: Nos réalisations
+            group: Page nos réalisations
         nosPartenaires:
             type: imagelist
             label: Nos partenaires
@@ -479,18 +481,18 @@ vosOptions:
             type: text
             label: Titre de la page Recrutements
             info: Titre de la page Recrutements
-            group: Recrutements
+            group: Page recrutements
         recrutementsText:
             type: article
             label: Texte de la page Recrutements
             info: Texte de la page Recrutements
-            group: Recrutements
+            group: Page recrutements
         recrutementsStep:
             type: collection
             limit: 3
             label: Etapes de recrutement
             info: Etapes de recrutement
-            group: Recrutements
+            group: Page recrutements
             fields:
                 step:
                     type: set

@@ -571,5 +571,41 @@
         <target>listing_details_box.listing_template</target>
       </segment>
     </unit>
+    <unit id="PuH1ywj" name="Votre entreprise ...">
+      <segment>
+        <source>Votre entreprise ...</source>
+        <target>Votre entreprise ...</target>
+      </segment>
+    </unit>
+    <unit id="lQh5NiI" name="Votre e-mail...">
+      <segment>
+        <source>Votre e-mail...</source>
+        <target>Votre e-mail...</target>
+      </segment>
+    </unit>
+    <unit id="S8wlsSN" name="Votre nom ...">
+      <segment>
+        <source>Votre nom ...</source>
+        <target>Votre nom ...</target>
+      </segment>
+    </unit>
+    <unit id="e7ugmq4" name="Votre prénom ...">
+      <segment>
+        <source>Votre prénom ...</source>
+        <target>Votre prénom ...</target>
+      </segment>
+    </unit>
+    <unit id="gh7Bgs4" name="Votre e-mail ...">
+      <segment>
+        <source>Votre e-mail ...</source>
+        <target>Votre e-mail ...</target>
+      </segment>
+    </unit>
+    <unit id="2TIXCLt" name="DÉPOSER MON CV">
+      <segment>
+        <source>DÉPOSER MON CV</source>
+        <target>DÉPOSER MON CV</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
