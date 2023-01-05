@@ -107,10 +107,16 @@ savoirFaire:
             info: Titre de la page
             fixture_format: '{title}'
             group: Introduction
-        teaser:
+        intro:
             type: article
             label: Texte d'introduction
             info: Texte d'introduction de la page
+            fixture_format: '{intro}'
+            group: Introduction
+        teaser:
+            type: article
+            label: Contenu de la page
+            info: Contenu de la page
             fixture_format: '{teaser}'
             group: Introduction
         cardOne:
@@ -285,8 +291,8 @@ nosEquipes:
             group: Introduction
         teaser:
             type: article
-            label: Contenue de la page
-            info: Contenue de la page
+            label: Contenu de la page
+            info: Contenu de la page
             fixture_format: '{teaser}'
             group: Introduction
         seo:
