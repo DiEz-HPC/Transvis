@@ -41,9 +41,10 @@
     line-height: 1.5rem;
 }
 
-@media screen and (max-width: 375px) {
-    .card-sf h3 {
-        font-size: 14px;
+@media screen and (max-width: 450px) {
+    .card-sf h3,
+    .card-sf .button-link {
+        font-size: 3.2vw;
     }
 }
 
