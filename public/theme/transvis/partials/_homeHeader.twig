@@ -28,7 +28,7 @@
                 <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
                     <div class="headerHaveProjectText text-center text-lg-start mt-4" data-aos="fade-up">{{ record.headerBottomTextLeft }}</div>
                     <div class="d-flex justify-content-center justify-content-lg-start mt-4">
-                        {% with { text: "contactez-nous", link: '/contact', width: "200px", height: "38px", nextWidth: "8%"} %}
+                        {% with { text: "Contactez-nous", link: '/contact', width: "200px", height: "38px", nextWidth: "8%", upper: false} %}
                             {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>
@@ -39,7 +39,7 @@
                         {{ record.headerBottomTextRight }}
                     </div>
                     <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
-                        {% with { text: "linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "18%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg'} %}
+                        {% with { text: "Linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "18%", external: true, icon: 'images/linkedin-square-svgrepo-com.svg', upper: false} %}
                             {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>

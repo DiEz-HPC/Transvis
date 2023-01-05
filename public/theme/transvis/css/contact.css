@@ -20,6 +20,7 @@
 .form-control::placeholder {
     color: var(--light-color);
     font-weight: var(--font-weight--bold);
+    font-family: "Montserrat", sans-serif !important;
 }
 .form-control:focus {
     background-color: rgba(18, 18, 18, 0.23);
