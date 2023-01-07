@@ -6,7 +6,7 @@
 {% endblock cardSFstylesheet %}
 
 {% block cardSFContent %}
-    {% set cardsIcon = ['images/savoirs-faire/main.svg', 'images/savoirs-faire/robot.svg', 'images/savoirs-faire/group.svg'] %}
+    {% set cardsIcon = ['images/savoirs-faire/robot.svg',  'images/savoirs-faire/group.svg', 'images/savoirs-faire/main.svg'] %}
     {% set cardLink = ['/nos-realisations', '/nos-equipes', '/nos-savoir-faire'] %}
     {% if card.image.path is not defined or card.image.path is empty %}
         {% set path = asset(cardsIcon[loop - 1]) %}
