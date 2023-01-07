@@ -42,16 +42,17 @@ record.
             {% if record.intro is defined %}
                 <div data-aos="fade-up" data-aos-delay="250">{{ record.intro }}</div>
             {% endif %}
-            <div class="p-0 p-md-3" id="nosEquipeTeaser">
-                {{ superposition(record.teaser) }}
-            </div>
-            <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-around col-12">
+             <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-lg-start justify-content-around col-12 my-lg-5">
                 {% for  card in cards %}
                     {% with { card: card, loop: loop.index } %}
                     {{ block('cardSFContent') }}
                     {% endwith %}
                 {% endfor %}
             </div>
+            <div class="p-0 p-md-3" id="nosEquipeTeaser">
+                {{ superposition(record.teaser) }}
+            </div>
+           
         </div>
         {% with {keyFigures: keyFigures, keyFigureTitle: record.keyFigureTitle } %}
         {{ block('bannerKeysFiguresContent') }}
