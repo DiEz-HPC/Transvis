@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2cc01a07f6f4d327b6cc43b8d466fe3",
+    "content-hash": "a62dc810409e200328b55b3066859281",
     "packages": [
         {
             "name": "api-platform/core",
@@ -168,6 +168,57 @@
             "time": "2022-01-11T10:29:54+00:00"
         },
         {
+            "name": "appolodev/bolt-seo",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AppoloDev/bolt-seo.git",
+                "reference": "9c1b3561463e61de6f29673eeb6d7ad582739a45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AppoloDev/bolt-seo/zipball/9c1b3561463e61de6f29673eeb6d7ad582739a45",
+                "reference": "9c1b3561463e61de6f29673eeb6d7ad582739a45",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "bolt/core": "^5.1",
+                "migrify/config-transformer": "^0.4.2",
+                "phpstan/phpstan": "^0.12.32",
+                "phpstan/phpstan-symfony": "^0.12.6",
+                "symplify/easy-coding-standard": "^8.1"
+            },
+            "type": "bolt-extension",
+            "extra": {
+                "entrypoint": "Appolo\\BoltSeo\\Extension"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Appolo\\BoltSeo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AppoloDev",
+                    "email": "contact@appolo.fr"
+                }
+            ],
+            "description": "Bolt 5 - Seo extension",
+            "support": {
+                "issues": "https://github.com/AppoloDev/bolt-seo/issues",
+                "source": "https://github.com/AppoloDev/bolt-seo/tree/1.0.7"
+            },
+            "time": "2022-12-06T12:58:11+00:00"
+        },
+        {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.11.0",
             "source": {
@@ -308,67 +359,17 @@
             "time": "2020-11-29T07:37:23+00:00"
         },
         {
-            "name": "bobdenotter/configuration-notices",
+            "name": "bobdenotter/sitemap",
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bobdenotter/configuration-notices.git",
-                "reference": "884af85ef972137a5d5ff08c759162a79ebd0c52"
+                "url": "https://github.com/bobdenotter/sitemap.git",
+                "reference": "068ecacd47708f0fb5058089ec61a6fea6b9a917"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobdenotter/configuration-notices/zipball/884af85ef972137a5d5ff08c759162a79ebd0c52",
-                "reference": "884af85ef972137a5d5ff08c759162a79ebd0c52",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.9"
-            },
-            "require-dev": {
-                "bolt/core": "^5.1",
-                "symplify/easy-coding-standard": "^8.3"
-            },
-            "type": "bolt-extension",
-            "extra": {
-                "entrypoint": "BobdenOtter\\ConfigurationNotices\\Extension",
-                "screenshots": [
-                    "screenshots/notices.png"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "BobdenOtter\\ConfigurationNotices\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
-                }
-            ],
-            "description": "💡 A small tool to point out common pitfalls for Bolt 5 configuration settings",
-            "support": {
-                "issues": "https://github.com/bobdenotter/configuration-notices/issues",
-                "source": "https://github.com/bobdenotter/configuration-notices/tree/1.3.0"
-            },
-            "time": "2022-05-24T13:25:44+00:00"
-        },
-        {
-            "name": "bobdenotter/weatherwidget",
-            "version": "1.1.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobdenotter/weatherwidget.git",
-                "reference": "50204830b6f952ad97d9ce20418a9781a6d3fbb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobdenotter/weatherwidget/zipball/50204830b6f952ad97d9ce20418a9781a6d3fbb8",
-                "reference": "50204830b6f952ad97d9ce20418a9781a6d3fbb8",
+                "url": "https://api.github.com/repos/bobdenotter/sitemap/zipball/068ecacd47708f0fb5058089ec61a6fea6b9a917",
+                "reference": "068ecacd47708f0fb5058089ec61a6fea6b9a917",
                 "shasum": ""
             },
             "require": {
@@ -376,18 +377,15 @@
             },
             "require-dev": {
                 "bolt/core": "^4.0.0",
-                "symplify/easy-coding-standard": "^6.0"
+                "symplify/easy-coding-standard": "^10.2"
             },
             "type": "bolt-extension",
             "extra": {
-                "entrypoint": "BobdenOtter\\WeatherWidget\\Extension",
-                "screenshots": [
-                    "screenshots/widget.png"
-                ]
+                "entrypoint": "Bobdenotter\\Sitemap\\Extension"
             },
             "autoload": {
                 "psr-4": {
-                    "BobdenOtter\\WeatherWidget\\": "src/"
+                    "Bobdenotter\\Sitemap\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -397,15 +395,15 @@
             "authors": [
                 {
                     "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
+                    "email": "bobdenotter@gmail.com"
                 }
             ],
-            "description": "🌤 A simple Dashboard Widget that displays the current weather. So you don't actually need to go outside or open the curtains.",
+            "description": "Provide a sitemap (.xml) for your Bolt 5 site",
             "support": {
-                "issues": "https://github.com/bobdenotter/weatherwidget/issues",
-                "source": "https://github.com/bobdenotter/weatherwidget/tree/1.1.15"
+                "issues": "https://github.com/bobdenotter/sitemap/issues",
+                "source": "https://github.com/bobdenotter/sitemap/tree/1.3.0"
             },
-            "time": "2021-03-27T11:14:42+00:00"
+            "time": "2022-06-09T10:03:55+00:00"
         },
         {
             "name": "bobdenotter/yaml-migrations",
@@ -461,16 +459,16 @@
         },
         {
             "name": "bolt/article",
-            "version": "2.1.0",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/article.git",
-                "reference": "15df9345d3c987d50ee2abee9c91b9c1c33e3d6a"
+                "reference": "cd43f3da0a70e61b877d14192cca25a609ac8388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/article/zipball/15df9345d3c987d50ee2abee9c91b9c1c33e3d6a",
-                "reference": "15df9345d3c987d50ee2abee9c91b9c1c33e3d6a",
+                "url": "https://api.github.com/repos/bolt/article/zipball/cd43f3da0a70e61b877d14192cca25a609ac8388",
+                "reference": "cd43f3da0a70e61b877d14192cca25a609ac8388",
                 "shasum": ""
             },
             "require": {
@@ -505,22 +503,22 @@
             "description": "📝 Bolt Extension to add the Article FieldType",
             "support": {
                 "issues": "https://github.com/bolt/article/issues",
-                "source": "https://github.com/bolt/article/tree/2.1.0"
+                "source": "https://github.com/bolt/article/tree/2.1.2"
             },
-            "time": "2022-08-12T14:34:15+00:00"
+            "time": "2022-11-28T12:55:32+00:00"
         },
         {
             "name": "bolt/assets",
-            "version": "5.1.14",
+            "version": "5.1.19-pl.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/assets.git",
-                "reference": "d505f7451948110ca76a99e844f0989164d0162a"
+                "reference": "7162b3e8e8ea743d3ad6b0b4c04de39b0eeac53e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/assets/zipball/d505f7451948110ca76a99e844f0989164d0162a",
-                "reference": "d505f7451948110ca76a99e844f0989164d0162a",
+                "url": "https://api.github.com/repos/bolt/assets/zipball/7162b3e8e8ea743d3ad6b0b4c04de39b0eeac53e",
+                "reference": "7162b3e8e8ea743d3ad6b0b4c04de39b0eeac53e",
                 "shasum": ""
             },
             "require-dev": {
@@ -540,9 +538,9 @@
             "description": "🛠 Javascript and CSS Assets used in Bolt's backend. Do not `require` directly.",
             "support": {
                 "issues": "https://github.com/bolt/assets/issues",
-                "source": "https://github.com/bolt/assets/tree/5.1.14"
+                "source": "https://github.com/bolt/assets/tree/5.1.19-pl.1"
             },
-            "time": "2022-08-31T13:21:43+00:00"
+            "time": "2022-12-09T09:55:27+00:00"
         },
         {
             "name": "bolt/common",
@@ -602,16 +600,16 @@
         },
         {
             "name": "bolt/core",
-            "version": "5.1.14",
+            "version": "5.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/core.git",
-                "reference": "e4a76e90e85a6c92045720983927ab9414becf67"
+                "reference": "50d75562fa7262fd07aad26bd7b14ce3423f99e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/core/zipball/e4a76e90e85a6c92045720983927ab9414becf67",
-                "reference": "e4a76e90e85a6c92045720983927ab9414becf67",
+                "url": "https://api.github.com/repos/bolt/core/zipball/50d75562fa7262fd07aad26bd7b14ce3423f99e5",
+                "reference": "50d75562fa7262fd07aad26bd7b14ce3423f99e5",
                 "shasum": ""
             },
             "require": {
@@ -749,7 +747,7 @@
             "description": "🧿 Bolt 5 Core",
             "support": {
                 "issues": "https://github.com/bolt/core/issues",
-                "source": "https://github.com/bolt/core/tree/5.1.14"
+                "source": "https://github.com/bolt/core/tree/5.1.19"
             },
             "funding": [
                 {
@@ -757,39 +755,42 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-31T13:15:56+00:00"
+            "time": "2022-12-09T09:42:38+00:00"
         },
         {
-            "name": "bolt/newswidget",
-            "version": "1.3.0",
+            "name": "bolt/forms",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bolt/newswidget.git",
-                "reference": "8e842bcaf323111292ba7f8241d21341f1c6709d"
+                "url": "https://github.com/bolt/forms.git",
+                "reference": "460d2c6f723baf61a36e91ef25d6c4349f8b427f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/newswidget/zipball/8e842bcaf323111292ba7f8241d21341f1c6709d",
-                "reference": "8e842bcaf323111292ba7f8241d21341f1c6709d",
+                "url": "https://api.github.com/repos/bolt/forms/zipball/460d2c6f723baf61a36e91ef25d6c4349f8b427f",
+                "reference": "460d2c6f723baf61a36e91ef25d6c4349f8b427f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1.3"
+                "ext-json": "*",
+                "gregwar/captcha-bundle": "^2.2",
+                "php": ">=7.2.9",
+                "twig/twig": "^2.12 || ^3.0"
             },
             "require-dev": {
-                "bolt/core": "^4.0.0",
-                "symplify/easy-coding-standard": "^6.0"
+                "bolt/core": "^5.1",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-doctrine": "^0.12",
+                "phpstan/phpstan-symfony": "^0.12",
+                "symplify/easy-coding-standard": "^10.2"
             },
             "type": "bolt-extension",
             "extra": {
-                "entrypoint": "Bolt\\NewsWidget\\Extension",
-                "screenshots": [
-                    "screenshots/widget.png"
-                ]
+                "entrypoint": "Bolt\\BoltForms\\Extension"
             },
             "autoload": {
                 "psr-4": {
-                    "Bolt\\NewsWidget\\": "src/"
+                    "Bolt\\BoltForms\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -799,28 +800,28 @@
             "authors": [
                 {
                     "name": "Bob den Otter",
-                    "email": "bob@twokings.nl"
+                    "email": "bobdenotter@gmail.com"
                 }
             ],
-            "description": "📰 A simple Widget Extension to display the latest Bolt news on the dashboard.",
+            "description": "📦 This Bolt extension can be used to handle forms in your Bolt 5 project.",
             "support": {
-                "issues": "https://github.com/bolt/newswidget/issues",
-                "source": "https://github.com/bolt/newswidget/tree/1.3.0"
+                "issues": "https://github.com/bolt/forms/issues",
+                "source": "https://github.com/bolt/forms/tree/1.6.0"
             },
-            "time": "2021-04-04T13:49:37+00:00"
+            "time": "2022-11-11T11:51:18+00:00"
         },
         {
             "name": "bolt/redactor",
-            "version": "2.1.0",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/redactor.git",
-                "reference": "54adf06d0ef9f7ee104e5d9f8d8f257d9b806b5b"
+                "reference": "572f5a895d7d0a4b97ec5f39b07238a32aa1dc13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/redactor/zipball/54adf06d0ef9f7ee104e5d9f8d8f257d9b806b5b",
-                "reference": "54adf06d0ef9f7ee104e5d9f8d8f257d9b806b5b",
+                "url": "https://api.github.com/repos/bolt/redactor/zipball/572f5a895d7d0a4b97ec5f39b07238a32aa1dc13",
+                "reference": "572f5a895d7d0a4b97ec5f39b07238a32aa1dc13",
                 "shasum": ""
             },
             "require": {
@@ -855,9 +856,9 @@
             "description": "📝 Bolt Extension to add the Redactor FieldType",
             "support": {
                 "issues": "https://github.com/bolt/redactor/issues",
-                "source": "https://github.com/bolt/redactor/tree/2.1.0"
+                "source": "https://github.com/bolt/redactor/tree/2.1.3"
             },
-            "time": "2022-08-12T14:37:32+00:00"
+            "time": "2022-12-20T12:16:33+00:00"
         },
         {
             "name": "bolt/themes",
@@ -3788,6 +3789,129 @@
             "time": "2022-05-05T09:31:05+00:00"
         },
         {
+            "name": "gregwar/captcha",
+            "version": "v1.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Captcha.git",
+                "reference": "4bb668e6b40e3205a020ca5ee4ca8cff8b8780c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/4bb668e6b40e3205a020ca5ee4ca8cff8b8780c5",
+                "reference": "4bb668e6b40e3205a020ca5ee4ca8cff8b8780c5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0",
+                "symfony/finder": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "captcha",
+            "autoload": {
+                "psr-4": {
+                    "Gregwar\\": "src/Gregwar"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                },
+                {
+                    "name": "Jeremy Livingston",
+                    "email": "jeremy.j.livingston@gmail.com"
+                }
+            ],
+            "description": "Captcha generator",
+            "homepage": "https://github.com/Gregwar/Captcha",
+            "keywords": [
+                "bot",
+                "captcha",
+                "spam"
+            ],
+            "support": {
+                "issues": "https://github.com/Gregwar/Captcha/issues",
+                "source": "https://github.com/Gregwar/Captcha/tree/master"
+            },
+            "time": "2020-03-24T14:39:05+00:00"
+        },
+        {
+            "name": "gregwar/captcha-bundle",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/CaptchaBundle.git",
+                "reference": "2b55ba41fd890f1a94d30e53a530c344bf12d6a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/CaptchaBundle/zipball/2b55ba41fd890f1a94d30e53a530c344bf12d6a5",
+                "reference": "2b55ba41fd890f1a94d30e53a530c344bf12d6a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "gregwar/captcha": "^1.1.9",
+                "php": ">=7.1.3",
+                "symfony/form": "~5.0|~6.0",
+                "symfony/framework-bundle": "~5.0|~6.0",
+                "symfony/translation": "~5.0|^6.0",
+                "twig/twig": "^2.10|^3.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.66",
+                "symplify/easy-coding-standard": "^6.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Gregwar\\CaptchaBundle\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                },
+                {
+                    "name": "Jeremy Livingston",
+                    "email": "jeremy.j.livingston@gmail.com"
+                }
+            ],
+            "description": "Captcha bundle",
+            "homepage": "https://github.com/Gregwar/CaptchaBundle",
+            "keywords": [
+                "Symfony2",
+                "bot",
+                "captcha",
+                "code",
+                "security",
+                "spam",
+                "symfony",
+                "visual"
+            ],
+            "support": {
+                "issues": "https://github.com/Gregwar/CaptchaBundle/issues",
+                "source": "https://github.com/Gregwar/CaptchaBundle/tree/v2.2.0"
+            },
+            "time": "2022-01-11T08:28:06+00:00"
+        },
+        {
             "name": "guzzlehttp/psr7",
             "version": "2.4.1",
             "source": {
@@ -4053,6 +4177,54 @@
                 "source": "https://github.com/jasny/twig-extensions"
             },
             "time": "2019-12-10T16:04:23+00:00"
+        },
+        {
+            "name": "jeschek/dragsort",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/philippjeschek/bolt-dragsort.git",
+                "reference": "0e3522002e59536765376fd1c8621ba114d12558"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/philippjeschek/bolt-dragsort/zipball/0e3522002e59536765376fd1c8621ba114d12558",
+                "reference": "0e3522002e59536765376fd1c8621ba114d12558",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "twig/twig": "^2.12 | ^3.0"
+            },
+            "require-dev": {
+                "bolt/core": "^5.1",
+                "symplify/easy-coding-standard": "^9.4"
+            },
+            "type": "bolt-extension",
+            "extra": {
+                "entrypoint": "Jeschek\\DragSort\\Extension"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jeschek\\DragSort\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Jeschek",
+                    "email": "mail@philippjeschek.me"
+                }
+            ],
+            "description": "This extension enables drag and drop sorting for records in the backend.",
+            "support": {
+                "issues": "https://github.com/philippjeschek/bolt-dragsort/issues",
+                "source": "https://github.com/philippjeschek/bolt-dragsort/tree/1.0.5"
+            },
+            "time": "2022-04-07T09:28:14+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -8394,16 +8566,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v2.2.3",
+            "version": "v2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "0763da1bdcce1d48c06778d48249905c26d34a72"
+                "reference": "52baff1adb29faf443c6710cb775bd88b9627381"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/0763da1bdcce1d48c06778d48249905c26d34a72",
-                "reference": "0763da1bdcce1d48c06778d48249905c26d34a72",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/52baff1adb29faf443c6710cb775bd88b9627381",
+                "reference": "52baff1adb29faf443c6710cb775bd88b9627381",
                 "shasum": ""
             },
             "require": {
@@ -8439,7 +8611,7 @@
             "description": "Composer plugin for Symfony",
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
-                "source": "https://github.com/symfony/flex/tree/v2.2.3"
+                "source": "https://github.com/symfony/flex/tree/v2.2.4"
             },
             "funding": [
                 {
@@ -8455,7 +8627,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-07T09:39:47+00:00"
+            "time": "2022-12-20T07:19:39+00:00"
         },
         {
             "name": "symfony/form",
@@ -9620,16 +9792,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4"
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
-                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/5bbc823adecdae860bb64756d639ecfec17b050a",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a",
                 "shasum": ""
             },
             "require": {
@@ -9644,7 +9816,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -9682,7 +9854,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -9698,7 +9870,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -10041,16 +10213,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e"
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
                 "shasum": ""
             },
             "require": {
@@ -10065,7 +10237,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -10104,7 +10276,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -10120,20 +10292,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "bf44a9fd41feaac72b074de600314a93e2ae78e2"
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/bf44a9fd41feaac72b074de600314a93e2ae78e2",
-                "reference": "bf44a9fd41feaac72b074de600314a93e2ae78e2",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/869329b1e9894268a8a61dabb69153029b7a8c97",
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97",
                 "shasum": ""
             },
             "require": {
@@ -10142,7 +10314,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -10180,7 +10352,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php72/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-php72/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -10196,7 +10368,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -12417,16 +12589,16 @@
         },
         {
             "name": "symfony/webpack-encore-bundle",
-            "version": "v1.15.1",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/webpack-encore-bundle.git",
-                "reference": "718673b1e758533614190ae74d07305a72bc66a9"
+                "reference": "bb399930c0299866258b616a74a27b50b94c5d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/718673b1e758533614190ae74d07305a72bc66a9",
-                "reference": "718673b1e758533614190ae74d07305a72bc66a9",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/bb399930c0299866258b616a74a27b50b94c5d45",
+                "reference": "bb399930c0299866258b616a74a27b50b94c5d45",
                 "shasum": ""
             },
             "require": {
@@ -12470,7 +12642,7 @@
             "description": "Integration with your Symfony app & Webpack Encore!",
             "support": {
                 "issues": "https://github.com/symfony/webpack-encore-bundle/issues",
-                "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.15.1"
+                "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.16.0"
             },
             "funding": [
                 {
@@ -12486,7 +12658,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-13T17:07:35+00:00"
+            "time": "2022-10-18T15:21:06+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -12886,16 +13058,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.4.2",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077"
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077",
-                "reference": "e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c38fd6b0b7f370c198db91ffd02e23b517426b58",
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58",
                 "shasum": ""
             },
             "require": {
@@ -12946,7 +13118,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.4.2"
+                "source": "https://github.com/twigphp/Twig/tree/v3.4.3"
             },
             "funding": [
                 {
@@ -12958,7 +13130,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-12T06:47:24+00:00"
+            "time": "2022-09-28T08:42:51+00:00"
         },
         {
             "name": "ua-parser/uap-php",
@@ -13372,16 +13544,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.99",
+            "version": "0.12.100",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7"
+                "reference": "48236ddf823547081b2b153d1cd2994b784328c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b4d40f1d759942f523be267a1bab6884f46ca3f7",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/48236ddf823547081b2b153d1cd2994b784328c3",
+                "reference": "48236ddf823547081b2b153d1cd2994b784328c3",
                 "shasum": ""
             },
             "require": {
@@ -13412,7 +13584,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.99"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.100"
             },
             "funding": [
                 {
@@ -13424,15 +13596,11 @@
                     "type": "github"
                 },
                 {
-                    "url": "https://www.patreon.com/phpstan",
-                    "type": "patreon"
-                },
-                {
                     "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-12T20:09:55+00:00"
+            "time": "2022-11-01T09:52:08+00:00"
         },
         {
             "name": "phpstan/phpstan-doctrine",
@@ -13572,6 +13740,99 @@
             "time": "2021-09-02T12:14:11+00:00"
         },
         {
+            "name": "symfony/maker-bundle",
+            "version": "v1.48.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/maker-bundle.git",
+                "reference": "2e428e8432e9879187672fe08f1cc335e2a31dd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/2e428e8432e9879187672fe08f1cc335e2a31dd6",
+                "reference": "2e428e8432e9879187672fe08f1cc335e2a31dd6",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^2.0",
+                "nikic/php-parser": "^4.11",
+                "php": ">=8.0",
+                "symfony/config": "^5.4.7|^6.0",
+                "symfony/console": "^5.4.7|^6.0",
+                "symfony/dependency-injection": "^5.4.7|^6.0",
+                "symfony/deprecation-contracts": "^2.2|^3",
+                "symfony/filesystem": "^5.4.7|^6.0",
+                "symfony/finder": "^5.4.3|^6.0",
+                "symfony/framework-bundle": "^5.4.7|^6.0",
+                "symfony/http-kernel": "^5.4.7|^6.0"
+            },
+            "conflict": {
+                "doctrine/doctrine-bundle": "<2.4",
+                "doctrine/orm": "<2.10",
+                "symfony/doctrine-bridge": "<5.4"
+            },
+            "require-dev": {
+                "composer/semver": "^3.0",
+                "doctrine/doctrine-bundle": "^2.4",
+                "doctrine/orm": "^2.10.0",
+                "symfony/http-client": "^5.4.7|^6.0",
+                "symfony/phpunit-bridge": "^5.4.7|^6.0",
+                "symfony/polyfill-php80": "^1.16.0",
+                "symfony/process": "^5.4.7|^6.0",
+                "symfony/security-core": "^5.4.7|^6.0",
+                "symfony/yaml": "^5.4.3|^6.0",
+                "twig/twig": "^2.0|^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\MakerBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code.",
+            "homepage": "https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html",
+            "keywords": [
+                "code generator",
+                "generator",
+                "scaffold",
+                "scaffolding"
+            ],
+            "support": {
+                "issues": "https://github.com/symfony/maker-bundle/issues",
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.48.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-14T10:48:46+00:00"
+        },
+        {
             "name": "symplify/easy-coding-standard",
             "version": "9.4.70",
             "source": {
@@ -13636,5 +13897,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }

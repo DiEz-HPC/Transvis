@@ -1,0 +1,22 @@
+{% block buttonFilterStylesheet %}
+    {{ encore_entry_link_tags('buttonFilterStyle', null, 'transvis') }}
+{% endblock %}
+
+{% block buttonFilterJavascript %}
+{{ encore_entry_script_tags('tagSearchJs', null, 'transvis') }}
+{% endblock %}
+
+{% block buttonFilterContent %}
+
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="buttonFilterContainer col-11" data-records-tag="{{ recordsTagList|json_encode }}"
+             data-records-taxonomies="{{ taxonomies }}" id="buttonFilterContainer">
+            <input id="search" class="search-input w-100 mb-4" type="text" placeholder="FILTRER" autocomplete="off">
+            <ul class="drop"></ul>
+        </div>
+        <button class="search-input col-11" type="submit" data-records-all="/nos-realisations" id="buttonSeeAll">Tout
+            voir
+        </button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{#
+card (contentype recrutement):
+    title: text
+    teaser: text
+    profile: text
+    description:
+        contrat: select (text)
+        salary: number
+        temps: select (text)
+#}
+{% use '@theme/partials/buttons/_tags.twig' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+
+{% block cardRecrutementStylesheet %}
+    {{ encore_entry_link_tags('cardRecrutementStyle', null, 'transvis') }}
+    {{ block('tagStylesheet') }}
+    {{ block('buttonRedStylesheet')}}
+{% endblock %}
+
+{% block cardRecrutementContent %}
+    {% set tags = [card.description.contrat, 'temps ' ~ card.description.temps, card.description.salary] %}
+    <div class="card-recrutement col-12 col-xl-3 mb-5" data-aos="fade-up" data-aos-duration="{{ 250 + (index * 250)}}">
+        <div class="block-image">
+            <img class="w-100 h-100" src="{{ asset('images/banner-recrutement-card.png.webp') }}" alt="bannière recrutement">
+        </div>
+        <div class="block-content">
+            <h3 class="title">{{ card.title | upper }}</h3>
+            <p class="teaser mb-2">{{ card.teaser }}</p>
+            <div class="tags d-flex pb-1 flex-wrap">
+                {% for tag in tags %}
+                    {%  with { name: tag , slug: tag} %}
+                    {{ block('tagContent') }}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+            {%  with { text: "Candidater rapidement", link: card|link, width: "285px", height: "37px", nextWidth: "5%" } %}
+                {{ block('buttonRedContent') }}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock cardRecrutementContent %}

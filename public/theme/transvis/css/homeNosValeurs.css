@@ -1,0 +1,48 @@
+.homeValeurContainer {
+    background-image: url('../images/savoirs-faire/banner.png.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 400px;
+}
+
+.homeValeursTitle {
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+}
+.circle {
+    background-color: var(--dark-color);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.homeNameOfValue{
+    color: var(--light-color);
+    font-size: 1.5em;
+    font-weight: var(--font-weight--bold);
+    margin-top: 10px;
+}
+.homeNosValeurTeaser{
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+}
+.homeNosValeurTeaser h1, .homeNosValeurTeaser h2, .homeNosValeurTeaser h3, .homeNosValeurTeaser h4, .homeNosValeurTeaser h5, .homeNosValeurTeaser h6 {
+    color: var(--light-color) !important;
+    font-weight: var(--font-weight--bold);
+}
+.logo-valeur {
+    filter: invert(1);
+}
+
+.homeValeurContainer .btn-link{
+    text-decoration: none !important;
+}
+
+.homeValeurContainer figure img {
+    max-width: 35px;
+    max-height: 35px;
+}

@@ -7,5 +7,605 @@
         <target><![CDATA[Unfortunately, no content could be found. Try another page, or go to the <a href="/">homepage</a>.]]></target>
       </segment>
     </unit>
+    <unit id="lONBiUz" name="default-title">
+      <segment>
+        <source>default-title</source>
+        <target>default-title</target>
+      </segment>
+    </unit>
+    <unit id="3NHVIj9" name="Name">
+      <segment>
+        <source>Name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="rMKsKxN" name="Your name...">
+      <segment>
+        <source>Your name...</source>
+        <target>Your name...</target>
+      </segment>
+    </unit>
+    <unit id="8kiP1O9" name="Email address">
+      <segment>
+        <source>Email address</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="TMY52.l" name="Your email...">
+      <segment>
+        <source>Your email...</source>
+        <target>Your email...</target>
+      </segment>
+    </unit>
+    <unit id="egV72Za" name="Your message">
+      <segment>
+        <source>Your message</source>
+        <target>Your message</target>
+      </segment>
+    </unit>
+    <unit id="gvYWw0o" name="Your message...">
+      <segment>
+        <source>Your message...</source>
+        <target>Your message...</target>
+      </segment>
+    </unit>
+    <unit id="2Iib8ls" name="Do you want us to contact you back?">
+      <segment>
+        <source>Do you want us to contact you back?</source>
+        <target>Do you want us to contact you back?</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
+    <unit id="_.3xzA_" name="Submit my message »">
+      <segment>
+        <source>Submit my message »</source>
+        <target>Submit my message »</target>
+      </segment>
+    </unit>
+    <unit id=".MeoEev" name="String city processor string">
+      <segment>
+        <source>String city processor string</source>
+        <target>String city processor string</target>
+      </segment>
+    </unit>
+    <unit id="SXECSqW" name="your email">
+      <segment>
+        <source>your email</source>
+        <target>your email</target>
+      </segment>
+    </unit>
+    <unit id="4yW.j5A" name="Prénom">
+      <segment>
+        <source>Prénom</source>
+        <target>Prénom</target>
+      </segment>
+    </unit>
+    <unit id="KWbVHrq" name="Votre prénom...">
+      <segment>
+        <source>Votre prénom...</source>
+        <target>Votre prénom...</target>
+      </segment>
+    </unit>
+    <unit id="ssEkU20" name="Nom">
+      <segment>
+        <source>Nom</source>
+        <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="qPTtpCA" name="Votre nom...">
+      <segment>
+        <source>Votre nom...</source>
+        <target>Votre nom...</target>
+      </segment>
+    </unit>
+    <unit id="sB0RYun" name="Adresse mail">
+      <segment>
+        <source>Adresse mail</source>
+        <target>Adresse mail</target>
+      </segment>
+    </unit>
+    <unit id="v8etfqd" name="Votre mail...">
+      <segment>
+        <source>Votre mail...</source>
+        <target>Votre mail...</target>
+      </segment>
+    </unit>
+    <unit id="L3dmip3" name="Message">
+      <segment>
+        <source>Message</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="ctwI8yE" name="Votre message...">
+      <segment>
+        <source>Votre message...</source>
+        <target>Votre message...</target>
+      </segment>
+    </unit>
+    <unit id="d7zpI6e" name="Envoyer le message">
+      <segment>
+        <source>Envoyer le message</source>
+        <target>Envoyer le message</target>
+      </segment>
+    </unit>
+    <unit id="JrBQ5.0" name="Email du contact ...">
+      <segment>
+        <source>Email du contact ...</source>
+        <target>Email du contact ...</target>
+      </segment>
+    </unit>
+    <unit id="21nrsnI" name="Sujet">
+      <segment>
+        <source>Sujet</source>
+        <target>Sujet</target>
+      </segment>
+    </unit>
+    <unit id="rXOz2do" name="Sujet du mail ...">
+      <segment>
+        <source>Sujet du mail ...</source>
+        <target>Sujet du mail ...</target>
+      </segment>
+    </unit>
+    <unit id="QERVmkw" name="Votre message">
+      <segment>
+        <source>Votre message</source>
+        <target>Votre message</target>
+      </segment>
+    </unit>
+    <unit id=".fWf0o5" name="Votre message ...">
+      <segment>
+        <source>Votre message ...</source>
+        <target>Votre message ...</target>
+      </segment>
+    </unit>
+    <unit id="eQdSCfK" name="Envoyer">
+      <segment>
+        <source>Envoyer</source>
+        <target>Envoyer</target>
+      </segment>
+    </unit>
+    <unit id="PuSnaWK" name="Nom de votre entreprise">
+      <segment>
+        <source>Nom de votre entreprise</source>
+        <target>Nom de votre entreprise</target>
+      </segment>
+    </unit>
+    <unit id="wtP_WzB" name="Entreprise ...">
+      <segment>
+        <source>Entreprise ...</source>
+        <target>Entreprise ...</target>
+      </segment>
+    </unit>
+    <unit id="4EMl7HC">
+      <segment>
+        <source>You have already requested a reset password email. Please check your email or try again soon.</source>
+        <target>Vous avez déjà demandé un e-mail de réinitialisation du mot de passe. Veuillez vérifier votre boîte mail ou réessayer plus tard.</target>
+      </segment>
+    </unit>
+    <unit id=".yHun4s" name="Last province contact company">
+      <segment>
+        <source>Last province contact company</source>
+        <target>Last province contact company</target>
+      </segment>
+    </unit>
+    <unit id="VXkveKy" name="Sujet...">
+      <segment>
+        <source>Sujet...</source>
+        <target>Sujet...</target>
+      </segment>
+    </unit>
+    <unit id="yk3gR69" name="Envoyerrrr">
+      <segment>
+        <source>Envoyerrrr</source>
+        <target>Envoyerrrr</target>
+      </segment>
+    </unit>
+    <unit id="gQ0Mqto" name="ENVOYER">
+      <segment>
+        <source>ENVOYER</source>
+        <target>ENVOYER</target>
+      </segment>
+    </unit>
+    <unit id="OPxagAY" name="general.phrase.none">
+      <segment>
+        <source>general.phrase.none</source>
+        <target>general.phrase.none</target>
+      </segment>
+    </unit>
+    <unit id="2hoKa1k" name="label.remembermeduration">
+      <segment>
+        <source>label.remembermeduration</source>
+        <target>Se souvenir de moi</target>
+      </segment>
+    </unit>
+    <unit id="NF.vvAN" name="You have to login in order to access this page.">
+      <segment>
+        <source>You have to login in order to access this page.</source>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
+      </segment>
+    </unit>
+    <unit id="JdtMlOI" name="Machine Sheet">
+      <segment>
+        <source>Machine Sheet</source>
+        <target>Machine Sheet</target>
+      </segment>
+    </unit>
+    <unit id="KAcFzss" name="NOM...">
+      <segment>
+        <source>NOM...</source>
+        <target>NOM...</target>
+      </segment>
+    </unit>
+    <unit id="zdCP2Rd" name="PRÉNOM...">
+      <segment>
+        <source>PRÉNOM...</source>
+        <target>PRÉNOM...</target>
+      </segment>
+    </unit>
+    <unit id=".7ROOc8" name="ADRESSE MAIL...">
+      <segment>
+        <source>ADRESSE MAIL...</source>
+        <target>ADRESSE MAIL...</target>
+      </segment>
+    </unit>
+    <unit id="aMIkarM" name="VOTRE LETTRE DE MOTIVATION...">
+      <segment>
+        <source>VOTRE LETTRE DE MOTIVATION...</source>
+        <target>VOTRE LETTRE DE MOTIVATION...</target>
+      </segment>
+    </unit>
+    <unit id="h7V4k1c" name="Lettre de motivation">
+      <segment>
+        <source>Lettre de motivation</source>
+        <target>Lettre de motivation</target>
+      </segment>
+    </unit>
+    <unit id="D1.tF5H" name="CV">
+      <segment>
+        <source>CV</source>
+        <target>CV</target>
+      </segment>
+    </unit>
+    <unit id="vdIL9gy" name="DÉPOSER VOTRE CV...">
+      <segment>
+        <source>DÉPOSER VOTRE CV...</source>
+        <target>DÉPOSER VOTRE CV...</target>
+      </segment>
+    </unit>
+    <unit id="n4bQgYh" name="test">
+      <segment>
+        <source>test</source>
+        <target>test</target>
+      </segment>
+    </unit>
+    <unit id="laeSb0k" name="POSTE...">
+      <segment>
+        <source>POSTE...</source>
+        <target>POSTE...</target>
+      </segment>
+    </unit>
+    <unit id="zYeSeNJ" name="action.stop_impersonating">
+      <segment>
+        <source>action.stop_impersonating</source>
+        <target>action.stop_impersonating</target>
+      </segment>
+    </unit>
+    <unit id="OYUVA5." name="general.label.search">
+      <segment>
+        <source>general.label.search</source>
+        <target>general.label.search</target>
+      </segment>
+    </unit>
+    <unit id="rWF6D91" name="Job">
+      <segment>
+        <source>Job</source>
+        <target>Job</target>
+      </segment>
+    </unit>
+    <unit id="d1tb_WR" name="Created at">
+      <segment>
+        <source>Created at</source>
+        <target>Created at</target>
+      </segment>
+    </unit>
+    <unit id="ifaDJWD" name="Year">
+      <segment>
+        <source>Year</source>
+        <target>Year</target>
+      </segment>
+    </unit>
+    <unit id="MQylA_8" name="Month">
+      <segment>
+        <source>Month</source>
+        <target>Month</target>
+      </segment>
+    </unit>
+    <unit id="jyNk4Ru" name="Day">
+      <segment>
+        <source>Day</source>
+        <target>Day</target>
+      </segment>
+    </unit>
+    <unit id="8AY7gIc" name="Hour">
+      <segment>
+        <source>Hour</source>
+        <target>Hour</target>
+      </segment>
+    </unit>
+    <unit id="S3hmW_x" name="Minute">
+      <segment>
+        <source>Minute</source>
+        <target>Minute</target>
+      </segment>
+    </unit>
+    <unit id="pWjmb7S" name="NOM ...">
+      <segment>
+        <source>NOM ...</source>
+        <target>NOM ...</target>
+      </segment>
+    </unit>
+    <unit id="I0V.zPb" name="Prénom ...">
+      <segment>
+        <source>Prénom ...</source>
+        <target>Prénom ...</target>
+      </segment>
+    </unit>
+    <unit id="aRTjxZh" name="Adresse mail ...">
+      <segment>
+        <source>Adresse mail ...</source>
+        <target>Adresse mail ...</target>
+      </segment>
+    </unit>
+    <unit id="uOjfTxH" name="Motivation ...">
+      <segment>
+        <source>Motivation ...</source>
+        <target>Motivation ...</target>
+      </segment>
+    </unit>
+    <unit id="97Xekp9" name="CV ...">
+      <segment>
+        <source>CV ...</source>
+        <target>CV ...</target>
+      </segment>
+    </unit>
+    <unit id="R3oQYj1" name="Poste ...">
+      <segment>
+        <source>Poste ...</source>
+        <target>Poste ...</target>
+      </segment>
+    </unit>
+    <unit id="OEqzPDO" name="listing_table.actions.select_all">
+      <segment>
+        <source>listing_table.actions.select_all</source>
+        <target>listing_table.actions.select_all</target>
+      </segment>
+    </unit>
+    <unit id="qoZwSEY" name="action.preview_secure_share">
+      <segment>
+        <source>action.preview_secure_share</source>
+        <target>action.preview_secure_share</target>
+      </segment>
+    </unit>
+    <unit id="a_COwtV" name="image.button_upload_options">
+      <segment>
+        <source>image.button_upload_options</source>
+        <target>image.button_upload_options</target>
+      </segment>
+    </unit>
+    <unit id="wG04eAa" name="image.image_preview">
+      <segment>
+        <source>image.image_preview</source>
+        <target>image.image_preview</target>
+      </segment>
+    </unit>
+    <unit id="4TCRcpL" name="SEO Title">
+      <segment>
+        <source>SEO Title</source>
+        <target>SEO Title</target>
+      </segment>
+    </unit>
+    <unit id="3p.vSSI" name="Will be used as the &lt;tt&gt;&amp;lt;title&amp;gt;&lt;/tt&gt; and in search engines">
+      <segment>
+        <source>Will be used as the &lt;tt&gt;&amp;lt;title&amp;gt;&lt;/tt&gt; and in search engines</source>
+        <target><![CDATA[Will be used as the <tt>&lt;title&gt;</tt> and in search engines]]></target>
+      </segment>
+    </unit>
+    <unit id="HdE0ldo" name="Limit the length to %number% characters">
+      <segment>
+        <source>Limit the length to %number% characters</source>
+        <target>Limit the length to 70 characters</target>
+      </segment>
+    </unit>
+    <unit id="JPCo9LS" name="Meta description">
+      <segment>
+        <source>Meta description</source>
+        <target>Meta description</target>
+      </segment>
+    </unit>
+    <unit id="CJ8orGK">
+      <segment>
+        <source>Will be used as the &lt;tt&gt;&amp;lt;meta name="description"&amp;gt;&lt;/tt&gt;, and will show up in search engines</source>
+        <target><![CDATA[Will be used as the <tt>&lt;meta name="description"&gt;</tt>, and will show up in search engines]]></target>
+      </segment>
+    </unit>
+    <unit id="2PqBQn1" name="Google snippet preview">
+      <segment>
+        <source>Google snippet preview</source>
+        <target>Google snippet preview</target>
+      </segment>
+    </unit>
+    <unit id="L.07lHq" name="Default title">
+      <segment>
+        <source>Default title</source>
+        <target>Default title</target>
+      </segment>
+    </unit>
+    <unit id="ORnQHm." name="Shortlink">
+      <segment>
+        <source>Shortlink</source>
+        <target>Shortlink</target>
+      </segment>
+    </unit>
+    <unit id="GgpqNso" name="alias">
+      <segment>
+        <source>alias</source>
+        <target>alias</target>
+      </segment>
+    </unit>
+    <unit id="dDQIiSZ">
+      <segment>
+        <source>Use this to create an alias or shortlink to this record. Be sure to make it an absolute link.</source>
+        <target>Use this to create an alias or shortlink to this record. Be sure to make it an absolute link.</target>
+      </segment>
+    </unit>
+    <unit id="..3kd27" name="Canonical Link">
+      <segment>
+        <source>Canonical Link</source>
+        <target>Canonical Link</target>
+      </segment>
+    </unit>
+    <unit id="0XJxYrt" name="Use this to override the &lt;tt&gt;&amp;lt;link rel=&quot;canonical&quot;&amp;gt;&lt;/tt&gt;">
+      <segment>
+        <source>Use this to override the &lt;tt&gt;&amp;lt;link rel="canonical"&amp;gt;&lt;/tt&gt;</source>
+        <target><![CDATA[Use this to override the <tt>&lt;link rel="canonical"&gt;</tt>]]></target>
+      </segment>
+    </unit>
+    <unit id="FwLQ5cl" name="Use with caution, and only if you know what you're doing">
+      <segment>
+        <source>Use with caution, and only if you know what you're doing</source>
+        <target>Use with caution, and only if you know what you're doing</target>
+      </segment>
+    </unit>
+    <unit id="n3BhrCh" name="Meta Robots Tag">
+      <segment>
+        <source>Meta Robots Tag</source>
+        <target>Meta Robots Tag</target>
+      </segment>
+    </unit>
+    <unit id="tGAPy_h" name="Use this to set the &lt;tt&gt;&amp;lt;meta name=&quot;robots&quot;&amp;gt;&lt;/tt&gt;">
+      <segment>
+        <source>Use this to set the &lt;tt&gt;&amp;lt;meta name="robots"&amp;gt;&lt;/tt&gt;</source>
+        <target><![CDATA[Use this to set the <tt>&lt;meta name="robots"&gt;</tt>]]></target>
+      </segment>
+    </unit>
+    <unit id="JEVKWPy" name="Open Graph Type">
+      <segment>
+        <source>Open Graph Type</source>
+        <target>Open Graph Type</target>
+      </segment>
+    </unit>
+    <unit id="HxdlzS6" name="Use this to set the &lt;tt&gt;&amp;lt;meta name=&quot;og:type&quot;&amp;gt;&lt;/tt&gt;">
+      <segment>
+        <source>Use this to set the &lt;tt&gt;&amp;lt;meta name="og:type"&amp;gt;&lt;/tt&gt;</source>
+        <target><![CDATA[Use this to set the <tt>&lt;meta name="og:type"&gt;</tt>]]></target>
+      </segment>
+    </unit>
+    <unit id="johNrI3" name="Leave blank for the default">
+      <segment>
+        <source>Leave blank for the default</source>
+        <target>Leave blank for the default</target>
+      </segment>
+    </unit>
+    <unit id="JRCZLRM" name="Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.">
+      <segment>
+        <source>Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.</source>
+        <target>Pourquoi vous ? Expliquez nous votre motivation pour nous rejoindre.</target>
+      </segment>
+    </unit>
+    <unit id="yUeSYHH" name="Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.">
+      <segment>
+        <source>Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.</source>
+        <target>Pourquoi vous ? Décrivez-nous votre motivation à nous rejoindre.</target>
+      </segment>
+    </unit>
+    <unit id="pylGz2F" name="Parlez-nous de vous...">
+      <segment>
+        <source>Parlez-nous de vous...</source>
+        <target>Parlez-nous de vous...</target>
+      </segment>
+    </unit>
+    <unit id="uPhgz7H" name="Vous devez être connecté pour accéder à cette page.">
+      <segment>
+        <source>Vous devez être connecté pour accéder à cette page.</source>
+        <target>Vous devez être connecté pour accéder à cette page.</target>
+      </segment>
+    </unit>
+    <unit id="9UKAP.V" name="listing_details_box.showing_records">
+      <segment>
+        <source>listing_details_box.showing_records</source>
+        <target>listing_details_box.showing_records</target>
+      </segment>
+    </unit>
+    <unit id="UrywY0R" name="listing_details_box.name">
+      <segment>
+        <source>listing_details_box.name</source>
+        <target>listing_details_box.name</target>
+      </segment>
+    </unit>
+    <unit id=".l3zbrq" name="listing_details_box.slug">
+      <segment>
+        <source>listing_details_box.slug</source>
+        <target>listing_details_box.slug</target>
+      </segment>
+    </unit>
+    <unit id="eJ9YbdG" name="listing_details_box.record_template">
+      <segment>
+        <source>listing_details_box.record_template</source>
+        <target>listing_details_box.record_template</target>
+      </segment>
+    </unit>
+    <unit id="tsc7_G3" name="listing_details_box.listing_template">
+      <segment>
+        <source>listing_details_box.listing_template</source>
+        <target>listing_details_box.listing_template</target>
+      </segment>
+    </unit>
+    <unit id="PuH1ywj" name="Votre entreprise ...">
+      <segment>
+        <source>Votre entreprise ...</source>
+        <target>Votre entreprise ...</target>
+      </segment>
+    </unit>
+    <unit id="lQh5NiI" name="Votre e-mail...">
+      <segment>
+        <source>Votre e-mail...</source>
+        <target>Votre e-mail...</target>
+      </segment>
+    </unit>
+    <unit id="S8wlsSN" name="Votre nom ...">
+      <segment>
+        <source>Votre nom ...</source>
+        <target>Votre nom ...</target>
+      </segment>
+    </unit>
+    <unit id="e7ugmq4" name="Votre prénom ...">
+      <segment>
+        <source>Votre prénom ...</source>
+        <target>Votre prénom ...</target>
+      </segment>
+    </unit>
+    <unit id="gh7Bgs4" name="Votre e-mail ...">
+      <segment>
+        <source>Votre e-mail ...</source>
+        <target>Votre e-mail ...</target>
+      </segment>
+    </unit>
+    <unit id="2TIXCLt" name="DÉPOSER MON CV">
+      <segment>
+        <source>DÉPOSER MON CV</source>
+        <target>DÉPOSER MON CV</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

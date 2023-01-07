@@ -1,0 +1,40 @@
+{#
+text
+link
+width
+height
+nextWidith: arrow logo width default 10%
+#}
+
+{% block buttonRedStylesheet %}
+{{ encore_entry_link_tags('btnRedStyle', null, 'transvis') }}
+{% endblock buttonRedStylesheet %}
+
+{% block buttonRedContent %}
+
+{% if isBlack is not defined %}
+{% set isBlack = false %}
+{% endif %}
+{% if external is not defined %}
+{% set external = false %}
+{% endif %}
+{% if icon is not defined %}
+{% set icon = false %}
+{% endif %}
+{% if upper is not defined %}
+{% set upper = true %}
+{% endif %}
+    <a class="btn-link d-flex justify-content-center align-items-center btn-link-more {{ isBlack ? 'btn-link-dark' : 'button-link' }}" href="{{ link ?? '' }}"
+       style="width: {{ width ?? '' }}; height: {{ height ?? '' }}"
+       {{ external ? 'target="_blank"' : '' }}
+       >
+        <span class="me-2 align-baseline">
+        {% if upper is true %}
+        {{ text | upper }}
+        {% else %}
+        {{ text }}
+        {% endif %}</span>
+        <img src="{{ asset(icon ? icon :'images/savoirs-faire/next.png.webp') }}" alt="next" class="next"
+             style="width: {{ nextWidth ?? '' }}">
+    </a>
+{% endblock buttonRedContent%}

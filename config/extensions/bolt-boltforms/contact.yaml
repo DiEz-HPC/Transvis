@@ -1,0 +1,93 @@
+templates:
+    form: partials/forms/_contactForm.twig
+    email: partials/mail/_contactEmail.twig
+#database:
+    #name: bolt_contact_message
+  #contenttype:
+   # name: Message # save all form submissions to the quotations contenttype
+    #ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
+notification:
+    enabled: true
+    debug: false
+    debug_address: test@debug.com # Email address used when debug mode is enabled
+    debug_smtp: false
+    subject: Vous avez reçu un message via le formulaire de contact
+    subject_prefix: "[Transvis]"
+    replyto_name: "{NAME} {FIRSTNAME}" # Email addresses and names can be either the
+    replyto_email: "{EMAIL}" # name of a field below or valid text.
+    to_name: "Contact Transvis"
+    to_email: "{MAILTO}"
+    from_name: "{NAME} {FIRSTNAME}"
+    from_email: "{EMAIL}"
+feedback:
+    success: Votre message à bien était envoyé.
+    error: Il y a eu un problème lors de l'envoi de votre message. Veuillez réessayer.
+fields:
+    name:
+        type: text
+        options:
+            required: true
+            label: Nom
+            attr:
+                placeholder: Votre nom...
+                class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    firstname:
+        type: text
+        options:
+            required: true
+            label: Prénom
+            attr:
+                placeholder: Votre prénom...
+                class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    companyName:
+        type: text
+        options:
+            required: true
+            label: Nom de votre entreprise
+            attr:
+                placeholder: Votre entreprise...
+                class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    email:
+        type: email
+        options:
+            required: true
+            label: Adresse e-mail
+            attr:
+                placeholder: Votre e-mail...
+                class: contactInput
+            constraints: [NotBlank, Email]
+    subject:
+        type: text
+        options:
+            required: true
+            label: Sujet
+            attr:
+                placeholder: Sujet...
+                class: contactInput
+            constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+    message:
+        type: textarea
+        options:
+            required: true
+            label: Message
+            attr:
+                placeholder: Votre message...
+                class: contactInput
+    mailto:
+        type: hidden
+        options:
+            required: true
+            label: Mailto
+            attr:
+                placeholder: Votre mail...
+                class: contactInput
+            constraints: [NotBlank, Email]
+    submit:
+        type: submit
+        options:
+            label: Envoyer
+            attr:
+                class: btn-black

@@ -1,0 +1,74 @@
+{#
+Record.
+    title: 'text'
+    teaser: 'text'
+    profil: 'text'
+    description:
+        contrat: 'text'
+        temps: 'text'
+        salary: 'number'
+#}
+
+{% extends '@theme/partials/_master.twig' %}
+{% use '@theme/partials/buttons/_tags.twig' %}
+
+{% set tags = [record.description.contrat, 'temps ' ~ record.description.temps, record.description.salary ~ '€ annuel'] %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    {{ block('tagStylesheet') }}
+    {{ encore_entry_link_tags('recrutementStyle', null, 'transvis') }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+{{ parent() }}
+{%  endblock javascript %}
+
+{% block main %}
+    <div class="recrutement pt-5">
+        <div class="banner d-flex flex-column justify-content-center align-items-center">
+            <img src="{{ asset('images/banner-recrutement-card.png.webp') }}" alt="bannière">
+            <div class="filter-dark"></div>
+            <div class="banner-text d-flex flex-column justify-content-center align-items-center">
+                <h1 class>{{ record.title | upper }}</h1>
+                <div class="tags d-flex justify-around mt-3">
+                    {% for tag in tags %}
+                        {{ block('tagContent') }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="content d-flex flex-column flex-xl-row">
+            <div class="block-left col-12 col-xl-6 pb-5 mb-5">
+                {% include '@theme/partials/_line.twig' with {margin: 'mt-3 mb-5'} %}
+                <div class="px-3 px-xl-5">
+                    <h2 class="text-center">{{ 'Description du poste' | upper }}</h2>
+                    <div class="tags d-flex justify-content-center my-3">
+                        {% for tag in tags %}
+                            {{ block('tagContent') }}
+                        {% endfor %}
+                    </div>
+                    <div class="description text-center mb-2">
+                        {{ record.description.description | raw }}
+                    </div>
+                    <h3 class="text-center mt-5 pt-3">{{ 'Profil recherché' | upper }}</h3>
+                    <div class="profil text-center">
+                        {{ record.profil | raw }}
+                    </div>
+                    {% if record.other %}
+                        <h3 class="text-center mt-5 pt-3">{{ 'Informations complémentaires' | upper }}</h3>
+                        <div class="profil text-center">
+                            {{ record.other | raw }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="block-right col-12 col-xl-6">
+                <h2 class="text-center mt-5 mb-3 text-light">{{ 'Rejoignez-nous !' | upper }}</h2>
+                <div class="container mt-5">
+                    {{ render(url('app_recrutements_form_render')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

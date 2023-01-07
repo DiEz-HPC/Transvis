@@ -1,0 +1,31 @@
+{% extends '@bolt/_base/layout.html.twig' %}
+
+{% block title %}
+    Listes des candidatures
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset('css/adminContact.css')}}">
+    <link rel="stylesheet" href="{{asset('css/seeMore.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/_adminContact/adminContactButton.js') }}"></script>
+    <script src="{{ asset('js/_adminContact/pagination.js') }}"></script>
+    <script src="{{ asset('js/seeMore.js') }}"></script>
+{% endblock %}
+{% block main %}
+    <div class="container">
+        {% include 'partials/_appFlash.twig' %}
+        <div class="row">
+            <div class="col-12" id="contactMessage" data-pagination="1" data-nbpages="{{ nbPages }}">
+                {% include 'partials/_adminCandidatures.twig' %}
+            </div>
+            <button class="btn btn-primary" id="previousBtn">Page précedente</button>
+            <button class="btn btn-primary" id="nextBtn">Page suivante</button>
+        </div>
+        {% include 'partials/_adminContact/_confirmDeleteModal.twig' %}
+        <div class="d-flex justify-content-center w-100"></div>
+    </div>
+{% endblock %}

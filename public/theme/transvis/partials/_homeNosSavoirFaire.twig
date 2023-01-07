@@ -1,0 +1,45 @@
+{% use '@theme/partials/cards/_card_SF.twig' %}
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% use '@theme/partials/banner_keys/_banner_keys_figures.twig' %}
+{% block homeSavoirFaireStylesheet %}
+    {{ block('cardSFstylesheet') }}
+    {{ block('buttonRedStylesheet') }}
+    {{ block('bannerKeysFiguresStylesheet') }}
+{% endblock %}
+{% block homeSavoirFaireJavascript %}
+    {{ block('bannerKeysFiguresJavascript') }}
+    {{ encore_entry_script_tags('superpositionJs', null, 'transvis') }}
+{% endblock %}
+
+{% block homeSavoirFaireContent %}
+    {% setcontent nosSavoirFaire = 'nos-savoir-faire' %}
+    {% set cards = [nosSavoirFaire.cardOne ?? {}, nosSavoirFaire.cardTwo ?? {}, nosSavoirFaire.cardThree ?? {}] %}
+    {% set keyFigures = [nosSavoirFaire.keyFigureOne ?? {}, nosSavoirFaire.keyFigureTwo ?? {}, nosSavoirFaire.keyFigureThree ?? {}] %}
+
+    <h2 class="likeh1 text-center m-5" data-aos="fade-up">{{ record.savoirFaireTitle | upper }}</h2>
+    <div class="m-5 text-center" data-aos="fade-up" data-aos-delay="250">
+        {{record.savoirFaireIntro}}
+    </div>
+    <div class="m-5" id="homeNSFteaser">
+        {{ superposition(record.savoirFaireTeaser) }}
+    </div>
+
+    <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
+        {%  with { text: "En savoir plus", link: '/nos-savoir-faire', width: "200px", height: "37px", nextWidth: "8%"} %}
+        {{ block('buttonRedContent') }}
+        {% endwith %}
+    </div>
+
+    <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-xl-start justify-content-around col-12 mt-5">
+        {% for card in cards %}
+            {% if card is not empty %}
+                {% with { card: card, loop: loop.index } %}
+                {{ block('cardSFContent') }}
+                {% endwith %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% with {keyFigures: keyFigures, keyFigureTitle: nosSavoirFaire.keyFigureTitle } %}
+    {{ block('bannerKeysFiguresContent') }}
+    {% endwith %}
+{% endblock %}

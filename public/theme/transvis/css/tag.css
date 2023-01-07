@@ -1,0 +1,14 @@
+.tag {
+    height: 25px;
+    background: #121212;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 15px;
+    color: var(--light-color);
+    padding: 5px 14px;
+}
+.single-tag-container{
+    width: fit-content;
+}

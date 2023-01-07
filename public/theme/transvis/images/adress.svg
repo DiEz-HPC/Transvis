@@ -1,0 +1,21 @@
+<svg height="150" width="250">
+    <g>
+        <image href="{{ asset('images/localisation.svg') }}" height="20" width="20"/>
+        <foreignObject x="35" y="0" height="50" width="80%">
+            <text>{{ options.adresse|default('Veuillez configurer l\'adresse dans le back-office') }}</text>
+        </foreignObject>
+    </g>
+    <g>
+        <image href="{{ asset('images/enveloppe.svg') }}" y="{{ spacing * 1.2 }}" height="20" width="20"/>
+        <foreignObject x="35" y="{{ spacing * 1.2 }}" height="20" width="80%">
+            <text>{{ options.email|default('contact@transvis.fr') }}</text>
+        </foreignObject>
+    </g>
+    <g>
+        <image href="{{ asset('images/phone.svg') }}" y="{{ spacing * 2 }}" height="20" width="20"/>
+        <foreignObject x="35" y="{{ spacing * 2 }}" height="20" width="80%">
+            <text>{{ options.telephone|default('Veuillez configurer le téléphone dans le back-office') }}</text>
+        </foreignObject>
+    </g>
+    <rect x="0" y="0" width="100%" height="190" fill="transparent"/>
+</svg>

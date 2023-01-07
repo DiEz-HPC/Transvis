@@ -1,0 +1,70 @@
+{#
+    Records: 'collection record'
+#}
+
+{% extends '@theme/partials/_master.twig' %}
+{% use '@theme/partials/cards/_card_recrutements.twig' %}
+{% use '@theme/partials/_recruitments_number/_recruitments_number.twig' %}
+{% use '@theme/partials/buttons/_button_filter.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    {{ block('cardRecrutementStylesheet') }}
+    {{ block('recruitmentsNumberStylesheet') }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+    {{ parent() }}
+{%  endblock javascript %}
+
+{% block main %}
+    {% set pageTitle = options.recrutementsTitle|default('Recrutements') %}
+    {% set pageDescription = options.recrutementsText|default('') %}
+    {% set steps = options.recrutementsStep|default(null) %}
+    {% set hasRecords = records|length > 0 ? true : false %}
+    <div class="d-flex flex-column mt-5">
+        <div class="recrutementHeader">
+            <h1 class="text-center mt-4" data-aos="fade-up">
+                {{ pageTitle|upper }}
+            </h1>
+            <div class="p-5">
+                {{ pageDescription }}
+            </div>
+            <div class="d-flex flex-column flex-xl-row justify-content-center">
+                {% for step in steps %}
+                    {% with {index:loop.index, title: step.title, content: step.text} %}
+                    {{ block('recruitmentsNumberContent') }}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+            {% include "@theme/partials/_line.twig" %}
+            <div class="d-flex flex-column align-items-center">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.flashes('error') %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <h2 class="text-center my-5 col-12" data-aos="fade-up">
+                    {{ hasRecords ? 'postes à pourvoir'|upper : 'Aucun poste à pourvoir pour le moment'|upper }}
+                </h2>
+            </div>
+        </div>
+
+        <div class="recrutementBody">
+            <div class="d-flex flex-column flex-xl-row flex-xl-wrap justify-content-center justify-content-xl-around align-items-center p-5 col-12">
+                {% for record in records %}
+                    {% with { card: record, index: loop.index} %}
+                    {{ block('cardRecrutementContent')}}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12 {{ records.nbResults < records.maxPerPage ? 'd-none' : 'd-flex' }}  justify-content-center align-items-center my-5 ">
+            {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
+        </div>
+    </div>
+{% endblock main %}

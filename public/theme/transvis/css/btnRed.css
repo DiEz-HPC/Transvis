@@ -1,0 +1,36 @@
+.button-link, .btn-link {
+    background-color: var(--red-color);
+    width: 155px;
+    height: 37px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--light-color);
+    z-index: 1;
+    max-width: 100%;
+}
+
+.btn-link-dark {
+    background-color: var(--dark-color) !important;
+    border-radius: 5px;
+}
+
+.button-link:hover, .btn-link:hover {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.button-link:active, .btn-link:active {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.button-link span, .btn-link span {
+    font-weight: 500;
+    font-size: var(--font-size);
+    line-height: 20px;
+    text-align: center;
+}
+
+.button-link .next {
+    width: 10%;
+}

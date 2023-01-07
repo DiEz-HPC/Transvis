@@ -27,3 +27,22 @@ categories:
     multiple: true
     options: [ news, events, movies, music, books, life, love, fun ]
     required: false
+
+contrats:
+    name: Contrats
+    slug: contrats
+    singular_name: Contrat
+    singular_slug: contrat
+    behaves_like: categories
+    multiple: true
+    options: [ CDI, CDD, Intérim, Stage, Alternance, Freelance, Indépendant ]
+    required: false
+
+nosRealisationsTags:
+    name: Tags de la réalisation
+    slug: nosRealisations
+    singular_slug: Realisation
+    behaves_like: tags
+    postfix: "Commencez un nouveau tag en saisissant un caractère, valider le tag en appuyant sur entrée."
+    allow_spaces: false
+    required: false

@@ -2,7 +2,7 @@
 # in the project root.
 
 # The name of the website
-sitename: Transvis
+sitename: Transvis-CTI
 payoff: Vos machines adaptées. De la conception à l'implantation.
 
 secret: '%env(APP_SECRET)%'
@@ -28,7 +28,7 @@ theme: transvis
 
 # Set the timezone to be used on the website. For a list of valid timezone
 # settings, see: http://php.net/manual/en/timezones.php
-# timezone: UTC
+timezone: Europe/Paris
 
 # Set the default time format used on this website. For a list of valid date
 # format settings, see: https://www.php.net/manual/en/function.date.php
@@ -81,7 +81,7 @@ homepage_template: index.twig
 
 # The default content for the "Not Found" (404) page. Can be an (array of) template
 # names or identifiers for records, which will be tried until a match is found.
-notfound: [ blocks/404-not-found, 'helpers/page_404.html.twig' ]
+notfound: ['partials/helpers/page_404.html.twig' ]
 
 # Toggle maintenance mode on or off. Note: If you're logged in, you'll still see
 # the website as usual. Use an incognito window to see the "maintenance" page.
@@ -89,18 +89,18 @@ maintenance_mode: false
 
 # The default for the "Maintenance mode" (503) page. Can be an (array of) template
 # names or identifiers for records, which will be tried until a match is found.
-maintenance: [ blocks/503-maintenance-mode, 'helpers/page_503.html.twig' ]
+maintenance: ['partials/helpers/page_503.html.twig' ]
 
 # The default content for the "Forbidden" (403) page. Can be an (array of) template
 # names or identifiers for records, which will be tried until a match is found.
-forbidden: [ blocks/403-forbidden, 'helpers/page_403.html.twig' ]
+forbidden: ['partials/helpers/page_403.html.twig' ]
 
 # The default content for the "Internal Server Error" (500) page. Can be an
 # (array of) template names or identifiers for records.
 # Note: Only used in `APP_ENV=prod` mode. You're advised to keep this as simple
 # as possible, because if an error occurs in this template, it can not be
 # handled, and you'll have a bad time debugging it!
-internal_server_error: [ 'helpers/page_500.html.twig' ]
+internal_server_error: [ 'partials/helpers/page_500.html.twig' ]
 
 # The default template for record-pages on the site.
 #
@@ -200,11 +200,11 @@ accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, t
 # instead. It just includes file types / extensions that are harder to exploit.
 # accept_file_types: [ gif, jpg, jpeg, png, txt, md, pdf, epub, mp3 ]
 
-accept_media_types: [ gif, jpg, jpeg, png, svg, pdf, mp3, tiff, avif, webp ]
+accept_media_types: [ gif, jpg, jpeg, png, svg, pdf, mp3, tiff, avif, webp]
 
 # Set the maximum upload size. Note, this can never exceed the settings for
 #`post_max_size` and `upload_max_filesize` in `php.ini`.
-accept_upload_size: 8M
+accept_upload_size: 950M
 
 # Default location for uploading files.
 upload_location: "{contenttype}/{year}/{month}/"
@@ -232,9 +232,9 @@ user_avatar:
 # Settings for the reset password logic
 reset_password_settings:
     show_already_requested_password_notice: true
-    mail_from: "do-not-reply@example.org"
-    mail_name: "Bolt CMS"
-    mail_subject: "Your password reset request"
+    mail_from: "no-reply@transvis.fr"
+    mail_name: "Transvis-cti"
+    mail_subject: "Reinitialisation de votre mot de passe"
     mail_template: "reset_password/email.html.twig"
 
 # Adds sorting and filtering of users in backend

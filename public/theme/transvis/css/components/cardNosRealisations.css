@@ -1,0 +1,52 @@
+/* purgecss start ignore */
+.card.nr {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100%;
+}
+.card.nr .card-img {
+    position: relative;
+    max-height: 200px;
+}
+.card.nr .card-img .card-img-top {
+    filter: grayscale(1);
+    border-radius: 5px 5px 0 0;
+    max-height: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+.card.nr .card-img .play-video svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.card.nr .card-img .play-video svg #part1 {
+    fill: transparent !important;
+}
+.card.nr .card-img .play-video svg #part2,
+.card.nr .card-img .play-video svg #part3 {
+    fill: var(--red-color) !important;
+}
+.card.nr .tag-line {
+    height: 32px;
+    overflow: hidden !important;
+}
+.card.nr .card-text {
+    height: 150px;
+}
+@media screen and (max-width: 768px) {
+    .card.nr .tag-line {
+        overflow: hidden;
+    }
+    .card.nr .card-text {
+        height: fit-content;
+    }
+}
+/* purgecss stop ignore */

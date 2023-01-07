@@ -5,44 +5,551 @@
 # content type.
 
 accueil:
-    name: accueil
-    singular_name: accueil
+    name: Accueil
+    singular_name: Accueil
+    slug: accueil
+    title_format: Page d'accueil
     fields:
-        title:
-            type: text
-            class: large
-            group: content
-            localize: true
-            label: Title
-            postfix: |
-                The 'Homepage' can contain basic information about the website. This title will be
-                shown on the homepage of the website, as the name implies. To change the
-                <em><strong>name</strong></em> of the site, as is shown in the header, and the tab
-                in the webbrowser, edit <code>sitename:</code> in the configuration file.
-        image:
+        headerVideo:
+            type: file
+            label: Video
+            info: Video de fond sur desktop
+            extensions: [mp4, webm]
+            group: En-tête
+        headerImage:
             type: image
-        introduction:
-            type: redactor
-            localize: true
-        content:
-            type: redactor
-            localize: true
-        contentlink:
+            label: Image mobile
+            info: L'image de fond sur mobile
+            group: En-tête
+        headerTitle:
+            type: article
+            label: Titre 
+            info: Titre de la page
+            group: En-tête
+        headerTeaser:
+            type: article
+            label: Texte d'en-tête
+            info: Texte d'introduction présent sur le header
+            group: En-tête
+        headerBottomTextLeft:
+            type: article
+            label: Texte de gauche
+            info: Texte de gauche présent en bas du header
+            group: En-tête
+        headerBottomTextRight:
+            type: article
+            label: Texte de droite
+            info: Texte de droite présent en bas du header
+            group: En-tête
+        savoirFaireTitle:
             type: text
-            label: Link
-            placeholder: 'contentType/slug or https://example.org/'
-            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
-            fixture_format: '{url}'
-        slug:
-            type: slug
-            uses: title
-            group: Meta
+            label: Titre
+            info: Titre de la section savoir-faire
+            group: Savoir-faire
+        savoirFaireIntro:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction pour la section savoir-faire
+            group: Savoir-faire
+        savoirFaireTeaser:
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section savoir-faire
+            group: Savoir-faire
+        nosEquipesTitle:
+            type: text
+            label: Titre
+            info: Titre de la section nos équipes
+            group: Nos équipes
+        nosEquipesIntro:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction pour la section nos équipes
+            group: Nos équipes
+        nosEquipesTeaser:
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section nos équipes
+            group: Nos équipes
+        nosEquipesImage:
+            type: image
+            label: Image
+            info: Image de la section nos équipes
+            group: Nos équipes
+        nosValeursTitle:
+            type: text
+            label: Titre
+            info: Titre de la section nos valeurs
+            group: Nos valeurs
+        nosValeursTeaser:
+            type: article
+            label: Contenu de la section
+            info: Contenu pour la section nos valeurs
+            group: Nos valeurs     
+        seo:
+            type: seo
+            group: "Réglage SEO"     
     viewless: false
-    taxonomy: [ categories, tags, foobars ]
+    record_template: 'index.twig'
+    default_status: held
     singleton: true
     icon_many: "fa:home"
     icon_one: "fa:home"
 
+savoirFaire:
+    name: Nos savoir-faire
+    singular_name: Nos savoir-faire
+    slug: nos-savoir-faire
+    fields:
+        title:
+            type: text
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        intro:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{intro}'
+            group: Introduction
+        teaser:
+            type: article
+            label: Contenu de la page
+            info: Contenu de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        cardOne:
+            type: set
+            label: Première carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la première carte
+                    info: Image de la première carte
+                text:
+                  type: text
+                  label: Texte de la première carte
+                  info: Texte de la première carte
+        cardTwo:
+            type: set
+            label: Deuxième carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la deuxième carte
+                    info: Image de la deuxième carte
+                text:
+                  type: text
+                  label: Texte de la deuxième carte
+                  info: Texte de la deuxième carte
+        cardThree:
+            type: set
+            label: Troisième carte
+            group: Cartes
+            fields:
+                image:
+                    type: image
+                    label: Image de la troisième carte
+                    info: Image de la troisième carte
+                text:
+                  type: text
+                  label: Texte de la troisième carte
+                  info: Texte de la troisième carte
+        keyFigureTitle:
+            type: text
+            label: Titre de la section 
+            info: Titre de la section chiffres clés
+            group: Chiffres clés
+        keyFigureOne:
+            type: set
+            label: Premier chiffre clé
+            group: Chiffres clés
+            fields:
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
+                text:
+                    type: article
+                    label: Texte du premier chiffre clé
+                    info: Texte du premier chiffre clé
+                image:
+                    type: image
+                    label: Logo du premier chiffre clé
+                    info: Logo du premier chiffre clé
+        keyFigureTwo:
+            type: set
+            label: Deuxième chiffre clé
+            group: Chiffres clés
+            fields:
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
+                text:
+                    type: article
+                    label: Texte du deuxième chiffre clé
+                    info: Texte du deuxième chiffre clé
+                image:
+                    type: image
+                    label: Logo du deuxième chiffre clé
+                    info: Logo du deuxième chiffre clé
+        keyFigureThree:
+            type: set
+            label: Troisième chiffre clé
+            group: Chiffres clés
+            fields:
+                keyNumber:
+                    type: number
+                    label: Chiffre clé
+                    info: chiffre clé
+                text:
+                    type: article
+                    label: Texte du troisième chiffre clé
+                    info: Texte du troisième chiffre clé
+                image:
+                    type: image
+                    label: Logo du troisième chiffre clé
+                    info: Logo du troisième chiffre clé
+        seo:
+            type: seo
+            group: "Réglage SEO"
+    default_status: held
+    viewless: false
+    singleton: true
+    icon_many: "fa:brain"
+    icon_one: "fa:brain"
+    record_template: 'savoirFaire.twig'
+
+nosValeurs:
+    name: Nos valeurs
+    singular_name: Nos valeurs
+    slug: nos-valeurs
+    fields:
+        title:
+            type: text
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        teaser:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        contentValues:
+            type: collection
+            label: Nos valeurs
+            group: Valeurs
+            fields:
+                contentValue:
+                    type: set
+                    label: Valeur
+                    fields:
+                        nameOfValue:
+                            type: text
+                            label: Nom de la valeur
+                            info: Nom de la valeur    
+                        image:
+                            type: image
+                            label: Image de la valeur
+                            info: Logo de couleur noir
+                        text:
+                            type: article
+                            label: Texte de la valeur
+                            info: Texte de la valeur
+        seo:
+            type: seo
+            group: "Réglage SEO"
+    default_status: held
+    viewless: false
+    singleton: true
+    icon_many: "fa:fist-raised"
+    icon_one: "fa:fist-raised"
+    record_template: 'nosValeurs.twig'
+
+nosEquipes:
+    name: Nos équipes
+    singular_name: Nos équipes
+    slug: nos-equipes
+    fields:
+        title:
+            type: text
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Introduction
+        intro:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{intro}'
+            group: Introduction
+        teaser:
+            type: article
+            label: Contenu de la page
+            info: Contenu de la page
+            fixture_format: '{teaser}'
+            group: Introduction
+        seo:
+            type: seo
+            group: "Réglage SEO"
+    default_status: held
+    viewless: false
+    singleton: true
+    icon_many: "fa:users"
+    icon_one: "fa:users"
+    record_template: 'nosEquipes.twig'
+
+nosRealisations:
+    name: Nos réalisations
+    singular_name: Réalisation
+    slug: nos-realisations
+    fields:
+        title:
+          type: text
+          label: Nom de la réalisation
+          info: Nom de la réalisation
+          group: Réalisation
+          fixture_format: '{title}'
+        teaser:
+          type: article
+          label: Texte de description
+          info: Texte de description de la réalisation
+          group: Réalisation
+          fixture_format: '{teaser}'
+        carousel:
+          type: imagelist
+          label: Images de la réalisation
+          info: Images de la réalisation
+          group: Médias
+          fixture_format: '{carousel}'
+        video:
+          type: file
+          extensions: [3g2,3gp,aaf,asf,avchd,avi,drc,flv,m2v,m3u8,m4p,m4v,mkv,mng,mov,mp2,mp4,mpe,mpeg,mpg,mpv,mxf,nsv,ogg,ogv,qt,rm,rmvb,roq,svi,vob,webm,wmv,yuv]
+          label: Vidéo de la réalisation
+          info: Selectionner une vidéo de la réalisation
+          group: Médias
+        videoTime:
+          type: integer
+          label: Position de la vidéo
+          info: Temp en seconde de l'image que vous voulez afficher
+          group: Médias
+        machineSheet:
+          type: file
+          extensions: [pdf,doc,docx]
+          label: Fiche technique
+          info: Fiche technique de la réalisation
+          group: Fiche technique
+        sort:
+          type: number
+          mode: integer
+          default: 10
+          label: Ordre d'affichage
+          info: Ordre d'affichage de la réalisation
+          group: Réalisation
+        seo:
+          type: seo
+          group: "Réglage SEO"
+    taxonomy:  nosRealisationsTags
+    listing_template: 'Realisations.twig'
+    record_template: 'Realisation.twig'
+    default_status: held
+    viewless: false
+    icon_many: "fa:images"
+    icon_one: "fa:images"
+    order: -createdAt
+  
+recrutements:
+    name: Recrutements
+    singular_name: Recrutement
+    slug: recrutements
+    fields:
+        title:
+          type: text
+          label: Intitulé du poste
+          info: Intitulé du poste
+          group: Recrutement
+        teaser:
+          type: text
+          pattern: '^.{1,100}$'
+          error: 'Le texte doit faire maximum 100 caractères'
+          label: "Texte de description (max: 100 caractères)"
+          info: Texte de description du poste
+          group: Recrutement
+        profil:
+          type: article
+          label: Profil recherché
+          info: Profil recherché
+          group: Recrutement
+        other:
+          type: article
+          label: Informations complémentaires
+          info: Informations complémentaires
+          group: Recrutement
+        description:
+            type: set
+            label: Déscription du poste
+            group: Détails
+            fields:
+                description:
+                    type: article
+                    label: Déscription du poste
+                    info: Déscription du poste
+                contrat:
+                    type: select
+                    label: Type de contrat
+                    info: Contrat
+                    values:
+                        CDI: CDI
+                        CDD: CDD
+                        Intérimaire: Intérimaire
+                        Alternance: Alternance
+                        Stage: Stage
+                temps:
+                  type: select
+                  values: 
+                    plein: 'Temps plein'
+                    partiel: 'Temps partiel'
+                  label: Temps de travail
+                  info: Temps de travail pour le poste
+                salary:
+                  type: text
+                  label: Salaire annuel
+                  info: Salaire annuel pour le poste
+        seo:
+            type: seo
+            group: "Réglage SEO"
+    listing_template: 'recrutements.twig'
+    record_template: 'recrutement.twig'
+    default_status: held
+    viewless: false
+    icon_many: "fa:table"
+    icon_one: "fa:table"
+
+contactPage:
+    name: Page contact
+    singular_name: Contact
+    slug: Contact
+    fields:
+        title:
+            type: text
+            label: Titre
+            info: Titre de la page
+            fixture_format: '{title}'
+            group: Contenu
+        teaser:
+            type: article
+            label: Texte d'introduction
+            info: Texte d'introduction de la page
+            fixture_format: '{teaser}'
+            group: Contenu
+        other:
+            type: article
+            label: Autre texte
+            info: Autre texte de la page
+            group: Contenu
+        seo:
+            type: seo
+            group: "Réglage SEO"
+    default_status: held
+    viewless: false
+    singleton: true
+    icon_many: "fa:address-book"
+    icon_one: "fa:envelope"
+    record_template: 'contact.twig'    
+
+vosOptions:
+    name: Autre contenu
+    singular_name: Autre contenu
+    slug: Vos options
+    fields:
+        nosRealisationsTitle:
+            type: text
+            label: Titre de la page Nos réalisations
+            info: Titre de la page Nos réalisations
+            group: Page nos réalisations
+        nosRealisationsText:
+            type: article
+            label: Texte de la page Nos réalisations
+            info: Texte de la page Nos réalisations
+            group: Page nos réalisations
+        nosPartenaires:
+            type: imagelist
+            label: Nos partenaires
+            info: Nos partenaires
+            group: Ils nous font confiance
+        recrutementsTitle:
+            type: text
+            label: Titre de la page Recrutements
+            info: Titre de la page Recrutements
+            group: Page recrutements
+        recrutementsText:
+            type: article
+            label: Texte de la page Recrutements
+            info: Texte de la page Recrutements
+            group: Page recrutements
+        recrutementsStep:
+            type: collection
+            limit: 3
+            label: Etapes de recrutement
+            info: Etapes de recrutement
+            group: Page recrutements
+            fields:
+                step:
+                    type: set
+                    label: Etape
+                    fields:
+                        title:
+                          type: text
+                          label: Titre de l'étape
+                          info: Titre de l'étape
+                          pattern: ^.{1,50}$
+                        text:
+                          type: text
+                          label: Texte de l'étape
+                          info: Texte de l'étape
+                          pattern: ^.{1,100}$
+        logo:
+            type: image
+            label: Logo
+            info: Logo
+            group: Autres
+        linkedin:
+            type: text
+            label: Lien Linkedin
+            info: Lien vers votre page Linkedin
+            group: Autres
+        adresse:
+            type: text
+            label: Adresse
+            info: Adresse de l'entreprise (Présent sur le footer)
+            group: Autres
+        telephone:
+            type: text
+            label: Téléphone
+            info: Téléphone de l'entreprise (Présent sur le footer)
+            group: Autres
+        email:
+            type: email
+            label: Email de contact
+            pattern: email
+            info: Email de contact de l'entreprise (Présent sur le footer, utilisé pour le formulaire de contact)
+            group: Autres
+        footerText:
+            type: textarea
+            label: Texte du footer
+            info: Texte du footer
+            group: Autres
+    default_status: held
+    viewless: true
+    singleton: true
+    icon_many: "fa:sliders-h"
+    icon_one: "fa:sliders-h"
 
 # Possible field types:
 #

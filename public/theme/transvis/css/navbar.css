@@ -1,0 +1,180 @@
+#burgerMenu {
+    transition: all 0.3s ease-in-out;
+}
+.nav-point {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+.nav-contact {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--red-color);
+    fill: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    transition: all 0.3s ease-in-out;
+}
+.nav-contact:hover {
+    background-color: var(--light-color);
+    border: var(--red-color) 1px solid;
+}
+.nav-contact:hover svg {
+   fill: var(--red-color);
+
+}
+.nav-item {
+    font-weight: var(--font-weight--bold);
+}
+.nav-link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav-link:hover {
+    color: var(--red-color) !important;
+}
+
+.nav-item.active a {
+    color: var(--red-color) !important;
+    fill: var(--red-color) !important;
+}
+.burger-toggler {
+    display: none;
+}
+.nav-content {
+    display: flex;
+}
+.headerNavLogo{
+    margin-left: 25px;
+    margin-top: 25px;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+        display: none;
+    }
+}
+/* hide point on mobile */
+@media (max-width: 1024px) {
+    .headerNavLogo{
+        margin: auto;
+    }
+    .nav-point {
+        display: none;
+    }
+    .nav-content {
+        width: 70vw;
+        height: 100vh;
+        transform: translateX(-100%);
+        background-color: var(--light-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        flex-direction: column;
+        animation: slideOut 0.5s ease-in-out;
+    }
+    .nav-content ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 70%;
+    }
+    /* purgecss start ignore */
+    .nav-content.appears {
+        display: flex;
+        transform: translateX(0);
+        animation: slideIn 0.5s ease-in-out;
+    }
+    /* purgecss stop ignore */
+    #burger-toggler {
+        z-index: 900;
+        width: 45px;
+        height: 30px;
+        position: relative;
+        margin: 0.75rem;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+
+    #burger-toggler span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 75%;
+        background: var(--red-color);
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+    }
+
+    /* Icon 3 */
+
+    #burger-toggler span:nth-child(1) {
+        top: 0;
+    }
+
+    #burger-toggler span:nth-child(2),
+    #burger-toggler span:nth-child(3) {
+        top: 10px;
+    }
+
+    #burger-toggler span:nth-child(4) {
+        top: 20px;
+    }
+
+    #burger-toggler.open span:nth-child(1) {
+        top: 10px;
+        width: 0;
+        left: 50%;
+    }
+
+    #burger-toggler.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #burger-toggler.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    #burger-toggler.open span:nth-child(4) {
+        top: 10px;
+        width: 0;
+        left: 50%;
+    }
+}

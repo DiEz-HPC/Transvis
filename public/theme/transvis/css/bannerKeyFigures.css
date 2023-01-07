@@ -1,0 +1,55 @@
+.banner-key-figure {
+    background-image: url(../images/savoirs-faire/banner.png.webp);
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+
+.keyFigureTitle {
+    padding-top: 15px;
+    color: var(--light-color);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: var(--font-size-larger);
+    line-height: 44px;
+}
+
+.keyFigure {
+    height: 200px;
+}
+
+.keyLogo{
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.keyFigureNumber {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 49px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.keyFiguretext {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 768px) {
+    .keyFigureTitle {
+        font-size: var(--font-size-title);
+    }
+    .keyFigureNumber {
+        font-size: 2rem;
+    }
+    .keyFiguretext {
+        font-size: 16px;
+    }
+}

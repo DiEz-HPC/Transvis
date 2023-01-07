@@ -1,0 +1,135 @@
+:root {
+    --border-radius-banner: 5px;
+}
+
+.recrutement .banner {
+    height: 368px;
+    position: relative;
+    border-radius: var(--border-radius-banner);
+}
+
+.recrutement .banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    filter: grayscale(1);
+    border-radius: var(--border-radius-banner);
+}
+
+.recrutement .banner .filter-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.6;
+    z-index: 2;
+    border-radius: var(--border-radius-banner);
+}
+
+.tag {
+    position: relative;
+    background-color: var(--red-color);
+    z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+    .tag {
+        font-size: 10px;
+    }
+}
+
+.recrutement .banner .banner-text h1 {
+    color: var(--light-color);
+    z-index: 3;
+}
+
+.recrutement .banner .banner-text h1::before {
+    display: none;
+}
+
+.tags .tag {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.recrutement .content .block-right {
+    background-image: url(../images/bgRed.png.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.recrutement h3{
+    font-size: 36px;
+    font-weight: var(--font-weight--bold);
+    color: var(--dark-color);
+    position: relative;
+    line-height: 44px;
+}
+
+@media screen and (max-width: 768px) {
+    .recrutement h3 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+.send-mail-button {
+    height: 40px;
+}
+.send-mail-button::after {
+    content: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect width='40' height='40' fill='url(%23pattern0)'/%3E%3Cdefs%3E%3Cpattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'%3E%3Cuse xlink:href='%23image0_98_189' transform='scale(0.03125)'/%3E%3C/pattern%3E%3Cimage id='image0_98_189' width='32' height='32' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgEAQAAACJ4248AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAAAGAAAABgAPBrQs8AAAAHdElNRQfmCh4UGzqCqnO2AAAChUlEQVRYw+1WO0grQRQ9sySiRAQbi6QQNFoEFBMUbIwBRdRGBNFCEhA1fjoNllaChdgpiijWgkUaESUiiBY2ipVESBMQ/EREbRSJc14xvLdZk+jGD6/JgYHduzP3nHvm7uwCeeSRx3+GMDOJtNuBwsIfZ+fdnQlyj4e/BZlIWD6XWVKiXx8egjMzAPn98tvbIUIhCwBQ1tdDeDzp5Z+f6zeLi8D4OITfDw4NCe31NWfHqWlATw+4vQ1RXq4/kKurmT0Kh0mfT9nldJK9veTLC2UkQpnqjBlym03lSybJujpycJA04STZ3KzEVFYqsV4veX9Pnp2p5jRD7nCQJyfk0xPZ2alipgXYbOTkpLLvb8zlIuNxNVyuj9e73eTlJRmPU9bW6nElwEI5NQXhdH5ex/Ky0ptIANPTQGMjsLUFHB2R3d1CHBykk3d0ABsbQDQKdHUJ7fr6/RwLhNsNVFeb38zbW8BqFdrVFdnSAlxcADs7lIGA0DY3dfJQCJibA09PIXw+IZ6fTXMYqygqohwZIYUwxjWNXFtTTbW/T769kRMTlFYrubKiGvf4WMUHBtLzmu0B6fWqJqyoyEze308KQTk7q0hjMfWmBAKkEOTSUiYRWQVQ+v0q8ftTS/XJe3Jj0rExMhqlbGrSY5lFZBdAu51yeJgMBslgkHJ+Xj8HspN/vI3pIv4JoCwoIEtLDSPlkNEPoqoqlSSZpPT7c+8lIciFBVJKcnQ0RUAsluErIcm+PoMA7u7mWvmHTshIhCQtEIEA6HAYZgopwb094/K2NnB9Hbi5oWxt/ZoCAAiHgYYGCJM5KGtq1N79Bh4fzf2QyLIyiOLir1qfHQ8PP58zjzzyyBF/ANJo/kNk5tHrAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTEwLTMwVDIwOjI3OjU4KzAwOjAwNODppgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0xMC0zMFQyMDoyNzo1OCswMDowMEW9URoAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjItMTAtMzBUMjA6Mjc6NTgrMDA6MDASqHDFAAAAAElFTkSuQmCC'/%3E%3C/defs%3E%3C/svg%3E%0A");
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+}
+.recrutement h3::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -15px;
+    left: 0;
+    width: 250px;
+    border: 3px solid var(--red-color);
+    background-color: var(--red-color);
+    border-radius: 0.5em;
+    margin: auto;
+}
+
+.btnFile {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 38px;
+    padding: 0;
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    background: var(--dark-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btnFile:hover {
+    filter: brightness(2);
+}
+
+button img {
+    width: 20px;
+    filter: invert(100%);
+}
+
+.consentCheckbox{
+    color: var(--light-color);
+    font-weight: var(--font-weight--bold);
+    font-size: smaller;
+}
+
+.recrutement textarea::placeholder {
+    font-family: "Montserrat", sans-serif !important;
+}

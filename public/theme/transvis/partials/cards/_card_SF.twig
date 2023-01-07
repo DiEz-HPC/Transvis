@@ -1,0 +1,27 @@
+{% use '@theme/partials/buttons/_button-red.twig' %}
+
+{% block cardSFstylesheet %}
+    {{ encore_entry_link_tags('cardSFStyle', null, 'transvis') }}
+    {{ block('buttonRedStylesheet') }}
+{% endblock cardSFstylesheet %}
+
+{% block cardSFContent %}
+    {% set cardsIcon = ['images/savoirs-faire/robot.svg',  'images/savoirs-faire/group.svg', 'images/savoirs-faire/main.svg'] %}
+    {% set cardLink = ['/nos-realisations', '/nos-equipes', '/nos-savoir-faire'] %}
+    {% if card.image.path is not defined or card.image.path is empty %}
+        {% set path = asset(cardsIcon[loop - 1]) %}
+    {% else %}
+        {% set path = asset(card.image.path) %}
+    {% endif %}
+    {% set link = cardLink[loop - 1] %}
+    <div class="card-sf col-3 mt-2 mt-xl-0 d-flex flex-column align-items-center mb-5 mb-lg-0" data-aos="fade-up" data-aos-duration="{{ 500 * loop }}">
+        <div class="logo d-flex justify-content-center my-3">
+            <img class="w-50" src="{{ path }}" alt="logo main">
+        </div>
+        <h3 class="card-sf__title text-center px-3">{{ card.text | upper }}</h3>
+        {%  with { text: "Découvrir", link: link } %}
+            {{ block('buttonRedContent') }}
+        {% endwith %}
+    </div>
+
+{% endblock cardSFContent %}

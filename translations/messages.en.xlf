@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+  <file id="messages.en">
+    <unit id="lONBiUz" name="default-title">
+      <segment>
+        <source>default-title</source>
+        <target>default-title</target>
+      </segment>
+    </unit>
+    <unit id="FIqbGzc" name="reset_password_error">
+      <segment>
+        <source>reset_password_error</source>
+        <target>reset_password_error</target>
+      </segment>
+    </unit>
+    <unit id="ogZAHZ6">
+      <segment>
+        <source>Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe - You have already requested a reset password email. Please check your email or try again soon.</source>
+        <target>Un problème est survenu lors du traitement de votre demande de réinitialisation de mot de passe - You have already requested a reset password email. Please check your email or try again soon.</target>
+      </segment>
+    </unit>
+    <unit id="sB0RYun" name="Adresse mail">
+      <segment>
+        <source>Adresse mail</source>
+        <target>Adresse mail</target>
+      </segment>
+    </unit>
+    <unit id="JrBQ5.0" name="Email du contact ...">
+      <segment>
+        <source>Email du contact ...</source>
+        <target>Email du contact ...</target>
+      </segment>
+    </unit>
+    <unit id="21nrsnI" name="Sujet">
+      <segment>
+        <source>Sujet</source>
+        <target>Sujet</target>
+      </segment>
+    </unit>
+    <unit id="rXOz2do" name="Sujet du mail ...">
+      <segment>
+        <source>Sujet du mail ...</source>
+        <target>Sujet du mail ...</target>
+      </segment>
+    </unit>
+    <unit id="QERVmkw" name="Votre message">
+      <segment>
+        <source>Votre message</source>
+        <target>Votre message</target>
+      </segment>
+    </unit>
+    <unit id=".fWf0o5" name="Votre message ...">
+      <segment>
+        <source>Votre message ...</source>
+        <target>Votre message ...</target>
+      </segment>
+    </unit>
+    <unit id="eQdSCfK" name="Envoyer">
+      <segment>
+        <source>Envoyer</source>
+        <target>Envoyer</target>
+      </segment>
+    </unit>
+    <unit id=".MeoEev" name="String city processor string">
+      <segment>
+        <source>String city processor string</source>
+        <target>String city processor string</target>
+      </segment>
+    </unit>
+    <unit id=".yHun4s" name="Last province contact company">
+      <segment>
+        <source>Last province contact company</source>
+        <target>Last province contact company</target>
+      </segment>
+    </unit>
+    <unit id="0PsI1zu" name="filemanager.delete_folder_missing">
+      <segment>
+        <source>filemanager.delete_folder_missing</source>
+        <target>filemanager.delete_folder_missing</target>
+      </segment>
+    </unit>
+    <unit id="XwuQgYC" name="Votre candidature a bien été envoyée.">
+      <segment>
+        <source>Votre candidature a bien été envoyée.</source>
+        <target>Votre candidature a bien été envoyée.</target>
+      </segment>
+    </unit>
+    <unit id="Ej.WZqo" name="danger">
+      <segment>
+        <source>danger</source>
+        <target>danger</target>
+      </segment>
+    </unit>
+    <unit id="ekJPePm" name="You do not have permission to access this page.">
+      <segment>
+        <source>You do not have permission to access this page.</source>
+        <target>You do not have permission to access this page.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

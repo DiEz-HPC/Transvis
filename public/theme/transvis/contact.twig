@@ -1,0 +1,45 @@
+{#
+record.
+    title: 'text'
+    teaser: 'redactor'
+#}
+
+{% extends '@theme/partials/_master.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('contactStyle', null, 'transvis') }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+    {{ parent() }}
+{%  endblock javascript %}
+
+{% block main %}
+    <div class="row box-top text-center justify-content-center mt-5">
+        <h1 class="mb-4 mt-4" data-aos="fade-up">{{ record.title|upper }}</h1>
+        <div class="col-10" id="contactTeaser">
+            {{ record.teaser }}
+        </div>
+    </div>
+    {% include "@theme/partials/_line.twig" %}
+    <div class="row box-bottom py-2 px-1 px-md-5 text-center" style="background-image: url({{ asset('images/bgRed.png.webp') }}); background-size: cover;">
+        <h2 class="my-4 form-title" data-aos="fade-up">
+            {{ 'Un projet ?' | upper }}
+            <br>
+            {{ 'Venez en discuter' | upper }}
+        </h2>
+        <div class="col-12 col-md-12 col-lg-7">
+            {{ boltform('contact') }}
+        </div>
+        <div class="col-12 col-md-12 col-lg-5 d-flex justify-content-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1150000!2d2.03983881583451!3d48.00846046812351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x356d01e77c96204e!2zNDjCsDAwJzMwLjQiTiAywrAwMiczMS4zIkU!5e0!3m2!1sfr!2sfr!4v1670849941682!5m2!1sfr!2sfr&z=2" width="480" height="370" id="gmap_canvas" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="line mb-3 mt-3 "></div>
+    <div class="row justify-content-center text-center mt-3">
+        <div class="col-10 mb-3">
+            {{ record.other }}
+        </div>
+    </div>
+{% endblock main %}

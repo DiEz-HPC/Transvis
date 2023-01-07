@@ -1,0 +1,51 @@
+{% use '@theme/partials/buttons/_button-red.twig' %}
+{% block homeHeaderStylesheet %}
+{{ encore_entry_link_tags('homeHeaderStyle', null, 'transvis') }}
+    {{ block('buttonRedStylesheet') }}
+{% endblock %}
+
+{% block homeHeaderContent %}
+    <div id="headerVideoDiv" style="background-image: url({{ record.headerImage.path ?? '' }});">
+        <div class="homeNav">
+            {{ include('partials/_header.twig') }}
+        </div>
+        <video controls muted autoplay loop preload="auto" id="videoHeader">
+            <source src="{{ record.headerVideo }}">
+        </video>
+        <div id="headerContent" class="styling">
+                <div class="col-12 col-lg-12 col-xl-6 header-block-left pt-5 pt-sm-0" >
+                    <div class="px-3 px-sm-4" data-aos="fade-right" data-aos-delay="0" data-aos-durationdata-aos-duration="500">{{ record.headerTitle  }}</div>
+                </div>
+                <div class="col-12 col-lg-12 col-xl-6 header-block-right p-4">
+                    <div class="col-12 col-lg-10" data-aos="fade-left" data-aos-delay="0" data-aos-durationdata-aos-duration="500">
+                        {{ record.headerTeaser }}
+                    </div>
+                </div>
+        </div>
+        <div class="container headerHaveProject" data-aos="fade-up" data-aos-delay="500">
+            {% include "@theme/partials/_line.twig" %}
+            <div class=" d-flex flex-column flex-lg-row">
+                <div class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-start">
+                    <div class="headerHaveProjectText text-center text-lg-start mt-4">{{ record.headerBottomTextLeft }}</div>
+                    <div class="d-flex justify-content-center justify-content-lg-start mt-4">
+                        {% with { text: "Contactez-nous", link: '/contact', width: "200px", height: "38px", nextWidth: "8%", upper: false} %}
+                            {{ block('buttonRedContent') }}
+                        {% endwith %}
+                    </div>
+                </div>
+                <div
+                    class="col-lg-6 col-xl-6 align-items-center justify-content-center justify-content-lg-end my-4 mt-lg-0 pb-3 pb-lg-0">
+                    <div class="headerHaveProjectText text-center text-lg-end mt-4 p-0">
+                        {{ record.headerBottomTextRight }}
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
+                        {% with { text: "Linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "18%", external: true, icon: 'images/icons8-linkedin.svg', upper: false} %}
+                            {{ block('buttonRedContent') }}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

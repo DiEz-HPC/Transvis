@@ -1,0 +1,22 @@
+{#
+    tag: text
+#}
+
+{% block tagStylesheet %}
+{{ encore_entry_link_tags('tagStyle', null, 'transvis') }}
+{% endblock %}
+{% block tagJavascript %}
+{{ encore_entry_script_tags('tagSeeMoreJs', null, 'transvis') }}
+{% endblock %}
+{% block tagContent %}
+    {% set name = name ?? tag %}
+    <div class="single-tag-container text-center">
+        <p class="me-2 mb-2 text-center">
+        {% if taxonomies is defined %}
+             <a href="{{ taxonomies is defined ? "/" ~ taxonomies ~ "/" ~ slug : ''  }}" class="tag-link tag">{{ name | upper }}</a>
+        {% else %}
+            <span class="tag-link tag">{{ name | upper }}</span>
+        {% endif %}
+        </p>
+    </div>
+{% endblock %}

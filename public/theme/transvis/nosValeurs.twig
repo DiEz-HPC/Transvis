@@ -1,0 +1,58 @@
+{#
+record.
+    title: 'text'
+    teaser: 'redactor'
+    contentValues: 'collection'
+        contentValue: 'fields"
+            image: 'image"
+            text: 'text'
+    seo
+    slug
+#}
+{% extends '@theme/partials/_master.twig' %}
+
+{% use '@theme/partials/cards/_card_valeur.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('valeursStyle', null, 'transvis') }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+{{ parent() }}
+<script src="{{ asset('js/dependency/jquery-3.6.1.min.js') }}"></script>
+{{ encore_entry_script_tags('timelineJs', null, 'transvis') }}
+{% endblock javascript %}
+
+{% block main %}
+    <div class="nos-valeurs d-flex flex-column mt-5">
+        <div class="block-top d-flex flex-column">
+            <h1 class="text-center pt-1 mb-4 mt-4" data-aos="fade-up">{{ record.title | upper }}</h1>
+            <div class="col-12 text-center px-5" data-aos="fade-up" data-aos-delay="250">
+                {{ record.teaser }}
+            </div>
+        </div>
+        {% include '@theme/partials/_line.twig' %}
+        <div class="block-bottom py-5">
+            <div class="ag-timeline-block">
+                <section class="ag-section">
+                    <div class="ag-format-container">
+                        <div class="js-timeline ag-timeline">
+                            <div class="js-timeline_line ag-timeline_line">
+                                <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+                            </div>
+                            <div class="ag-timeline_list">
+                                {% for valeur in record.contentValues %}
+                                    {% with {valeur: valeur} %}
+                                        {{ block('cardValeurContent') }}
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+

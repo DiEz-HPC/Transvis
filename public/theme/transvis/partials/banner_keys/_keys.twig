@@ -1,0 +1,22 @@
+{% macro keyLogoPath(key, loop) %}
+    {% set keyLogo = ['images/savoirs-faire/diplome.svg', 'images/savoirs-faire/group.svg', 'images/savoirs-faire/robot-industriel.svg'] %}
+    {% if key.image.path is not defined or key.image.path is empty %}
+        {{ asset(keyLogo[loop - 1]) }}
+    {% else %}
+        {{ asset(key.image.path) }}
+    {% endif %}
+{% endmacro keyLogoPath %}
+
+{% block keysContent %}
+    <div class="keyFigure d-flex flex-column align-items-center col-12 col-lg-4 my-5 my-sm-3 my-lg-0" data-aos="fade-up" data-aos-duration="{{ 500 * loop }}">
+        <img class="keyLogo" src="{{ _self.keyLogoPath(key, loop) }}" alt="{{ key.image.alt | default('logo chiffre clé') }}">
+        <div class="d-flex flex-column text-center">
+            <span class="keyFigureNumber text-white my-2" data-number="{{ key.keyNumber is not defined or key.keyNumber is empty ? 0 : key.keyNumber }}">
+                {{ key.keyNumber is not defined or key.keyNumber is empty ? 'A définir' : 0 }}
+            </span>
+            <div class="keyFiguretext text-white">
+                {{ key.text|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

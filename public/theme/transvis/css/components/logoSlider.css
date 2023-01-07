@@ -1,0 +1,39 @@
+/* purgecss start ignore */
+.slider-container {
+    max-width: 100% !important;
+    --bs-gutter-x: 0 !important;
+}
+#sliderContainer .slider-logo {
+    filter: grayscale(100%);
+    height: auto;
+    max-height: 145px;
+    width: 90%;
+    object-fit: contain;
+}
+
+#sliderContainer .slider-logo:hover {
+    filter: grayscale(0%);
+}
+
+.slider-text {
+    border-right: var(--slider-border);
+}
+
+#sliderContainer {
+    padding: 0 !important;
+    border-bottom: var(--slider-border);
+    border-top: var(--slider-border);
+    border-left: var(--slider-border);
+}
+
+#sliderContainer .splide__pagination__page,
+#sliderContainer .splide__arrows {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+   #sliderContainer .slider-logo {
+        max-height: 100px;
+    }
+}
+/* purgecss stop ignore */

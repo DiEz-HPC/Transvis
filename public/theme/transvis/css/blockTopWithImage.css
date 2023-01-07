@@ -1,0 +1,69 @@
+.container-sf {
+    padding: 0 6%;
+}
+
+.block-top .block-left h1:before {
+    margin: 0;
+}
+
+.block-top .block-left h1 {
+    padding-top: 15px;
+}
+
+.block-top .block-left p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-justify: inter-word;
+}
+
+.block-top .block-right {
+    background-size: cover;
+    margin: 15px;
+    height: 80%;
+}
+
+.block-top .block-right img {
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .block-top .block-right {
+        margin-top: 0;
+    }
+}
+
+#image-back {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    z-index: 1;
+}
+
+#image-front {
+    object-fit: cover;
+    object-position: bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.block-right{
+    float: right;  
+    max-width: 40vw;
+    border: 1.5rem;
+}
+.block-right img{
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 1200px) {
+    .block-right {
+        float: none;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+}

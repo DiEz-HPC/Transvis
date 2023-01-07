@@ -1,0 +1,68 @@
+/* purgecss start ignore */
+/* Css spécifique pour le champ "Article" coté visiteur ( peut agir sur tout le site ) */
+.article-h2 {
+    font-size: var(--font-size-title);
+}
+.article-h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight--bold);
+    width: 100%;
+}
+b {
+    color: var(--red-color) !important;
+}
+.article-paragraph b {
+    font-weight: var(--font-weight-light) !important;
+    color: var(--red-color) !important;
+}
+
+.article-ul {
+    padding-left: 0;
+}
+
+.float-right {
+    float: right !important;
+    margin-left: 1rem;
+}
+.float-left {
+    float: left !important;
+    margin-right: 1rem;
+}
+.align-right {
+    text-align: right !important;
+}
+.align-left {
+    text-align: left !important;
+}
+.align-center {
+    text-align: center !important;
+}
+.article-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.superposition {
+    display: inline-block;
+    position: relative;
+}
+.superposition img:first-of-type {
+    height: 100%;
+    width: auto;
+}
+.superposition img:last-of-type {
+    height: 100%;
+    width: 100%;
+}
+.superposition img:nth-of-type(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+/* purgecss stop ignore */

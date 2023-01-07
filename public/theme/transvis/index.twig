@@ -1,25 +1,46 @@
-{% extends 'partials/_master.twig' %}
+{#
+    record:
+        video: 'file"
+        teaser: 'text'
+#}
+
+{% extends '@theme/partials/_master.twig' %}
+
+{% use '@theme/partials/_logo_slider.twig' %}
+{% use '@theme/partials/_homeHeader.twig' %}
+{% use '@theme/partials/_homeNosValeurs.twig' %}
+{% use '@theme/partials/_homeNosSavoirFaire.twig' %}
+{% use '@theme/partials/_homeNosEquipes.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    {{ block('logoSliderStylesheet') }}
+    {{ block('homeHeaderStylesheet') }}
+    {{ block('homeNosValeursStylesheet') }}
+    {{ block('homeSavoirFaireStylesheet') }}
+    {{ block('homeNosEquipesStylesheet') }}
+{% endblock stylesheet %}
+
+{% block javascript %}
+    {{ parent() }}
+    {{ block('logoSliderJavascript')}}
+    {{ block('homeSavoirFaireJavascript') }}
+{%  endblock javascript %}
+
 
 {% block main %}
-
-    {% if record|default %}
-
-        <h1>{{ record|title }}</h1>
-
-        {# Keep this block until the final deploy #}
-        {{ include('partials/_fresh_install.twig') }}
-
-        {# Output the `introduction` field. If it doesn't exist, 'default' to
-           the full excerpt of the current Record #}
-        {{ record.introduction|default(record|excerpt) }}
-
-        {% include 'partials/_image.twig' with ({'image': record|image}) %}
-
-        {{ record.content }}
-
-    
-
-    {% endif %}
-
+    <section id="homePageHeader">
+        {{ block('homeHeaderContent')}}
+    </section>
+    {{ block('logoSliderContent')}}
+    <section id="homeSavoirFaire">
+        {{ block('homeSavoirFaireContent') }}
+    </section>
+    <section>
+        {{ block('homeNosEquipesContent')}}
+    </section>
+      
+    <section class="homeNosValeurs">
+        {{ block('homeNosValeursContent')}}
+    </section>
 {% endblock main %}
-
