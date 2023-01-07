@@ -47,7 +47,7 @@ fields:
             required: true
             label: Nom de votre entreprise
             attr:
-                placeholder: Votre entreprise ...
+                placeholder: Votre entreprise...
                 class: contactInput
             constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
     email:
