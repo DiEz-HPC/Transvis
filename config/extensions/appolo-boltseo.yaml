@@ -15,7 +15,7 @@ keywords_length: 0 #255
 # Default values to consider for the title, meta description and meta keywords
 fields:
     slug: ['slug']
-    title: ['title', 'name']
+    title: ['name', 'title']
     description: ['introduction', 'teaser', 'description', 'body']
     keywords: []
     image: ['image']
