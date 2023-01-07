@@ -29,9 +29,9 @@ li {
 .contact-list-item {
     margin-bottom: 10px;
 }
-.contact-list-item-logo {
+/*.contact-list-item-logo {
     margin-left: 10px;
-}
+}*/
 a {
     color: white;
     text-decoration: none;
@@ -43,8 +43,8 @@ a {
 
 .rounded-link {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: rgba(30, 30, 30, 1);
     display: inline-block;
     text-align: center;

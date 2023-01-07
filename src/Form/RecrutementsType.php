@@ -25,7 +25,7 @@ class RecrutementsType extends AbstractType
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'attr' => [
-                    'placeholder' => 'Votre nom ...',
+                    'placeholder' => 'Votre nom...',
                 ],
                 'required' => true,
                 'constraints' => [
@@ -45,7 +45,7 @@ class RecrutementsType extends AbstractType
                 [
                     'label' => 'Prénom',
                     'attr' => [
-                        'placeholder' => 'Votre prénom ...',
+                        'placeholder' => 'Votre prénom...',
                     ],
                     'required' => true,
                     'constraints' => [
@@ -64,7 +64,7 @@ class RecrutementsType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Adresse mail',
                 'attr' => [
-                    'placeholder' => 'Votre e-mail ...',
+                    'placeholder' => 'Votre e-mail...',
                 ],
                 'required' => true,
                 'constraints' => [

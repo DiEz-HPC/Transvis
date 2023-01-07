@@ -50,21 +50,28 @@ const setLogoSizeSlider = (splideDiv) => {
 
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
+    let customEvent = new Event("modalClosed");
     modal.addEventListener("click", function (e) {
         if (e.target === modal) {
-            stopVideo(modal);
-            modal.style.display = "none";
-            body.style.overflow = "auto";
+            modal.dispatchEvent(customEvent);
         }
     });
     close.addEventListener("click", function () {
+        modal.dispatchEvent(customEvent);
+    });
+
+    modal.addEventListener("modalClosed", function () {
         stopVideo(modal);
         modal.style.display = "none";
         body.style.overflow = "auto";
+        modal.dataset.alreadyOpened = true;
     });
 };
 
 const initCarousel = (carouselDiv, modal) => {
+    if (modal.dataset.alreadyOpened === "true") {
+        return;
+    }
     let carousel = new Splide(carouselDiv, {
         type: "loop",
         focus: "center",
@@ -89,10 +96,9 @@ const initCarousel = (carouselDiv, modal) => {
     carousel.on("move", function () {
         pauseVideo(carouselDiv);
     });
-
-    let close = modal.querySelector(".btn-close-modal");
-    close.addEventListener("click", function () {
-        carousel.destroy();
+    
+    modal.addEventListener("modalClosed", function () {
+        carousel.go(0);
     });
 };
 const setInnerCarouselSize = (carouselDiv) => {
@@ -104,6 +110,9 @@ const setInnerCarouselSize = (carouselDiv) => {
 };
 
 const initLogoSlider = (splideDiv, modal) => {
+    if (modal.dataset.alreadyOpened === "true") {
+        return;
+    }
     new Splide(splideDiv, {
         type: "loop",
         drag: "free",
@@ -119,8 +128,6 @@ const initLogoSlider = (splideDiv, modal) => {
         },
     }).mount({ AutoScroll });
     setLogoSizeSlider(splideDiv);
-
-   
 };
 
 const pauseVideo = (modal) => {
@@ -155,7 +162,7 @@ const hasVideo = (modal) => {
     let imageNotFound = modal.querySelector("#imageNotFound");
     if (videoPlayer) {
         return true;
-    }else if(!imageNotFound){
+    } else if (!imageNotFound) {
         return true;
     }
     return false;

@@ -17,7 +17,7 @@
         </div>
         <div class="col-6 col-xl-2">
             <h6>
-                NAVIGATION
+                NOUS DECOUVRIR
             </h6>
             <div class="red-line my-3"></div>
             {{ menu(
@@ -48,8 +48,8 @@
                     {% include '@theme/images/adress.svg' with {spacing: 55} %}
                 </li>
                 <li class="contact-list-item contact-list-item-logo">
-                    <div class="row align-items-center">
-                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/linkedin.svg') }}" class="rounded-link-img" alt="linkedin"></a>
+                    <div class="row align-items-center justify-content-center">
+                        <a href="{{ options.linkedin|default('https://www.linkedin.com/') }}" target="_blank" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/icons8-linkedin.svg') }}" class="rounded-link-img" alt="linkedin"></a>
                         <a href="mailto:{{ options.email|default('contact@transvis.fr') }}" class="rounded-link d-flex justify-content-center align-items-center"><img src="{{ asset('images/enveloppe.svg') }}" class="rounded-link-img" alt="enveloppe"></a>
                     </div>
                 </li>

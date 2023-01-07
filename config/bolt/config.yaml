@@ -2,7 +2,7 @@
 # in the project root.
 
 # The name of the website
-sitename: Transvis
+sitename: Transvis-CTI
 payoff: Vos machines adaptées. De la conception à l'implantation.
 
 secret: '%env(APP_SECRET)%'

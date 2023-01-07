@@ -8,6 +8,7 @@
 {% endblock %}
 {% block homeSavoirFaireJavascript %}
     {{ block('bannerKeysFiguresJavascript') }}
+    {{ encore_entry_script_tags('superpositionJs', null, 'transvis') }}
 {% endblock %}
 
 {% block homeSavoirFaireContent %}
@@ -20,26 +21,25 @@
         {{record.savoirFaireIntro}}
     </div>
     <div class="m-5" id="homeNSFteaser">
-        {{record.savoirFaireTeaser}}
+        {{ superposition(record.savoirFaireTeaser) }}
     </div>
 
     <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
         {%  with { text: "En savoir plus", link: '/nos-savoir-faire', width: "200px", height: "37px", nextWidth: "8%"} %}
-            {{ block('buttonRedContent') }}
+        {{ block('buttonRedContent') }}
         {% endwith %}
     </div>
 
-    <div
-        class="block-card d-flex flex-column flex-xl-row align-items-center align-items-xl-start justify-content-around col-12 mt-5">
+    <div class="block-card d-flex flex-column flex-xl-row align-items-center align-items-xl-start justify-content-around col-12 mt-5">
         {% for card in cards %}
             {% if card is not empty %}
                 {% with { card: card, loop: loop.index } %}
-                    {{ block('cardSFContent') }}
+                {{ block('cardSFContent') }}
                 {% endwith %}
             {% endif %}
         {% endfor %}
     </div>
     {% with {keyFigures: keyFigures, keyFigureTitle: nosSavoirFaire.keyFigureTitle } %}
-        {{ block('bannerKeysFiguresContent') }}
+    {{ block('bannerKeysFiguresContent') }}
     {% endwith %}
 {% endblock %}
