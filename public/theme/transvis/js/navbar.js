@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (checkIfMobile()) {
         toggleMobileNavbar();
+        handleMobileScrollTop();
     } else {
         // On sauvegarde la hauteur initial de la navbar et du logo pour les réutilisé
         const initialNavbarHeight = getOffset(
@@ -30,24 +31,21 @@ var getOffset = (el) => {
 var toggleMobileNavbar = () => {
     const header = document.querySelector(".headerHaveProject");
     const togglerButton = document.getElementById("burger-toggler");
-
-        togglerButton.addEventListener("click", function (e) {
-            var mobileMenu = document.getElementById("burgerMenu");
-            mobileMenu.classList.toggle("appears");
-            if ( mobileMenu.classList.contains("appears")) {
-                openNavbar(header);
-                hideOnClickOutside(burgerMenu, togglerButton);
-            } else {
-                closeNavbar(header);
-            }
-        });
+    togglerButton.addEventListener("click", function (e) {
+        var mobileMenu = document.getElementById("burgerMenu");
+        mobileMenu.classList.toggle("appears");
+        if (mobileMenu.classList.contains("appears")) {
+            openNavbar(header);
+        } else {
+            closeNavbar(header);
+        }
+    });
 };
 var openNavbar = (header) => {
     if (header) {
         header.style.zIndex = "0";
     }
     document.body.style.overflow = "hidden !important";
-    document.body.style.position = "fixed";
     checkForDnone();
     toggleButton("open");
 };
@@ -74,8 +72,7 @@ var hideOnClickOutside = (burgerMenu, togglerButton) => {
             }
         }
     });
-
-}
+};
 // Fonction qui vérifie si la classe contien d-none
 var checkForDnone = () => {
     if (document.getElementById("burgerMenu").classList.contains("d-none")) {
@@ -181,4 +178,28 @@ var handleScrollTop = (initialLogoHeight) => {
             initialLogoHeight
         );
     }
+};
+
+const handleMobileScrollTop = () => {
+    // On récupère la position du scroll
+    var prevScrollpos = window.pageYOffset;
+    // On écoute le scroll
+    window.onscroll = function () {
+        // On récupère la nouvelle position du scroll
+        var currentScrollPos = window.pageYOffset;
+        // On récupère la navbar
+        var header = document.querySelector("#burger-toggler");
+
+        // Si on scroll vers le haut
+        if (prevScrollpos > currentScrollPos) {
+            header.style.position = "fixed";
+            header.style.top = "0";
+            header.style.left = "0";
+        } else {
+            // Sinon on scroll vers le bas
+            // On enlève la navbar
+            header.style.top = "-250px";
+        }
+        prevScrollpos = currentScrollPos;
+    };
 };
