@@ -147,6 +147,7 @@ const stopVideo = (modal) => {
 const initVideo = (modal) => {
     var videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
+        videoPlayer.play();
         videoPlayer.addEventListener(
             "play",
             function () {

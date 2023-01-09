@@ -39,7 +39,7 @@
                         {{ record.headerBottomTextRight }}
                     </div>
                     <div class="d-flex justify-content-center justify-content-lg-end mt-4 p-0">
-                        {% with { text: "Linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "18%", external: true, icon: 'images/icons8-linkedin.svg', upper: false} %}
+                        {% with { text: "Linked", link:(options.linkedin|default('https://www.linkedin.com/')), width: "150px", height: "38px", nextWidth: "15%", external: true, icon: 'images/icons8-linkedin.svg', upper: false, spacing: 'm-0'} %}
                             {{ block('buttonRedContent') }}
                         {% endwith %}
                     </div>

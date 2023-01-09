@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (checkIfMobile()) {
         toggleMobileNavbar();
+        handleMobileScrollTop();
     } else {
         // On sauvegarde la hauteur initial de la navbar et du logo pour les réutilisé
-        const initialNavbarHeight = getOffset(document.querySelector("main")).top;
-        const initialLogoHeight = document.querySelector(".headerNavLogo").offsetHeight;
+        const initialNavbarHeight = getOffset(
+            document.querySelector("main")
+        ).top;
+        const initialLogoHeight =
+            document.querySelector(".headerNavLogo").offsetHeight;
         hideOnScroll(initialNavbarHeight, initialLogoHeight);
     }
 });
@@ -15,47 +19,60 @@ var checkIfMobile = () => {
 };
 
 // Fonction qui permet de récupérer la position d'un élément
-var getOffset = ( el ) => {
+var getOffset = (el) => {
     var _y = 0;
-    while( el && !isNaN( el.offsetTop ) ) {
+    while (el && !isNaN(el.offsetTop)) {
         _y += el.offsetTop - el.scrollTop;
         el = el.offsetParent;
     }
-    return { top: _y};
-}
+    return { top: _y };
+};
 // Fonction qui permet d'ouvrir et fermé le menu burger
 var toggleMobileNavbar = () => {
     const header = document.querySelector(".headerHaveProject");
-    document
-        .getElementById("burger-toggler")
-        .addEventListener("click", function () {
-            document.getElementById("burgerMenu").classList.toggle("appears");
-            if (
-                document
-                    .getElementById("burgerMenu")
-                    .classList.contains("appears")
-            ) {
-                if (header) {
-                    header.style.zIndex = "0";
-                }
-
-                document.body.style.overflow = "hidden !important";
-                document.body.style.position = "fixed";
-                checkForDnone();
-                toggleButton("open");
-            } else {
-                toggleButton("close");
-                document.body.style.overflow = "auto";
-                document.body.style.position = "relative";
-                if (header) {
-                    setTimeout(function () {
-                        header.style.zIndex = "999";
-                    }, 500);
-                }
-            }
-        });
+    const togglerButton = document.getElementById("burger-toggler");
+    togglerButton.addEventListener("click", function (e) {
+        var mobileMenu = document.getElementById("burgerMenu");
+        mobileMenu.classList.toggle("appears");
+        if (mobileMenu.classList.contains("appears")) {
+            openNavbar(header);
+        } else {
+            closeNavbar(header);
+        }
+    });
+};
+var openNavbar = (header) => {
+    if (header) {
+        header.style.zIndex = "0";
+    }
+    document.body.style.overflow = "hidden !important";
+    checkForDnone();
+    toggleButton("open");
+};
+var closeNavbar = (header) => {
+    toggleButton("close");
+    document.body.style.overflow = "auto";
+    document.body.style.position = "relative";
+    if (header) {
+        setTimeout(function () {
+            header.style.zIndex = "999";
+        }, 500);
+    }
 };
 
+var hideOnClickOutside = (burgerMenu, togglerButton) => {
+    document.addEventListener("click", function (e) {
+        if (burgerMenu.classList.contains("appears")) {
+            if (
+                !burgerMenu.contains(e.target) &&
+                !togglerButton.contains(e.target)
+            ) {
+                burgerMenu.classList.remove("appears");
+                closeNavbar();
+            }
+        }
+    });
+};
 // Fonction qui vérifie si la classe contien d-none
 var checkForDnone = () => {
     if (document.getElementById("burgerMenu").classList.contains("d-none")) {
@@ -100,14 +117,14 @@ var hideOnScroll = (initialNavbarHeight, initialLogoHeight) => {
     };
 };
 
-var setNavbarStyle = (
-    navbar,
-    isTop = false,
-    initialLogoHeight = 150
-) => {
+var setNavbarStyle = (navbar, isTop = false, initialLogoHeight = 150) => {
     // On récupère les couleurs du thème
-    var blackColor = getComputedStyle(document.documentElement).getPropertyValue("--dark-color");
-    var whiteColor = getComputedStyle(document.documentElement).getPropertyValue("--light-color");
+    var blackColor = getComputedStyle(
+        document.documentElement
+    ).getPropertyValue("--dark-color");
+    var whiteColor = getComputedStyle(
+        document.documentElement
+    ).getPropertyValue("--light-color");
     // On définit le style de la navbar
     var css = {
         background: checkIfHomePage() ? blackColor : whiteColor,
@@ -132,7 +149,8 @@ var setNavbarStyle = (
         css.backdropFilter = "none";
         css.webkitBackdropFilter = "none";
         css.padding = "0";
-        document.querySelector(".headerNavLogo").style.height = initialLogoHeight + "px";
+        document.querySelector(".headerNavLogo").style.height =
+            initialLogoHeight + "px";
         document.querySelector(".headerNavLogo").style.marginTop = "25px";
     }
     // On applique le style à la navbar
@@ -160,4 +178,28 @@ var handleScrollTop = (initialLogoHeight) => {
             initialLogoHeight
         );
     }
+};
+
+const handleMobileScrollTop = () => {
+    // On récupère la position du scroll
+    var prevScrollpos = window.pageYOffset;
+    // On écoute le scroll
+    window.onscroll = function () {
+        // On récupère la nouvelle position du scroll
+        var currentScrollPos = window.pageYOffset;
+        // On récupère la navbar
+        var header = document.querySelector("#burger-toggler");
+
+        // Si on scroll vers le haut
+        if (prevScrollpos > currentScrollPos) {
+            header.style.position = "fixed";
+            header.style.top = "0";
+            header.style.left = "0";
+        } else {
+            // Sinon on scroll vers le bas
+            // On enlève la navbar
+            header.style.top = "-250px";
+        }
+        prevScrollpos = currentScrollPos;
+    };
 };

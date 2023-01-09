@@ -1,7 +1,7 @@
 {% use '@theme/partials/_logo_slider.twig' %}
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% block videoModalJavascript %}
-{{ encore_entry_script_tags('nosRealisationModalJs', null, 'transvis') }}
+    {{ encore_entry_script_tags('nosRealisationModalJs', null, 'transvis') }}
     {{ block('buttonRedStylesheet') }}
 {% endblock videoModalJavascript %}
 
@@ -57,22 +57,27 @@
                         {% endwith %}
                     {% endif %}
                 </div>
-                <div class="row">
-                {% with {id : 'logoSliderModal'} %}
-                    {{ block('logoSliderContent')}}
-                {% endwith %}
-                </div>
-
-                <div class="row modalFooter align-items-center justify-content-center" style="background-image: url({{ asset('images/bgRed.png.webp') }}); background-size: cover;">
-                    <div class="text-center modalContactText">
-                        <p>Un projet ?</p>
-                        <p>Venez en discuter</p>
+                <div class="row modalFooter" style="background-image: url({{ asset('images/bgRed.png.webp') }}); background-size: cover;">
+                    <div class="modalContactText d-flex justify-content-end align-items-center col-6">
+                        <div class="d-flex flex-column text-center">
+                            <p>Un projet ?</p>
+                            <p>Venez en discuter</p>
+                        </div>
                     </div>
-                    <br>
-                    {%  with { text: "Contactez-nous", link: '/contact' , width: "200px", height: "37px", nextWidth: "0%", isBlack: true} %}
-                    {{ block('buttonRedContent') }}
+
+                    <div class="d-flex justify-content-start align-items-center col-6">
+                        {%  with { text: "Contactez-nous", link: '/contact' , width: "200px", height: "37px", nextWidth: "0%", isBlack: true} %}
+                        {{ block('buttonRedContent') }}
+                        {% endwith %}
+                    </div>
+                </div>
+                <div class="row">
+                    {% with {id : 'logoSliderModal'} %}
+                    {{ block('logoSliderContent')}}
                     {% endwith %}
                 </div>
+
+
             </div>
         </div>
 

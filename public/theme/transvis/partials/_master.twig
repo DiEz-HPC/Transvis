@@ -6,7 +6,7 @@
         <meta
         name="viewport" content="width=device-width, initial-scale=1.0">
         {# make sure we always display a proper title: The record's title if there is one, appended with the
-                                   sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
+                                           sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
         <title>{{ seo.title() }}</title>
         {{ seo.metatags() }}
         <link rel="preload" href="{{ asset('fonts/Montserrat-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
@@ -27,8 +27,7 @@
         {% if record is defined and record.contentType != 'accueil' or records is defined %}
             {{ include('partials/_header.twig') }}
         {% endif %}
-        {% block rgpd %}
-        {% endblock %}
+        {% block rgpd %}{% endblock %}
         <main>
             {% block body %}
 
@@ -43,10 +42,8 @@
 
     </body>
     {% block javascript %}
-
         {{ encore_entry_script_tags('appJs', null, 'transvis') }}
-       {# {{ encore_entry_script_tags('bootstrapJs', null, 'transvis') }} #}
+        {# {{ encore_entry_script_tags('bootstrapJs', null, 'transvis') }} #}
         {{ encore_entry_script_tags('navbarJs', null, 'transvis') }}
-
     {% endblock javascript %}
 </html>
