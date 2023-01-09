@@ -63,7 +63,6 @@ var closeNavbar = (header) => {
 };
 
 var hideOnClickOutside = (burgerMenu, togglerButton) => {
-   console.log("hideOnClickOutside")
     document.addEventListener("click", function (e) {
         if (burgerMenu.classList.contains("appears")) {
             if (
