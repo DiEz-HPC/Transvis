@@ -4,7 +4,9 @@
         <div class="col-12 col-xl-6 my-5 row">
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center col-lg-4">
                 {% if options.logo is defined and options.logo is not empty %}
-                    <img src="{{ asset(options.logo) }}" class="footerCorpLogo" alt="Logo">
+                    <a href="/">
+                        <img src="{{ asset(options.logo) }}" class="footerCorpLogo" alt="Logo">
+                    </a>
                 {% else %}
                     <div class="alert alert-danger" role="alert">
                         Veuillez configurer le logo dans le back-office
