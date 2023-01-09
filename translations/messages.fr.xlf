@@ -607,5 +607,11 @@
         <target>DÉPOSER MON CV</target>
       </segment>
     </unit>
+    <unit id="J1UTq0q" name="Votre entreprise...">
+      <segment>
+        <source>Votre entreprise...</source>
+        <target>Votre entreprise...</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
