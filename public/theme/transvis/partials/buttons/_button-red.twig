@@ -24,11 +24,14 @@ nextWidith: arrow logo width default 10%
 {% if upper is not defined %}
 {% set upper = true %}
 {% endif %}
+{% if spacing is not defined %}
+{% set spacing = 'me-2' %}
+{% endif %}
     <a class="btn-link d-flex justify-content-center align-items-center btn-link-more {{ isBlack ? 'btn-link-dark' : 'button-link' }}" href="{{ link ?? '' }}"
        style="width: {{ width ?? '' }}; height: {{ height ?? '' }}"
        {{ external ? 'target="_blank"' : '' }}
        >
-        <span class="me-2 align-baseline">
+        <span class="{{ spacing }} align-baseline">
         {% if upper is true %}
         {{ text | upper }}
         {% else %}

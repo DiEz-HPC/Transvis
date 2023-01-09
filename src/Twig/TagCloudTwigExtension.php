@@ -29,12 +29,13 @@ class TagCloudTwigExtension extends AbstractExtension
         $om = $this->objectManager;
         $qb = $om->createQueryBuilder();
         $qb->select("t.name, t.slug")
-            ->addSelect("count(c) as count")
-            ->from(Taxonomy::class, 't')
-            ->leftJoin('t.content', 'c')          
-            ->where("t.type = '".$taxonomyType."'")
-            ->groupBy("t.id")
-            ->orderBy("t.name");
+        ->addSelect("count(c) as count")
+        ->from(Taxonomy::class, 't')
+        ->leftJoin('t.content', 'c')
+        ->where("t.type = '".$taxonomyType."'")
+        ->groupBy("t.id")
+        ->having("count(c) > 0")
+        ->orderBy("t.name");
         $query = $qb->getQuery();
         $results = $query->getResult();
         return $results;
