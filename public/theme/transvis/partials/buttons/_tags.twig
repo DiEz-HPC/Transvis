@@ -13,7 +13,7 @@
     <div class="single-tag-container text-center">
         <p class="me-2 mb-2 text-center">
         {% if taxonomies is defined %}
-             <a href="{{ taxonomies is defined ? "/" ~ taxonomies ~ "/" ~ slug : ''  }}" class="tag-link tag">{{ name | upper }}</a>
+             <a href="{{ taxonomies is defined ? "/" ~ taxonomies ~ "/" ~ slug ~ '#filtre-Realisations'  }}" class="tag-link tag">{{ name | upper }}</a>
         {% else %}
             <span class="tag-link tag">{{ name | upper }}</span>
         {% endif %}
