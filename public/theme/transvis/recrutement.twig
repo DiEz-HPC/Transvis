@@ -12,7 +12,7 @@ Record.
 {% extends '@theme/partials/_master.twig' %}
 {% use '@theme/partials/buttons/_tags.twig' %}
 
-{% set tags = [record.description.contrat, 'temps ' ~ record.description.temps, record.description.salary ~ '€ annuel'] %}
+{% set tags = [record.description.contrat, 'temps ' ~ record.description.temps, record.description.salary] %}
 
 {% block stylesheet %}
     {{ parent() }}
@@ -43,11 +43,6 @@ Record.
                 {% include '@theme/partials/_line.twig' with {margin: 'mt-3 mb-5'} %}
                 <div class="px-3 px-xl-5">
                     <h2 class="text-center">{{ 'Description du poste' | upper }}</h2>
-                    <div class="tags d-flex justify-content-center my-3">
-                        {% for tag in tags %}
-                            {{ block('tagContent') }}
-                        {% endfor %}
-                    </div>
                     <div class="description text-center mb-2">
                         {{ record.description.description | raw }}
                     </div>
