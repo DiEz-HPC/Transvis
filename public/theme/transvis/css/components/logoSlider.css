@@ -18,6 +18,9 @@
 .slider-text {
     border-right: var(--slider-border);
 }
+.logoSliderText {
+    font-size: var(--font-size-title);
+}
 
 #sliderContainer {
     padding: 0 !important;
