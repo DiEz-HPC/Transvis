@@ -15,7 +15,9 @@
         height: 340px;
     }
 }
-
+.container-sf {
+    padding: 0 6%;
+}
 
 .card-recrutement .block-image {
     height: calc(var(--card-recrutement-height)  * .4);
