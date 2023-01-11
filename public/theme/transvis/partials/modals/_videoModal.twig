@@ -34,8 +34,8 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     {% if record.video is not null and record.video is not empty %}
-                                        <li class="splide__slide  d-flex align-items-center justify-content-center">
-                                            <video controls muted id="videoPlayer">
+                                        <li class="splide__slide  d-flex align-items-center justify-content-center" data-splide-html-video='{{ record.video }}'>
+                                            <video controls muted id="videoPlayer" class="d-none">
                                                 <source src="{{ record.video }}" type="video/webm">
                                             </video>
                                         </li>
@@ -45,6 +45,9 @@
                                             <img data-splide-lazy="{{ asset(picture) }}" alt="{{ picture.title }}" class="img-responsive" style="object-fit: contain;">
                                         </li>
                                     {% endfor %}
+                                    <li class="splide__slide  d-flex align-items-center justify-content-center">
+                                        <img data-splide-lazy="{{ asset("images/Transvis800px.png.webp") }}" alt="logo transvis" class="img-responsive" style="object-fit: contain;">
+                                    </li>
                                 </ul>
                             </div>
                         </div>
