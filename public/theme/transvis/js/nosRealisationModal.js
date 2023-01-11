@@ -147,14 +147,16 @@ const stopVideo = (modal) => {
 const initVideo = (modal) => {
     var videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
-        videoPlayer.play();
         videoPlayer.addEventListener(
             "play",
             function () {
+                console.log("video played");
                 videoPlayer.currentTime = 0;
             },
             { once: true }
         );
+        videoPlayer.play();
+
     }
 };
 
