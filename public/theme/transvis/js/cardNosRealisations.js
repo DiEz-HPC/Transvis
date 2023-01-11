@@ -4,9 +4,9 @@ window.addEventListener("load", function () {
         const isCaptured = card.dataset.iscaptured;
         if(isCaptured === '0') {
             setTimeout(function(){
-                modal = card.querySelector(".modalYoutube");                   
+                modal = card.querySelector(".modalYoutube");
                 const video = modal.querySelector("video");
-                var time = card.dataset.timerecord;
+                let time = card.dataset.timerecord;
                 if(time.length === 0){
                     time = 1;
                 }

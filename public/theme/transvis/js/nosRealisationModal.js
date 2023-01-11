@@ -1,5 +1,6 @@
-import { Splide } from "@splidejs/splide";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import {Splide} from "@splidejs/splide";
+import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
+
 document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
     let cards = document.querySelectorAll(".cardNosRealisations");
@@ -69,9 +70,11 @@ const closeModal = (modal, body) => {
 };
 
 const initCarousel = (carouselDiv, modal) => {
+
     if (modal.dataset.alreadyOpened === "true") {
         return;
     }
+
     let carousel = new Splide(carouselDiv, {
         type: "loop",
         focus: "center",
@@ -85,18 +88,20 @@ const initCarousel = (carouselDiv, modal) => {
             speed: 0,
         },
         breakpoints: {
-            1200: { perPage: 1, gap: "1rem" },
-            640: { perPage: 1, gap: "5rem" },
+            1200: {perPage: 1, gap: "1rem"},
+            640: {perPage: 1, gap: "5rem"},
         },
     });
     carousel.mount();
+
+    initVideo(modal);
 
     setInnerCarouselSize(carouselDiv);
 
     carousel.on("move", function () {
         pauseVideo(carouselDiv);
     });
-    
+
     modal.addEventListener("modalClosed", function () {
         carousel.go(0);
     });
@@ -123,10 +128,10 @@ const initLogoSlider = (splideDiv, modal) => {
             speed: 1,
         },
         breakpoints: {
-            1200: { perPage: 3, gap: "1rem" },
-            640: { perPage: 2, gap: 0 },
+            1200: {perPage: 3, gap: "1rem"},
+            640: {perPage: 2, gap: 0},
         },
-    }).mount({ AutoScroll });
+    }).mount({AutoScroll});
     setLogoSizeSlider(splideDiv);
 };
 
@@ -145,7 +150,7 @@ const stopVideo = (modal) => {
 };
 
 const initVideo = (modal) => {
-    var videoPlayer = modal.querySelector("video");
+    const videoPlayer = modal.querySelector("video");
     if (videoPlayer) {
         videoPlayer.addEventListener(
             "play",
@@ -153,10 +158,9 @@ const initVideo = (modal) => {
                 console.log("video played");
                 videoPlayer.currentTime = 0;
             },
-            { once: true }
+            {once: true}
         );
-        videoPlayer.play();
-
+        videoPlayer.play().then();
     }
 };
 
