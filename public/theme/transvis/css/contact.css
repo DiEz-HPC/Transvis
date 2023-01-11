@@ -39,3 +39,6 @@ iframe{
     font-weight: var(--font-weight--bold);
     font-size: smaller;
 }
+.container-sf {
+    padding: 0 6%;
+}

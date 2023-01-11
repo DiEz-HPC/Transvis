@@ -7,7 +7,9 @@
     overflow-x: hidden;
 
 }
-
+.container-sf {
+    padding: 0 6%;
+}
 .js-ag-active .logo-valeur {
     filter: invert(100%);
 }
