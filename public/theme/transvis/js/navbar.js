@@ -36,6 +36,7 @@ var toggleMobileNavbar = () => {
         mobileMenu.classList.toggle("appears");
         if (mobileMenu.classList.contains("appears")) {
             openNavbar(header);
+            hideOnClickOutside(mobileMenu, togglerButton);
         } else {
             closeNavbar(header);
         }
