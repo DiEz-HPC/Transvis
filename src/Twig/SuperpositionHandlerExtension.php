@@ -11,22 +11,20 @@ use Twig\Extension\AbstractExtension;
 class SuperpositionHandlerExtension extends AbstractExtension
 {
 
-
-        public function __construct(private $publicFolder)
-        {
-            $this->publicFolder = $publicFolder;
-        }
-    
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('superposition', [$this, 'superposition']),
         ];
     }
 
-    public function superposition(Markup $content): Markup
+    public function superposition(Markup|string $content): Markup
     {
-        $dom = new DOMDocument;
+        if (!$content instanceof Markup) {
+            $content = new Markup($content, 'UTF-8');
+        }
+
+        $dom = new DOMDocument();
         @$dom->loadHTML('<?xml encoding="utf-8"?>' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $superposition = $dom->getElementsByTagName('figure');
 
@@ -39,9 +37,9 @@ class SuperpositionHandlerExtension extends AbstractExtension
             // On ajoute l'image avant le premier enfant de la balise figure
             $superposition->insertBefore($img, $superposition->firstChild);
         }
-        $message_encoded = mb_convert_encoding($dom->saveHTML() , 'HTML-ENTITIES', 'UTF-8');
+        $message_encoded = mb_convert_encoding($dom->saveHTML(), 'HTML-ENTITIES', 'UTF-8');
         return new Markup($message_encoded, 'UTF-8');
-        
+
     }
 
 }
