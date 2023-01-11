@@ -1,5 +1,7 @@
-import {Splide} from "@splidejs/splide";
-import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
+import { Splide } from "@splidejs/splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Video } from "@splidejs/splide-extension-video";
+import "@splidejs/splide-extension-video/dist/css/splide-extension-video.min.css";
 
 document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll(".modalYoutube");
@@ -30,7 +32,7 @@ const openModal = (modals, body, nbDiv) => {
     let splideDiv = modal.querySelector("#logoSliderModal");
     let carouselDiv = modal.querySelector("#carouselSlider");
     if (hasVideo(modal)) {
-        initVideo(modal);
+        //initVideo(modal);
         // init carousel
         initCarousel(carouselDiv, modal);
         // init logo slider
@@ -70,12 +72,23 @@ const closeModal = (modal, body) => {
 };
 
 const initCarousel = (carouselDiv, modal) => {
-
     if (modal.dataset.alreadyOpened === "true") {
         return;
     }
 
     let carousel = new Splide(carouselDiv, {
+        video: {
+            loop: true,
+            mute: true,
+            autoplay: true,
+            playerOptions: {
+                htmlVideo: {
+                    autoplay: true,
+                    muted: true,
+                    preload: "auto",
+                },
+            },
+        },
         type: "loop",
         focus: "center",
         perPage: 1,
@@ -88,13 +101,11 @@ const initCarousel = (carouselDiv, modal) => {
             speed: 0,
         },
         breakpoints: {
-            1200: {perPage: 1, gap: "1rem"},
-            640: {perPage: 1, gap: "5rem"},
+            1200: { perPage: 1, gap: "1rem" },
+            640: { perPage: 1, gap: "5rem" },
         },
     });
-    carousel.mount();
-
-    initVideo(modal);
+    carousel.mount({ Video });
 
     setInnerCarouselSize(carouselDiv);
 
@@ -128,10 +139,10 @@ const initLogoSlider = (splideDiv, modal) => {
             speed: 1,
         },
         breakpoints: {
-            1200: {perPage: 3, gap: "1rem"},
-            640: {perPage: 2, gap: 0},
+            1200: { perPage: 3, gap: "1rem" },
+            640: { perPage: 2, gap: 0 },
         },
-    }).mount({AutoScroll});
+    }).mount({ AutoScroll });
     setLogoSizeSlider(splideDiv);
 };
 
@@ -158,7 +169,7 @@ const initVideo = (modal) => {
                 console.log("video played");
                 videoPlayer.currentTime = 0;
             },
-            {once: true}
+            { once: true }
         );
         videoPlayer.play().then();
     }
