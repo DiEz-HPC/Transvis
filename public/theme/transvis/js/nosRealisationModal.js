@@ -32,7 +32,6 @@ const openModal = (modals, body, nbDiv) => {
     let splideDiv = modal.querySelector("#logoSliderModal");
     let carouselDiv = modal.querySelector("#carouselSlider");
     if (hasVideo(modal)) {
-        //initVideo(modal);
         // init carousel
         initCarousel(carouselDiv, modal);
         // init logo slider
