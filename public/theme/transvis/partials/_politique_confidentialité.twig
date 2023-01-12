@@ -52,6 +52,30 @@
                             <td>{{ options.email }}</td>
                         </tr>
                     {% endif %}
+                    {% if rgpd.hosterName is defined and rgpd.hosterName is not null %}
+                        <tr>
+                            <td>Nom de l'hébergeur :</td>
+                            <td>{{ rgpd.hosterName }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if rgpd.hosterSocial is defined and rgpd.hosterSocial is not null %}
+                        <tr>
+                            <td>Raison social de l'hébergeur :</td>
+                            <td>{{ rgpd.hosterSocial }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if rgpd.hosterAddress is defined and rgpd.hosterAddress is not null %}
+                        <tr>
+                            <td>Adresse de l'hébergeur :</td>
+                            <td>{{ rgpd.hosterAddress }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if rgpd.hosterPhone is defined and rgpd.hosterPhone is not null %}
+                        <tr>
+                            <td>Numéro de l'hébergeur :</td>
+                            <td>{{ rgpd.hosterPhone }}</td>
+                        </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div>
