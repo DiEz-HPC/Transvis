@@ -74,7 +74,7 @@
 }
 .headerHaveProject {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     right: 0;
     left: 0;
     margin: auto;
@@ -147,10 +147,3 @@
 
 }
 
-/* purgecss start ignore */
-@media screen and (max-height: 1024px) {
-    #headerContent .article-paragraph {
-        font-size: .9rem;
-    }
-}
-/* purgecss end ignore */
