@@ -20,6 +20,7 @@ assignable_roles:
       ROLE_PAGE_CONTACT,
       ROLE_VOS_OPTIONS,
       ROLE_ACCUEIL,
+      ROLE_MENTIONS_LEGAL,
   ]
 
 # These permissions are the 'global' permissions; these are not tied
@@ -174,6 +175,12 @@ contenttypes:
         create: [ROLE_VOS_OPTIONS]
         change-ownership: [ROLE_VOS_OPTIONS]
         view: [ROLE_VOS_OPTIONS]
+
+    Mentions legal:
+        edit: [ROLE_MENTIONS_LEGAL, CONTENT_OWNER]
+        create: [ROLE_MENTIONS_LEGAL]
+        change-ownership: [ROLE_MENTIONS_LEGAL]
+        view: [ROLE_MENTIONS_LEGAL]
 
 # This is an example of how to define Contenttype specific permissions
 #
