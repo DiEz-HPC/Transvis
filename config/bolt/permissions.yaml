@@ -129,9 +129,9 @@ contenttype-default:
 contenttypes:
     nos-realisations:
         edit: [ROLE_NOS_REALISATIONS, CONTENT_OWNER]
-        create: [ROLE_NOSREALISATIONS]
-        change-ownership: [ROLE_NOSREALISATIONS]
-        view: [ROLE_NOSREALISATIONS]
+        create: [ROLE_NOS_REALISATIONS]
+        change-ownership: [ROLE_NOS_REALISATIONS]
+        view: [ROLE_NOS_REALISATIONS]
 
     accueil:
         edit: [ROLE_ACCUEIL, CONTENT_OWNER]
