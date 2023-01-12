@@ -551,6 +551,62 @@ vosOptions:
     icon_many: "fa:sliders-h"
     icon_one: "fa:sliders-h"
 
+mentionsLegal: 
+    name: Mentions légal
+    singular_name: Mention légal
+    slug: Mentions legal
+    fields:
+      social:
+        type: text
+        label: Raison sociale
+        info: Raison sociale
+        group: Entreprise
+      type:
+        type: text
+        label: Forme juridique
+        info: Forme juridique
+        group: Entreprise
+      capital:
+        type: text
+        label: Capital social
+        info: Capital social
+        group: Entreprise
+      rcs:
+        type: text
+        label: Numéro d’inscription RCS
+        info: Numéro d’inscription RCS
+        group: Entreprise
+      tva:
+        type: text
+        label: Numéro TVA Intracommunautaire
+        info: Numéro TVA Intracommunautaire
+        group: Entreprise
+      hosterName:
+        type: text
+        label: Nom de l'hébergeur
+        info: Nom de l'hébergeur
+        group: Hébergeur
+      hosterSocial:
+        type: text
+        label: Raison social de l'hébergeur
+        info: Raison social de l'hébergeur
+        group: Hébergeur
+      hosterAddress:
+        type: text
+        label: Adresse de l'hébergeur
+        info: Adresse de l'hégergeur
+        group: Hébergeur
+      hosterPhone:
+        type: text
+        label: Téléphone de l'hébergeur
+        info: Téléphone de l'hébergeur
+        group: Hébergeur
+    default_status: held
+    viewless: true
+    singleton: true
+    icon_many: "fa:balance-scale-right"
+    icon_one: "fa:balance-scale-right"
+    show_on_dashboard: false
 # Possible field types:
 #
 # text - varchar(256) - input type text.
