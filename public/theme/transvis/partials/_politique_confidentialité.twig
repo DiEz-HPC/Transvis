@@ -8,9 +8,58 @@
     {{ include('partials/_header.twig') }}
 {% endblock %}
 {% block main %}
+    {% setcontent rgpd = "Mentions legal" %}
+    {% setcontent options = "Vos options" %}
     <section class="container rgpd">
+        <div class="title d-flex justify-content-center">
+            <table class="table d-flex flex-column justify-content-center align-items-center">
+                <thead>
+                    <tr class='text-center'>
+                        <th colspan="2">
+                            <h1 class="mt-5">MENTIONS LÉGAL</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if rgpd.social is defined and rgpd.social is not null %}
+                        <tr>
+                            <td>Raison sociale :</td>
+                            <td>{{ rgpd.social }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if rgpd.type is defined and rgpd.type is not null %}
+                        <tr>
+                            <td>Forme juridique :</td>
+                            <td>{{ rgpd.type }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if rgpd.capital is defined and rgpd.capital is not null %}
+                        <tr>
+                            <td>Capital social :</td>
+                            <td>{{ rgpd.capital }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if options.adresse is defined and options.adresse is not null %}
+                        <tr>
+                            <td>Adresse :</td>
+                            <td>
+                                {{ options.adresse }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if options.email is defined and options.email is not null %}
+                        <tr>
+                            <td>Adresse e-mail :</td>
+                            <td>{{ options.email }}</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
         <div class="title text-center">
-            <p><br><br><h1>POLITIQUE DE CONFIDENTIALITÉ</h1>www.transvis.fr<br>Transvis<br><br>Type de site&nbsp;: vitrine
+            <p><br><br><h1>POLITIQUE DE CONFIDENTIALITÉ</h1>www.transvis.fr<br>Raison social :
+                {% if rgpd.social is defined and rgpd.social is not null %}
+                    {{ rgpd.social }}
+                {% endif %}<br>Type de site&nbsp;: vitrine
             </p>
         </div>
         <div class="content">
@@ -223,8 +272,15 @@
             <h3>Comment modifier, supprimer ou contester les données recueillies</h3>
             <p>Si vous souhaitez que vos renseignements soient supprimés ou modifiés d’une façon ou d’une autre, veuillez communiquer avec notre agent de protection de la vie privée ici :
             </p>
-            <p>02 38 52 78 78<br>contact@transvis.fr<br>3 rue Pierre Durand, 45470 Rebréchien
-            </p>
+            {% if options.telephone is defined and options.telephone is not null %}
+                <p>{{ options.telephone }}</p>
+            {% endif %}
+            {% if options.email is defined and options.email is not null %}
+                <p>{{ options.email }}</p>
+            {% endif %}
+            {% if options.adresse is defined and options.adresse is not null %}
+                <p>{{ options.adresse }}</p>
+            {% endif %}
         </div>
         <div>
             <p>
@@ -235,7 +291,16 @@
         </div>
         <div>
             <h3>Contact</h3>
-            <p>Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit&nbsp;:<br>02 38 52 78 78<br>contact@transvis.fr<br>3 rue Pierre Durand, 45470 Rebréchien
+            <p>Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit&nbsp;:
+                {% if options.telephone is defined and options.telephone is not null %}
+                    <p>{{ options.telephone }}</p>
+                {% endif %}
+                {% if options.email is defined and options.email is not null %}
+                    <p>{{ options.email }}</p>
+                {% endif %}
+                {% if options.adresse is defined and options.adresse is not null %}
+                    <p>{{ options.adresse }}</p>
+                {% endif %}
             </p>
         </div>
         <p><br><em>Date d’entrée en vigueur&nbsp;:
