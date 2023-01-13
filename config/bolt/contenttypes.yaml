@@ -552,8 +552,8 @@ vosOptions:
     icon_one: "fa:sliders-h"
 
 mentionsLegal: 
-    name: Mentions légal
-    singular_name: Mention légal
+    name: Mentions légales
+    singular_name: Mention légale
     slug: Mentions legal
     fields:
       social:
@@ -588,8 +588,8 @@ mentionsLegal:
         group: Hébergeur
       hosterSocial:
         type: text
-        label: Raison social de l'hébergeur
-        info: Raison social de l'hébergeur
+        label: Raison sociale de l'hébergeur
+        info: Raison sociale de l'hébergeur
         group: Hébergeur
       hosterAddress:
         type: text
