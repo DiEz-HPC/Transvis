@@ -25,7 +25,7 @@ defaultImage is variable passed with call component
                     <img id="image-back" src="{{ asset('images/savoirs-faire/bloc-contour.png.webp') }}" alt="contour">
                     <img id="image-front" class="p-2" src="{{ record.image.path is defined and record.image.path is not empty ? asset(record.image) : asset(defaultImage ?? 'no image') }}" alt="image d'illustration">
                 </div>
-                <div class="p-3" data-aos="fade-right" data-aos-delay="500">
+                <div class="p-3">
                     {{ record.teaser }}
                 </div>
             </div>
