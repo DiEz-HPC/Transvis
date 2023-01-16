@@ -30,7 +30,7 @@ class SuperpositionHandlerExtension extends AbstractExtension
 
         foreach ($superposition as $superposition) {
             $img = $dom->createElement('img');
-            $img->setAttribute('src', '/theme/transvis/images/savoirs-faire/last-bloc-contour.png');
+            $img->setAttribute('src', '/theme/transvis/images/savoirs-faire/bloc.png');
             $img->setAttribute('alt', 'image de contour');
             $img->setAttribute('id', 'image-back');
 
