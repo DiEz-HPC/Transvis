@@ -40,7 +40,7 @@ record.
             <h1 class="text-center text-xl-start pt-1 line-before-start mb-5"
                 data-aos="fade-up">{{ record.title | upper }}</h1>
             {% if record.intro is defined %}
-                <div data-aos="fade-up" data-aos-delay="250">{{ record.intro }}</div>
+                <div data-aos="fade-up" data-aos-delay="250"> {{ superposition(record.intro) }}</div>
             {% endif %}
         </div>
         <div class="banner mb-5">
