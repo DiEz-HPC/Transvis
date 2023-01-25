@@ -86,10 +86,12 @@
 .modalYoutube .splide__slide{
     background-size: contain !important;
 }
+/* purgecss start ignore */
 .splide__video,
 .splide__video *{
     height: 100%;
 }
+/* purgecss stop ignore */
 /* modal fullscreen en mobile */
 @media screen and (max-width: 768px) {
     .modalYoutube .modalContainer{
