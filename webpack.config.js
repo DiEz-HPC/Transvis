@@ -110,14 +110,7 @@ Encore
     )
     .addEntry("tagSeachJs", "./public/theme/transvis/js/tagSearch.js")
     .addEntry("tagSeeMoreJs", "./public/theme/transvis/js/tagSeeMore.js")
-    .addEntry(
-        "cardNosRealisationsJs",
-        "./public/theme/transvis/js/cardNosRealisations.js"
-    )
-    .addEntry(
-        "nosRealisationModalJs",
-        "./public/theme/transvis/js/nosRealisationModal.js"
-    )
+    .addEntry("nosRealisationModalJs", "./public/theme/transvis/js/nosRealisationModal.js")
     .addEntry("logoSliderJs", "./public/theme/transvis/js/logoSlider.js")
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
