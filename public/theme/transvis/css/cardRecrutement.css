@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
     .card-recrutement {
         width: 100%;
         height: 340px;
