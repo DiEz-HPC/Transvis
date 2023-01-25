@@ -613,23 +613,5 @@
         <target>Votre entreprise...</target>
       </segment>
     </unit>
-    <unit id="W7z__Yi" name="action.impersonate">
-      <segment>
-        <source>action.impersonate</source>
-        <target>action.impersonate</target>
-      </segment>
-    </unit>
-    <unit id="z8r0TY6" name="action.edit_permissions">
-      <segment>
-        <source>action.edit_permissions</source>
-        <target>action.edit_permissions</target>
-      </segment>
-    </unit>
-    <unit id="eJG2.4P" name="listing.current_sessions_header">
-      <segment>
-        <source>listing.current_sessions_header</source>
-        <target>listing.current_sessions_header</target>
-      </segment>
-    </unit>
   </file>
 </xliff>
