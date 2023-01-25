@@ -21,7 +21,6 @@ final class Version20230125124443 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE bolt_nos_realisation_picture (id INT AUTO_INCREMENT NOT NULL, realisation_id INT NOT NULL, picture_path VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('ALTER TABLE bolt_candidature DROP is_answered');
         $this->addSql('ALTER TABLE bolt_field_translation CHANGE value value JSON NOT NULL');
     }
 
@@ -29,7 +28,6 @@ final class Version20230125124443 extends AbstractMigration
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE bolt_nos_realisation_picture');
-        $this->addSql('ALTER TABLE bolt_candidature ADD is_answered TINYINT(1) DEFAULT \'0\' NOT NULL');
         $this->addSql('ALTER TABLE bolt_field_translation CHANGE value value JSON NOT NULL');
     }
 }
