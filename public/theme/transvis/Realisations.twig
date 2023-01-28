@@ -1,6 +1,7 @@
 {% extends '@theme/partials/_master.twig' %}
 {% use '@theme/partials/cards/_card_nosRealisations.twig' %}
 {% use '@theme/partials/_logo_slider.twig' %}
+{% use '@theme/partials/modals/_videoModal.twig' %}
 {#
     Records: 'collection record'
 #}
@@ -9,12 +10,14 @@
     {{ encore_entry_link_tags('nosRealisationsStyle', null, 'transvis') }}
     {{ block('cardNosRealisationsStylesheet')}}
     {{ block('logoSliderStylesheet') }}
+    {{ block('videoModalStyleSheet')}}
 {% endblock stylesheet %}
 
 {% block javascript %}
     {{ parent() }}
     {{ block('cardNosRealisationsJavascript') }}
     {{ block('logoSliderJavascript') }}
+        {{ block('videoModalJavascript') }}
 {%  endblock javascript %}
 
 {% block main %}
@@ -91,7 +94,9 @@
                 {% endwith %}
             {% endfor %}
         </div>
-
+        
+        {{ block('videoModalContent') }}
+       
         <div class="col-12 d-flex justify-content-center align-items-center my-5">
             {{ pager(records, template = 'partials/helpers/_pager.html.twig') }}
         </div>

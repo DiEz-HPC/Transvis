@@ -21,6 +21,11 @@
         {% if app.environment == "prod" %}
             {{ encore_entry_script_tags('matomoJs', null, 'transvis') }}
         {% endif %}
+         <script
+			  src="https://code.jquery.com/jquery-3.6.3.min.js"
+			  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+			  crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/htmx.org@1.8.5" integrity="sha384-7aHh9lqPYGYZ7sTHvzP1t3BAfLhYSTy9ArHdP3Xsr9/3TlGurYgcPBoFmXX2TX/w" crossorigin="anonymous"></script>
     </head>
     {% setcontent options = 'Vos options' %}
     <body>

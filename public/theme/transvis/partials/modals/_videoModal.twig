@@ -10,79 +10,64 @@
 {% endblock videoModalStyleSheet %}
 
 {% block videoModalContent %}
-    <div class="modalYoutube" id="modal-{{loopIndex}}">
+    <div class="modalYoutube" id="modalYoutube-htmx">
         <div class="modalContainer">
-            <div class="">
-                <div class="modalHeader row justify-content-center align-items-center">
-                    <h1 class="text-center modalTitle col-11">
-                        {{ record.title | upper  }}
-                    </h1>
-                    <button type="button" class="btn-close-modal">
-                        {% include ("images/enveloppe.svg") %}
-                    </button>
-                </div>
-            </div>
-            <div class="modalBody mt-4">
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        {{ record.teaser }}
+
+            <div id="htmx-result">
+                <div class="">
+                    <div class="modalHeader row justify-content-center align-items-center">
+                        <h1 class="text-center modalTitle col-11">
+                            {{ 'Chargement' | upper  }}
+                        </h1>
+                        <button type="button" class="btn-close-modal">
+                            {% include ("images/enveloppe.svg") %}
+                        </button>
                     </div>
                 </div>
-                <div class="video-player mt-4 d-flex justify-content-center align-items-center">
-                    <div class="col-10 video-player-inner">
-                        <div class="splide slider-slide col-12 col-md-12 col-xl-12" id="carouselSlider">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    {% if record.video is not null and record.video is not empty %}
-                                        <li class="splide__slide  d-flex align-items-center justify-content-center" data-splide-html-video='{{ record.video }}'>
-                                            <video controls muted id="videoPlayer" class="d-none">
-                                                <source src="{{ record.video }}" type="video/webm">
-                                            </video>
-                                        </li>
-                                    {% endif %}
-                                    {% for picture in record.carousel %}
+                <div class="modalBody mt-4">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            {{ 'Le contenu est en cours de chargements ...' }}
+                        </div>
+                    </div>
+                    <div class="video-player mt-4 d-flex justify-content-center align-items-center">
+                        <div class="col-10 video-player-inner">
+                            <div class="splide slider-slide col-12 col-md-12 col-xl-12" id="carouselSlider">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
                                         <li class="splide__slide  d-flex align-items-center justify-content-center">
-                                            <img data-splide-lazy="{{ asset(picture) }}" alt="{{ picture.title }}" class="img-responsive" style="object-fit: contain;">
+                                            <img data-splide-lazy="{{ asset("images/Transvis800px.png.webp") }}" alt="logo transvis" class="img-responsive" style="object-fit: contain;">
                                         </li>
-                                    {% endfor %}
-                                    <li class="splide__slide  d-flex align-items-center justify-content-center">
-                                        <img data-splide-lazy="{{ asset("images/Transvis800px.png.webp") }}" alt="logo transvis" class="img-responsive" style="object-fit: contain;">
-                                    </li>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row justify-content-center my-4">
-                    {% if record.machineSheet is defined and record.machineSheet is not null and record.machineSheet is not empty %}
-                        {%  with { text: "Fiche technique", link: record.machineSheet, width: "250px", height: "37px", nextWidth: "8%", isBlack: true, external: true} %}
-                        {{ block('buttonRedContent') }}
-                        {% endwith %}
-                    {% endif %}
-                </div>
-                <div class="row modalFooter" style="background-image: url({{ asset('images/bgRed.png.webp') }}); background-size: cover;">
-                    <div class="modalContactText d-flex justify-content-end align-items-center col-6">
-                        <div class="d-flex text-center">
-                            <p style="margin: 0px;">Un projet ?</p>
-                        </div>
+                    <div class="row justify-content-center my-4">
+                        
                     </div>
+                </div>
+            </div>
+            <div class="row modalFooter" style="background-image: url({{ asset('images/bgRed.png.webp') }}); background-size: cover;">
+                <div class="modalContactText d-flex justify-content-end align-items-center col-6">
+                    <div class="d-flex text-center">
+                        <p style="margin: 0px;">Un projet ?</p>
+                    </div>
+                </div>
 
-                    <div class="d-flex justify-content-start align-items-center col-6">
-                        {%  with { text: "Contactez-nous", link: '/contact' , width: "200px", height: "37px", nextWidth: "0%", isBlack: true} %}
-                        {{ block('buttonRedContent') }}
-                        {% endwith %}
-                    </div>
-                </div>
-                <div class="row">
-                    {% with {id : 'logoSliderModal'} %}
-                    {{ block('logoSliderContent')}}
+                <div class="d-flex justify-content-start align-items-center col-6">
+                    {%  with { text: "Contactez-nous", link: '/contact' , width: "200px", height: "37px", nextWidth: "0%", isBlack: true} %}
+                    {{ block('buttonRedContent') }}
                     {% endwith %}
                 </div>
-
-
             </div>
+            <div class="row">
+                {% with {id : 'logoSliderModal'} %}
+                {{ block('logoSliderContent')}}
+                {% endwith %}
+            </div>
+
+
         </div>
-
-
     </div>
 {% endblock videoModalContent %}
