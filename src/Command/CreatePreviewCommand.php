@@ -41,12 +41,12 @@ class CreatePreviewCommand extends Command
       
         foreach($contents as $content){
             if($content->getFieldValue('video')['filename'] == null || $content->getFieldValue('video')['filename'] == ""){
-                $io->writeln('La réalisation portant l\id : ' . $content->getFieldValue('id') . ' n\'a pas de video');
+                $io->writeln('La réalisation : ' . $content->getId() . ' n\'a pas de video');
             }else{
-                $io->writeln('La réalisation portant l\id : ' . $content->getFieldValue('id') . ' a une video');
+                $io->writeln('La réalisation : ' . $content->getId() . ' a une video');
                 $io->writeln('Génération de la preview...');
-
-                $this->generatePreview->generatePreview($content);
+                $generationStatus = $this->generatePreview->generatePreview($content);
+                $io->writeln($generationStatus);
             }
         }
 

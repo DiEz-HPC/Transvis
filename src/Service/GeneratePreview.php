@@ -18,7 +18,12 @@ class GeneratePreview
     public function generatePreview(Content $content)
     {
         // On initialise la librairie FFMpeg
-        $ffmpeg = FFMpeg\FFMpeg::create();
+        $ffmpeg = FFMpeg\FFMpeg::create(array(
+            'ffmpeg.binaries'  => $this->projectDir . '/ffmpeg/ffmpeg',
+            'ffprobe.binaries' => $this->projectDir . '/ffmpeg/ffprobe',
+            'timeout'          => 3600, // The timeout for the underlying process
+            'ffmpeg.threads'   => 1,   // The number of threads that FFMpeg should use
+        ));
 
         $publicPath = $this->projectDir . '/' . $this->publicFolder;
         $contentTypePath = $publicPath . '/files/';
@@ -27,7 +32,7 @@ class GeneratePreview
         // On vérifie si une video est présente
         $videoContent = $content->getFieldValue('video');
         if($videoContent == null || $videoContent['filename'] == ""){
-            return;
+            return 'La réalisation : ' . $content->getId() . ' n\'a pas de video';
         }
 
         // On récupère le temps de la preview
@@ -42,7 +47,9 @@ class GeneratePreview
         $frame->save($contentTypePath . $pictureName . '.jpg');
 
         // On enregistre la preview
-        $this->createMedia($content->getId(), '/files/' .$pictureName . '.jpg');
+        if($this->createMedia($content->getId(), '/files/' .$pictureName . '.jpg')){
+            return 'La réalisation : ' . $content->getId() . ' a bien été généré';
+        }
         
     }
 
@@ -61,5 +68,6 @@ class GeneratePreview
         $this->em->persist($media);
         $this->em->flush();
 
+        return true;
     }
 }
