@@ -44,9 +44,9 @@ const openModal = (modal, body) => {
 
 const initCarousel = (carouselDiv, modal) => {
     if (modal.dataset.alreadyOpened === "true") {
-    //    return;
+        //    return;
     }
-    if(carouselDiv.classList.contains("is-active")){
+    if (carouselDiv.classList.contains("is-active")) {
         return;
     }
 
@@ -92,10 +92,6 @@ const initCarousel = (carouselDiv, modal) => {
     carousel.on("move", function () {
         pauseVideo(carouselDiv);
     });
-    modal.addEventListener("modalClosed", function () {
-      carousel.destroy();
-    });
-
 };
 
 const setInnerCarouselSize = (carouselDiv) => {
@@ -114,7 +110,7 @@ const setLogoSizeSlider = (splideDiv) => {
 
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
-   
+
     let customEvent = new Event("modalClosed");
     modal.addEventListener("click", function (e) {
         if (e.target === modal) {
@@ -130,6 +126,40 @@ const closeModal = (modal, body) => {
         modal.style.display = "none";
         body.style.overflow = "auto";
         modal.dataset.alreadyOpened = true;
+        modal.querySelector("#htmx-result").innerHTML = `<div class="">
+        <div class="modalHeader row justify-content-center align-items-center">
+            <h1 class="text-center modalTitle col-11">
+                CHARGEMENT
+            </h1>
+            <button type="button" class="btn-close-modal">
+               
+            </button>
+        </div>
+    </div>
+    <div class="modalBody mt-4">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                Le contenu est en cours de chargements ...
+            </div>
+        </div>
+        <div class="video-player mt-4 d-flex justify-content-center align-items-center">
+            <div class="col-10 video-player-inner">
+                <div class="splide slider-slide col-12 col-md-12 col-xl-12" id="carouselSlider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide  d-flex align-items-center justify-content-center">
+                                <img data-splide-lazy="{{ asset("images/Transvis800px.png.webp") }}" alt="logo transvis" class="img-responsive" style="object-fit: contain;">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center my-4">
+            
+        </div>
+    </div>
+</div>`;
     });
 };
 
