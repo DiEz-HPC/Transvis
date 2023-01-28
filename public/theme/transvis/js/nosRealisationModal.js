@@ -92,12 +92,6 @@ const initCarousel = (carouselDiv, modal) => {
     carousel.on("move", function () {
         pauseVideo(carouselDiv);
     });
-
-    modal.addEventListener("modalClosed", function () {
-        carousel.go(0);
-        carousel.destroy({ Video });
-    });
-    
 };
 
 const setInnerCarouselSize = (carouselDiv) => {
