@@ -119,6 +119,8 @@ Encore
         "./public/theme/transvis/js/nosRealisationModal.js"
     )
     .addEntry("logoSliderJs", "./public/theme/transvis/js/logoSlider.js")
+    .addEntry('htmx', './public/theme/transvis/js/dependency/htmx.js')
+    .addEntry('jQuery', './public/theme/transvis/js/dependency/jquery-3.6.1.min.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     // .enableStimulusBridge('./assets/controllers.json')

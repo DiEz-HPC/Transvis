@@ -6,35 +6,33 @@
 
 {% use '@theme/partials/buttons/_button-red.twig' %}
 {% use '@theme/partials/buttons/_tags.twig' %}
-{% use '@theme/partials/modals/_videoModal.twig' %}
+
 {% block cardNosRealisationsStylesheet %}
     {{ block('buttonRedStylesheet') }}
     {{ block('tagStylesheet') }}
-    {{ block('videoModalStyleSheet')}}
     {{ encore_entry_link_tags('cardNosRealisationStyle', null, 'transvis') }}
 {% endblock %}
 {% block cardNosRealisationsJavascript %}
     {{ block('tagJavascript') }}
-    {{ block('videoModalJavascript') }}
-    {{ encore_entry_script_tags('cardNosRealisationsJs', null, 'transvis') }}
 {% endblock %}
 
 {% block cardNosRealisationsContent %}
+  {% set loadpreview = loadpreview(record.id) %}
     <div class="col-12 col-xl-4 p-4 cardOuterContainer" data-loopindex="{{loopIndex}}" data-timerecord="{{ record.videoTime }}" data-iscaptured="0" data-aos="fade-up" data-aos-duration="{{ 250 + (loopIndex * 250)}}">
-        <div class="card nr cardNosRealisations" data-loop-index="{{loopIndex}}">
+        <div class="card nr cardNosRealisations" data-loop-index="{{loopIndex}}" data-realisation-id="{{record.id}}" >
             <div class="card-img">
-            {% if record.video is defined and record.video is not null and record.video is not empty %}
-                <canvas class="card-img-top" id="cardImage{{loopIndex}}"></canvas>
-            {% elseif record.carousel is defined and record.carousel is not empty %}
-                {% for picture in record.carousel %}
-                    {% if loop.first %}
-                        <img class="card-img-top" src="{{ asset(picture) }}" alt="{{ picture.title }}" >
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-                <img id="imageNotFound" class="card-img-top" src="{{ asset('images/Image_not_available.png.webp') }}" alt="image non trouvé" >
-            {% endif %}
-                <div class="play-video">
+                {% if loadpreview is defined and loadpreview is not null and loadpreview is not empty %}
+                    <img src="{{ loadpreview(record.id) }}" class="card-img-top" alt="preview">
+                {% elseif record.carousel is defined and record.carousel is not empty %}
+                    {% for picture in record.carousel %}
+                        {% if loop.first %}
+                            <img class="card-img-top" src="{{ asset(picture) }}" alt="{{ picture.title }}">
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <img id="imageNotFound" class="card-img-top" src="{{ asset('images/Image_not_available.png.webp') }}" alt="image non trouvé">
+                {% endif %}
+                <div class="play-video" hx-get="/htmx/realisation/{{ record.id }}" hx-trigger="click, touchend" hx-target="#htmx-result">
                     {% include ("images/play-button.svg") %}
                 </div>
             </div>
@@ -48,14 +46,11 @@
                     {% endfor %}
                 </div>
                 <p class="card-text">{{record.teaser|excerpt(300)}}</p>
-                {%  with { text: "En savoir plus", link: "#modal-" ~ loopIndex,  width: "200px", height: "37px", nextWidth: "8%"} %}
+                {%  with { text: "En savoir plus", link: "#modal-" ~ loopIndex,  width: "200px", height: "37px", nextWidth: "8%", hxGet: '/htmx/realisation/' ~ record.id , hxTrigger:"click,touchend", hxTarget:'#htmx-result'} %}
                 {{ block('buttonRedContent') }}
                 {% endwith %}
             </div>
-
         </div>
-        {% with {loopIndex : loopIndex, record : record} %}
-        {{ block('videoModalContent') }}
-        {% endwith %}
+
     </div>
 {% endblock %}
