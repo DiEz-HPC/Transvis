@@ -110,7 +110,14 @@ Encore
     )
     .addEntry("tagSeachJs", "./public/theme/transvis/js/tagSearch.js")
     .addEntry("tagSeeMoreJs", "./public/theme/transvis/js/tagSeeMore.js")
-    .addEntry("nosRealisationModalJs", "./public/theme/transvis/js/nosRealisationModal.js")
+    .addEntry(
+        "cardNosRealisationsJs",
+        "./public/theme/transvis/js/cardNosRealisations.js"
+    )
+    .addEntry(
+        "nosRealisationModalJs",
+        "./public/theme/transvis/js/nosRealisationModal.js"
+    )
     .addEntry("logoSliderJs", "./public/theme/transvis/js/logoSlider.js")
     .addEntry('htmx', './public/theme/transvis/js/dependency/htmx.js')
     .addEntry('jQuery', './public/theme/transvis/js/dependency/jquery-3.6.1.min.js')

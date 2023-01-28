@@ -28,9 +28,6 @@ const animationKeys = () => {
                                 clearInterval(interval);
                             }
                         },  timeout);
-                    } else {
-                        clearInterval(interval);
-                        key.innerHTML = 0;
                     }
                 }
             );
