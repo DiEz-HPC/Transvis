@@ -18,6 +18,8 @@
     {{ block('cardNosRealisationsJavascript') }}
     {{ block('logoSliderJavascript') }}
         {{ block('videoModalJavascript') }}
+    {{ encore_entry_script_tags('htmx', null, 'transvis')}}
+    {{ encore_entry_script_tags('jQuery', null, 'transvis') }}
 {%  endblock javascript %}
 
 {% block main %}

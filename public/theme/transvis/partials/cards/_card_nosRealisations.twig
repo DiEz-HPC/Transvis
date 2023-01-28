@@ -32,7 +32,7 @@
                 {% else %}
                     <img id="imageNotFound" class="card-img-top" src="{{ asset('images/Image_not_available.png.webp') }}" alt="image non trouvé">
                 {% endif %}
-                <div class="play-video" hx-get="/htmx/realisation/{{ record.id }}" hx-trigger="click" hx-target="#htmx-result">
+                <div class="play-video" hx-get="/htmx/realisation/{{ record.id }}" hx-trigger="click, touchend" hx-target="#htmx-result">
                     {% include ("images/play-button.svg") %}
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     {% endfor %}
                 </div>
                 <p class="card-text">{{record.teaser|excerpt(300)}}</p>
-                {%  with { text: "En savoir plus", link: "#modal-" ~ loopIndex,  width: "200px", height: "37px", nextWidth: "8%", hxGet: '/htmx/realisation/' ~ record.id , hxTrigger:"click", hxTarget:'#htmx-result'} %}
+                {%  with { text: "En savoir plus", link: "#modal-" ~ loopIndex,  width: "200px", height: "37px", nextWidth: "8%", hxGet: '/htmx/realisation/' ~ record.id , hxTrigger:"click,touchend", hxTarget:'#htmx-result'} %}
                 {{ block('buttonRedContent') }}
                 {% endwith %}
             </div>
