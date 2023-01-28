@@ -91,6 +91,7 @@
 .splide__video *{
     height: 100%;
 }
+
 /* purgecss stop ignore */
 /* modal fullscreen en mobile */
 @media screen and (max-width: 768px) {
