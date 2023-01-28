@@ -31,7 +31,7 @@ class RealisationSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            ContentEvent::PRE_SAVE => ['generatePreview'],
+            ContentEvent::POST_SAVE => ['generatePreview'],
         ];
     }
 }

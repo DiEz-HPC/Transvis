@@ -61,6 +61,8 @@ class GeneratePreview
         // Si on a pas d'entré on en crée une
         if($media == null){
             $media = new NosRealisationPicture();
+        }else {
+           $this->deletePicture($media->getPicturePath());
         }      
         $media->setRealisationId($contentId);
         $media->setPicturePath($path);
@@ -69,5 +71,13 @@ class GeneratePreview
         $this->em->flush();
 
         return true;
+    }
+
+    private function deletePicture(string $path) {
+        $file = $this->projectDir . '/' . $this->publicFolder . $path;
+
+        if(file_exists($file)){
+            unlink($file);
+        }
     }
 }

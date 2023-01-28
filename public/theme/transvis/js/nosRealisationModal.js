@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleModal(cards, modal, body);
     modal.addEventListener("htmx:load", function () {
         initCarousel(modal.querySelector("#carouselSlider"), modal);
+        closeModal(modal, body);
     });
 });
 
@@ -19,7 +20,6 @@ const handleModal = (cards, modal, body) => {
         let seeMoreButton = card.querySelector(".btn-link-more");
         let buttons = [playButton, seeMoreButton];
         buttons.forEach(function (button) {
-            let realisationId = card.dataset.realisationId;
             button.addEventListener("click", function () {
                 openModal(modal, body);
             });
@@ -39,7 +39,6 @@ const openModal = (modal, body) => {
         modal.style.display = "flex";
         body.style.overflow = "hidden";
         modal.style.zIndex = "10000";
-        closeModal(modal, body);
     }
 };
 
@@ -117,6 +116,7 @@ const setLogoSizeSlider = (splideDiv) => {
 
 const closeModal = (modal, body) => {
     let close = modal.querySelector(".btn-close-modal");
+   
     let customEvent = new Event("modalClosed");
     modal.addEventListener("click", function (e) {
         if (e.target === modal) {
