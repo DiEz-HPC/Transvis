@@ -19,7 +19,7 @@ card (contentype recrutement):
 
 {% block cardRecrutementContent %}
     {% set tags = [card.description.contrat, 'temps ' ~ card.description.temps, card.description.salary] %}
-    <div class="card-recrutement col-12 col-xl-3 mb-5 h-100" data-aos="fade-up" data-aos-duration="{{ 250 + (index * 250)}}">
+    <div class="card-recrutement col-12 col-xl-3 mb-5 mx-2 h-100" data-aos="fade-up" data-aos-duration="{{ 250 + (index * 250)}}">
         <div class="block-image">
             <img class="w-100 h-100" src="{{ asset('images/banner-recrutement-card.png.webp') }}" alt="bannière recrutement">
         </div>
