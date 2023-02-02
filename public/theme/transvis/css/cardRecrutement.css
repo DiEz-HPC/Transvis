@@ -30,8 +30,11 @@
 }
 
 .card-recrutement .block-content {
-    height: calc(var(--card-recrutement-height)  * .6);
+    height: 100%;
     padding: var(--spacing);
+}
+.card-recrutement .block-content .block-title {
+    margin-bottom: .5rem;
 }
 
 .card-recrutement .block-content h3 {
@@ -48,4 +51,12 @@
     font-weight: 500;
     font-size: .875rem;
     line-height: 17px;
+}
+
+.card-recrutement .block-content .block-title,
+.card-recrutement .block-content .tags,
+.card-recrutement .block-content .block-button,
+.card-recrutement .block-content .teaser {
+    height: fit-content !important;
+    min-height: 40px;
 }
