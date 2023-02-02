@@ -57,7 +57,7 @@
         </div>
 
         <div class="recrutementBody">
-            <div class="d-flex flex-column flex-xl-row flex-xl-wrap justify-content-center justify-content-xl-around align-items-center p-5 col-12">
+            <div class="d-flex flex-column flex-xl-row flex-xl-wrap justify-content-center justify-content-xl-around align-items-center p-3 col-12">
                 {% for record in records %}
                     {% with { card: record, index: loop.index} %}
                     {{ block('cardRecrutementContent')}}
